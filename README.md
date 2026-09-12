@@ -1,3 +1,6 @@
+> **Windows port:** this fork adds a Windows 10/11 implementation of OpenEmu in [`Windows/`](Windows/README.md)
+> (.NET 9 + Avalonia, libretro cores for all 42 systems bundled). The macOS app below is unchanged.
+
 OpenEmu
 =======
 

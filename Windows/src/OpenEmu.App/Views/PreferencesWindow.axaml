@@ -1,0 +1,62 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:s="clr-namespace:OpenEmu.App.Services"
+        x:Class="OpenEmu.App.Views.PreferencesWindow"
+        Width="820" Height="600" MinWidth="700" MinHeight="480"
+        Title="{s:T prefs.title}" WindowStartupLocation="CenterScreen">
+  <TabControl x:Name="Tabs" Margin="8">
+    <TabItem Header="{s:T prefs.library}">
+      <ScrollViewer><StackPanel x:Name="LibraryPanel" Margin="16" Spacing="12" /></ScrollViewer>
+    </TabItem>
+    <TabItem Header="{s:T prefs.gameplay}">
+      <ScrollViewer><StackPanel x:Name="GameplayPanel" Margin="16" Spacing="10" /></ScrollViewer>
+    </TabItem>
+    <TabItem Header="{s:T prefs.controls}">
+      <DockPanel Margin="16">
+        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Spacing="12">
+          <TextBlock Text="{s:T prefs.controls.system}" VerticalAlignment="Center" />
+          <ComboBox x:Name="ControlsSystem" Width="240" />
+          <ComboBox x:Name="ControlsPlayer" Width="130" />
+          <Button x:Name="ControlsReset" Content="{s:T prefs.controls.reset}" />
+          <TextBlock x:Name="GamepadStatus" Classes="muted" VerticalAlignment="Center" />
+        </StackPanel>
+        <TextBlock DockPanel.Dock="Top" Text="{s:T prefs.controls.hint}" Classes="muted" Margin="0,8" TextWrapping="Wrap" />
+        <TextBlock x:Name="CaptureHint" DockPanel.Dock="Bottom" Foreground="#FFD070" Margin="0,8,0,0" IsVisible="False" Text="{s:T prefs.controls.press}" />
+        <ScrollViewer><StackPanel x:Name="ControlsPanel" Spacing="4" /></ScrollViewer>
+      </DockPanel>
+    </TabItem>
+    <TabItem Header="{s:T prefs.cores}">
+      <DockPanel Margin="16">
+        <TextBlock DockPanel.Dock="Top" Text="{s:T prefs.cores.hint}" Classes="muted" TextWrapping="Wrap" />
+        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Spacing="8" Margin="0,10">
+          <Button x:Name="InstallAllBtn" Content="{s:T prefs.cores.installAll}" />
+          <Button x:Name="CheckUpdatesBtn" Content="{s:T prefs.cores.checkUpdates}" />
+          <TextBlock x:Name="CoresStatus" Classes="muted" VerticalAlignment="Center" />
+          <ProgressBar x:Name="CoresProgress" Width="160" IsVisible="False" Minimum="0" Maximum="1" VerticalAlignment="Center" />
+        </StackPanel>
+        <ScrollViewer><StackPanel x:Name="CoresPanel" Spacing="4" /></ScrollViewer>
+      </DockPanel>
+    </TabItem>
+    <TabItem Header="{s:T prefs.bios}">
+      <DockPanel Margin="16">
+        <TextBlock DockPanel.Dock="Top" Text="{s:T prefs.bios.hint}" Classes="muted" TextWrapping="Wrap" />
+        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Spacing="8" Margin="0,10">
+          <Button x:Name="BiosImportBtn" Content="{s:T prefs.bios.import}" />
+          <Button x:Name="BiosFolderBtn" Content="{s:T prefs.bios.openFolder}" />
+          <TextBlock x:Name="BiosStatus" Classes="muted" VerticalAlignment="Center" />
+        </StackPanel>
+        <ScrollViewer><StackPanel x:Name="BiosPanel" Spacing="2" /></ScrollViewer>
+      </DockPanel>
+    </TabItem>
+    <TabItem Header="{s:T prefs.about}">
+      <StackPanel Margin="24" Spacing="10" MaxWidth="560" HorizontalAlignment="Left">
+        <TextBlock Text="OpenEmu for Windows" Classes="h1" />
+        <TextBlock x:Name="VersionText" Classes="muted" />
+        <TextBlock Text="{s:T prefs.about.body}" TextWrapping="Wrap" />
+        <TextBlock Text="https://github.com/dmondini-glitch/OpenEmu" Classes="muted" />
+        <TextBlock Text="Upstream: https://github.com/OpenEmu/OpenEmu · Cores: https://buildbot.libretro.com" Classes="muted" TextWrapping="Wrap" />
+        <TextBlock x:Name="PathsText" Classes="muted" TextWrapping="Wrap" FontSize="11" />
+      </StackPanel>
+    </TabItem>
+  </TabControl>
+</Window>

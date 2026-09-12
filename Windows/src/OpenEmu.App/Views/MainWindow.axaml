@@ -1,0 +1,113 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:s="clr-namespace:OpenEmu.App.Services"
+        xmlns:vm="clr-namespace:OpenEmu.App.ViewModels"
+        x:Class="OpenEmu.App.Views.MainWindow"
+        Width="1180" Height="760" MinWidth="820" MinHeight="520"
+        Title="OpenEmu" Background="#232326">
+  <DockPanel>
+    <!-- Sidebar -->
+    <Border DockPanel.Dock="Left" Width="230" Background="#1B1B1D" BorderBrush="#111" BorderThickness="0,0,1,0">
+      <DockPanel>
+        <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" Margin="8" Spacing="4">
+          <Button x:Name="AddCollectionBtn" Classes="toolbar" Content="＋" ToolTip.Tip="{s:T sidebar.newCollection}" />
+          <Button x:Name="PrefsBtn" Classes="toolbar" Content="⚙" ToolTip.Tip="{s:T toolbar.preferences}" />
+          <Button x:Name="CoresBtn" Classes="toolbar" Content="🧩" ToolTip.Tip="{s:T toolbar.cores}" />
+        </StackPanel>
+        <ScrollViewer>
+          <StackPanel>
+            <TextBlock Classes="sidebarHeader" Text="{s:T sidebar.consoles}" />
+            <ListBox x:Name="SystemsList" Classes="sidebar" SelectionMode="Single" />
+            <TextBlock Classes="sidebarHeader" Text="{s:T sidebar.collections}" />
+            <ListBox x:Name="CollectionsList" Classes="sidebar" SelectionMode="Single" />
+            <TextBlock Classes="sidebarHeader" Text="{s:T sidebar.homebrew}" />
+            <ListBox x:Name="HomebrewList" Classes="sidebar" SelectionMode="Single" />
+          </StackPanel>
+        </ScrollViewer>
+      </DockPanel>
+    </Border>
+
+    <!-- Toolbar -->
+    <Border DockPanel.Dock="Top" Height="52" Background="#2A2A2D" BorderBrush="#111" BorderThickness="0,0,0,1">
+      <Grid ColumnDefinitions="*,Auto" Margin="14,0">
+        <StackPanel Orientation="Horizontal" Spacing="12" VerticalAlignment="Center">
+          <TextBlock x:Name="HeaderText" Classes="h1" Text="OpenEmu" VerticalAlignment="Center" />
+          <TextBlock x:Name="CountText" Classes="muted" VerticalAlignment="Center" />
+        </StackPanel>
+        <StackPanel Grid.Column="1" Orientation="Horizontal" Spacing="8" VerticalAlignment="Center">
+          <Button x:Name="ImportBtn" Content="{s:T toolbar.import}" />
+          <ToggleButton x:Name="GridBtn" Content="▦" ToolTip.Tip="{s:T toolbar.grid}" IsChecked="True" />
+          <ToggleButton x:Name="ListBtn" Content="☰" ToolTip.Tip="{s:T toolbar.list}" />
+          <Slider x:Name="SizeSlider" Minimum="100" Maximum="320" Width="110" VerticalAlignment="Center" />
+          <TextBox x:Name="SearchBox" Width="200" Watermark="{s:T toolbar.search}" />
+        </StackPanel>
+      </Grid>
+    </Border>
+
+    <!-- Status bar -->
+    <Border DockPanel.Dock="Bottom" Height="26" Background="#1B1B1D" BorderBrush="#111" BorderThickness="0,1,0,0">
+      <TextBlock x:Name="StatusText" Classes="muted" FontSize="11" VerticalAlignment="Center" Margin="12,0" />
+    </Border>
+
+    <!-- Content -->
+    <Grid x:Name="ContentGrid" Background="#232326">
+      <ScrollViewer x:Name="GridScroll">
+        <ListBox x:Name="GamesGrid" Background="Transparent" SelectionMode="Multiple" Margin="8">
+          <ListBox.ItemsPanel>
+            <ItemsPanelTemplate><WrapPanel Orientation="Horizontal" /></ItemsPanelTemplate>
+          </ListBox.ItemsPanel>
+          <ListBox.Styles>
+            <Style Selector="ListBoxItem">
+              <Setter Property="Padding" Value="6" />
+              <Setter Property="Margin" Value="2" />
+              <Setter Property="CornerRadius" Value="8" />
+            </Style>
+          </ListBox.Styles>
+          <ListBox.ItemTemplate>
+            <DataTemplate x:DataType="vm:GameItem">
+              <StackPanel Width="{Binding $parent[ListBox].Tag}" Spacing="6">
+                <Border CornerRadius="6" ClipToBounds="True" Height="{Binding $parent[ListBox].Tag}" Background="{Binding PlaceholderBrush}" BoxShadow="0 2 8 0 #66000000">
+                  <Panel>
+                    <StackPanel IsVisible="{Binding NoCover}" VerticalAlignment="Center" Margin="10" Spacing="6">
+                      <TextBlock Text="{Binding SystemShort}" Foreground="#CCFFFFFF" FontSize="11" FontWeight="Bold" HorizontalAlignment="Center" />
+                      <TextBlock Text="{Binding Title}" Foreground="White" FontSize="14" FontWeight="SemiBold" TextWrapping="Wrap" TextAlignment="Center" MaxLines="4" TextTrimming="CharacterEllipsis" />
+                    </StackPanel>
+                    <Image Source="{Binding Cover}" IsVisible="{Binding HasCover}" Stretch="Uniform" />
+                    <Border IsVisible="{Binding Missing}" Background="#99000000" VerticalAlignment="Bottom" Padding="6,2">
+                      <TextBlock Text="{s:T library.missing}" Foreground="#FFD070" FontSize="11" HorizontalAlignment="Center" />
+                    </Border>
+                  </Panel>
+                </Border>
+                <TextBlock Text="{Binding Title}" FontSize="12" TextTrimming="CharacterEllipsis" TextAlignment="Center" MaxLines="2" TextWrapping="Wrap" />
+                <TextBlock Text="{Binding SystemName}" FontSize="10" Classes="muted" TextAlignment="Center" TextTrimming="CharacterEllipsis" />
+              </StackPanel>
+            </DataTemplate>
+          </ListBox.ItemTemplate>
+        </ListBox>
+      </ScrollViewer>
+      <ScrollViewer x:Name="ListScroll" IsVisible="False">
+        <ListBox x:Name="GamesList" Background="Transparent" SelectionMode="Multiple" Margin="8">
+          <ListBox.ItemTemplate>
+            <DataTemplate x:DataType="vm:GameItem">
+              <Grid ColumnDefinitions="*,200,120,110,90" Height="26">
+                <TextBlock Text="{Binding Title}" VerticalAlignment="Center" TextTrimming="CharacterEllipsis" />
+                <TextBlock Grid.Column="1" Text="{Binding SystemName}" Classes="muted" VerticalAlignment="Center" TextTrimming="CharacterEllipsis" />
+                <TextBlock Grid.Column="2" Text="{Binding LastPlayed}" Classes="muted" VerticalAlignment="Center" />
+                <TextBlock Grid.Column="3" Text="{Binding Added}" Classes="muted" VerticalAlignment="Center" />
+                <TextBlock Grid.Column="4" Text="{Binding SizeText}" Classes="muted" VerticalAlignment="Center" TextAlignment="Right" />
+              </Grid>
+            </DataTemplate>
+          </ListBox.ItemTemplate>
+        </ListBox>
+      </ScrollViewer>
+      <ContentControl x:Name="HomebrewHost" IsVisible="False" />
+      <!-- blank slate -->
+      <StackPanel x:Name="BlankSlate" IsVisible="False" VerticalAlignment="Center" HorizontalAlignment="Center" Spacing="10" MaxWidth="420">
+        <TextBlock Text="🕹" FontSize="64" HorizontalAlignment="Center" />
+        <TextBlock Text="{s:T library.empty.title}" Classes="h1" HorizontalAlignment="Center" />
+        <TextBlock Text="{s:T library.empty.body}" Classes="muted" TextWrapping="Wrap" TextAlignment="Center" />
+      </StackPanel>
+      <Border x:Name="DropOverlay" IsVisible="False" Background="#5533AAFF" BorderBrush="#88CCFF" BorderThickness="3" CornerRadius="10" Margin="12" IsHitTestVisible="False" />
+    </Grid>
+  </DockPanel>
+</Window>

@@ -1,0 +1,58 @@
+using Avalonia.Controls;
+using OpenEmu.App.Views;
+using OpenEmu.Core.Config;
+using OpenEmu.Core.Cores;
+using OpenEmu.Core.Emulation;
+using OpenEmu.Core.Library;
+using OpenEmu.Core.Libretro;
+using OpenEmu.Core.Localization;
+using OpenEmu.Core.Systems;
+
+namespace OpenEmu.App.Services;
+
+/// <summary>Resolves system → core → BIOS and opens a game window.</summary>
+public sealed class GameLauncher
+{
+    private readonly AppServices _s;
+    public List<GameWindow> OpenWindows { get; } = new();
+    public GameLauncher(AppServices s) => _s = s;
+
+    public async Task<GameWindow?> LaunchAsync(Game game, Window owner, string? coreId = null)
+    {
+        var system = SystemCatalog.Find(game.SystemId);
+        if (system == null) { await Dialogs.Message(owner, L.T("common.error"), $"Unknown system {game.SystemId}"); return null; }
+        if (!File.Exists(game.RomPath)) { await Dialogs.Message(owner, L.T("common.error"), $"{L.T("library.missing")}: {game.RomPath}"); return null; }
+
+        var core = (coreId ?? game.CoreOverride) is { } cid ? CoreManifest.Find(cid) : null;
+        core ??= _s.Cores.PreferredCore(system, _s.Settings);
+        if (core == null) { await Dialogs.Message(owner, L.T("common.error"), $"No core available for {system.Name}"); return null; }
+
+        var lib = _s.Cores.FindLibrary(core.Id);
+        if (lib == null)
+        {
+            if (!await Dialogs.Confirm(owner, L.T("prefs.cores"), L.T("play.coreNotInstalled", core.Title))) return null;
+            try { lib = await Dialogs.RunWithProgress(owner, L.T("notify.installing", core.Title), p => _s.Cores.InstallAsync(core.Id, p)); }
+            catch (Exception ex) { await Dialogs.Message(owner, L.T("common.error"), L.T("notify.installFailed", core.Title, ex.Message)); return null; }
+        }
+
+        var missing = _s.Bios.MissingRequired(system, core);
+        if (missing.Count > 0)
+        {
+            var list = string.Join("\n", missing.Select(m => $"• {m.Firmware.Path} – {m.Firmware.Description}"));
+            await Dialogs.Message(owner, L.T("prefs.bios"), L.T("play.missingBios", system.Name, list) + "\n\n" + L.T("prefs.bios.hint"));
+            return null;
+        }
+
+        var opts = new SessionOptions
+        {
+            System = system, Core = core, CoreLibraryPath = lib, RomPath = game.RomPath, GameKey = game.GameKey,
+            CoreOptions = _s.Settings.CoreOptions.TryGetValue(core.Id, out var co) ? new(co) : new(),
+            Language = _s.Settings.Language == "pt-BR" ? Retro.LanguagePortugueseBrazil : Retro.LanguageEnglish,
+        };
+        var win = new GameWindow(game, opts);
+        OpenWindows.Add(win);
+        win.Closed += (_, _) => OpenWindows.Remove(win);
+        win.Show();
+        return win;
+    }
+}

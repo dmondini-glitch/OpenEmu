@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <RootNamespace>OpenEmu.Core</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\systems.json" LogicalName="systems.json" />
+    <EmbeddedResource Include="Resources\cores.json" LogicalName="cores.json" />
+    <EmbeddedResource Include="Resources\strings.en.json" LogicalName="strings.en.json" WithCulture="false" />
+    <EmbeddedResource Include="Resources\strings.pt-BR.json" LogicalName="strings.pt-BR.json" WithCulture="false" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Data.Sqlite" Version="10.0.12" />
+    <PackageReference Include="NAudio.Wasapi" Version="2.2.1" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,51 @@
+<Application xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="OpenEmu.App.App"
+             RequestedThemeVariant="Dark">
+  <Application.Styles>
+    <FluentTheme />
+    <Style Selector="Window">
+      <Setter Property="Background" Value="#1F1F21" />
+      <Setter Property="FontFamily" Value="fonts:Inter#Inter" />
+    </Style>
+    <Style Selector="TextBlock.sidebarHeader">
+      <Setter Property="Foreground" Value="#8A8A8E" />
+      <Setter Property="FontSize" Value="11" />
+      <Setter Property="FontWeight" Value="Bold" />
+      <Setter Property="Margin" Value="14,14,0,4" />
+    </Style>
+    <Style Selector="ListBox.sidebar">
+      <Setter Property="Background" Value="Transparent" />
+      <Setter Property="Padding" Value="0" />
+    </Style>
+    <Style Selector="ListBox.sidebar ListBoxItem">
+      <Setter Property="Padding" Value="14,5" />
+      <Setter Property="MinHeight" Value="26" />
+      <Setter Property="FontSize" Value="13" />
+    </Style>
+    <Style Selector="ListBox.sidebar ListBoxItem:selected /template/ ContentPresenter">
+      <Setter Property="Background" Value="#3A3A3E" />
+    </Style>
+    <Style Selector="Button.toolbar">
+      <Setter Property="Background" Value="Transparent" />
+      <Setter Property="Padding" Value="8,4" />
+    </Style>
+    <Style Selector="Border.card">
+      <Setter Property="Background" Value="#2C2C2F" />
+      <Setter Property="CornerRadius" Value="6" />
+      <Setter Property="BorderBrush" Value="#3A3A3E" />
+      <Setter Property="BorderThickness" Value="1" />
+    </Style>
+    <Style Selector="TextBlock.h1">
+      <Setter Property="FontSize" Value="20" />
+      <Setter Property="FontWeight" Value="SemiBold" />
+    </Style>
+    <Style Selector="TextBlock.muted">
+      <Setter Property="Foreground" Value="#9A9AA0" />
+    </Style>
+    <Style Selector="TextBlock.hud">
+      <Setter Property="Foreground" Value="White" />
+      <Setter Property="FontSize" Value="12" />
+    </Style>
+  </Application.Styles>
+</Application>

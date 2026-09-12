@@ -1,0 +1,42 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:s="clr-namespace:OpenEmu.App.Services"
+        x:Class="OpenEmu.App.Views.GameWindow"
+        Width="800" Height="640" MinWidth="320" MinHeight="240"
+        Background="Black" Title="OpenEmu">
+  <Grid x:Name="Root" Background="Black">
+    <ContentControl x:Name="ViewHost" />
+    <!-- toast / notifications -->
+    <Border x:Name="Toast" IsVisible="False" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,16,0,0"
+            Background="#CC202024" CornerRadius="8" Padding="14,8" BorderBrush="#55FFFFFF" BorderThickness="1">
+      <TextBlock x:Name="ToastText" Classes="hud" FontSize="13" />
+    </Border>
+    <TextBlock x:Name="FpsText" Classes="hud" IsVisible="False" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,8,10,0" Foreground="#CCFFFFFF" />
+    <Border x:Name="PausedOverlay" IsVisible="False" Background="#66000000">
+      <TextBlock Text="{s:T notify.paused}" Foreground="White" FontSize="28" HorizontalAlignment="Center" VerticalAlignment="Center" />
+    </Border>
+    <!-- HUD bar (OpenEmu's GameControlsBar) -->
+    <Border x:Name="Hud" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,18"
+            Background="#D9232326" CornerRadius="10" Padding="10,6" BorderBrush="#66FFFFFF" BorderThickness="1">
+      <StackPanel Orientation="Horizontal" Spacing="4">
+        <Button x:Name="StopBtn" Classes="toolbar" ToolTip.Tip="{s:T play.stop}" Content="⏹" FontSize="16" />
+        <Button x:Name="PauseBtn" Classes="toolbar" ToolTip.Tip="{s:T play.pause}" Content="⏸" FontSize="16" />
+        <Button x:Name="ResetBtn" Classes="toolbar" ToolTip.Tip="{s:T play.reset}" Content="↺" FontSize="16" />
+        <ToggleButton x:Name="FfBtn" Classes="toolbar" ToolTip.Tip="{s:T play.fastForward}" Content="⏩" FontSize="16" Background="Transparent" />
+        <Rectangle Width="1" Fill="#55FFFFFF" Margin="4,4" />
+        <Button x:Name="SaveBtn" Classes="toolbar" ToolTip.Tip="{s:T play.saveState}" Content="💾" FontSize="15" />
+        <Button x:Name="LoadBtn" Classes="toolbar" ToolTip.Tip="{s:T play.loadState}" Content="📂" FontSize="15" />
+        <Button x:Name="ShotBtn" Classes="toolbar" ToolTip.Tip="{s:T play.screenshot}" Content="📷" FontSize="15" />
+        <Rectangle Width="1" Fill="#55FFFFFF" Margin="4,4" />
+        <Button x:Name="CheatsBtn" Classes="toolbar" ToolTip.Tip="{s:T play.cheats}" Content="🧬" FontSize="15" />
+        <Button x:Name="OptionsBtn" Classes="toolbar" ToolTip.Tip="{s:T play.coreOptions}" Content="⚙" FontSize="16" />
+        <Button x:Name="ControlsBtn" Classes="toolbar" ToolTip.Tip="{s:T play.controls}" Content="🎮" FontSize="15" />
+        <Button x:Name="DiscBtn" Classes="toolbar" ToolTip.Tip="{s:T play.disc}" Content="💿" FontSize="15" IsVisible="False" />
+        <Rectangle Width="1" Fill="#55FFFFFF" Margin="4,4" />
+        <Button x:Name="MuteBtn" Classes="toolbar" ToolTip.Tip="{s:T play.mute}" Content="🔊" FontSize="15" />
+        <Slider x:Name="VolumeSlider" Minimum="0" Maximum="1" Width="90" VerticalAlignment="Center" ToolTip.Tip="{s:T play.volume}" />
+        <Button x:Name="FullBtn" Classes="toolbar" ToolTip.Tip="{s:T play.fullscreen}" Content="⛶" FontSize="16" />
+      </StackPanel>
+    </Border>
+  </Grid>
+</Window>

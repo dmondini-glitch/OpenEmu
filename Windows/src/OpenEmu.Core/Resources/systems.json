@@ -1,0 +1,5062 @@
+{
+ "version": 1,
+ "systems": [
+  {
+   "id": "openemu.system.3do",
+   "name": "3DO",
+   "extensions": [
+    "cue"
+   ],
+   "type": "Console",
+   "controlGroups": [
+    [
+     {
+      "name": "OE3DOButtonUp",
+      "label": "Up"
+     },
+     {
+      "name": "OE3DOButtonDown",
+      "label": "Down"
+     },
+     {
+      "name": "OE3DOButtonLeft",
+      "label": "Left"
+     },
+     {
+      "name": "OE3DOButtonRight",
+      "label": "Right"
+     }
+    ],
+    [
+     {
+      "name": "OE3DOButtonP",
+      "label": "P"
+     },
+     {
+      "name": "OE3DOButtonX",
+      "label": "X"
+     }
+    ],
+    [
+     {
+      "name": "OE3DOButtonL",
+      "label": "L"
+     },
+     {
+      "name": "OE3DOButtonR",
+      "label": "R"
+     }
+    ],
+    [
+     {
+      "name": "OE3DOButtonA",
+      "label": "A"
+     },
+     {
+      "name": "OE3DOButtonB",
+      "label": "B"
+     },
+     {
+      "name": "OE3DOButtonC",
+      "label": "C"
+     }
+    ]
+   ],
+   "axes": [
+    [
+     "OE3DOButtonUp",
+     "OE3DOButtonDown"
+    ],
+    [
+     "OE3DOButtonLeft",
+     "OE3DOButtonRight"
+    ]
+   ],
+   "hats": [
+    [
+     "OE3DOButtonUp",
+     "OE3DOButtonRight",
+     "OE3DOButtonDown",
+     "OE3DOButtonLeft"
+    ]
+   ],
+   "keyboard": {
+    "OE3DOButtonLeft": 80,
+    "OE3DOButtonRight": 79,
+    "OE3DOButtonUp": 82,
+    "OE3DOButtonL": 23,
+    "OE3DOButtonR": 6,
+    "OE3DOButtonDown": 81,
+    "OE3DOButtonA": 20,
+    "OE3DOButtonB": 26,
+    "OE3DOButtonC": 8,
+    "OE3DOButtonP": 40,
+    "OE3DOButtonX": 229
+   },
+   "libretroMap": {
+    "OE3DOButtonUp": "UP",
+    "OE3DOButtonDown": "DOWN",
+    "OE3DOButtonLeft": "LEFT",
+    "OE3DOButtonRight": "RIGHT",
+    "OE3DOButtonP": "START",
+    "OE3DOButtonX": "SELECT",
+    "OE3DOButtonL": "L",
+    "OE3DOButtonR": "R",
+    "OE3DOButtonA": "Y",
+    "OE3DOButtonB": "B",
+    "OE3DOButtonC": "A"
+   },
+   "cores": [
+    "opera"
+   ]
+  },
+  {
+   "id": "openemu.system.arcade",
+   "name": "Arcade",
+   "extensions": [
+    "zip",
+    "7z",
+    "chd",
+    "bin",
+    "rom"
+   ],
+   "type": "Arcade",
+   "controlGroups": [
+    [
+     {
+      "name": "OEArcadeButtonUp",
+      "label": "Up"
+     },
+     {
+      "name": "OEArcadeButtonDown",
+      "label": "Down"
+     },
+     {
+      "name": "OEArcadeButtonLeft",
+      "label": "Left"
+     },
+     {
+      "name": "OEArcadeButtonRight",
+      "label": "Right"
+     }
+    ],
+    [
+     {
+      "name": "OEArcadeUIConfigure",
+      "label": "Configure"
+     },
+     {
+      "name": "OEArcadeButtonInsertCoin",
+      "label": "Insert Coin"
+     },
+     {
+      "name": "OEArcadeButtonP1Start",
+      "label": "Player Start"
+     },
+     {
+      "name": "OEArcadeButtonService",
+      "label": "Service"
+     }
+    ],
+    [
+     {
+      "name": "OEArcadeButton1",
+      "label": "Button 1"
+     },
+     {
+      "name": "OEArcadeButton2",
+      "label": "Button 2"
+     },
+     {
+      "name": "OEArcadeButton3",
+      "label": "Button 3"
+     }
+    ],
+    [
+     {
+      "name": "OEArcadeButton4",
+      "label": "Button 4"
+     },
+     {
+      "name": "OEArcadeButton5",
+      "label": "Button 5"
+     },
+     {
+      "name": "OEArcadeButton6",
+      "label": "Button 6"
+     }
+    ]
+   ],
+   "axes": [
+    [
+     "OEArcadeButtonUp",
+     "OEArcadeButtonDown"
+    ],
+    [
+     "OEArcadeButtonLeft",
+     "OEArcadeButtonRight"
+    ]
+   ],
+   "hats": [
+    [
+     "OEArcadeButtonUp",
+     "OEArcadeButtonRight",
+     "OEArcadeButtonDown",
+     "OEArcadeButtonLeft"
+    ]
+   ],
+   "keyboard": {
+    "OEArcadeButtonLeft": 80,
+    "OEArcadeButtonRight": 79,
+    "OEArcadeButton5": 22,
+    "OEArcadeButton1": 20,
+    "OEArcadeButtonInsertCoin": 34,
+    "OEArcadeButtonUp": 82,
+    "OEArcadeButton4": 4,
+    "OEArcadeButtonDown": 81,
+    "OEArcadeButtonP1Start": 30,
+    "OEArcadeButtonService": 59,
+    "OEArcadeButton3": 8,
+    "OEArcadeUIConfigure": 43,
+    "OEArcadeButton6": 7,
+    "OEArcadeButton2": 26
+   },
+   "libretroMap": {
+    "OEArcadeButtonUp": "UP",
+    "OEArcadeButtonDown": "DOWN",
+    "OEArcadeButtonLeft": "LEFT",
+    "OEArcadeButtonRight": "RIGHT",
+    "OEArcadeUIConfigure": "L3",
+    "OEArcadeButtonInsertCoin": "SELECT",
+    "OEArcadeButtonP1Start": "START",
+    "OEArcadeButtonService": "L2",
+    "OEArcadeButton1": "B",
+    "OEArcadeButton2": "A",
+    "OEArcadeButton3": "Y",
+    "OEArcadeButton4": "X",
+    "OEArcadeButton5": "L",
+    "OEArcadeButton6": "R"
+   },
+   "cores": [
+    "fbneo",
+    "mame2003_plus"
+   ]
+  },
+  {
+   "id": "openemu.system.2600",
+   "name": "Atari 2600",
+   "extensions": [
+    "a26",
+    "bin"
+   ],
+   "type": "Console",
+   "controlGroups": [
+    [
+     {
+      "name": "OE2600ButtonUp",
+      "label": "Up"
+     },
+     {
+      "name": "OE2600ButtonDown",
+      "label": "Down"
+     },
+     {
+      "name": "OE2600ButtonLeft",
+      "label": "Left"
+     },
+     {
+      "name": "OE2600ButtonRight",
+      "label": "Right"
+     }
+    ],
+    [
+     {
+      "name": "OE2600ButtonFire1",
+      "label": "Fire"
+     },
+     {
+      "name": "OE2600ButtonReset",
+      "label": "Console Reset"
+     },
+     {
+      "name": "OE2600ButtonSelect",
+      "label": "Select"
+     }
+    ],
+    [
+     {
+      "name": "OE2600ButtonLeftDiffA",
+      "label": "L Diff A"
+     },
+     {
+      "name": "OE2600ButtonLeftDiffB",
+      "label": "L Diff B"
+     },
+     {
+      "name": "OE2600ButtonRightDiffA",
+      "label": "R Diff A"
+     },
+     {
+      "name": "OE2600ButtonRightDiffB",
+      "label": "R Diff B"
+     },
+     {
+      "name": "OE2600ButtonTVTypeColor",
+      "label": "TV Color"
+     },
+     {
+      "name": "OE2600ButtonTVTypeBlackAndWhite",
+      "label": "TV Black & White"
+     }
+    ]
+   ],
+   "axes": [
+    [
+     "OE2600ButtonUp",
+     "OE2600ButtonDown"
+    ],
+    [
+     "OE2600ButtonLeft",
+     "OE2600ButtonRight"
+    ]
+   ],
+   "hats": [
+    [
+     "OE2600ButtonUp",
+     "OE2600ButtonRight",
+     "OE2600ButtonDown",
+     "OE2600ButtonLeft"
+    ]
+   ],
+   "keyboard": {
+    "OE2600ButtonFire1": 4,
+    "OE2600ButtonLeftDiffA": 20,
+    "OE2600ButtonSelect": 229,
+    "OE2600ButtonRightDiffA": 8,
+    "OE2600ButtonUp": 82,
+    "OE2600ButtonRightDiffB": 21,
+    "OE2600ButtonDown": 81,
+    "OE2600ButtonTVTypeColor": 23,
+    "OE2600ButtonRight": 79,
+    "OE2600ButtonLeftDiffB": 26,
+    "OE2600ButtonLeft": 80,
+    "OE2600ButtonTVTypeBlackAndWhite": 28,
+    "OE2600ButtonReset": 40
+   },
+   "libretroMap": {
+    "OE2600ButtonUp": "UP",
+    "OE2600ButtonDown": "DOWN",
+    "OE2600ButtonLeft": "LEFT",
+    "OE2600ButtonRight": "RIGHT",
+    "OE2600ButtonFire1": "B",
+    "OE2600ButtonReset": "START",
+    "OE2600ButtonSelect": "SELECT",
+    "OE2600ButtonLeftDiffA": "L",
+    "OE2600ButtonLeftDiffB": "L2",
+    "OE2600ButtonRightDiffA": "R",
+    "OE2600ButtonRightDiffB": "R2",
+    "OE2600ButtonTVTypeColor": "X",
+    "OE2600ButtonTVTypeBlackAndWhite": "Y"
+   },
+   "cores": [
+    "stella",
+    "stella2014"
+   ]
+  },
+  {
+   "id": "openemu.system.5200",
+   "name": "Atari 5200",
+   "extensions": [
+    "a52",
+    "bin"
+   ],
+   "type": "Console",
+   "controlGroups": [
+    [
+     {
+      "name": "OE5200ButtonUp",
+      "label": "Up"
+     },
+     {
+      "name": "OE5200ButtonDown",
+      "label": "Down"
+     },
+     {
+      "name": "OE5200ButtonLeft",
+      "label": "Left"
+     },
+     {
+      "name": "OE5200ButtonRight",
+      "label": "Right"
+     }
+    ],
+    [
+     {
+      "name": "OE5200ButtonFire1",
+      "label": "Fire 1"
+     },
+     {
+      "name": "OE5200ButtonFire2",
+      "label": "Fire 2"
+     },
+     {
+      "name": "OE5200ButtonStart",
+      "label": "Start"
+     },
+     {
+      "name": "OE5200ButtonPause",
+      "label": "Console Pause"
+     }
+    ],
+    [
+     {
+      "name": "OE5200ButtonReset",
+      "label": "Console Reset"
+     }
+    ],
+    [
+     {
+      "name": "OE5200Button1",
+      "label": "1"
+     },
+     {
+      "name": "OE5200Button2",
+      "label": "2"
+     },
+     {
+      "name": "OE5200Button3",
+      "label": "3"
+     },
+     {
+      "name": "OE5200Button4",
+      "label": "4"
+     }
+    ],
+    [
+     {
+      "name": "OE5200Button5",
+      "label": "5"
+     },
+     {
+      "name": "OE5200Button6",
+      "label": "6"
+     },
+     {
+      "name": "OE5200Button7",
+      "label": "7"
+     },
+     {
+      "name": "OE5200Button8",
+      "label": "8"
+     }
+    ],
+    [
+     {
+      "name": "OE5200Button9",
+      "label": "9"
+     },
+     {
+      "name": "OE5200Button0",
+      "label": "0"
+     },
+     {
+      "name": "OE5200ButtonAsterisk",
+      "label": "*"
+     },
+     {
+      "name": "OE5200ButtonPound",
+      "label": "#"
+     }
+    ]
+   ],
+   "axes": [
+    [
+     "OE5200ButtonUp",
+     "OE5200ButtonDown"
+    ],
+    [
+     "OE5200ButtonLeft",
+     "OE5200ButtonRight"
+    ]
+   ],
+   "hats": [
+    [
+     "OE5200ButtonUp",
+     "OE5200ButtonRight",
+     "OE5200ButtonDown",
+     "OE5200ButtonLeft"
+    ]
+   ],
+   "keyboard": {
+    "OE5200Button5": 34,
+    "OE5200ButtonReset": 20,
+    "OE5200ButtonPause": 229,
+    "OE5200ButtonRight": 79,
+    "OE5200Button4": 33,
+    "OE5200Button9": 38,
+    "OE5200Button3": 32,
+    "OE5200ButtonStart": 40,
+    "OE5200Button8": 37,
+    "OE5200Button2": 31,
+    "OE5200ButtonUp": 82,
+    "OE5200ButtonFire2": 22,
+    "OE5200ButtonPound": 46,
+    "OE5200Button7": 36,
+    "OE5200ButtonFire1": 4,
+    "OE5200ButtonAsterisk": 45,
+    "OE5200ButtonLeft": 80,
+    "OE5200Button1": 30,
+    "OE5200Button6": 35,
+    "OE5200Button0": 39,
+    "OE5200ButtonDown": 81
+   },
+   "libretroMap": {
+    "OE5200ButtonUp": "UP",
+    "OE5200ButtonDown": "DOWN",
+    "OE5200ButtonLeft": "LEFT",
+    "OE5200ButtonRight": "RIGHT",
+    "OE5200ButtonFire1": "B",
+    "OE5200ButtonFire2": "A",
+    "OE5200ButtonStart": "START",
+    "OE5200ButtonPause": "SELECT",
+    "OE5200ButtonReset": "X",
+    "OE5200Button1": "Y",
+    "OE5200Button2": "L",
+    "OE5200Button3": "R",
+    "OE5200Button4": "L2",
+    "OE5200Button5": "R2",
+    "OE5200Button6": "L3",
+    "OE5200Button7": "R3",
+    "OE5200Button8": "X",
+    "OE5200Button9": "Y",
+    "OE5200Button0": "L",
+    "OE5200ButtonAsterisk": "R",
+    "OE5200ButtonPound": "L2"
+   },
+   "cores": [
+    "a5200",
+    "atari800"
+   ]
+  },
+  {
+   "id": "openemu.system.7800",
+   "name": "Atari 7800",
+   "extensions": [
+    "a78"
+   ],
+   "type": "Console",
+   "controlGroups": [
+    [
+     {
+      "name": "OE7800ButtonUp",
+      "label": "Up"
+     },
+     {
+      "name": "OE7800ButtonDown",
+      "label": "Down"
+     },
+     {
+      "name": "OE7800ButtonLeft",
+      "label": "Left"
+     },
+     {
+      "name": "OE7800ButtonRight",
+      "label": "Right"
+     }
+    ],
+    [
+     {
+      "name": "OE7800ButtonFire1",
+      "label": "Fire 1"
+     },
+     {
+      "name": "OE7800ButtonFire2",
+      "label": "Fire 2"
+     },
+     {
+      "name": "OE7800ButtonSelect",
+      "label": "Select"
+     },
+     {
+      "name": "OE7800ButtonPause",
+      "label": "Console Pause"
+     }
+    ],
+    [
+     {
+      "name": "OE7800ButtonReset",
+      "label": "Console Reset"
+     },
+     {
+      "name": "OE7800ButtonLeftDiff",
+      "label": "L Diff"
+     },
+     {
+      "name": "OE7800ButtonRightDiff",
+      "label": "R Diff"
+     }
+    ]
+   ],
+   "axes": [
+    [
+     "OE7800ButtonUp",
+     "OE7800ButtonDown"
+    ],
+    [
+     "OE7800ButtonLeft",
+     "OE7800ButtonRight"
+    ]
+   ],
+   "hats": [
+    [
+     "OE7800ButtonUp",
+     "OE7800ButtonRight",
+     "OE7800ButtonDown",
+     "OE7800ButtonLeft"
+    ]
+   ],
+   "keyboard": {
+    "OE7800ButtonRightDiff": 21,
+    "OE7800ButtonLeftDiff": 26,
+    "OE7800ButtonDown": 81,
+    "OE7800ButtonFire1": 4,
+    "OE7800ButtonUp": 82,
+    "OE7800ButtonSelect": 40,
+    "OE7800ButtonLeft": 80,
+    "OE7800ButtonRight": 79,
+    "OE7800ButtonPause": 229,
+    "OE7800ButtonFire2": 22,
+    "OE7800ButtonReset": 20
+   },
+   "libretroMap": {
+    "OE7800ButtonUp": "UP",
+    "OE7800ButtonDown": "DOWN",
+    "OE7800ButtonLeft": "LEFT",
+    "OE7800ButtonRight": "RIGHT",
+    "OE7800ButtonFire1": "B",
+    "OE7800ButtonFire2": "A",
+    "OE7800ButtonSelect": "SELECT",
+    "OE7800ButtonPause": "START",
+    "OE7800ButtonReset": "X",
+    "OE7800ButtonLeftDiff": "L",
+    "OE7800ButtonRightDiff": "R"
+   },
+   "cores": [
+    "prosystem"
+   ]
+  },
+  {
+   "id": "openemu.system.atari8bit",
+   "name": "Atari 8-bit",
+   "extensions": [
+    "atr",
+    "bas",
+    "com",
+    "rom",
+    "xex",
+    "xfd"
+   ],
+   "type": "Computer",
+   "controlGroups": [
+    [
+     {
+      "name": "OEA8JoystickUp",
+      "label": "Up"
+     },
+     {
+      "name": "OEA8JoystickDown",
+      "label": "Down"
+     },
+     {
+      "name": "OEA8JoystickLeft",
+      "label": "Left"
+     },
+     {
+      "name": "OEA8JoystickRight",
+      "label": "Right"
+     }
+    ],
+    [
+     {
+      "name": "OEA8ButtonFire",
+      "label": "Fire"
+     }
+    ]
+   ],
+   "axes": [
+    [
+     "OEA8JoystickUp",
+     "OEA8JoystickDown"
+    ],
+    [
+     "OEA8JoystickLeft",
+     "OEA8JoystickRight"
+    ]
+   ],
+   "hats": [
+    [
+     "OEA8JoystickUp",
+     "OEA8JoystickRight",
+     "OEA8JoystickDown",
+     "OEA8JoystickLeft"
+    ]
+   ],
+   "keyboard": {
+    "OEA8JoystickUp": 96,
+    "OEA8JoystickDown": 90,
+    "OEA8JoystickLeft": 92,
+    "OEA8JoystickRight": 94,
+    "OEA8ButtonFire": 98
+   },
+   "libretroMap": {
+    "OEA8JoystickUp": "UP",
+    "OEA8JoystickDown": "DOWN",
+    "OEA8JoystickLeft": "LEFT",
+    "OEA8JoystickRight": "RIGHT",
+    "OEA8ButtonFire": "B"
+   },
+   "cores": [
+    "atari800"
+   ]
+  },
+  {
+   "id": "openemu.system.colecovision",
+   "name": "ColecoVision",
+   "extensions": [
+    "col",
+    "rom"
+   ],
+   "type": "Console",
+   "controlGroups": [
+    [
+     {
+      "name": "OEColecoVisionButtonUp",
+      "label": "Up"
+     },
+     {
+      "name": "OEColecoVisionButtonDown",
+      "label": "Down"
+     },
+     {
+      "name": "OEColecoVisionButtonLeft",
+      "label": "Left"
+     },
+     {
+      "name": "OEColecoVisionButtonRight",
+      "label": "Right"
+     }
+    ],
+    [
+     {
+      "name": "OEColecoVisionButtonLeftAction",
+      "label": "Left Action"
+     },
+     {
+      "name": "OEColecoVisionButtonRightAction",
+      "label": "Right Action"
+     }
+    ],
+    [
+     {
+      "name": "OEColecoVisionButton1",
+      "label": "1"
+     },
+     {
+      "name": "OEColecoVisionButton2",
+      "label": "2"
+     },
+     {
+      "name": "OEColecoVisionButton3",
+      "label": "3"
+     },
+     {
+      "name": "OEColecoVisionButton4",
+      "label": "4"
+     }
+    ],
+    [
+     {
+      "name": "OEColecoVisionButton5",
+      "label": "5"
+     },
+     {
+      "name": "OEColecoVisionButton6",
+      "label": "6"
+     },
+     {
+      "name": "OEColecoVisionButton7",
+      "label": "7"
+     },
+     {
+      "name": "OEColecoVisionButton8",
+      "label": "8"
+     }
+    ],
+    [
+     {
+      "name": "OEColecoVisionButton9",
+      "label": "9"
+     },
+     {
+      "name": "OEColecoVisionButton0",
+      "label": "0"
+     },
+     {
+      "name": "OEColecoVisionButtonAsterisk",
+      "label": "*"
+     },
+     {
+      "name": "OEColecoVisionButtonPound",
+      "label": "#"
+     }
+    ]
+   ],
+   "axes": [
+    [
+     "OEColecoVisionButtonUp",
+     "OEColecoVisionButtonDown"
+    ],
+    [
+     "OEColecoVisionButtonLeft",
+     "OEColecoVisionButtonRight"
+    ]
+   ],
+   "hats": [
+    [
+     "OEColecoVisionButtonUp",
+     "OEColecoVisionButtonRight",
+     "OEColecoVisionButtonDown",
+     "OEColecoVisionButtonLeft"
+    ]
+   ],
+   "keyboard": {
+    "OEColecoVisionButton5": 34,
+    "OEColecoVisionButtonLeft": 80,
+    "OEColecoVisionButtonDown": 81,
+    "OEColecoVisionButton7": 36,
+    "OEColecoVisionButton0": 39,
+    "OEColecoVisionButtonRightAction": 26,
+    "OEColecoVisionButton2": 31,
+    "OEColecoVisionButtonUp": 82,
+    "OEColecoVisionButton9": 38,
+    "OEColecoVisionButton4": 33,
+    "OEColecoVisionButtonPound": 46,
+    "OEColecoVisionButton6": 35,
+    "OEColecoVisionButtonRight": 79,
+    "OEColecoVisionButton8": 37,
+    "OEColecoVisionButton1": 30,
+    "OEColecoVisionButton3": 32,
+    "OEColecoVisionButtonLeftAction": 20,
+    "OEColecoVisionButtonAsterisk": 45
+   },
+   "libretroMap": {
+    "OEColecoVisionButtonUp": "UP",
+    "OEColecoVisionButtonDown": "DOWN",
+    "OEColecoVisionButtonLeft": "LEFT",
+    "OEColecoVisionButtonRight": "RIGHT",
+    "OEColecoVisionButtonLeftAction": "B",
+    "OEColecoVisionButtonRightAction": "A",
+    "OEColecoVisionButton1": "Y",
+    "OEColecoVisionButton2": "X",
+    "OEColecoVisionButton3": "L",
+    "OEColecoVisionButton4": "R",
+    "OEColecoVisionButton5": "L2",
+    "OEColecoVisionButton6": "R2",
+    "OEColecoVisionButton7": "L3",
+    "OEColecoVisionButton8": "R3",
+    "OEColecoVisionButton9": "START",
+    "OEColecoVisionButton0": "SELECT",
+    "OEColecoVisionButtonAsterisk": "START",
+    "OEColecoVisionButtonPound": "SELECT"
+   },
+   "cores": [
+    "gearcoleco",
+    "bluemsx"
+   ]
+  },
+  {
+   "id": "openemu.system.c64",
+   "name": "Commodore 64",
+   "extensions": [
+    "crt",
+    "d64",
+    "d71",
+    "d81",
+    "g64",
+    "p00",
+    "p64",
+    "prg",
+    "t64",
+    "tap",
+    "x64"
+   ],
+   "type": "Computer",
+   "controlGroups": [
+    [
+     {
+      "name": "OEC64JoystickUp",
+      "label": "Up"
+     },
+     {
+      "name": "OEC64JoystickDown",
+      "label": "Down"
+     },
+     {
+      "name": "OEC64JoystickLeft",
+      "label": "Left"
+     },
+     {
+      "name": "OEC64JoystickRight",
+      "label": "Right"
+     }
+    ],
+    [
+     {
+      "name": "OEC64ButtonFire",
+      "label": "Fire"
+     },
+     {
+      "name": "OEC64ButtonJump",
+      "label": "Jump"
+     },
+     {
+      "name": "OEC64SwapJoysticks",
+      "label": "Swap Joysticks"
+     }
+    ]
+   ],
+   "axes": [
+    [
+     "OEC64JoystickUp",
+     "OEC64JoystickDown"
+    ],
+    [
+     "OEC64JoystickLeft",
+     "OEC64JoystickRight"
+    ]
+   ],
+   "hats": [
+    [
+     "OEC64JoystickUp",
+     "OEC64JoystickRight",
+     "OEC64JoystickDown",
+     "OEC64JoystickLeft"
+    ]
+   ],
+   "keyboard": {
+    "OEC64JoystickUp": 96,
+    "OEC64JoystickDown": 90,
+    "OEC64JoystickLeft": 92,
+    "OEC64JoystickRight": 94,
+    "OEC64ButtonFire": 98,
+    "OEC64ButtonJump": 93,
+    "OEC64SwapJoysticks": 83
+   },
+   "libretroMap": {
+    "OEC64JoystickUp": "UP",
+    "OEC64JoystickDown": "DOWN",
+    "OEC64JoystickLeft": "LEFT",
+    "OEC64JoystickRight": "RIGHT",
+    "OEC64ButtonFire": "B",
+    "OEC64ButtonJump": "A",
+    "OEC64SwapJoysticks": "SELECT"
+   },
+   "cores": [
+    "vice_x64sc",
+    "vice_x64"
+   ]
+  },
+  {
+   "id": "openemu.system.dc",
+   "name": "Dreamcast",
+   "extensions": [
+    "cdi",
+    "gdi"
+   ],
+   "type": "Console",
+   "controlGroups": [
+    [
+     {
+      "name": "OEDCButtonUp",
+      "label": "Up"
+     },
+     {
+      "name": "OEDCButtonDown",
+      "label": "Down"
+     },
+     {
+      "name": "OEDCButtonLeft",
+      "label": "Left"
+     },
+     {
+      "name": "OEDCButtonRight",
+      "label": "Right"
+     }
+    ],
+    [
+     {
+      "name": "OEDCAnalogUp",
+      "label": "Up"
+     },
+     {
+      "name": "OEDCAnalogDown",
+      "label": "Down"
+     },
+     {
+      "name": "OEDCAnalogLeft",
+      "label": "Left"
+     },
+     {
+      "name": "OEDCAnalogRight",
+      "label": "Right"
+     }
+    ],
+    [
+     {
+      "name": "OEDCButtonA",
+      "label": "A"
+     },
+     {
+      "name": "OEDCButtonB",
+      "label": "B"
+     },
+     {
+      "name": "OEDCButtonX",
+      "label": "X"
+     },
+     {
+      "name": "OEDCButtonY",
+      "label": "Y"
+     }
+    ],
+    [
+     {
+      "name": "OEDCAnalogL",
+      "label": "L"
+     },
+     {
+      "name": "OEDCAnalogR",
+      "label": "R"
+     },
+     {
+      "name": "OEDCButtonStart",
+      "label": "Start"
+     }
+    ]
+   ],
+   "axes": [
+    [
+     "OEDCButtonUp",
+     "OEDCButtonDown"
+    ],
+    [
+     "OEDCButtonLeft",
+     "OEDCButtonRight"
+    ],
+    [
+     "OEDCAnalogUp",
+     "OEDCAnalogDown"
+    ],
+    [
+     "OEDCAnalogLeft",
+     "OEDCAnalogRight"
+    ]
+   ],
+   "hats": [
+    [
+     "OEDCButtonUp",
+     "OEDCButtonRight",
+     "OEDCButtonDown",
+     "OEDCButtonLeft"
+    ]
+   ],
+   "keyboard": {
+    "OEDCAnalogL": 20,
+    "OEDCButtonStart": 40,
+    "OEDCAnalogR": 7,
+    "OEDCButtonDown": 81,
+    "OEDCButtonRight": 79,
+    "OEDCButtonB": 29,
+    "OEDCButtonLeft": 80,
+    "OEDCButtonY": 27,
+    "OEDCButtonUp": 82,
+    "OEDCButtonA": 22,
+    "OEDCButtonX": 4
+   },
+   "libretroMap": {
+    "OEDCButtonUp": "UP",
+    "OEDCButtonDown": "DOWN",
+    "OEDCButtonLeft": "LEFT",
+    "OEDCButtonRight": "RIGHT",
+    "OEDCAnalogUp": "LY-",
+    "OEDCAnalogDown": "LY+",
+    "OEDCAnalogLeft": "LX-",
+    "OEDCAnalogRight": "LX+",
+    "OEDCButtonA": "A",
+    "OEDCButtonB": "B",
+    "OEDCButtonX": "X",
+    "OEDCButtonY": "Y",
+    "OEDCAnalogL": "L2",
+    "OEDCAnalogR": "R2",
+    "OEDCButtonStart": "START"
+   },
+   "cores": [
+    "flycast"
+   ]
+  },
+  {
+   "id": "openemu.system.gba",
+   "name": "Game Boy Advance",
+   "extensions": [
+    "gba"
+   ],
+   "type": "Handheld",
+   "controlGroups": [
+    [
+     {
+      "name": "OEGBAButtonUp",
+      "label": "Up"
+     },
+     {
+      "name": "OEGBAButtonDown",
+      "label": "Down"
+     },
+     {
+      "name": "OEGBAButtonLeft",
+      "label": "Left"
+     },
+     {
+      "name": "OEGBAButtonRight",
+      "label": "Right"
+     }
+    ],
+    [
+     {
+      "name": "OEGBAButtonStart",
+      "label": "Start"
+     },
+     {
+      "name": "OEGBAButtonSelect",
+      "label": "Select"
+     }
+    ],
+    [
+     {
+      "name": "OEGBAButtonA",
+      "label": "A"
+     },
+     {
+      "name": "OEGBAButtonB",
+      "label": "B"
+     },
+     {
+      "name": "OEGBAButtonL",
+      "label": "L"
+     },
+     {
+      "name": "OEGBAButtonR",
+      "label": "R"
+     }
+    ]
+   ],
+   "axes": [
+    [
+     "OEGBAButtonUp",
+     "OEGBAButtonDown"
+    ],
+    [
+     "OEGBAButtonLeft",
+     "OEGBAButtonRight"
+    ]
+   ],
+   "hats": [
+    [
+     "OEGBAButtonUp",
+     "OEGBAButtonRight",
+     "OEGBAButtonDown",
+     "OEGBAButtonLeft"
+    ]
+   ],
+   "keyboard": {
+    "OEGBAButtonLeft": 80,
+    "OEGBAButtonA": 7,
+    "OEGBAButtonB": 22,
+    "OEGBAButtonSelect": 229,
+    "OEGBAButtonDown": 81,
+    "OEGBAButtonUp": 82,
+    "OEGBAButtonStart": 40,
+    "OEGBAButtonRight": 79,
+    "OEGBAButtonL": 20,
+    "OEGBAButtonR": 8
+   },
+   "libretroMap": {
+    "OEGBAButtonUp": "UP",
+    "OEGBAButtonDown": "DOWN",
+    "OEGBAButtonLeft": "LEFT",
+    "OEGBAButtonRight": "RIGHT",
+    "OEGBAButtonStart": "START",
+    "OEGBAButtonSelect": "SELECT",
+    "OEGBAButtonA": "A",
+    "OEGBAButtonB": "B",
+    "OEGBAButtonL": "L",
+    "OEGBAButtonR": "R"
+   },
+   "cores": [
+    "mgba",
+    "mednafen_gba"
+   ]
+  },
+  {
+   "id": "openemu.system.gb",
+   "name": "Game Boy",
+   "extensions": [
+    "gb",
+    "gbc",
+    "sgb"
+   ],
+   "type": "Handheld",
+   "controlGroups": [
+    [
+     {
+      "name": "OEGBButtonUp",
+      "label": "Up"
+     },
+     {
+      "name": "OEGBButtonDown",
+      "label": "Down"
+     },
+     {
+      "name": "OEGBButtonLeft",
+      "label": "Left"
+     },
+     {
+      "name": "OEGBButtonRight",
+      "label": "Right"
+     }
+    ],
+    [
+     {
+      "name": "OEGBButtonStart",
+      "label": "Start"
+     },
+     {
+      "name": "OEGBButtonSelect",
+      "label": "Select"
+     }
+    ],
+    [
+     {
+      "name": "OEGBButtonA",
+      "label": "A"
+     },
+     {
+      "name": "OEGBButtonB",
+      "label": "B"
+     }
+    ]
+   ],
+   "axes": [
+    [
+     "OEGBButtonUp",
+     "OEGBButtonDown"
+    ],
+    [
+     "OEGBButtonLeft",
+     "OEGBButtonRight"
+    ]
+   ],
+   "hats": [
+    [
+     "OEGBButtonUp",
+     "OEGBButtonRight",
+     "OEGBButtonDown",
+     "OEGBButtonLeft"
+    ]
+   ],
+   "keyboard": {
+    "OEGBButtonDown": 81,
+    "OEGBButtonRight": 79,
+    "OEGBButtonUp": 82,
+    "OEGBButtonLeft": 80,
+    "OEGBButtonA": 4,
+    "OEGBButtonStart": 40,
+    "OEGBButtonSelect": 229,
+    "OEGBButtonB": 22
+   },
+   "libretroMap": {
+    "OEGBButtonUp": "UP",
+    "OEGBButtonDown": "DOWN",
+    "OEGBButtonLeft": "LEFT",
+    "OEGBButtonRight": "RIGHT",
+    "OEGBButtonStart": "START",
+    "OEGBButtonSelect": "SELECT",
+    "OEGBButtonA": "A",
+    "OEGBButtonB": "B"
+   },
+   "cores": [
+    "gambatte",
+    "sameboy",
+    "mgba",
+    "tgbdual"
+   ]
+  },
+  {
+   "id": "openemu.system.gc",
+   "name": "GameCube",
+   "extensions": [
+    "iso",
+    "gcm",
+    "gcz",
+    "rvz",
+    "ciso"
+   ],
+   "type": "Console",
+   "controlGroups": [
+    [
+     {
+      "name": "OEGCButtonUp",
+      "label": "Up"
+     },
+     {
+      "name": "OEGCButtonDown",
+      "label": "Down"
+     },
+     {
+      "name": "OEGCButtonLeft",
+      "label": "Left"
+     },
+     {
+      "name": "OEGCButtonRight",
+      "label": "Right"
+     }
+    ],
+    [
+     {
+      "name": "OEGCAnalogUp",
+      "label": "Up"
+     },
+     {
+      "name": "OEGCAnalogDown",
+      "label": "Down"
+     },
+     {
+      "name": "OEGCAnalogLeft",
+      "label": "Left"
+     },
+     {
+      "name": "OEGCAnalogRight",
+      "label": "Right"
+     }
+    ],
+    [
+     {
+      "name": "OEGCAnalogCUp",
+      "label": "Up"
+     },
+     {
+      "name": "OEGCAnalogCDown",
+      "label": "Down"
+     },
+     {
+      "name": "OEGCAnalogCLeft",
+      "label": "Left"
+     },
+     {
+      "name": "OEGCAnalogCRight",
+      "label": "Right"
+     }
+    ],
+    [
+     {
+      "name": "OEGCButtonA",
+      "label": "A"
+     },
+     {
+      "name": "OEGCButtonB",
+      "label": "B"
+     },
+     {
+      "name": "OEGCButtonX",
+      "label": "X"
+     },
+     {
+      "name": "OEGCButtonY",
+      "label": "Y"
+     }
+    ],
+    [
+     {
+      "name": "OEGCButtonL",
+      "label": "L"
+     },
+     {
+      "name": "OEGCButtonR",
+      "label": "R"
+     },
+     {
+      "name": "OEGCButtonZ",
+      "label": "Z"
+     },
+     {
+      "name": "OEGCButtonStart",
+      "label": "Start"
+     }
+    ]
+   ],
+   "axes": [
+    [
+     "OEGCAnalogUp",
+     "OEGCAnalogDown"
+    ],
+    [
+     "OEGCAnalogLeft",
+     "OEGCAnalogRight"
+    ],
+    [
+     "OEGCAnalogCUp",
+     "OEGCAnalogCDown"
+    ],
+    [
+     "OEGCAnalogCLeft",
+     "OEGCAnalogCRight"
+    ],
+    [
+     "OEGCButtonUp",
+     "OEGCButtonDown"
+    ],
+    [
+     "OEGCButtonLeft",
+     "OEGCButtonRight"
+    ]
+   ],
+   "hats": [
+    [
+     "OEGCButtonUp",
+     "OEGCButtonRight",
+     "OEGCButtonDown",
+     "OEGCButtonLeft"
+    ]
+   ],
+   "keyboard": {
+    "OEGCButtonA": 27,
+    "OEGCButtonR": 7,
+    "OEGCButtonLeft": 80,
+    "OEGCButtonUp": 82,
+    "OEGCButtonRight": 79,
+    "OEGCButtonL": 20,
+    "OEGCButtonX": 22,
+    "OEGCButtonDown": 81,
+    "OEGCButtonB": 29,
+    "OEGCButtonStart": 40,
+    "OEGCButtonZ": 9,
+    "OEGCButtonY": 4
+   },
+   "libretroMap": {
+    "OEGCButtonUp": "UP",
+    "OEGCButtonDown": "DOWN",
+    "OEGCButtonLeft": "LEFT",
+    "OEGCButtonRight": "RIGHT",
+    "OEGCAnalogUp": "LY-",
+    "OEGCAnalogDown": "LY+",
+    "OEGCAnalogLeft": "LX-",
+    "OEGCAnalogRight": "LX+",
+    "OEGCAnalogCUp": "RY-",
+    "OEGCAnalogCDown": "RY+",
+    "OEGCAnalogCLeft": "RX-",
+    "OEGCAnalogCRight": "RX+",
+    "OEGCButtonA": "A",
+    "OEGCButtonB": "B",
+    "OEGCButtonX": "X",
+    "OEGCButtonY": "Y",
+    "OEGCButtonL": "L2",
+    "OEGCButtonR": "R2",
+    "OEGCButtonZ": "R",
+    "OEGCButtonStart": "START"
+   },
+   "cores": [
+    "dolphin"
+   ]
+  },
+  {
+   "id": "openemu.system.gg",
+   "name": "Game Gear",
+   "extensions": [
+    "gg"
+   ],
+   "type": "Handheld",
+   "controlGroups": [
+    [
+     {
+      "name": "OEGGButtonUp",
+      "label": "Up"
+     },
+     {
+      "name": "OEGGButtonDown",
+      "label": "Down"
+     },
+     {
+      "name": "OEGGButtonLeft",
+      "label": "Left"
+     },
+     {
+      "name": "OEGGButtonRight",
+      "label": "Right"
+     }
+    ],
+    [
+     {
+      "name": "OEGGButtonA",
+      "label": "Button 1"
+     },
+     {
+      "name": "OEGGButtonB",
+      "label": "Button 2"
+     },
+     {
+      "name": "OEGGButtonStart",
+      "label": "Start"
+     }
+    ]
+   ],
+   "axes": [
+    [
+     "OEGGButtonUp",
+     "OEGGButtonDown"
+    ],
+    [
+     "OEGGButtonLeft",
+     "OEGGButtonRight"
+    ]
+   ],
+   "hats": [
+    [
+     "OEGGButtonUp",
+     "OEGGButtonRight",
+     "OEGGButtonDown",
+     "OEGGButtonLeft"
+    ]
+   ],
+   "keyboard": {
+    "OEGGButtonLeft": 80,
+    "OEGGButtonB": 22,
+    "OEGGButtonRight": 79,
+    "OEGGButtonStart": 40,
+    "OEGGButtonA": 4,
+    "OEGGButtonDown": 81,
+    "OEGGButtonUp": 82
+   },
+   "libretroMap": {
+    "OEGGButtonUp": "UP",
+    "OEGGButtonDown": "DOWN",
+    "OEGGButtonLeft": "LEFT",
+    "OEGGButtonRight": "RIGHT",
+    "OEGGButtonA": "B",
+    "OEGGButtonB": "A",
+    "OEGGButtonStart": "START"
+   },
+   "cores": [
+    "genesis_plus_gx",
+    "gearsystem",
+    "smsplus"
+   ]
+  },
+  {
+   "id": "openemu.system.sg",
+   "name": "Sega Mega Drive",
+   "extensions": [
+    "smd",
+    "bin",
+    "md",
+    "gen"
+   ],
+   "type": "Console",
+   "controlGroups": [
+    [
+     {
+      "name": "OEGenesisButtonUp",
+      "label": "Up"
+     },
+     {
+      "name": "OEGenesisButtonDown",
+      "label": "Down"
+     },
+     {
+      "name": "OEGenesisButtonLeft",
+      "label": "Left"
+     },
+     {
+      "name": "OEGenesisButtonRight",
+      "label": "Right"
+     }
+    ],
+    [
+     {
+      "name": "OEGenesisButtonStart",
+      "label": "Start"
+     },
+     {
+      "name": "OEGenesisButtonMode",
+      "label": "Mode"
+     }
+    ],
+    [
+     {
+      "name": "OEGenesisButtonA",
+      "label": "A"
+     },
+     {
+      "name": "OEGenesisButtonB",
+      "label": "B"
+     },
+     {
+      "name": "OEGenesisButtonC",
+      "label": "C"
+     }
+    ],
+    [
+     {
+      "name": "OEGenesisButtonX",
+      "label": "X"
+     },
+     {
+      "name": "OEGenesisButtonY",
+      "label": "Y"
+     },
+     {
+      "name": "OEGenesisButtonZ",
+      "label": "Z"
+     }
+    ]
+   ],
+   "axes": [
+    [
+     "OEGenesisButtonUp",
+     "OEGenesisButtonDown"
+    ],
+    [
+     "OEGenesisButtonLeft",
+     "OEGenesisButtonRight"
+    ]
+   ],
+   "hats": [
+    [
+     "OEGenesisButtonUp",
+     "OEGenesisButtonRight",
+     "OEGenesisButtonDown",
+     "OEGenesisButtonLeft"
+    ]
+   ],
+   "keyboard": {
+    "OEGenesisButtonB": 22,
+    "OEGenesisButtonDown": 81,
+    "OEGenesisButtonY": 26,
+    "OEGenesisButtonStart": 40,
+    "OEGenesisButtonUp": 82,
+    "OEGenesisButtonMode": 229,
+    "OEGenesisButtonLeft": 80,
+    "OEGenesisButtonC": 7,
+    "OEGenesisButtonA": 4,
+    "OEGenesisButtonX": 20,
+    "OEGenesisButtonZ": 8,
+    "OEGenesisButtonRight": 79
+   },
+   "libretroMap": {
+    "OEGenesisButtonUp": "UP",
+    "OEGenesisButtonDown": "DOWN",
+    "OEGenesisButtonLeft": "LEFT",
+    "OEGenesisButtonRight": "RIGHT",
+    "OEGenesisButtonStart": "START",
+    "OEGenesisButtonMode": "SELECT",
+    "OEGenesisButtonA": "Y",
+    "OEGenesisButtonB": "B",
+    "OEGenesisButtonC": "A",
+    "OEGenesisButtonX": "L",
+    "OEGenesisButtonY": "X",
+    "OEGenesisButtonZ": "R"
+   },
+   "cores": [
+    "genesis_plus_gx",
+    "picodrive",
+    "blastem"
+   ]
+  },
+  {
+   "id": "openemu.system.intellivision",
+   "name": "Intellivision",
+   "extensions": [
+    "intv",
+    "int",
+    "bin",
+    "rom"
+   ],
+   "type": "Console",
+   "controlGroups": [
+    [
+     {
+      "name": "OEIntellivisionButtonUp",
+      "label": "Up"
+     },
+     {
+      "name": "OEIntellivisionButtonDown",
+      "label": "Down"
+     },
+     {
+      "name": "OEIntellivisionButtonLeft",
+      "label": "Left"
+     },
+     {
+      "name": "OEIntellivisionButtonRight",
+      "label": "Right"
+     }
+    ],
+    [
+     {
+      "name": "OEIntellivisionButtonTopAction",
+      "label": "Top Action"
+     },
+     {
+      "name": "OEIntellivisionButtonBottomLeftAction",
+      "label": "Bottom Left Action"
+     },
+     {
+      "name": "OEIntellivisionButtonBottomRightAction",
+      "label": "Bottom Right Action"
+     }
+    ],
+    [
+     {
+      "name": "OEIntellivisionButton1",
+      "label": "1"
+     },
+     {
+      "name": "OEIntellivisionButton2",
+      "label": "2"
+     },
+     {
+      "name": "OEIntellivisionButton3",
+      "label": "3"
+     },
+     {
+      "name": "OEIntellivisionButton4",
+      "label": "4"
+     }
+    ],
+    [
+     {
+      "name": "OEIntellivisionButton5",
+      "label": "5"
+     },
+     {
+      "name": "OEIntellivisionButton6",
+      "label": "6"
+     },
+     {
+      "name": "OEIntellivisionButton7",
+      "label": "7"
+     },
+     {
+      "name": "OEIntellivisionButton8",
+      "label": "8"
+     }
+    ],
+    [
+     {
+      "name": "OEIntellivisionButton9",
+      "label": "9"
+     },
+     {
+      "name": "OEIntellivisionButton0",
+      "label": "0"
+     },
+     {
+      "name": "OEIntellivisionButtonClear",
+      "label": "Clear"
+     },
+     {
+      "name": "OEIntellivisionButtonEnter",
+      "label": "Enter"
+     }
+    ]
+   ],
+   "axes": [
+    [
+     "OEIntellivisionButtonUp",
+     "OEIntellivisionButtonDown"
+    ],
+    [
+     "OEIntellivisionButtonLeft",
+     "OEIntellivisionButtonRight"
+    ]
+   ],
+   "hats": [
+    [
+     "OEIntellivisionButtonUp",
+     "OEIntellivisionButtonRight",
+     "OEIntellivisionButtonDown",
+     "OEIntellivisionButtonLeft"
+    ]
+   ],
+   "keyboard": {
+    "OEIntellivisionButtonLeft": 80,
+    "OEIntellivisionButtonUp": 82,
+    "OEIntellivisionButtonBottomRightAction": 26,
+    "OEIntellivisionButton6": 35,
+    "OEIntellivisionButton7": 36,
+    "OEIntellivisionButton8": 37,
+    "OEIntellivisionButton9": 38,
+    "OEIntellivisionButtonBottomLeftAction": 20,
+    "OEIntellivisionButtonClear": 45,
+    "OEIntellivisionButton0": 39,
+    "OEIntellivisionButtonRight": 79,
+    "OEIntellivisionButton1": 30,
+    "OEIntellivisionButtonDown": 81,
+    "OEIntellivisionButton2": 31,
+    "OEIntellivisionButtonEnter": 46,
+    "OEIntellivisionButton3": 32,
+    "OEIntellivisionButtonTopAction": 27,
+    "OEIntellivisionButton4": 33,
+    "OEIntellivisionButton5": 34
+   },
+   "libretroMap": {
+    "OEIntellivisionButtonUp": "UP",
+    "OEIntellivisionButtonDown": "DOWN",
+    "OEIntellivisionButtonLeft": "LEFT",
+    "OEIntellivisionButtonRight": "RIGHT",
+    "OEIntellivisionButtonTopAction": "X",
+    "OEIntellivisionButtonBottomLeftAction": "B",
+    "OEIntellivisionButtonBottomRightAction": "A",
+    "OEIntellivisionButton1": "L",
+    "OEIntellivisionButton2": "R",
+    "OEIntellivisionButton3": "L2",
+    "OEIntellivisionButton4": "R2",
+    "OEIntellivisionButton5": "L3",
+    "OEIntellivisionButton6": "R3",
+    "OEIntellivisionButton7": "Y",
+    "OEIntellivisionButton8": "UP",
+    "OEIntellivisionButton9": "DOWN",
+    "OEIntellivisionButton0": "LEFT",
+    "OEIntellivisionButtonClear": "SELECT",
+    "OEIntellivisionButtonEnter": "START"
+   },
+   "cores": [
+    "freeintv"
+   ]
+  },
+  {
+   "id": "openemu.system.jaguar",
+   "name": "Atari Jaguar",
+   "extensions": [
+    "j64",
+    "jag"
+   ],
+   "type": "Console",
+   "controlGroups": [
+    [
+     {
+      "name": "OEJaguarButtonUp",
+      "label": "Up"
+     },
+     {
+      "name": "OEJaguarButtonDown",
+      "label": "Down"
+     },
+     {
+      "name": "OEJaguarButtonLeft",
+      "label": "Left"
+     },
+     {
+      "name": "OEJaguarButtonRight",
+      "label": "Right"
+     }
+    ],
+    [
+     {
+      "name": "OEJaguarButtonPause",
+      "label": "Console Pause"
+     },
+     {
+      "name": "OEJaguarButtonOption",
+      "label": "Option"
+     }
+    ],
+    [
+     {
+      "name": "OEJaguarButtonA",
+      "label": "A"
+     },
+     {
+      "name": "OEJaguarButtonB",
+      "label": "B"
+     },
+     {
+      "name": "OEJaguarButtonC",
+      "label": "C"
+     }
+    ],
+    [
+     {
+      "name": "OEJaguarButton1",
+      "label": "1"
+     },
+     {
+      "name": "OEJaguarButton2",
+      "label": "2"
+     },
+     {
+      "name": "OEJaguarButton3",
+      "label": "3"
+     },
+     {
+      "name": "OEJaguarButton4",
+      "label": "4"
+     }
+    ],
+    [
+     {
+      "name": "OEJaguarButton5",
+      "label": "5"
+     },
+     {
+      "name": "OEJaguarButton6",
+      "label": "6"
+     },
+     {
+      "name": "OEJaguarButton7",
+      "label": "7"
+     },
+     {
+      "name": "OEJaguarButton8",
+      "label": "8"
+     }
+    ],
+    [
+     {
+      "name": "OEJaguarButton9",
+      "label": "9"
+     },
+     {
+      "name": "OEJaguarButton0",
+      "label": "0"
+     },
+     {
+      "name": "OEJaguarButtonAsterisk",
+      "label": "*"
+     },
+     {
+      "name": "OEJaguarButtonPound",
+      "label": "#"
+     }
+    ]
+   ],
+   "axes": [
+    [
+     "OEJaguarButtonUp",
+     "OEJaguarButtonDown"
+    ],
+    [
+     "OEJaguarButtonLeft",
+     "OEJaguarButtonRight"
+    ]
+   ],
+   "hats": [
+    [
+     "OEJaguarButtonUp",
+     "OEJaguarButtonRight",
+     "OEJaguarButtonDown",
+     "OEJaguarButtonLeft"
+    ]
+   ],
+   "keyboard": {
+    "OEJaguarButtonAsterisk": 45,
+    "OEJaguarButtonB": 26,
+    "OEJaguarButton6": 35,
+    "OEJaguarButton2": 31,
+    "OEJaguarButtonPound": 46,
+    "OEJaguarButtonC": 20,
+    "OEJaguarButtonOption": 229,
+    "OEJaguarButton7": 36,
+    "OEJaguarButton3": 32,
+    "OEJaguarButtonPause": 40,
+    "OEJaguarButtonRight": 79,
+    "OEJaguarButton8": 37,
+    "OEJaguarButtonUp": 82,
+    "OEJaguarButton4": 33,
+    "OEJaguarButton0": 39,
+    "OEJaguarButtonA": 8,
+    "OEJaguarButton9": 38,
+    "OEJaguarButton5": 34,
+    "OEJaguarButton1": 30,
+    "OEJaguarButtonLeft": 80,
+    "OEJaguarButtonDown": 81
+   },
+   "libretroMap": {
+    "OEJaguarButtonUp": "UP",
+    "OEJaguarButtonDown": "DOWN",
+    "OEJaguarButtonLeft": "LEFT",
+    "OEJaguarButtonRight": "RIGHT",
+    "OEJaguarButtonPause": "START",
+    "OEJaguarButtonOption": "SELECT",
+    "OEJaguarButtonA": "A",
+    "OEJaguarButtonB": "B",
+    "OEJaguarButtonC": "Y",
+    "OEJaguarButton1": "X",
+    "OEJaguarButton2": "L",
+    "OEJaguarButton3": "R",
+    "OEJaguarButton4": "L2",
+    "OEJaguarButton5": "R2",
+    "OEJaguarButton6": "L3",
+    "OEJaguarButton7": "R3",
+    "OEJaguarButton8": "R2",
+    "OEJaguarButton9": "L3",
+    "OEJaguarButton0": "R2",
+    "OEJaguarButtonAsterisk": "R3",
+    "OEJaguarButtonPound": "START"
+   },
+   "cores": [
+    "virtualjaguar"
+   ]
+  },
+  {
+   "id": "openemu.system.lynx",
+   "name": "Atari Lynx",
+   "extensions": [
+    "lnx"
+   ],
+   "type": "Handheld",
+   "controlGroups": [
+    [
+     {
+      "name": "OELynxButtonUp",
+      "label": "Up"
+     },
+     {
+      "name": "OELynxButtonDown",
+      "label": "Down"
+     },
+     {
+      "name": "OELynxButtonLeft",
+      "label": "Left"
+     },
+     {
+      "name": "OELynxButtonRight",
+      "label": "Right"
+     }
+    ],
+    [
+     {
+      "name": "OELynxButtonA",
+      "label": "A"
+     },
+     {
+      "name": "OELynxButtonB",
+      "label": "B"
+     }
+    ],
+    [
+     {
+      "name": "OELynxButtonOption1",
+      "label": "Option 1"
+     },
+     {
+      "name": "OELynxButtonOption2",
+      "label": "Option 2"
+     }
+    ]
+   ],
+   "axes": [
+    [
+     "OELynxButtonUp",
+     "OELynxButtonDown"
+    ],
+    [
+     "OELynxButtonLeft",
+     "OELynxButtonRight"
+    ]
+   ],
+   "hats": [
+    [
+     "OELynxButtonUp",
+     "OELynxButtonRight",
+     "OELynxButtonDown",
+     "OELynxButtonLeft"
+    ]
+   ],
+   "keyboard": {
+    "OELynxButtonLeft": 80,
+    "OELynxButtonOption1": 40,
+    "OELynxButtonA": 4,
+    "OELynxButtonOption2": 229,
+    "OELynxButtonUp": 82,
+    "OELynxButtonB": 22,
+    "OELynxButtonRight": 79,
+    "OELynxButtonDown": 81
+   },
+   "libretroMap": {
+    "OELynxButtonUp": "UP",
+    "OELynxButtonDown": "DOWN",
+    "OELynxButtonLeft": "LEFT",
+    "OELynxButtonRight": "RIGHT",
+    "OELynxButtonA": "A",
+    "OELynxButtonB": "B",
+    "OELynxButtonOption1": "L",
+    "OELynxButtonOption2": "R"
+   },
+   "cores": [
+    "handy",
+    "mednafen_lynx"
+   ]
+  },
+  {
+   "id": "openemu.system.msx",
+   "name": "MSX",
+   "extensions": [
+    "rom",
+    "mx1",
+    "mx2",
+    "cas",
+    "dsk"
+   ],
+   "type": "Computer",
+   "controlGroups": [
+    [
+     {
+      "name": "OEMSXButtonUp",
+      "label": "Up"
+     },
+     {
+      "name": "OEMSXButtonDown",
+      "label": "Down"
+     },
+     {
+      "name": "OEMSXButtonLeft",
+      "label": "Left"
+     },
+     {
+      "name": "OEMSXButtonRight",
+      "label": "Right"
+     }
+    ],
+    [
+     {
+      "name": "OEMSXButtonA",
+      "label": "A"
+     },
+     {
+      "name": "OEMSXButtonB",
+      "label": "B"
+     }
+    ]
+   ],
+   "axes": [
+    [
+     "OEMSXButtonUp",
+     "OEMSXButtonDown"
+    ],
+    [
+     "OEMSXButtonLeft",
+     "OEMSXButtonRight"
+    ]
+   ],
+   "hats": [
+    [
+     "OEMSXButtonUp",
+     "OEMSXButtonRight",
+     "OEMSXButtonDown",
+     "OEMSXButtonLeft"
+    ]
+   ],
+   "keyboard": {
+    "OEMSXButtonUp": 96,
+    "OEMSXButtonDown": 90,
+    "OEMSXButtonLeft": 92,
+    "OEMSXButtonRight": 94,
+    "OEMSXButtonA": 98,
+    "OEMSXButtonB": 99
+   },
+   "libretroMap": {
+    "OEMSXButtonUp": "UP",
+    "OEMSXButtonDown": "DOWN",
+    "OEMSXButtonLeft": "LEFT",
+    "OEMSXButtonRight": "RIGHT",
+    "OEMSXButtonA": "B",
+    "OEMSXButtonB": "A"
+   },
+   "cores": [
+    "bluemsx"
+   ]
+  },
+  {
+   "id": "openemu.system.n64",
+   "name": "Nintendo 64",
+   "extensions": [
+    "n64",
+    "z64",
+    "v64"
+   ],
+   "type": "Console",
+   "controlGroups": [
+    [
+     {
+      "name": "OEN64ButtonDPadUp",
+      "label": "Up"
+     },
+     {
+      "name": "OEN64ButtonDPadDown",
+      "label": "Down"
+     },
+     {
+      "name": "OEN64ButtonDPadLeft",
+      "label": "Left"
+     },
+     {
+      "name": "OEN64ButtonDPadRight",
+      "label": "Right"
+     }
+    ],
+    [
+     {
+      "name": "OEN64AnalogUp",
+      "label": "Up"
+     },
+     {
+      "name": "OEN64AnalogDown",
+      "label": "Down"
+     },
+     {
+      "name": "OEN64AnalogLeft",
+      "label": "Left"
+     },
+     {
+      "name": "OEN64AnalogRight",
+      "label": "Right"
+     }
+    ],
+    [
+     {
+      "name": "OEN64ButtonL",
+      "label": "L"
+     },
+     {
+      "name": "OEN64ButtonR",
+      "label": "R"
+     }
+    ],
+    [
+     {
+      "name": "OEN64ButtonA",
+      "label": "A"
+     },
+     {
+      "name": "OEN64ButtonB",
+      "label": "B"
+     },
+     {
+      "name": "OEN64ButtonStart",
+      "label": "Start"
+     },
+     {
+      "name": "OEN64ButtonZ",
+      "label": "Z"
+     }
+    ],
+    [
+     {
+      "name": "OEN64ButtonCUp",
+      "label": "Up"
+     },
+     {
+      "name": "OEN64ButtonCDown",
+      "label": "Down"
+     },
+     {
+      "name": "OEN64ButtonCLeft",
+      "label": "Left"
+     },
+     {
+      "name": "OEN64ButtonCRight",
+      "label": "Right"
+     }
+    ]
+   ],
+   "axes": [
+    [
+     "OEN64ButtonDPadUp",
+     "OEN64ButtonDPadDown"
+    ],
+    [
+     "OEN64ButtonDPadLeft",
+     "OEN64ButtonDPadRight"
+    ],
+    [
+     "OEN64ButtonCUp",
+     "OEN64ButtonCDown"
+    ],
+    [
+     "OEN64ButtonCLeft",
+     "OEN64ButtonCRight"
+    ],
+    [
+     "OEN64AnalogLeft",
+     "OEN64AnalogRight"
+    ],
+    [
+     "OEN64AnalogUp",
+     "OEN64AnalogDown"
+    ]
+   ],
+   "hats": [
+    [
+     "OEN64ButtonDPadUp",
+     "OEN64ButtonDPadRight",
+     "OEN64ButtonDPadDown",
+     "OEN64ButtonDPadLeft"
+    ],
+    [
+     "OEN64ButtonCUp",
+     "OEN64ButtonCRight",
+     "OEN64ButtonCDown",
+     "OEN64ButtonCLeft"
+    ]
+   ],
+   "keyboard": {
+    "OEN64ButtonCDown": 14,
+    "OEN64ButtonDPadLeft": 80,
+    "OEN64ButtonA": 4,
+    "OEN64ButtonCLeft": 13,
+    "OEN64ButtonDPadUp": 82,
+    "OEN64ButtonB": 22,
+    "OEN64ButtonCUp": 12,
+    "OEN64ButtonR": 26,
+    "OEN64ButtonZ": 29,
+    "OEN64ButtonL": 20,
+    "OEN64ButtonCRight": 15,
+    "OEN64ButtonDPadDown": 81,
+    "OEN64ButtonDPadRight": 79,
+    "OEN64ButtonStart": 40
+   },
+   "libretroMap": {
+    "OEN64ButtonDPadUp": "UP",
+    "OEN64ButtonDPadDown": "DOWN",
+    "OEN64ButtonDPadLeft": "LEFT",
+    "OEN64ButtonDPadRight": "RIGHT",
+    "OEN64AnalogUp": "LY-",
+    "OEN64AnalogDown": "LY+",
+    "OEN64AnalogLeft": "LX-",
+    "OEN64AnalogRight": "LX+",
+    "OEN64ButtonL": "L",
+    "OEN64ButtonR": "R",
+    "OEN64ButtonA": "A",
+    "OEN64ButtonB": "B",
+    "OEN64ButtonStart": "START",
+    "OEN64ButtonZ": "L2",
+    "OEN64ButtonCUp": "RY-",
+    "OEN64ButtonCDown": "RY+",
+    "OEN64ButtonCLeft": "RX-",
+    "OEN64ButtonCRight": "RX+"
+   },
+   "cores": [
+    "mupen64plus_next"
+   ]
+  },
+  {
+   "id": "openemu.system.nds",
+   "name": "Nintendo DS",
+   "extensions": [
+    "nds"
+   ],
+   "type": "Handheld",
+   "controlGroups": [
+    [
+     {
+      "name": "OENDSButtonUp",
+      "label": "Up"
+     },
+     {
+      "name": "OENDSButtonDown",
+      "label": "Down"
+     },
+     {
+      "name": "OENDSButtonLeft",
+      "label": "Left"
+     },
+     {
+      "name": "OENDSButtonRight",
+      "label": "Right"
+     }
+    ],
+    [
+     {
+      "name": "OENDSButtonA",
+      "label": "A"
+     },
+     {
+      "name": "OENDSButtonB",
+      "label": "B"
+     },
+     {
+      "name": "OENDSButtonX",
+      "label": "X"
+     },
+     {
+      "name": "OENDSButtonY",
+      "label": "Y"
+     }
+    ],
+    [
+     {
+      "name": "OENDSButtonL",
+      "label": "Left Trigger"
+     },
+     {
+      "name": "OENDSButtonR",
+      "label": "Right Trigger"
+     },
+     {
+      "name": "OENDSButtonStart",
+      "label": "Start"
+     },
+     {
+      "name": "OENDSButtonSelect",
+      "label": "Select"
+     }
+    ],
+    [
+     {
+      "name": "OENDSButtonLid",
+      "label": "Lid"
+     },
+     {
+      "name": "OENDSButtonMicrophone",
+      "label": "Mic"
+     }
+    ]
+   ],
+   "axes": [
+    [
+     "OENDSButtonUp",
+     "OENDSButtonDown"
+    ],
+    [
+     "OENDSButtonLeft",
+     "OENDSButtonRight"
+    ]
+   ],
+   "hats": [
+    [
+     "OENDSButtonUp",
+     "OENDSButtonRight",
+     "OENDSButtonDown",
+     "OENDSButtonLeft"
+    ]
+   ],
+   "keyboard": {
+    "OENDSButtonLeft": 80,
+    "OENDSButtonSelect": 229,
+    "OENDSButtonMicrophone": 53,
+    "OENDSButtonX": 22,
+    "OENDSButtonA": 27,
+    "OENDSButtonY": 4,
+    "OENDSButtonB": 29,
+    "OENDSButtonR": 26,
+    "OENDSButtonUp": 82,
+    "OENDSButtonLid": 42,
+    "OENDSButtonL": 20,
+    "OENDSButtonDown": 81,
+    "OENDSButtonStart": 40,
+    "OENDSButtonRight": 79
+   },
+   "libretroMap": {
+    "OENDSButtonUp": "UP",
+    "OENDSButtonDown": "DOWN",
+    "OENDSButtonLeft": "LEFT",
+    "OENDSButtonRight": "RIGHT",
+    "OENDSButtonA": "A",
+    "OENDSButtonB": "B",
+    "OENDSButtonX": "X",
+    "OENDSButtonY": "Y",
+    "OENDSButtonL": "L",
+    "OENDSButtonR": "R",
+    "OENDSButtonStart": "START",
+    "OENDSButtonSelect": "SELECT",
+    "OENDSButtonLid": "L2",
+    "OENDSButtonMicrophone": "R2"
+   },
+   "cores": [
+    "melondsds",
+    "melonds",
+    "desmume"
+   ]
+  },
+  {
+   "id": "openemu.system.nes",
+   "name": "Nintendo (NES)",
+   "extensions": [
+    "nes"
+   ],
+   "type": "Console",
+   "controlGroups": [
+    [
+     {
+      "name": "OENESButtonUp",
+      "label": "Up"
+     },
+     {
+      "name": "OENESButtonDown",
+      "label": "Down"
+     },
+     {
+      "name": "OENESButtonLeft",
+      "label": "Left"
+     },
+     {
+      "name": "OENESButtonRight",
+      "label": "Right"
+     }
+    ],
+    [
+     {
+      "name": "OENESButtonStart",
+      "label": "Start"
+     },
+     {
+      "name": "OENESButtonSelect",
+      "label": "Select"
+     }
+    ],
+    [
+     {
+      "name": "OENESButtonA",
+      "label": "A"
+     },
+     {
+      "name": "OENESButtonB",
+      "label": "B"
+     }
+    ]
+   ],
+   "axes": [
+    [
+     "OENESButtonUp",
+     "OENESButtonDown"
+    ],
+    [
+     "OENESButtonLeft",
+     "OENESButtonRight"
+    ]
+   ],
+   "hats": [
+    [
+     "OENESButtonUp",
+     "OENESButtonRight",
+     "OENESButtonDown",
+     "OENESButtonLeft"
+    ]
+   ],
+   "keyboard": {
+    "OENESButtonB": 22,
+    "OENESButtonUp": 82,
+    "OENESButtonRight": 79,
+    "OENESButtonLeft": 80,
+    "OENESButtonSelect": 229,
+    "OENESButtonDown": 81,
+    "OENESButtonA": 4,
+    "OENESButtonStart": 40
+   },
+   "libretroMap": {
+    "OENESButtonUp": "UP",
+    "OENESButtonDown": "DOWN",
+    "OENESButtonLeft": "LEFT",
+    "OENESButtonRight": "RIGHT",
+    "OENESButtonStart": "START",
+    "OENESButtonSelect": "SELECT",
+    "OENESButtonA": "A",
+    "OENESButtonB": "B"
+   },
+   "cores": [
+    "fceumm",
+    "nestopia",
+    "mesen"
+   ]
+  },
+  {
+   "id": "openemu.system.ngp",
+   "name": "NeoGeo Pocket",
+   "extensions": [
+    "ngp",
+    "ngc",
+    "npc"
+   ],
+   "type": "Handheld",
+   "controlGroups": [
+    [
+     {
+      "name": "OENGPButtonUp",
+      "label": "Up"
+     },
+     {
+      "name": "OENGPButtonDown",
+      "label": "Down"
+     },
+     {
+      "name": "OENGPButtonLeft",
+      "label": "Left"
+     },
+     {
+      "name": "OENGPButtonRight",
+      "label": "Right"
+     }
+    ],
+    [
+     {
+      "name": "OENGPButtonA",
+      "label": "A"
+     },
+     {
+      "name": "OENGPButtonB",
+      "label": "B"
+     }
+    ],
+    [
+     {
+      "name": "OENGPButtonOption",
+      "label": "Option"
+     }
+    ]
+   ],
+   "axes": [
+    [
+     "OENGPButtonUp",
+     "OENGPButtonDown"
+    ],
+    [
+     "OENGPButtonLeft",
+     "OENGPButtonRight"
+    ]
+   ],
+   "hats": [
+    [
+     "OENGPButtonUp",
+     "OENGPButtonRight",
+     "OENGPButtonDown",
+     "OENGPButtonLeft"
+    ]
+   ],
+   "keyboard": {
+    "OENGPButtonUp": 82,
+    "OENGPButtonB": 22,
+    "OENGPButtonLeft": 80,
+    "OENGPButtonRight": 79,
+    "OENGPButtonDown": 81,
+    "OENGPButtonOption": 40,
+    "OENGPButtonA": 4
+   },
+   "libretroMap": {
+    "OENGPButtonUp": "UP",
+    "OENGPButtonDown": "DOWN",
+    "OENGPButtonLeft": "LEFT",
+    "OENGPButtonRight": "RIGHT",
+    "OENGPButtonA": "B",
+    "OENGPButtonB": "A",
+    "OENGPButtonOption": "START"
+   },
+   "cores": [
+    "mednafen_ngp"
+   ]
+  },
+  {
+   "id": "openemu.system.fds",
+   "name": "Famicom Disk System",
+   "extensions": [
+    "fds"
+   ],
+   "type": "Console",
+   "controlGroups": [
+    [
+     {
+      "name": "OEFDSButtonUp",
+      "label": "Up"
+     },
+     {
+      "name": "OEFDSButtonDown",
+      "label": "Down"
+     },
+     {
+      "name": "OEFDSButtonLeft",
+      "label": "Left"
+     },
+     {
+      "name": "OEFDSButtonRight",
+      "label": "Right"
+     }
+    ],
+    [
+     {
+      "name": "OEFDSButtonStart",
+      "label": "Start"
+     },
+     {
+      "name": "OEFDSButtonSelect",
+      "label": "Select"
+     }
+    ],
+    [
+     {
+      "name": "OEFDSButtonA",
+      "label": "A"
+     },
+     {
+      "name": "OEFDSButtonB",
+      "label": "B"
+     },
+     {
+      "name": "OEFDSButtonChangeSide",
+      "label": "Change Disk Side"
+     }
+    ]
+   ],
+   "axes": [
+    [
+     "OEFDSButtonUp",
+     "OEFDSButtonDown"
+    ],
+    [
+     "OEFDSButtonLeft",
+     "OEFDSButtonRight"
+    ]
+   ],
+   "hats": [
+    [
+     "OEFDSButtonUp",
+     "OEFDSButtonRight",
+     "OEFDSButtonDown",
+     "OEFDSButtonLeft"
+    ]
+   ],
+   "keyboard": {
+    "OEFDSButtonDown": 81,
+    "OEFDSButtonStart": 40,
+    "OEFDSButtonRight": 79,
+    "OEFDSButtonSelect": 229,
+    "OEFDSButtonLeft": 80,
+    "OEFDSButtonA": 4,
+    "OEFDSButtonUp": 82,
+    "OEFDSButtonB": 22,
+    "OEFDSButtonChangeSide": 20
+   },
+   "libretroMap": {
+    "OEFDSButtonUp": "UP",
+    "OEFDSButtonDown": "DOWN",
+    "OEFDSButtonLeft": "LEFT",
+    "OEFDSButtonRight": "RIGHT",
+    "OEFDSButtonStart": "START",
+    "OEFDSButtonSelect": "SELECT",
+    "OEFDSButtonA": "A",
+    "OEFDSButtonB": "B",
+    "OEFDSButtonChangeSide": "L"
+   },
+   "cores": [
+    "fceumm",
+    "nestopia"
+   ]
+  },
+  {
+   "id": "openemu.system.odyssey2",
+   "name": "Odyssey²",
+   "extensions": [
+    "bin"
+   ],
+   "type": "Console",
+   "controlGroups": [
+    [
+     {
+      "name": "OEOdyssey2ButtonUp",
+      "label": "Up"
+     },
+     {
+      "name": "OEOdyssey2ButtonDown",
+      "label": "Down"
+     },
+     {
+      "name": "OEOdyssey2ButtonLeft",
+      "label": "Left"
+     },
+     {
+      "name": "OEOdyssey2ButtonRight",
+      "label": "Right"
+     }
+    ],
+    [
+     {
+      "name": "OEOdyssey2ButtonAction",
+      "label": "Action"
+     }
+    ]
+   ],
+   "axes": [
+    [
+     "OEOdyssey2ButtonUp",
+     "OEOdyssey2ButtonDown"
+    ],
+    [
+     "OEOdyssey2ButtonLeft",
+     "OEOdyssey2ButtonRight"
+    ]
+   ],
+   "hats": [
+    [
+     "OEOdyssey2ButtonUp",
+     "OEOdyssey2ButtonRight",
+     "OEOdyssey2ButtonDown",
+     "OEOdyssey2ButtonLeft"
+    ]
+   ],
+   "keyboard": {
+    "OEOdyssey2ButtonUp": 82,
+    "OEOdyssey2ButtonDown": 81,
+    "OEOdyssey2ButtonLeft": 80,
+    "OEOdyssey2ButtonRight": 79,
+    "OEOdyssey2ButtonAction": 4
+   },
+   "libretroMap": {
+    "OEOdyssey2ButtonUp": "UP",
+    "OEOdyssey2ButtonDown": "DOWN",
+    "OEOdyssey2ButtonLeft": "LEFT",
+    "OEOdyssey2ButtonRight": "RIGHT",
+    "OEOdyssey2ButtonAction": "B"
+   },
+   "cores": [
+    "o2em"
+   ]
+  },
+  {
+   "id": "openemu.system.pcecd",
+   "name": "TurboGrafx-CD",
+   "extensions": [
+    "cue",
+    "ccd"
+   ],
+   "type": "Console",
+   "controlGroups": [
+    [
+     {
+      "name": "OEPCECDButtonUp",
+      "label": "Up"
+     },
+     {
+      "name": "OEPCECDButtonDown",
+      "label": "Down"
+     },
+     {
+      "name": "OEPCECDButtonLeft",
+      "label": "Left"
+     },
+     {
+      "name": "OEPCECDButtonRight",
+      "label": "Right"
+     }
+    ],
+    [
+     {
+      "name": "OEPCECDButtonRun",
+      "label": "Run"
+     },
+     {
+      "name": "OEPCECDButtonSelect",
+      "label": "Select"
+     }
+    ],
+    [
+     {
+      "name": "OEPCECDButton1",
+      "label": "1"
+     },
+     {
+      "name": "OEPCECDButton2",
+      "label": "2"
+     },
+     {
+      "name": "OEPCECDButton3",
+      "label": "3"
+     },
+     {
+      "name": "OEPCECDButton4",
+      "label": "4"
+     },
+     {
+      "name": "OEPCECDButton5",
+      "label": "5"
+     },
+     {
+      "name": "OEPCECDButton6",
+      "label": "6"
+     },
+     {
+      "name": "OEPCECDButtonMode",
+      "label": "2/6 Mode"
+     }
+    ]
+   ],
+   "axes": [
+    [
+     "OEPCECDButtonUp",
+     "OEPCECDButtonDown"
+    ],
+    [
+     "OEPCECDButtonLeft",
+     "OEPCECDButtonRight"
+    ]
+   ],
+   "hats": [
+    [
+     "OEPCECDButtonUp",
+     "OEPCECDButtonRight",
+     "OEPCECDButtonDown",
+     "OEPCECDButtonLeft"
+    ]
+   ],
+   "keyboard": {
+    "OEPCECDButtonLeft": 80,
+    "OEPCECDButtonMode": 23,
+    "OEPCECDButton3": 7,
+    "OEPCECDButtonRun": 40,
+    "OEPCECDButtonUp": 82,
+    "OEPCECDButton6": 8,
+    "OEPCECDButton1": 4,
+    "OEPCECDButtonDown": 81,
+    "OEPCECDButton4": 20,
+    "OEPCECDButtonRight": 79,
+    "OEPCECDButton2": 22,
+    "OEPCECDButtonSelect": 229,
+    "OEPCECDButton5": 26
+   },
+   "libretroMap": {
+    "OEPCECDButtonUp": "UP",
+    "OEPCECDButtonDown": "DOWN",
+    "OEPCECDButtonLeft": "LEFT",
+    "OEPCECDButtonRight": "RIGHT",
+    "OEPCECDButtonRun": "START",
+    "OEPCECDButtonSelect": "SELECT",
+    "OEPCECDButton1": "A",
+    "OEPCECDButton2": "B",
+    "OEPCECDButton3": "Y",
+    "OEPCECDButton4": "X",
+    "OEPCECDButton5": "L",
+    "OEPCECDButton6": "R",
+    "OEPCECDButtonMode": "L2"
+   },
+   "cores": [
+    "mednafen_pce",
+    "mednafen_pce_fast"
+   ]
+  },
+  {
+   "id": "openemu.system.pce",
+   "name": "TurboGrafx-16",
+   "extensions": [
+    "pce"
+   ],
+   "type": "Console",
+   "controlGroups": [
+    [
+     {
+      "name": "OEPCEButtonUp",
+      "label": "Up"
+     },
+     {
+      "name": "OEPCEButtonDown",
+      "label": "Down"
+     },
+     {
+      "name": "OEPCEButtonLeft",
+      "label": "Left"
+     },
+     {
+      "name": "OEPCEButtonRight",
+      "label": "Right"
+     }
+    ],
+    [
+     {
+      "name": "OEPCEButtonRun",
+      "label": "Run"
+     },
+     {
+      "name": "OEPCEButtonSelect",
+      "label": "Select"
+     }
+    ],
+    [
+     {
+      "name": "OEPCEButton1",
+      "label": "1"
+     },
+     {
+      "name": "OEPCEButton2",
+      "label": "2"
+     },
+     {
+      "name": "OEPCEButton3",
+      "label": "3"
+     },
+     {
+      "name": "OEPCEButton4",
+      "label": "4"
+     },
+     {
+      "name": "OEPCEButton5",
+      "label": "5"
+     },
+     {
+      "name": "OEPCEButton6",
+      "label": "6"
+     },
+     {
+      "name": "OEPCEButtonMode",
+      "label": "2/6 Mode"
+     }
+    ]
+   ],
+   "axes": [
+    [
+     "OEPCEButtonUp",
+     "OEPCEButtonDown"
+    ],
+    [
+     "OEPCEButtonLeft",
+     "OEPCEButtonRight"
+    ]
+   ],
+   "hats": [
+    [
+     "OEPCEButtonUp",
+     "OEPCEButtonRight",
+     "OEPCEButtonDown",
+     "OEPCEButtonLeft"
+    ]
+   ],
+   "keyboard": {
+    "OEPCEButton5": 26,
+    "OEPCEButtonRun": 40,
+    "OEPCEButtonSelect": 229,
+    "OEPCEButton6": 8,
+    "OEPCEButtonDown": 81,
+    "OEPCEButtonMode": 23,
+    "OEPCEButtonRight": 79,
+    "OEPCEButtonUp": 82,
+    "OEPCEButton1": 4,
+    "OEPCEButtonLeft": 80,
+    "OEPCEButton2": 22,
+    "OEPCEButton3": 7,
+    "OEPCEButton4": 20
+   },
+   "libretroMap": {
+    "OEPCEButtonUp": "UP",
+    "OEPCEButtonDown": "DOWN",
+    "OEPCEButtonLeft": "LEFT",
+    "OEPCEButtonRight": "RIGHT",
+    "OEPCEButtonRun": "START",
+    "OEPCEButtonSelect": "SELECT",
+    "OEPCEButton1": "A",
+    "OEPCEButton2": "B",
+    "OEPCEButton3": "Y",
+    "OEPCEButton4": "X",
+    "OEPCEButton5": "L",
+    "OEPCEButton6": "R",
+    "OEPCEButtonMode": "L2"
+   },
+   "cores": [
+    "mednafen_pce",
+    "mednafen_pce_fast",
+    "mednafen_supergrafx"
+   ]
+  },
+  {
+   "id": "openemu.system.pcfx",
+   "name": "PC-FX",
+   "extensions": [
+    "cue",
+    "ccd",
+    "m3u"
+   ],
+   "type": "Console",
+   "controlGroups": [
+    [
+     {
+      "name": "OEPCFXButtonUp",
+      "label": "Up"
+     },
+     {
+      "name": "OEPCFXButtonDown",
+      "label": "Down"
+     },
+     {
+      "name": "OEPCFXButtonLeft",
+      "label": "Left"
+     },
+     {
+      "name": "OEPCFXButtonRight",
+      "label": "Right"
+     }
+    ],
+    [
+     {
+      "name": "OEPCFXButtonRun",
+      "label": "Run"
+     },
+     {
+      "name": "OEPCFXButtonSelect",
+      "label": "Select"
+     }
+    ],
+    [
+     {
+      "name": "OEPCFXButton1",
+      "label": "1"
+     },
+     {
+      "name": "OEPCFXButton2",
+      "label": "2"
+     },
+     {
+      "name": "OEPCFXButton3",
+      "label": "3"
+     }
+    ],
+    [
+     {
+      "name": "OEPCFXButton4",
+      "label": "4"
+     },
+     {
+      "name": "OEPCFXButton5",
+      "label": "5"
+     },
+     {
+      "name": "OEPCFXButton6",
+      "label": "6"
+     }
+    ]
+   ],
+   "axes": [
+    [
+     "OEPCFXButtonUp",
+     "OEPCFXButtonDown"
+    ],
+    [
+     "OEPCFXButtonLeft",
+     "OEPCFXButtonRight"
+    ]
+   ],
+   "hats": [
+    [
+     "OEPCFXButtonUp",
+     "OEPCFXButtonRight",
+     "OEPCFXButtonDown",
+     "OEPCFXButtonLeft"
+    ]
+   ],
+   "keyboard": {
+    "OEPCFXButtonUp": 82,
+    "OEPCFXButton3": 7,
+    "OEPCFXButtonRun": 40,
+    "OEPCFXButtonDown": 81,
+    "OEPCFXButton4": 20,
+    "OEPCFXButtonLeft": 80,
+    "OEPCFXButtonSelect": 229,
+    "OEPCFXButton5": 26,
+    "OEPCFXButton1": 4,
+    "OEPCFXButton6": 8,
+    "OEPCFXButton2": 22,
+    "OEPCFXButtonRight": 79
+   },
+   "libretroMap": {
+    "OEPCFXButtonUp": "UP",
+    "OEPCFXButtonDown": "DOWN",
+    "OEPCFXButtonLeft": "LEFT",
+    "OEPCFXButtonRight": "RIGHT",
+    "OEPCFXButtonRun": "START",
+    "OEPCFXButtonSelect": "SELECT",
+    "OEPCFXButton1": "A",
+    "OEPCFXButton2": "B",
+    "OEPCFXButton3": "Y",
+    "OEPCFXButton4": "X",
+    "OEPCFXButton5": "L",
+    "OEPCFXButton6": "R"
+   },
+   "cores": [
+    "mednafen_pcfx"
+   ]
+  },
+  {
+   "id": "openemu.system.psp",
+   "name": "Sony PSP",
+   "extensions": [
+    "iso",
+    "cso"
+   ],
+   "type": "Handheld",
+   "controlGroups": [
+    [
+     {
+      "name": "OEPSPButtonUp",
+      "label": "Up"
+     },
+     {
+      "name": "OEPSPButtonDown",
+      "label": "Down"
+     },
+     {
+      "name": "OEPSPButtonLeft",
+      "label": "Left"
+     },
+     {
+      "name": "OEPSPButtonRight",
+      "label": "Right"
+     }
+    ],
+    [
+     {
+      "name": "OEPSPAnalogUp",
+      "label": "Up"
+     },
+     {
+      "name": "OEPSPAnalogDown",
+      "label": "Down"
+     },
+     {
+      "name": "OEPSPAnalogLeft",
+      "label": "Left"
+     },
+     {
+      "name": "OEPSPAnalogRight",
+      "label": "Right"
+     }
+    ],
+    [
+     {
+      "name": "OEPSPButtonTriangle",
+      "label": "△"
+     },
+     {
+      "name": "OEPSPButtonCircle",
+      "label": "◯"
+     },
+     {
+      "name": "OEPSPButtonCross",
+      "label": "✕"
+     },
+     {
+      "name": "OEPSPButtonSquare",
+      "label": "▢"
+     }
+    ],
+    [
+     {
+      "name": "OEPSPButtonL1",
+      "label": "L1"
+     },
+     {
+      "name": "OEPSPButtonR1",
+      "label": "R1"
+     },
+     {
+      "name": "OEPSPButtonStart",
+      "label": "Start"
+     },
+     {
+      "name": "OEPSPButtonSelect",
+      "label": "Select"
+     }
+    ]
+   ],
+   "axes": [
+    [
+     "OEPSPButtonUp",
+     "OEPSPButtonDown"
+    ],
+    [
+     "OEPSPButtonLeft",
+     "OEPSPButtonRight"
+    ],
+    [
+     "OEPSPAnalogLeft",
+     "OEPSPAnalogRight"
+    ],
+    [
+     "OEPSPAnalogUp",
+     "OEPSPAnalogDown"
+    ]
+   ],
+   "hats": [
+    [
+     "OEPSPButtonUp",
+     "OEPSPButtonRight",
+     "OEPSPButtonDown",
+     "OEPSPButtonLeft"
+    ]
+   ],
+   "keyboard": {
+    "OEPSPButtonStart": 40,
+    "OEPSPButtonCircle": 29,
+    "OEPSPButtonLeft": 80,
+    "OEPSPButtonSquare": 4,
+    "OEPSPButtonSelect": 229,
+    "OEPSPButtonL1": 20,
+    "OEPSPButtonRight": 79,
+    "OEPSPButtonR1": 7,
+    "OEPSPButtonCross": 22,
+    "OEPSPButtonUp": 82,
+    "OEPSPButtonTriangle": 27,
+    "OEPSPButtonDown": 81
+   },
+   "libretroMap": {
+    "OEPSPButtonUp": "UP",
+    "OEPSPButtonDown": "DOWN",
+    "OEPSPButtonLeft": "LEFT",
+    "OEPSPButtonRight": "RIGHT",
+    "OEPSPAnalogUp": "LY-",
+    "OEPSPAnalogDown": "LY+",
+    "OEPSPAnalogLeft": "LX-",
+    "OEPSPAnalogRight": "LX+",
+    "OEPSPButtonTriangle": "X",
+    "OEPSPButtonCircle": "A",
+    "OEPSPButtonCross": "B",
+    "OEPSPButtonSquare": "Y",
+    "OEPSPButtonL1": "L",
+    "OEPSPButtonR1": "R",
+    "OEPSPButtonStart": "START",
+    "OEPSPButtonSelect": "SELECT"
+   },
+   "cores": [
+    "ppsspp"
+   ]
+  },
+  {
+   "id": "openemu.system.ps2",
+   "name": "Sony PlayStation 2",
+   "extensions": [
+    "iso",
+    "cue",
+    "ccd"
+   ],
+   "type": "Console",
+   "controlGroups": [
+    [
+     {
+      "name": "OEPS2ButtonUp",
+      "label": "Up"
+     },
+     {
+      "name": "OEPS2ButtonDown",
+      "label": "Down"
+     },
+     {
+      "name": "OEPS2ButtonLeft",
+      "label": "Left"
+     },
+     {
+      "name": "OEPS2ButtonRight",
+      "label": "Right"
+     }
+    ],
+    [
+     {
+      "name": "OEPS2LeftAnalogUp",
+      "label": "Up"
+     },
+     {
+      "name": "OEPS2LeftAnalogDown",
+      "label": "Down"
+     },
+     {
+      "name": "OEPS2LeftAnalogLeft",
+      "label": "Left"
+     },
+     {
+      "name": "OEPS2LeftAnalogRight",
+      "label": "Right"
+     }
+    ],
+    [
+     {
+      "name": "OEPS2RightAnalogUp",
+      "label": "Up"
+     },
+     {
+      "name": "OEPS2RightAnalogDown",
+      "label": "Down"
+     },
+     {
+      "name": "OEPS2RightAnalogLeft",
+      "label": "Left"
+     },
+     {
+      "name": "OEPS2RightAnalogRight",
+      "label": "Right"
+     }
+    ],
+    [
+     {
+      "name": "OEPS2ButtonAnalogMode",
+      "label": "Analog Mode"
+     }
+    ],
+    [
+     {
+      "name": "OEPS2ButtonTriangle",
+      "label": "△"
+     },
+     {
+      "name": "OEPS2ButtonCircle",
+      "label": "◯"
+     },
+     {
+      "name": "OEPS2ButtonCross",
+      "label": "✕"
+     },
+     {
+      "name": "OEPS2ButtonSquare",
+      "label": "▢"
+     }
+    ],
+    [
+     {
+      "name": "OEPS2ButtonL1",
+      "label": "L1"
+     },
+     {
+      "name": "OEPS2ButtonL2",
+      "label": "L2"
+     },
+     {
+      "name": "OEPS2ButtonR1",
+      "label": "R1"
+     },
+     {
+      "name": "OEPS2ButtonR2",
+      "label": "R2"
+     }
+    ],
+    [
+     {
+      "name": "OEPS2ButtonL3",
+      "label": "L3"
+     },
+     {
+      "name": "OEPS2ButtonR3",
+      "label": "R3"
+     },
+     {
+      "name": "OEPS2ButtonStart",
+      "label": "Start"
+     },
+     {
+      "name": "OEPS2ButtonSelect",
+      "label": "Select"
+     }
+    ]
+   ],
+   "axes": [
+    [
+     "OEPS2ButtonUp",
+     "OEPS2ButtonDown"
+    ],
+    [
+     "OEPS2ButtonLeft",
+     "OEPS2ButtonRight"
+    ],
+    [
+     "OEPS2LeftAnalogUp",
+     "OEPS2LeftAnalogDown"
+    ],
+    [
+     "OEPS2LeftAnalogLeft",
+     "OEPS2LeftAnalogRight"
+    ],
+    [
+     "OEPS2RightAnalogUp",
+     "OEPS2RightAnalogDown"
+    ],
+    [
+     "OEPS2RightAnalogLeft",
+     "OEPS2RightAnalogRight"
+    ]
+   ],
+   "hats": [
+    [
+     "OEPS2ButtonUp",
+     "OEPS2ButtonRight",
+     "OEPS2ButtonDown",
+     "OEPS2ButtonLeft"
+    ]
+   ],
+   "keyboard": {
+    "OEPS2ButtonR1": 7,
+    "OEPS2ButtonL3": 8,
+    "OEPS2ButtonR2": 9,
+    "OEPS2ButtonUp": 82,
+    "OEPS2ButtonStart": 40,
+    "OEPS2ButtonRight": 79,
+    "OEPS2ButtonTriangle": 27,
+    "OEPS2ButtonR3": 10,
+    "OEPS2ButtonDown": 81,
+    "OEPS2ButtonAnalogMode": 49,
+    "OEPS2ButtonCircle": 29,
+    "OEPS2ButtonSquare": 4,
+    "OEPS2ButtonL1": 20,
+    "OEPS2ButtonSelect": 229,
+    "OEPS2ButtonCross": 22,
+    "OEPS2ButtonLeft": 80,
+    "OEPS2ButtonL2": 26
+   },
+   "libretroMap": {
+    "OEPS2ButtonUp": "UP",
+    "OEPS2ButtonDown": "DOWN",
+    "OEPS2ButtonLeft": "LEFT",
+    "OEPS2ButtonRight": "RIGHT",
+    "OEPS2LeftAnalogUp": "LY-",
+    "OEPS2LeftAnalogDown": "LY+",
+    "OEPS2LeftAnalogLeft": "LX-",
+    "OEPS2LeftAnalogRight": "LX+",
+    "OEPS2RightAnalogUp": "RY-",
+    "OEPS2RightAnalogDown": "RY+",
+    "OEPS2RightAnalogLeft": "RX-",
+    "OEPS2RightAnalogRight": "RX+",
+    "OEPS2ButtonAnalogMode": "L3",
+    "OEPS2ButtonTriangle": "X",
+    "OEPS2ButtonCircle": "A",
+    "OEPS2ButtonCross": "B",
+    "OEPS2ButtonSquare": "Y",
+    "OEPS2ButtonL1": "L",
+    "OEPS2ButtonL2": "L2",
+    "OEPS2ButtonR1": "R",
+    "OEPS2ButtonR2": "R2",
+    "OEPS2ButtonL3": "L3",
+    "OEPS2ButtonR3": "R3",
+    "OEPS2ButtonStart": "START",
+    "OEPS2ButtonSelect": "SELECT"
+   },
+   "cores": [
+    "pcsx2",
+    "play"
+   ]
+  },
+  {
+   "id": "openemu.system.psx",
+   "name": "Sony PlayStation",
+   "extensions": [
+    "cue",
+    "ccd",
+    "m3u",
+    "pbp"
+   ],
+   "type": "Console",
+   "controlGroups": [
+    [
+     {
+      "name": "OEPSXButtonUp",
+      "label": "Up"
+     },
+     {
+      "name": "OEPSXButtonDown",
+      "label": "Down"
+     },
+     {
+      "name": "OEPSXButtonLeft",
+      "label": "Left"
+     },
+     {
+      "name": "OEPSXButtonRight",
+      "label": "Right"
+     }
+    ],
+    [
+     {
+      "name": "OEPSXLeftAnalogUp",
+      "label": "Up"
+     },
+     {
+      "name": "OEPSXLeftAnalogDown",
+      "label": "Down"
+     },
+     {
+      "name": "OEPSXLeftAnalogLeft",
+      "label": "Left"
+     },
+     {
+      "name": "OEPSXLeftAnalogRight",
+      "label": "Right"
+     }
+    ],
+    [
+     {
+      "name": "OEPSXRightAnalogUp",
+      "label": "Up"
+     },
+     {
+      "name": "OEPSXRightAnalogDown",
+      "label": "Down"
+     },
+     {
+      "name": "OEPSXRightAnalogLeft",
+      "label": "Left"
+     },
+     {
+      "name": "OEPSXRightAnalogRight",
+      "label": "Right"
+     }
+    ],
+    [
+     {
+      "name": "OEPSXButtonAnalogMode",
+      "label": "Analog Mode"
+     }
+    ],
+    [
+     {
+      "name": "OEPSXButtonTriangle",
+      "label": "△"
+     },
+     {
+      "name": "OEPSXButtonCircle",
+      "label": "◯"
+     },
+     {
+      "name": "OEPSXButtonCross",
+      "label": "✕"
+     },
+     {
+      "name": "OEPSXButtonSquare",
+      "label": "▢"
+     }
+    ],
+    [
+     {
+      "name": "OEPSXButtonL1",
+      "label": "L1"
+     },
+     {
+      "name": "OEPSXButtonL2",
+      "label": "L2"
+     },
+     {
+      "name": "OEPSXButtonR1",
+      "label": "R1"
+     },
+     {
+      "name": "OEPSXButtonR2",
+      "label": "R2"
+     }
+    ],
+    [
+     {
+      "name": "OEPSXButtonL3",
+      "label": "L3"
+     },
+     {
+      "name": "OEPSXButtonR3",
+      "label": "R3"
+     },
+     {
+      "name": "OEPSXButtonStart",
+      "label": "Start"
+     },
+     {
+      "name": "OEPSXButtonSelect",
+      "label": "Select"
+     }
+    ]
+   ],
+   "axes": [
+    [
+     "OEPSXButtonUp",
+     "OEPSXButtonDown"
+    ],
+    [
+     "OEPSXButtonLeft",
+     "OEPSXButtonRight"
+    ],
+    [
+     "OEPSXLeftAnalogUp",
+     "OEPSXLeftAnalogDown"
+    ],
+    [
+     "OEPSXLeftAnalogLeft",
+     "OEPSXLeftAnalogRight"
+    ],
+    [
+     "OEPSXRightAnalogUp",
+     "OEPSXRightAnalogDown"
+    ],
+    [
+     "OEPSXRightAnalogLeft",
+     "OEPSXRightAnalogRight"
+    ]
+   ],
+   "hats": [
+    [
+     "OEPSXButtonUp",
+     "OEPSXButtonRight",
+     "OEPSXButtonDown",
+     "OEPSXButtonLeft"
+    ]
+   ],
+   "keyboard": {
+    "OEPSXButtonSelect": 229,
+    "OEPSXButtonStart": 40,
+    "OEPSXButtonL1": 20,
+    "OEPSXButtonRight": 79,
+    "OEPSXButtonLeft": 80,
+    "OEPSXButtonL2": 26,
+    "OEPSXButtonR1": 7,
+    "OEPSXButtonAnalogMode": 49,
+    "OEPSXButtonL3": 8,
+    "OEPSXButtonR2": 9,
+    "OEPSXButtonCross": 22,
+    "OEPSXButtonUp": 82,
+    "OEPSXButtonTriangle": 27,
+    "OEPSXButtonCircle": 29,
+    "OEPSXButtonSquare": 4,
+    "OEPSXButtonDown": 81,
+    "OEPSXButtonR3": 10
+   },
+   "libretroMap": {
+    "OEPSXButtonUp": "UP",
+    "OEPSXButtonDown": "DOWN",
+    "OEPSXButtonLeft": "LEFT",
+    "OEPSXButtonRight": "RIGHT",
+    "OEPSXLeftAnalogUp": "LY-",
+    "OEPSXLeftAnalogDown": "LY+",
+    "OEPSXLeftAnalogLeft": "LX-",
+    "OEPSXLeftAnalogRight": "LX+",
+    "OEPSXRightAnalogUp": "RY-",
+    "OEPSXRightAnalogDown": "RY+",
+    "OEPSXRightAnalogLeft": "RX-",
+    "OEPSXRightAnalogRight": "RX+",
+    "OEPSXButtonAnalogMode": "L3",
+    "OEPSXButtonTriangle": "X",
+    "OEPSXButtonCircle": "A",
+    "OEPSXButtonCross": "B",
+    "OEPSXButtonSquare": "Y",
+    "OEPSXButtonL1": "L",
+    "OEPSXButtonL2": "L2",
+    "OEPSXButtonR1": "R",
+    "OEPSXButtonR2": "R2",
+    "OEPSXButtonL3": "L3",
+    "OEPSXButtonR3": "R3",
+    "OEPSXButtonStart": "START",
+    "OEPSXButtonSelect": "SELECT"
+   },
+   "cores": [
+    "mednafen_psx_hw",
+    "mednafen_psx",
+    "swanstation",
+    "pcsx_rearmed"
+   ]
+  },
+  {
+   "id": "openemu.system.pokemonmini",
+   "name": "Pokémon mini",
+   "extensions": [
+    "min"
+   ],
+   "type": "Handheld",
+   "controlGroups": [
+    [
+     {
+      "name": "OEPMButtonUp",
+      "label": "Up"
+     },
+     {
+      "name": "OEPMButtonDown",
+      "label": "Down"
+     },
+     {
+      "name": "OEPMButtonLeft",
+      "label": "Left"
+     },
+     {
+      "name": "OEPMButtonRight",
+      "label": "Right"
+     }
+    ],
+    [
+     {
+      "name": "OEPMButtonMenu",
+      "label": "Menu"
+     },
+     {
+      "name": "OEPMButtonPower",
+      "label": "Power"
+     },
+     {
+      "name": "OEPMButtonShake",
+      "label": "Shake"
+     }
+    ],
+    [
+     {
+      "name": "OEPMButtonA",
+      "label": "A"
+     },
+     {
+      "name": "OEPMButtonB",
+      "label": "B"
+     },
+     {
+      "name": "OEPMButtonC",
+      "label": "C"
+     }
+    ]
+   ],
+   "axes": [
+    [
+     "OEPMButtonUp",
+     "OEPMButtonDown"
+    ],
+    [
+     "OEPMButtonLeft",
+     "OEPMButtonRight"
+    ]
+   ],
+   "hats": [
+    [
+     "OEPMButtonUp",
+     "OEPMButtonRight",
+     "OEPMButtonDown",
+     "OEPMButtonLeft"
+    ]
+   ],
+   "keyboard": {
+    "OEPMButtonUp": 82,
+    "OEPMButtonC": 7,
+    "OEPMButtonShake": 20,
+    "OEPMButtonRight": 79,
+    "OEPMButtonDown": 81,
+    "OEPMButtonB": 22,
+    "OEPMButtonMenu": 40,
+    "OEPMButtonLeft": 80,
+    "OEPMButtonPower": 229,
+    "OEPMButtonA": 4
+   },
+   "libretroMap": {
+    "OEPMButtonUp": "UP",
+    "OEPMButtonDown": "DOWN",
+    "OEPMButtonLeft": "LEFT",
+    "OEPMButtonRight": "RIGHT",
+    "OEPMButtonMenu": "START",
+    "OEPMButtonPower": "SELECT",
+    "OEPMButtonShake": "L",
+    "OEPMButtonA": "A",
+    "OEPMButtonB": "B",
+    "OEPMButtonC": "X"
+   },
+   "cores": [
+    "pokemini"
+   ]
+  },
+  {
+   "id": "openemu.system.sg1000",
+   "name": "SG-1000",
+   "extensions": [
+    "sg"
+   ],
+   "type": "Console",
+   "controlGroups": [
+    [
+     {
+      "name": "OESG1000ButtonUp",
+      "label": "Up"
+     },
+     {
+      "name": "OESG1000ButtonDown",
+      "label": "Down"
+     },
+     {
+      "name": "OESG1000ButtonLeft",
+      "label": "Left"
+     },
+     {
+      "name": "OESG1000ButtonRight",
+      "label": "Right"
+     }
+    ],
+    [
+     {
+      "name": "OESG1000Button1",
+      "label": "Button 1"
+     },
+     {
+      "name": "OESG1000Button2",
+      "label": "Button 2"
+     }
+    ],
+    [
+     {
+      "name": "OESG1000ButtonPause",
+      "label": "Console Pause"
+     }
+    ]
+   ],
+   "axes": [
+    [
+     "OESG1000ButtonUp",
+     "OESG1000ButtonDown"
+    ],
+    [
+     "OESG1000ButtonLeft",
+     "OESG1000ButtonRight"
+    ]
+   ],
+   "hats": [
+    [
+     "OESG1000ButtonUp",
+     "OESG1000ButtonRight",
+     "OESG1000ButtonDown",
+     "OESG1000ButtonLeft"
+    ]
+   ],
+   "keyboard": {
+    "OESG1000ButtonDown": 81,
+    "OESG1000Button2": 22,
+    "OESG1000ButtonPause": 40,
+    "OESG1000ButtonRight": 79,
+    "OESG1000Button1": 4,
+    "OESG1000ButtonUp": 82,
+    "OESG1000ButtonLeft": 80
+   },
+   "libretroMap": {
+    "OESG1000ButtonUp": "UP",
+    "OESG1000ButtonDown": "DOWN",
+    "OESG1000ButtonLeft": "LEFT",
+    "OESG1000ButtonRight": "RIGHT",
+    "OESG1000Button1": "B",
+    "OESG1000Button2": "A",
+    "OESG1000ButtonPause": "START"
+   },
+   "cores": [
+    "genesis_plus_gx",
+    "gearsystem"
+   ]
+  },
+  {
+   "id": "openemu.system.saturn",
+   "name": "Sega Saturn",
+   "extensions": [
+    "cue",
+    "ccd",
+    "m3u"
+   ],
+   "type": "Console",
+   "controlGroups": [
+    [
+     {
+      "name": "OESaturnButtonUp",
+      "label": "Up"
+     },
+     {
+      "name": "OESaturnButtonDown",
+      "label": "Down"
+     },
+     {
+      "name": "OESaturnButtonLeft",
+      "label": "Left"
+     },
+     {
+      "name": "OESaturnButtonRight",
+      "label": "Right"
+     }
+    ],
+    [
+     {
+      "name": "OESaturnButtonStart",
+      "label": "Start"
+     },
+     {
+      "name": "OESaturnButtonL",
+      "label": "L"
+     },
+     {
+      "name": "OESaturnButtonR",
+      "label": "R"
+     }
+    ],
+    [
+     {
+      "name": "OESaturnButtonA",
+      "label": "A"
+     },
+     {
+      "name": "OESaturnButtonB",
+      "label": "B"
+     },
+     {
+      "name": "OESaturnButtonC",
+      "label": "C"
+     }
+    ],
+    [
+     {
+      "name": "OESaturnButtonX",
+      "label": "X"
+     },
+     {
+      "name": "OESaturnButtonY",
+      "label": "Y"
+     },
+     {
+      "name": "OESaturnButtonZ",
+      "label": "Z"
+     }
+    ],
+    [
+     {
+      "name": "OESaturnLeftAnalogUp",
+      "label": "Up"
+     },
+     {
+      "name": "OESaturnLeftAnalogDown",
+      "label": "Down"
+     },
+     {
+      "name": "OESaturnLeftAnalogLeft",
+      "label": "Left"
+     },
+     {
+      "name": "OESaturnLeftAnalogRight",
+      "label": "Right"
+     },
+     {
+      "name": "OESaturnAnalogL",
+      "label": "Trigger L"
+     },
+     {
+      "name": "OESaturnAnalogR",
+      "label": "Trigger R"
+     },
+     {
+      "name": "OESaturnButtonAnalogMode",
+      "label": "Mode Switch"
+     }
+    ]
+   ],
+   "axes": [
+    [
+     "OESaturnButtonUp",
+     "OESaturnButtonDown"
+    ],
+    [
+     "OESaturnButtonLeft",
+     "OESaturnButtonRight"
+    ],
+    [
+     "OESaturnLeftAnalogUp",
+     "OESaturnLeftAnalogDown"
+    ],
+    [
+     "OESaturnLeftAnalogLeft",
+     "OESaturnLeftAnalogRight"
+    ]
+   ],
+   "hats": [
+    [
+     "OESaturnButtonUp",
+     "OESaturnButtonRight",
+     "OESaturnButtonDown",
+     "OESaturnButtonLeft"
+    ]
+   ],
+   "keyboard": {
+    "OESaturnButtonUp": 82,
+    "OESaturnButtonAnalogMode": 49,
+    "OESaturnButtonRight": 79,
+    "OESaturnButtonC": 8,
+    "OESaturnButtonZ": 7,
+    "OESaturnButtonR": 6,
+    "OESaturnButtonDown": 81,
+    "OESaturnButtonStart": 40,
+    "OESaturnButtonY": 22,
+    "OESaturnButtonB": 26,
+    "OESaturnButtonX": 4,
+    "OESaturnButtonA": 20,
+    "OESaturnButtonLeft": 80,
+    "OESaturnButtonL": 23
+   },
+   "libretroMap": {
+    "OESaturnButtonUp": "UP",
+    "OESaturnButtonDown": "DOWN",
+    "OESaturnButtonLeft": "LEFT",
+    "OESaturnButtonRight": "RIGHT",
+    "OESaturnButtonStart": "START",
+    "OESaturnButtonL": "L2",
+    "OESaturnButtonR": "R2",
+    "OESaturnButtonA": "Y",
+    "OESaturnButtonB": "B",
+    "OESaturnButtonC": "A",
+    "OESaturnButtonX": "L",
+    "OESaturnButtonY": "X",
+    "OESaturnButtonZ": "R",
+    "OESaturnLeftAnalogUp": "LY-",
+    "OESaturnLeftAnalogDown": "LY+",
+    "OESaturnLeftAnalogLeft": "LX-",
+    "OESaturnLeftAnalogRight": "LX+",
+    "OESaturnAnalogL": "L2",
+    "OESaturnAnalogR": "R2",
+    "OESaturnButtonAnalogMode": "L3"
+   },
+   "cores": [
+    "mednafen_saturn",
+    "kronos",
+    "yabause"
+   ]
+  },
+  {
+   "id": "openemu.system.32x",
+   "name": "Sega 32X",
+   "extensions": [
+    "32x",
+    "bin"
+   ],
+   "type": "Console",
+   "controlGroups": [
+    [
+     {
+      "name": "OESega32XButtonUp",
+      "label": "Up"
+     },
+     {
+      "name": "OESega32XButtonDown",
+      "label": "Down"
+     },
+     {
+      "name": "OESega32XButtonLeft",
+      "label": "Left"
+     },
+     {
+      "name": "OESega32XButtonRight",
+      "label": "Right"
+     }
+    ],
+    [
+     {
+      "name": "OESega32XButtonStart",
+      "label": "Start"
+     },
+     {
+      "name": "OESega32XButtonMode",
+      "label": "Mode"
+     }
+    ],
+    [
+     {
+      "name": "OESega32XButtonA",
+      "label": "A"
+     },
+     {
+      "name": "OESega32XButtonB",
+      "label": "B"
+     },
+     {
+      "name": "OESega32XButtonC",
+      "label": "C"
+     }
+    ],
+    [
+     {
+      "name": "OESega32XButtonX",
+      "label": "X"
+     },
+     {
+      "name": "OESega32XButtonY",
+      "label": "Y"
+     },
+     {
+      "name": "OESega32XButtonZ",
+      "label": "Z"
+     }
+    ]
+   ],
+   "axes": [
+    [
+     "OESega32XButtonUp",
+     "OESega32XButtonDown"
+    ],
+    [
+     "OESega32XButtonLeft",
+     "OESega32XButtonRight"
+    ]
+   ],
+   "hats": [
+    [
+     "OESega32XButtonUp",
+     "OESega32XButtonRight",
+     "OESega32XButtonDown",
+     "OESega32XButtonLeft"
+    ]
+   ],
+   "keyboard": {
+    "OESega32XButtonZ": 8,
+    "OESega32XButtonRight": 79,
+    "OESega32XButtonC": 7,
+    "OESega32XButtonA": 4,
+    "OESega32XButtonX": 20,
+    "OESega32XButtonDown": 81,
+    "OESega32XButtonUp": 82,
+    "OESega32XButtonStart": 40,
+    "OESega32XButtonMode": 229,
+    "OESega32XButtonB": 22,
+    "OESega32XButtonY": 26,
+    "OESega32XButtonLeft": 80
+   },
+   "libretroMap": {
+    "OESega32XButtonUp": "UP",
+    "OESega32XButtonDown": "DOWN",
+    "OESega32XButtonLeft": "LEFT",
+    "OESega32XButtonRight": "RIGHT",
+    "OESega32XButtonStart": "START",
+    "OESega32XButtonMode": "SELECT",
+    "OESega32XButtonA": "Y",
+    "OESega32XButtonB": "B",
+    "OESega32XButtonC": "A",
+    "OESega32XButtonX": "L",
+    "OESega32XButtonY": "X",
+    "OESega32XButtonZ": "R"
+   },
+   "cores": [
+    "picodrive"
+   ]
+  },
+  {
+   "id": "openemu.system.scd",
+   "name": "Sega Mega-CD",
+   "extensions": [
+    "cue"
+   ],
+   "type": "Console",
+   "controlGroups": [
+    [
+     {
+      "name": "OESegaCDButtonUp",
+      "label": "Up"
+     },
+     {
+      "name": "OESegaCDButtonDown",
+      "label": "Down"
+     },
+     {
+      "name": "OESegaCDButtonLeft",
+      "label": "Left"
+     },
+     {
+      "name": "OESegaCDButtonRight",
+      "label": "Right"
+     }
+    ],
+    [
+     {
+      "name": "OESegaCDButtonStart",
+      "label": "Start"
+     },
+     {
+      "name": "OESegaCDButtonMode",
+      "label": "Mode"
+     }
+    ],
+    [
+     {
+      "name": "OESegaCDButtonA",
+      "label": "A"
+     },
+     {
+      "name": "OESegaCDButtonB",
+      "label": "B"
+     },
+     {
+      "name": "OESegaCDButtonC",
+      "label": "C"
+     }
+    ],
+    [
+     {
+      "name": "OESegaCDButtonX",
+      "label": "X"
+     },
+     {
+      "name": "OESegaCDButtonY",
+      "label": "Y"
+     },
+     {
+      "name": "OESegaCDButtonZ",
+      "label": "Z"
+     }
+    ]
+   ],
+   "axes": [
+    [
+     "OESegaCDButtonUp",
+     "OESegaCDButtonDown"
+    ],
+    [
+     "OESegaCDButtonLeft",
+     "OESegaCDButtonRight"
+    ]
+   ],
+   "hats": [
+    [
+     "OESegaCDButtonUp",
+     "OESegaCDButtonRight",
+     "OESegaCDButtonDown",
+     "OESegaCDButtonLeft"
+    ]
+   ],
+   "keyboard": {
+    "OESegaCDButtonRight": 79,
+    "OESegaCDButtonLeft": 80,
+    "OESegaCDButtonY": 26,
+    "OESegaCDButtonB": 22,
+    "OESegaCDButtonStart": 40,
+    "OESegaCDButtonA": 4,
+    "OESegaCDButtonMode": 229,
+    "OESegaCDButtonX": 20,
+    "OESegaCDButtonDown": 81,
+    "OESegaCDButtonUp": 82,
+    "OESegaCDButtonC": 7,
+    "OESegaCDButtonZ": 8
+   },
+   "libretroMap": {
+    "OESegaCDButtonUp": "UP",
+    "OESegaCDButtonDown": "DOWN",
+    "OESegaCDButtonLeft": "LEFT",
+    "OESegaCDButtonRight": "RIGHT",
+    "OESegaCDButtonStart": "START",
+    "OESegaCDButtonMode": "SELECT",
+    "OESegaCDButtonA": "Y",
+    "OESegaCDButtonB": "B",
+    "OESegaCDButtonC": "A",
+    "OESegaCDButtonX": "L",
+    "OESegaCDButtonY": "X",
+    "OESegaCDButtonZ": "R"
+   },
+   "cores": [
+    "genesis_plus_gx",
+    "picodrive"
+   ]
+  },
+  {
+   "id": "openemu.system.sms",
+   "name": "Sega Master System",
+   "extensions": [
+    "sms"
+   ],
+   "type": "Console",
+   "controlGroups": [
+    [
+     {
+      "name": "OESMSButtonUp",
+      "label": "Up"
+     },
+     {
+      "name": "OESMSButtonDown",
+      "label": "Down"
+     },
+     {
+      "name": "OESMSButtonLeft",
+      "label": "Left"
+     },
+     {
+      "name": "OESMSButtonRight",
+      "label": "Right"
+     }
+    ],
+    [
+     {
+      "name": "OESMSButtonA",
+      "label": "Button 1/Start"
+     },
+     {
+      "name": "OESMSButtonB",
+      "label": "Button 2"
+     },
+     {
+      "name": "OESMSButtonStart",
+      "label": "Console Pause"
+     }
+    ]
+   ],
+   "axes": [
+    [
+     "OESMSButtonUp",
+     "OESMSButtonDown"
+    ],
+    [
+     "OESMSButtonLeft",
+     "OESMSButtonRight"
+    ]
+   ],
+   "hats": [
+    [
+     "OESMSButtonUp",
+     "OESMSButtonRight",
+     "OESMSButtonDown",
+     "OESMSButtonLeft"
+    ]
+   ],
+   "keyboard": {
+    "OESMSButtonA": 4,
+    "OESMSButtonStart": 40,
+    "OESMSButtonRight": 79,
+    "OESMSButtonLeft": 80,
+    "OESMSButtonB": 22,
+    "OESMSButtonUp": 82,
+    "OESMSButtonDown": 81
+   },
+   "libretroMap": {
+    "OESMSButtonUp": "UP",
+    "OESMSButtonDown": "DOWN",
+    "OESMSButtonLeft": "LEFT",
+    "OESMSButtonRight": "RIGHT",
+    "OESMSButtonA": "B",
+    "OESMSButtonB": "A",
+    "OESMSButtonStart": "START"
+   },
+   "cores": [
+    "genesis_plus_gx",
+    "gearsystem",
+    "smsplus"
+   ]
+  },
+  {
+   "id": "openemu.system.snes",
+   "name": "Super Nintendo (SNES)",
+   "extensions": [
+    "smc",
+    "snes",
+    "fig",
+    "sfc",
+    "bs",
+    "st"
+   ],
+   "type": "Console",
+   "controlGroups": [
+    [
+     {
+      "name": "OESNESButtonUp",
+      "label": "Up"
+     },
+     {
+      "name": "OESNESButtonDown",
+      "label": "Down"
+     },
+     {
+      "name": "OESNESButtonLeft",
+      "label": "Left"
+     },
+     {
+      "name": "OESNESButtonRight",
+      "label": "Right"
+     }
+    ],
+    [
+     {
+      "name": "OESNESButtonSelect",
+      "label": "Select"
+     },
+     {
+      "name": "OESNESButtonStart",
+      "label": "Start"
+     }
+    ],
+    [
+     {
+      "name": "OESNESButtonA",
+      "label": "A"
+     },
+     {
+      "name": "OESNESButtonB",
+      "label": "B"
+     },
+     {
+      "name": "OESNESButtonX",
+      "label": "X"
+     },
+     {
+      "name": "OESNESButtonY",
+      "label": "Y"
+     }
+    ],
+    [
+     {
+      "name": "OESNESButtonTriggerLeft",
+      "label": "L"
+     },
+     {
+      "name": "OESNESButtonTriggerRight",
+      "label": "R"
+     }
+    ]
+   ],
+   "axes": [
+    [
+     "OESNESButtonUp",
+     "OESNESButtonDown"
+    ],
+    [
+     "OESNESButtonLeft",
+     "OESNESButtonRight"
+    ]
+   ],
+   "hats": [
+    [
+     "OESNESButtonUp",
+     "OESNESButtonRight",
+     "OESNESButtonDown",
+     "OESNESButtonLeft"
+    ]
+   ],
+   "keyboard": {
+    "OESNESButtonTriggerLeft": 8,
+    "OESNESButtonDown": 81,
+    "OESNESButtonLeft": 80,
+    "OESNESButtonA": 7,
+    "OESNESButtonSelect": 229,
+    "OESNESButtonX": 26,
+    "OESNESButtonUp": 82,
+    "OESNESButtonB": 22,
+    "OESNESButtonY": 4,
+    "OESNESButtonStart": 40,
+    "OESNESButtonTriggerRight": 20,
+    "OESNESButtonRight": 79
+   },
+   "libretroMap": {
+    "OESNESButtonUp": "UP",
+    "OESNESButtonDown": "DOWN",
+    "OESNESButtonLeft": "LEFT",
+    "OESNESButtonRight": "RIGHT",
+    "OESNESButtonSelect": "SELECT",
+    "OESNESButtonStart": "START",
+    "OESNESButtonA": "A",
+    "OESNESButtonB": "B",
+    "OESNESButtonX": "X",
+    "OESNESButtonY": "Y",
+    "OESNESButtonTriggerLeft": "L",
+    "OESNESButtonTriggerRight": "R"
+   },
+   "cores": [
+    "snes9x",
+    "bsnes",
+    "mesen-s",
+    "bsnes_hd_beta"
+   ]
+  },
+  {
+   "id": "openemu.system.sv",
+   "name": "Supervision",
+   "extensions": [
+    "sv"
+   ],
+   "type": "Handheld",
+   "controlGroups": [
+    [
+     {
+      "name": "OESVButtonUp",
+      "label": "Up"
+     },
+     {
+      "name": "OESVButtonDown",
+      "label": "Down"
+     },
+     {
+      "name": "OESVButtonLeft",
+      "label": "Left"
+     },
+     {
+      "name": "OESVButtonRight",
+      "label": "Right"
+     }
+    ],
+    [
+     {
+      "name": "OESVButtonStart",
+      "label": "Start"
+     },
+     {
+      "name": "OESVButtonSelect",
+      "label": "Select"
+     }
+    ],
+    [
+     {
+      "name": "OESVButtonA",
+      "label": "A"
+     },
+     {
+      "name": "OESVButtonB",
+      "label": "B"
+     }
+    ]
+   ],
+   "axes": [
+    [
+     "OESVButtonUp",
+     "OESVButtonDown"
+    ],
+    [
+     "OESVButtonLeft",
+     "OESVButtonRight"
+    ]
+   ],
+   "hats": [
+    [
+     "OESVButtonUp",
+     "OESVButtonRight",
+     "OESVButtonDown",
+     "OESVButtonLeft"
+    ]
+   ],
+   "keyboard": {
+    "OESVButtonA": 4,
+    "OESVButtonDown": 81,
+    "OESVButtonRight": 79,
+    "OESVButtonLeft": 80,
+    "OESVButtonSelect": 229,
+    "OESVButtonStart": 40,
+    "OESVButtonB": 22,
+    "OESVButtonUp": 82
+   },
+   "libretroMap": {
+    "OESVButtonUp": "UP",
+    "OESVButtonDown": "DOWN",
+    "OESVButtonLeft": "LEFT",
+    "OESVButtonRight": "RIGHT",
+    "OESVButtonStart": "START",
+    "OESVButtonSelect": "SELECT",
+    "OESVButtonA": "A",
+    "OESVButtonB": "B"
+   },
+   "cores": [
+    "potator"
+   ]
+  },
+  {
+   "id": "openemu.system.vmu",
+   "name": "VMU",
+   "extensions": [
+    "vms"
+   ],
+   "type": "Handheld",
+   "controlGroups": [
+    [
+     {
+      "name": "OEVMUButtonUp",
+      "label": "Up"
+     },
+     {
+      "name": "OEVMUButtonDown",
+      "label": "Down"
+     },
+     {
+      "name": "OEVMUButtonLeft",
+      "label": "Left"
+     },
+     {
+      "name": "OEVMUButtonRight",
+      "label": "Right"
+     }
+    ],
+    [
+     {
+      "name": "OEVMUButtonSleep",
+      "label": "Sleep"
+     },
+     {
+      "name": "OEVMUButtonMode",
+      "label": "Mode"
+     }
+    ],
+    [
+     {
+      "name": "OEVMUButtonA",
+      "label": "A"
+     },
+     {
+      "name": "OEVMUButtonB",
+      "label": "B"
+     }
+    ]
+   ],
+   "axes": [
+    [
+     "OEVMUButtonUp",
+     "OEVMUButtonDown"
+    ],
+    [
+     "OEVMUButtonLeft",
+     "OEVMUButtonRight"
+    ]
+   ],
+   "hats": [
+    [
+     "OEVMUButtonUp",
+     "OEVMUButtonRight",
+     "OEVMUButtonDown",
+     "OEVMUButtonLeft"
+    ]
+   ],
+   "keyboard": {
+    "OEVMUButtonA": 20,
+    "OEVMUButtonSleep": 40,
+    "OEVMUButtonB": 26,
+    "OEVMUButtonMode": 229,
+    "OEVMUButtonLeft": 80,
+    "OEVMUButtonRight": 79,
+    "OEVMUButtonUp": 82,
+    "OEVMUButtonDown": 81
+   },
+   "libretroMap": {
+    "OEVMUButtonUp": "UP",
+    "OEVMUButtonDown": "DOWN",
+    "OEVMUButtonLeft": "LEFT",
+    "OEVMUButtonRight": "RIGHT",
+    "OEVMUButtonSleep": "SELECT",
+    "OEVMUButtonMode": "START",
+    "OEVMUButtonA": "A",
+    "OEVMUButtonB": "B"
+   },
+   "cores": [
+    "vemulator"
+   ]
+  },
+  {
+   "id": "openemu.system.vectrex",
+   "name": "Vectrex",
+   "extensions": [
+    "vec",
+    "gam",
+    "bin"
+   ],
+   "type": "Console",
+   "controlGroups": [
+    [
+     {
+      "name": "OEVectrexAnalogUp",
+      "label": "Up"
+     },
+     {
+      "name": "OEVectrexAnalogDown",
+      "label": "Down"
+     },
+     {
+      "name": "OEVectrexAnalogLeft",
+      "label": "Left"
+     },
+     {
+      "name": "OEVectrexAnalogRight",
+      "label": "Right"
+     }
+    ],
+    [
+     {
+      "name": "OEVectrexButton1",
+      "label": "Button 1"
+     },
+     {
+      "name": "OEVectrexButton2",
+      "label": "Button 2"
+     },
+     {
+      "name": "OEVectrexButton3",
+      "label": "Button 3"
+     },
+     {
+      "name": "OEVectrexButton4",
+      "label": "Button 4"
+     }
+    ]
+   ],
+   "axes": [
+    [
+     "OEVectrexAnalogUp",
+     "OEVectrexAnalogDown"
+    ],
+    [
+     "OEVectrexAnalogLeft",
+     "OEVectrexAnalogRight"
+    ]
+   ],
+   "hats": [
+    [
+     "OEVectrexAnalogUp",
+     "OEVectrexAnalogRight",
+     "OEVectrexAnalogDown",
+     "OEVectrexAnalogLeft"
+    ]
+   ],
+   "keyboard": {
+    "OEVectrexButton2": 31,
+    "OEVectrexButton3": 32,
+    "OEVectrexAnalogRight": 79,
+    "OEVectrexAnalogDown": 81,
+    "OEVectrexAnalogLeft": 80,
+    "OEVectrexAnalogUp": 82,
+    "OEVectrexButton1": 30,
+    "OEVectrexButton4": 33
+   },
+   "libretroMap": {
+    "OEVectrexAnalogUp": "LY-",
+    "OEVectrexAnalogDown": "LY+",
+    "OEVectrexAnalogLeft": "LX-",
+    "OEVectrexAnalogRight": "LX+",
+    "OEVectrexButton1": "B",
+    "OEVectrexButton2": "A",
+    "OEVectrexButton3": "Y",
+    "OEVectrexButton4": "X"
+   },
+   "cores": [
+    "vecx"
+   ]
+  },
+  {
+   "id": "openemu.system.vb",
+   "name": "Virtual Boy",
+   "extensions": [
+    "vb"
+   ],
+   "type": "Console",
+   "controlGroups": [
+    [
+     {
+      "name": "OEVBButtonLeftUp",
+      "label": "Up"
+     },
+     {
+      "name": "OEVBButtonLeftDown",
+      "label": "Down"
+     },
+     {
+      "name": "OEVBButtonLeftLeft",
+      "label": "Left"
+     },
+     {
+      "name": "OEVBButtonLeftRight",
+      "label": "Right"
+     }
+    ],
+    [
+     {
+      "name": "OEVBButtonRightUp",
+      "label": "Up"
+     },
+     {
+      "name": "OEVBButtonRightDown",
+      "label": "Down"
+     },
+     {
+      "name": "OEVBButtonRightLeft",
+      "label": "Left"
+     },
+     {
+      "name": "OEVBButtonRightRight",
+      "label": "Right"
+     }
+    ],
+    [
+     {
+      "name": "OEVBButtonL",
+      "label": "L"
+     },
+     {
+      "name": "OEVBButtonR",
+      "label": "R"
+     },
+     {
+      "name": "OEVBButtonA",
+      "label": "A"
+     },
+     {
+      "name": "OEVBButtonB",
+      "label": "B"
+     }
+    ],
+    [
+     {
+      "name": "OEVBButtonStart",
+      "label": "Start"
+     },
+     {
+      "name": "OEVBButtonSelect",
+      "label": "Select"
+     }
+    ]
+   ],
+   "axes": [
+    [
+     "OEVBButtonLeftUp",
+     "OEVBButtonLeftDown"
+    ],
+    [
+     "OEVBButtonLeftLeft",
+     "OEVBButtonLeftRight"
+    ]
+   ],
+   "hats": [
+    [
+     "OEVBButtonLeftUp",
+     "OEVBButtonLeftRight",
+     "OEVBButtonLeftDown",
+     "OEVBButtonLeftLeft"
+    ]
+   ],
+   "keyboard": {
+    "OEVBButtonR": 8,
+    "OEVBButtonRightUp": 26,
+    "OEVBButtonLeftDown": 81,
+    "OEVBButtonLeftUp": 82,
+    "OEVBButtonRightDown": 22,
+    "OEVBButtonL": 20,
+    "OEVBButtonA": 29,
+    "OEVBButtonSelect": 229,
+    "OEVBButtonB": 27,
+    "OEVBButtonLeftRight": 79,
+    "OEVBButtonRightRight": 7,
+    "OEVBButtonRightLeft": 4,
+    "OEVBButtonLeftLeft": 80,
+    "OEVBButtonStart": 40
+   },
+   "libretroMap": {
+    "OEVBButtonLeftUp": "UP",
+    "OEVBButtonLeftDown": "DOWN",
+    "OEVBButtonLeftLeft": "LEFT",
+    "OEVBButtonLeftRight": "RIGHT",
+    "OEVBButtonRightUp": "RY-",
+    "OEVBButtonRightDown": "RY+",
+    "OEVBButtonRightLeft": "RX-",
+    "OEVBButtonRightRight": "RX+",
+    "OEVBButtonL": "L",
+    "OEVBButtonR": "R",
+    "OEVBButtonA": "A",
+    "OEVBButtonB": "B",
+    "OEVBButtonStart": "START",
+    "OEVBButtonSelect": "SELECT"
+   },
+   "cores": [
+    "mednafen_vb"
+   ]
+  },
+  {
+   "id": "openemu.system.ws",
+   "name": "WonderSwan",
+   "extensions": [
+    "ws",
+    "wsc"
+   ],
+   "type": "Handheld",
+   "controlGroups": [
+    [
+     {
+      "name": "OEWSButtonX1",
+      "label": "X1 Up"
+     },
+     {
+      "name": "OEWSButtonX3",
+      "label": "X3 Down"
+     },
+     {
+      "name": "OEWSButtonX4",
+      "label": "X4 Left"
+     },
+     {
+      "name": "OEWSButtonX2",
+      "label": "X2 Right"
+     }
+    ],
+    [
+     {
+      "name": "OEWSButtonY1",
+      "label": "Y1 Up"
+     },
+     {
+      "name": "OEWSButtonY3",
+      "label": "Y3 Down"
+     },
+     {
+      "name": "OEWSButtonY4",
+      "label": "Y4 Left"
+     },
+     {
+      "name": "OEWSButtonY2",
+      "label": "Y2 Right"
+     }
+    ],
+    [
+     {
+      "name": "OEWSButtonA",
+      "label": "A"
+     },
+     {
+      "name": "OEWSButtonB",
+      "label": "B"
+     }
+    ],
+    [
+     {
+      "name": "OEWSButtonStart",
+      "label": "Start"
+     },
+     {
+      "name": "OEWSButtonSound",
+      "label": "Sound"
+     }
+    ]
+   ],
+   "axes": [
+    [
+     "OEWSButtonX1",
+     "OEWSButtonX3"
+    ],
+    [
+     "OEWSButtonX4",
+     "OEWSButtonX2"
+    ]
+   ],
+   "hats": [
+    [
+     "OEWSButtonX1",
+     "OEWSButtonX2",
+     "OEWSButtonX3",
+     "OEWSButtonX4"
+    ]
+   ],
+   "keyboard": {
+    "OEWSButtonStart": 40,
+    "OEWSButtonY3": 22,
+    "OEWSButtonY4": 4,
+    "OEWSButtonX1": 82,
+    "OEWSButtonSound": 229,
+    "OEWSButtonX2": 79,
+    "OEWSButtonA": 29,
+    "OEWSButtonX3": 81,
+    "OEWSButtonB": 27,
+    "OEWSButtonX4": 80,
+    "OEWSButtonY1": 26,
+    "OEWSButtonY2": 7
+   },
+   "libretroMap": {
+    "OEWSButtonX1": "UP",
+    "OEWSButtonX3": "DOWN",
+    "OEWSButtonX4": "LEFT",
+    "OEWSButtonX2": "RIGHT",
+    "OEWSButtonY1": "RX-",
+    "OEWSButtonY3": "RX+",
+    "OEWSButtonY4": "RY+",
+    "OEWSButtonY2": "RY-",
+    "OEWSButtonA": "A",
+    "OEWSButtonB": "B",
+    "OEWSButtonStart": "START",
+    "OEWSButtonSound": "SELECT"
+   },
+   "cores": [
+    "mednafen_wswan"
+   ]
+  }
+ ]
+}

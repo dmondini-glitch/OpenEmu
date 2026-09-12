@@ -1,0 +1,35 @@
+name: OpenEmu for Windows
+on:
+  push:
+    branches: [windows]
+    paths: ["Windows/**"]
+  pull_request:
+    paths: ["Windows/**"]
+  workflow_dispatch:
+jobs:
+  test:
+    runs-on: windows-latest
+    defaults: { run: { working-directory: Windows } }
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with: { dotnet-version: 9.0.x }
+      - run: dotnet build OpenEmu.Windows.sln -c Release
+      - run: dotnet test tests/OpenEmu.Core.Tests/OpenEmu.Core.Tests.csproj -c Release --no-build --logger "trx"
+      - name: Headless core smoke test (fceumm on Windows)
+        run: |
+          dotnet run --project src/OpenEmu.Cli -c Release --no-build -- install fceumm 2048
+          dotnet run --project src/OpenEmu.Cli -c Release --no-build -- run --core 2048 --frames 60 --state
+  package:
+    needs: test
+    runs-on: windows-latest
+    defaults: { run: { working-directory: Windows } }
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with: { dotnet-version: 9.0.x }
+      - run: pwsh scripts/build-windows.ps1
+      - uses: actions/upload-artifact@v4
+        with:
+          name: OpenEmu-Windows-x64
+          path: Windows/dist/OpenEmu-Windows-x64.zip

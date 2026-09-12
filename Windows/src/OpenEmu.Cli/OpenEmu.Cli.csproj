@@ -1,0 +1,10 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <AssemblyName>openemu-cli</AssemblyName>
+    <RootNamespace>OpenEmu.Cli</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\OpenEmu.Core\OpenEmu.Core.csproj" />
+  </ItemGroup>
+</Project>

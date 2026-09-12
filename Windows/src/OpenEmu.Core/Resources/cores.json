@@ -1,0 +1,3398 @@
+{
+ "version": 1,
+ "cores": [
+  {
+   "id": "2048",
+   "displayName": "2048",
+   "coreName": "2048",
+   "version": "1.0",
+   "license": "Public Domain",
+   "authors": "Gabriele Cirulli",
+   "systemName": "2048 Game Clone",
+   "manufacturer": "N/A",
+   "extensions": [],
+   "hwRender": false,
+   "needsFullPath": false,
+   "supportsNoGame": true,
+   "saveStates": true,
+   "cheats": false,
+   "diskControl": false,
+   "database": [
+    "2048"
+   ],
+   "firmware": [],
+   "download": {
+    "windows-x64": "https://buildbot.libretro.com/nightly/windows/x86_64/latest/2048_libretro.dll.zip",
+    "osx-arm64": "https://buildbot.libretro.com/nightly/apple/osx/arm64/latest/2048_libretro.dylib.zip",
+    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/2048_libretro.dylib.zip"
+   }
+  },
+  {
+   "id": "a5200",
+   "displayName": "Atari - 5200 (a5200)",
+   "coreName": "a5200",
+   "version": "2.0.2",
+   "license": "GPLv2",
+   "authors": "Petr Stehlik|zx81|Alekmaul|wavemotion-dave",
+   "systemName": "Atari 5200",
+   "manufacturer": "Atari",
+   "extensions": [
+    "a52",
+    "bin"
+   ],
+   "hwRender": false,
+   "needsFullPath": false,
+   "supportsNoGame": false,
+   "saveStates": true,
+   "cheats": false,
+   "diskControl": false,
+   "database": [
+    "Atari - 5200"
+   ],
+   "firmware": [
+    {
+     "path": "5200.rom",
+     "desc": "5200.rom (5200 BIOS)",
+     "optional": true
+    }
+   ],
+   "download": {
+    "windows-x64": "https://buildbot.libretro.com/nightly/windows/x86_64/latest/a5200_libretro.dll.zip",
+    "osx-arm64": "https://buildbot.libretro.com/nightly/apple/osx/arm64/latest/a5200_libretro.dylib.zip",
+    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/a5200_libretro.dylib.zip"
+   }
+  },
+  {
+   "id": "atari800",
+   "displayName": "Atari - 400/800/600XL/800XL/130XE/5200 (Atari800)",
+   "coreName": "Atari800",
+   "version": "7.0.0",
+   "license": "GPLv2",
+   "authors": "Petr Stehlik",
+   "systemName": "Atari 8-bit Family",
+   "manufacturer": "Atari",
+   "extensions": [
+    "xfd",
+    "atr",
+    "dcm",
+    "cas",
+    "bin",
+    "a52",
+    "zip",
+    "atx",
+    "car",
+    "rom",
+    "com",
+    "xex",
+    "m3u"
+   ],
+   "hwRender": false,
+   "needsFullPath": true,
+   "supportsNoGame": true,
+   "saveStates": true,
+   "cheats": false,
+   "diskControl": true,
+   "database": [
+    "Atari - 5200",
+    "Atari - 8-bit Family"
+   ],
+   "firmware": [
+    {
+     "path": "5200.rom",
+     "desc": "5200.rom (Atari 5200 BIOS)",
+     "optional": true
+    },
+    {
+     "path": "ATARIBAS.ROM",
+     "desc": "ATARIBAS.ROM (Atari BASIC)",
+     "optional": true
+    },
+    {
+     "path": "ATARIOSA.ROM",
+     "desc": "ATARIOSA.ROM (Atari 400/800 OS A)",
+     "optional": true
+    },
+    {
+     "path": "ATARIOSB.ROM",
+     "desc": "ATARIOSB.ROM (Atari 400/800 OS B)",
+     "optional": true
+    },
+    {
+     "path": "ATARIXL.ROM",
+     "desc": "ATARIXL.ROM (Atari XL/XE OS)",
+     "optional": true
+    },
+    {
+     "path": "BB01R4_OS.ROM",
+     "desc": "BB01R4_OS.ROM (Atari XL/XE/XEGS OS v4)",
+     "optional": true
+    },
+    {
+     "path": "XEGAME.ROM",
+     "desc": "XEGAME.ROM (Atari XEGS Missile Command)",
+     "optional": true
+    }
+   ],
+   "download": {
+    "windows-x64": "https://buildbot.libretro.com/nightly/windows/x86_64/latest/atari800_libretro.dll.zip",
+    "osx-arm64": "https://buildbot.libretro.com/nightly/apple/osx/arm64/latest/atari800_libretro.dylib.zip",
+    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/atari800_libretro.dylib.zip"
+   }
+  },
+  {
+   "id": "blastem",
+   "displayName": "Sega - MS/GG/MD/CD/32X (BlastEm)",
+   "coreName": "BlastEm",
+   "version": "v0.6.3-pre",
+   "license": "GPLv3",
+   "authors": "Mike Pavone",
+   "systemName": "Sega 8/16-bit (Various)",
+   "manufacturer": "Sega",
+   "extensions": [
+    "md",
+    "gen",
+    "smd",
+    "68k",
+    "sgd",
+    "32x",
+    "sms",
+    "gg",
+    "sg",
+    "sg1",
+    "sc",
+    "sc3",
+    "sf7",
+    "col",
+    "cue",
+    "toc",
+    "iso",
+    "chd",
+    "vgm",
+    "vgz",
+    "flac",
+    "wav",
+    "bin",
+    "rom",
+    "gz"
+   ],
+   "hwRender": false,
+   "needsFullPath": true,
+   "supportsNoGame": false,
+   "saveStates": true,
+   "cheats": false,
+   "diskControl": false,
+   "database": [
+    "Sega - 32X",
+    "Sega - Game Gear",
+    "Sega - Master System - Mark III",
+    "Sega - Mega Drive - Genesis",
+    "Sega - Mega-CD - Sega CD",
+    "Sega - PICO",
+    "Sega - SG-1000"
+   ],
+   "firmware": [
+    {
+     "path": "rom.db",
+     "desc": "rom.db (ROM feature database)",
+     "optional": true
+    }
+   ],
+   "download": {
+    "windows-x64": "https://buildbot.libretro.com/nightly/windows/x86_64/latest/blastem_libretro.dll.zip",
+    "osx-arm64": "https://buildbot.libretro.com/nightly/apple/osx/arm64/latest/blastem_libretro.dylib.zip",
+    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/blastem_libretro.dylib.zip"
+   }
+  },
+  {
+   "id": "bluemsx",
+   "displayName": "MSX/SVI/ColecoVision/SG-1000 (blueMSX)",
+   "coreName": "blueMSX",
+   "version": "SVN",
+   "license": "GPLv2",
+   "authors": "Daniel Vik",
+   "systemName": "MSX/SVI/ColecoVision/SG-1000",
+   "manufacturer": "Spectravideo|Philips|Al Alamiah|Sony|Sanyo|Mitsubishi|Toshiba|Hitachi|Panasonic|Canon|Casio|Pioneer|Fujitsu|Yamaha|JVC|Kyocera|GoldStar|Samsung|Daewoo|Gradiente|Sharp|Talent|NTT|ACVS/CIEL|DDX|AGE Labs",
+   "extensions": [
+    "rom",
+    "ri",
+    "mx1",
+    "mx2",
+    "dsk",
+    "col",
+    "sg",
+    "sc",
+    "sf",
+    "cas",
+    "m3u"
+   ],
+   "hwRender": false,
+   "needsFullPath": true,
+   "supportsNoGame": true,
+   "saveStates": true,
+   "cheats": false,
+   "diskControl": true,
+   "database": [
+    "Microsoft - MSX",
+    "Microsoft - MSX2",
+    "Coleco - ColecoVision",
+    "Sega - SG-1000",
+    "Spectravideo - SVI-318 - SVI-328"
+   ],
+   "firmware": [
+    {
+     "path": "Databases/msxromdb.xml",
+     "desc": "'Databases' folder",
+     "optional": false
+    },
+    {
+     "path": "Machines/Shared Roms/MSX.rom",
+     "desc": "'Machines' folder",
+     "optional": false
+    }
+   ],
+   "download": {
+    "windows-x64": "https://buildbot.libretro.com/nightly/windows/x86_64/latest/bluemsx_libretro.dll.zip",
+    "osx-arm64": "https://buildbot.libretro.com/nightly/apple/osx/arm64/latest/bluemsx_libretro.dylib.zip",
+    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/bluemsx_libretro.dylib.zip"
+   }
+  },
+  {
+   "id": "bsnes",
+   "displayName": "Nintendo - SNES / SFC (bsnes)",
+   "coreName": "bsnes",
+   "version": "115",
+   "license": "GPLv3",
+   "authors": "Near",
+   "systemName": "Super Nintendo Entertainment System",
+   "manufacturer": "Nintendo",
+   "extensions": [
+    "smc",
+    "sfc",
+    "swc",
+    "fig",
+    "gb",
+    "gbc",
+    "bs"
+   ],
+   "hwRender": false,
+   "needsFullPath": false,
+   "supportsNoGame": false,
+   "saveStates": true,
+   "cheats": false,
+   "diskControl": false,
+   "database": [
+    "Nintendo - Super Nintendo Entertainment System",
+    "Nintendo - Sufami Turbo",
+    "Nintendo - Satellaview"
+   ],
+   "firmware": [
+    {
+     "path": "dsp1.data.rom",
+     "desc": "dsp1.data.rom",
+     "optional": true
+    },
+    {
+     "path": "dsp1.program.rom",
+     "desc": "dsp1.program.rom",
+     "optional": true
+    },
+    {
+     "path": "dsp1b.data.rom",
+     "desc": "dsp1b.data.rom",
+     "optional": true
+    },
+    {
+     "path": "dsp1b.program.rom",
+     "desc": "dsp1b.program.rom",
+     "optional": true
+    },
+    {
+     "path": "dsp2.data.rom",
+     "desc": "dsp2.data.rom",
+     "optional": true
+    },
+    {
+     "path": "dsp2.program.rom",
+     "desc": "dsp2.program.rom",
+     "optional": true
+    },
+    {
+     "path": "dsp3.data.rom",
+     "desc": "dsp3.data.rom",
+     "optional": true
+    },
+    {
+     "path": "dsp3.program.rom",
+     "desc": "dsp3.program.rom",
+     "optional": true
+    },
+    {
+     "path": "dsp4.data.rom",
+     "desc": "dsp4.data.rom",
+     "optional": true
+    },
+    {
+     "path": "dsp4.program.rom",
+     "desc": "dsp4.program.rom",
+     "optional": true
+    },
+    {
+     "path": "cx4.data.rom",
+     "desc": "cx4.data.rom",
+     "optional": true
+    },
+    {
+     "path": "st010.data.rom",
+     "desc": "st010.data.rom",
+     "optional": true
+    },
+    {
+     "path": "st010.program.rom",
+     "desc": "st010.program.rom",
+     "optional": true
+    },
+    {
+     "path": "st011.data.rom",
+     "desc": "st011.data.rom",
+     "optional": true
+    },
+    {
+     "path": "st011.program.rom",
+     "desc": "st011.program.rom",
+     "optional": true
+    },
+    {
+     "path": "st018.data.rom",
+     "desc": "st018.data.rom",
+     "optional": true
+    },
+    {
+     "path": "st018.program.rom",
+     "desc": "st018.program.rom",
+     "optional": true
+    },
+    {
+     "path": "SGB1.sfc",
+     "desc": "SGB1.sfc (SGB Boot Image)",
+     "optional": true
+    },
+    {
+     "path": "SGB2.sfc",
+     "desc": "SGB2.sfc (SGB Boot Image)",
+     "optional": true
+    },
+    {
+     "path": "BS-X.bin",
+     "desc": "BS-X.bin (BS-X - Sore wa Namae o Nusumareta Machi no Monogatari (Japan) (Rev 1))",
+     "optional": true
+    }
+   ],
+   "download": {
+    "windows-x64": "https://buildbot.libretro.com/nightly/windows/x86_64/latest/bsnes_libretro.dll.zip",
+    "osx-arm64": "https://buildbot.libretro.com/nightly/apple/osx/arm64/latest/bsnes_libretro.dylib.zip",
+    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/bsnes_libretro.dylib.zip"
+   }
+  },
+  {
+   "id": "bsnes_hd_beta",
+   "displayName": "Nintendo - SNES / SFC (bsnes-hd beta)",
+   "coreName": "bsnes-hd beta",
+   "version": "v112.v12",
+   "license": "GPLv3",
+   "authors": "Near|DerKoun",
+   "systemName": "Super Nintendo Entertainment System",
+   "manufacturer": "Nintendo",
+   "extensions": [
+    "smc",
+    "sfc",
+    "swc",
+    "fig",
+    "gb",
+    "gbc",
+    "bs"
+   ],
+   "hwRender": false,
+   "needsFullPath": false,
+   "supportsNoGame": false,
+   "saveStates": true,
+   "cheats": false,
+   "diskControl": false,
+   "database": [
+    "Nintendo - Super Nintendo Entertainment System",
+    "Nintendo - Sufami Turbo",
+    "Nintendo - Satellaview"
+   ],
+   "firmware": [
+    {
+     "path": "dsp1.data.rom",
+     "desc": "dsp1.data.rom",
+     "optional": true
+    },
+    {
+     "path": "dsp1.program.rom",
+     "desc": "dsp1.program.rom",
+     "optional": true
+    },
+    {
+     "path": "dsp1b.data.rom",
+     "desc": "dsp1b.data.rom",
+     "optional": true
+    },
+    {
+     "path": "dsp1b.program.rom",
+     "desc": "dsp1b.program.rom",
+     "optional": true
+    },
+    {
+     "path": "dsp2.data.rom",
+     "desc": "dsp2.data.rom",
+     "optional": true
+    },
+    {
+     "path": "dsp2.program.rom",
+     "desc": "dsp2.program.rom",
+     "optional": true
+    },
+    {
+     "path": "dsp3.data.rom",
+     "desc": "dsp3.data.rom",
+     "optional": true
+    },
+    {
+     "path": "dsp3.program.rom",
+     "desc": "dsp3.program.rom",
+     "optional": true
+    },
+    {
+     "path": "dsp4.data.rom",
+     "desc": "dsp4.data.rom",
+     "optional": true
+    },
+    {
+     "path": "dsp4.program.rom",
+     "desc": "dsp4.program.rom",
+     "optional": true
+    },
+    {
+     "path": "cx4.data.rom",
+     "desc": "cx4.data.rom",
+     "optional": true
+    },
+    {
+     "path": "st010.data.rom",
+     "desc": "st010.data.rom",
+     "optional": true
+    },
+    {
+     "path": "st010.program.rom",
+     "desc": "st010.program.rom",
+     "optional": true
+    },
+    {
+     "path": "st011.data.rom",
+     "desc": "st011.data.rom",
+     "optional": true
+    },
+    {
+     "path": "st011.program.rom",
+     "desc": "st011.program.rom",
+     "optional": true
+    },
+    {
+     "path": "st018.data.rom",
+     "desc": "st018.data.rom",
+     "optional": true
+    },
+    {
+     "path": "st018.program.rom",
+     "desc": "st018.program.rom",
+     "optional": true
+    },
+    {
+     "path": "SGB1.sfc",
+     "desc": "SGB1.sfc (SGB Boot Image)",
+     "optional": true
+    },
+    {
+     "path": "SGB2.sfc",
+     "desc": "SGB2.sfc (SGB Boot Image)",
+     "optional": true
+    }
+   ],
+   "download": {
+    "windows-x64": "https://buildbot.libretro.com/nightly/windows/x86_64/latest/bsnes_hd_beta_libretro.dll.zip",
+    "osx-arm64": "https://buildbot.libretro.com/nightly/apple/osx/arm64/latest/bsnes_hd_beta_libretro.dylib.zip",
+    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/bsnes_hd_beta_libretro.dylib.zip"
+   }
+  },
+  {
+   "id": "desmume",
+   "displayName": "Nintendo - DS (DeSmuME)",
+   "coreName": "DeSmuME",
+   "version": "SVN",
+   "license": "GPLv2",
+   "authors": "YopYop156|Zeromus",
+   "systemName": "Nintendo DS",
+   "manufacturer": "Nintendo",
+   "extensions": [
+    "nds",
+    "ids",
+    "bin"
+   ],
+   "hwRender": true,
+   "needsFullPath": true,
+   "supportsNoGame": false,
+   "saveStates": true,
+   "cheats": true,
+   "diskControl": false,
+   "database": [
+    "Nintendo - Nintendo DS",
+    "Nintendo - Nintendo DS (Download Play)"
+   ],
+   "firmware": [
+    {
+     "path": "firmware.bin",
+     "desc": "firmware.bin (NDS Firmware)",
+     "optional": true
+    },
+    {
+     "path": "bios7.bin",
+     "desc": "bios7.bin (ARM7 BIOS)",
+     "optional": true
+    },
+    {
+     "path": "bios9.bin",
+     "desc": "bios9.bin (ARM9 BIOS)",
+     "optional": true
+    }
+   ],
+   "download": {
+    "windows-x64": "https://buildbot.libretro.com/nightly/windows/x86_64/latest/desmume_libretro.dll.zip",
+    "osx-arm64": "https://buildbot.libretro.com/nightly/apple/osx/arm64/latest/desmume_libretro.dylib.zip",
+    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/desmume_libretro.dylib.zip"
+   }
+  },
+  {
+   "id": "dolphin",
+   "displayName": "Nintendo - GameCube / Wii (Dolphin)",
+   "coreName": "Dolphin",
+   "version": "Git",
+   "license": "GPLv2+",
+   "authors": "Team Dolphin",
+   "systemName": "GameCube / Wii",
+   "manufacturer": "Nintendo",
+   "extensions": [
+    "gcm",
+    "iso",
+    "wbfs",
+    "ciso",
+    "gcz",
+    "elf",
+    "dol",
+    "dff",
+    "tgc",
+    "wad",
+    "rvz",
+    "m3u",
+    "wia"
+   ],
+   "hwRender": true,
+   "needsFullPath": true,
+   "supportsNoGame": false,
+   "saveStates": true,
+   "cheats": false,
+   "diskControl": false,
+   "database": [
+    "Nintendo - GameCube",
+    "Nintendo - Wii",
+    "Nintendo - Wii (Digital)"
+   ],
+   "firmware": [
+    {
+     "path": "dolphin-emu/Sys/codehandler.bin",
+     "desc": "Dolphin 'Sys' folder with dolphin-emu/Sys/codehandler.bin",
+     "optional": false
+    },
+    {
+     "path": "dolphin-emu/Sys/GC/JAP/IPL.bin",
+     "desc": "dolphin-emu/Sys/GC/JAP/IPL.bin (GameCube JP BIOS)",
+     "optional": true
+    },
+    {
+     "path": "dolphin-emu/Sys/GC/USA/IPL.bin",
+     "desc": "dolphin-emu/Sys/GC/USA/IPL.bin (GameCube US BIOS)",
+     "optional": true
+    },
+    {
+     "path": "dolphin-emu/Sys/GC/EUR/IPL.bin",
+     "desc": "dolphin-emu/Sys/GC/EUR/IPL.bin (GameCube EU BIOS)",
+     "optional": true
+    }
+   ],
+   "download": {
+    "windows-x64": "https://buildbot.libretro.com/nightly/windows/x86_64/latest/dolphin_libretro.dll.zip",
+    "osx-arm64": "https://buildbot.libretro.com/nightly/apple/osx/arm64/latest/dolphin_libretro.dylib.zip",
+    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/dolphin_libretro.dylib.zip"
+   }
+  },
+  {
+   "id": "fbneo",
+   "displayName": "Arcade (FinalBurn Neo)",
+   "coreName": "FinalBurn Neo",
+   "version": "v1.0.0.03",
+   "license": "Non-commercial",
+   "authors": "Team FBNeo",
+   "systemName": "Arcade (various)",
+   "manufacturer": "Various",
+   "extensions": [
+    "zip",
+    "7z",
+    "cue",
+    "ccd"
+   ],
+   "hwRender": false,
+   "needsFullPath": false,
+   "supportsNoGame": false,
+   "saveStates": true,
+   "cheats": true,
+   "diskControl": false,
+   "database": [
+    "FBNeo - Arcade Games"
+   ],
+   "firmware": [
+    {
+     "path": "fbneo/neogeo.zip",
+     "desc": "fbneo/neogeo.zip (Neo Geo BIOS)",
+     "optional": true
+    },
+    {
+     "path": "fbneo/neocdz.zip",
+     "desc": "fbneo/neocdz.zip (Neo Geo CDZ System BIOS)",
+     "optional": true
+    },
+    {
+     "path": "fbneo/decocass.zip",
+     "desc": "fbneo/decocass.zip (DECO Cassette System BIOS)",
+     "optional": true
+    },
+    {
+     "path": "fbneo/isgsm.zip",
+     "desc": "fbneo/isgsm.zip (ISG Selection Master Type 2006 System BIOS)",
+     "optional": true
+    },
+    {
+     "path": "fbneo/midssio.zip",
+     "desc": "fbneo/midssio.zip (Midway SSIO Sound Board Internal ROM)",
+     "optional": true
+    },
+    {
+     "path": "fbneo/nmk004.zip",
+     "desc": "fbneo/nmk004.zip (NMK004 Internal ROM)",
+     "optional": true
+    },
+    {
+     "path": "fbneo/pgm.zip",
+     "desc": "fbneo/pgm.zip (PGM System BIOS)",
+     "optional": true
+    },
+    {
+     "path": "fbneo/skns.zip",
+     "desc": "fbneo/skns.zip (Super Kaneko Nova System BIOS)",
+     "optional": true
+    },
+    {
+     "path": "fbneo/ym2608.zip",
+     "desc": "fbneo/ym2608.zip (YM2608 Internal ROM)",
+     "optional": true
+    },
+    {
+     "path": "fbneo/cchip.zip",
+     "desc": "fbneo/cchip.zip (C-Chip Internal ROM)",
+     "optional": true
+    },
+    {
+     "path": "fbneo/bubsys.zip",
+     "desc": "fbneo/bubsys.zip (Bubble System BIOS)",
+     "optional": true
+    },
+    {
+     "path": "fbneo/namcoc69.zip",
+     "desc": "fbneo/namcoc69.zip (Namco C69 BIOS)",
+     "optional": true
+    },
+    {
+     "path": "fbneo/namcoc70.zip",
+     "desc": "fbneo/namcoc70.zip (Namco C70 BIOS)",
+     "optional": true
+    },
+    {
+     "path": "fbneo/namcoc75.zip",
+     "desc": "fbneo/namcoc75.zip (Namco C75 BIOS)",
+     "optional": true
+    },
+    {
+     "path": "fbneo/coleco.zip",
+     "desc": "fbneo/coleco.zip (ColecoVision System BIOS)",
+     "optional": true
+    },
+    {
+     "path": "fbneo/fdsbios.zip",
+     "desc": "fbneo/fdsbios.zip (FDS System BIOS)",
+     "optional": true
+    },
+    {
+     "path": "fbneo/msx.zip",
+     "desc": "fbneo/msx.zip (MSX1 System BIOS)",
+     "optional": true
+    },
+    {
+     "path": "fbneo/ngp.zip",
+     "desc": "fbneo/ngp.zip (NeoGeo Pocket BIOS)",
+     "optional": true
+    },
+    {
+     "path": "fbneo/spectrum.zip",
+     "desc": "fbneo/spectrum.zip (ZX Spectrum BIOS)",
+     "optional": true
+    },
+    {
+     "path": "fbneo/spec128.zip",
+     "desc": "fbneo/spec128.zip (ZX Spectrum 128 BIOS)",
+     "optional": true
+    },
+    {
+     "path": "fbneo/spec1282a.zip",
+     "desc": "fbneo/spec1282a.zip (ZX Spectrum 128 +2a BIOS)",
+     "optional": true
+    },
+    {
+     "path": "fbneo/channelf.zip",
+     "desc": "fbneo/channelf.zip (Fairchild Channel F BIOS)",
+     "optional": true
+    },
+    {
+     "path": "fbneo/hiscore.dat",
+     "desc": "fbneo/hiscore.dat (High Score support database)",
+     "optional": true
+    }
+   ],
+   "download": {
+    "windows-x64": "https://buildbot.libretro.com/nightly/windows/x86_64/latest/fbneo_libretro.dll.zip",
+    "osx-arm64": "https://buildbot.libretro.com/nightly/apple/osx/arm64/latest/fbneo_libretro.dylib.zip",
+    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/fbneo_libretro.dylib.zip"
+   }
+  },
+  {
+   "id": "fceumm",
+   "displayName": "Nintendo - NES / Famicom (FCEUmm)",
+   "coreName": "FCEUmm",
+   "version": "SVN",
+   "license": "GPLv2",
+   "authors": "FCEU Team|CaH4e3",
+   "systemName": "Nintendo Entertainment System",
+   "manufacturer": "Nintendo",
+   "extensions": [
+    "fds",
+    "nes",
+    "unif",
+    "unf"
+   ],
+   "hwRender": false,
+   "needsFullPath": false,
+   "supportsNoGame": false,
+   "saveStates": true,
+   "cheats": true,
+   "diskControl": false,
+   "database": [
+    "Nintendo - Nintendo Entertainment System",
+    "Nintendo - Family Computer Disk System"
+   ],
+   "firmware": [
+    {
+     "path": "disksys.rom",
+     "desc": "disksys.rom (Family Computer Disk System BIOS)",
+     "optional": true
+    },
+    {
+     "path": "nes.pal",
+     "desc": "nes.pal (custom NES Palette)",
+     "optional": true
+    },
+    {
+     "path": "gamegenie.nes",
+     "desc": "gamegenie.nes (Game Genie add-on cartridge)",
+     "optional": true
+    }
+   ],
+   "download": {
+    "windows-x64": "https://buildbot.libretro.com/nightly/windows/x86_64/latest/fceumm_libretro.dll.zip",
+    "osx-arm64": "https://buildbot.libretro.com/nightly/apple/osx/arm64/latest/fceumm_libretro.dylib.zip",
+    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/fceumm_libretro.dylib.zip"
+   }
+  },
+  {
+   "id": "flycast",
+   "displayName": "Sega - Dreamcast/Naomi (Flycast)",
+   "coreName": "Flycast",
+   "version": "Git",
+   "license": "GPLv2",
+   "authors": "flyinghead",
+   "systemName": "Sega Dreamcast",
+   "manufacturer": "Sega",
+   "extensions": [
+    "chd",
+    "cdi",
+    "elf",
+    "bin",
+    "cue",
+    "gdi",
+    "lst",
+    "zip",
+    "dat",
+    "7z",
+    "m3u"
+   ],
+   "hwRender": true,
+   "needsFullPath": false,
+   "supportsNoGame": false,
+   "saveStates": true,
+   "cheats": false,
+   "diskControl": false,
+   "database": [
+    "Sega - Dreamcast",
+    "Sega - Naomi",
+    "Sega - Naomi 2",
+    "Atomiswave"
+   ],
+   "firmware": [
+    {
+     "path": "dc/dc_boot.bin",
+     "desc": "dc/dc_boot.bin (Dreamcast BIOS)",
+     "optional": true
+    },
+    {
+     "path": "dc/naomi.zip",
+     "desc": "dc/naomi.zip (Naomi Bios from MAME)",
+     "optional": true
+    },
+    {
+     "path": "dc/naomi2.zip",
+     "desc": "dc/naomi2.zip (Naomi2 Bios from MAME)",
+     "optional": true
+    },
+    {
+     "path": "dc/hod2bios.zip",
+     "desc": "dc/hod2bios.zip (Naomi The House of the Dead 2 Bios from MAME)",
+     "optional": true
+    },
+    {
+     "path": "dc/f355dlx.zip",
+     "desc": "dc/f355dlx.zip (Naomi Ferrari F355 Challenge deluxe Bios from MAME)",
+     "optional": true
+    },
+    {
+     "path": "dc/f355bios.zip",
+     "desc": "dc/f355bios.zip (Naomi Ferrari F355 Challenge twin/deluxe Bios from MAME)",
+     "optional": true
+    },
+    {
+     "path": "dc/airlbios.zip",
+     "desc": "dc/airlbios.zip (Naomi Airline Pilots deluxe Bios from MAME)",
+     "optional": true
+    },
+    {
+     "path": "dc/awbios.zip",
+     "desc": "dc/awbios.zip (Atomiswave BIOS from MAME)",
+     "optional": true
+    }
+   ],
+   "download": {
+    "windows-x64": "https://buildbot.libretro.com/nightly/windows/x86_64/latest/flycast_libretro.dll.zip",
+    "osx-arm64": "https://buildbot.libretro.com/nightly/apple/osx/arm64/latest/flycast_libretro.dylib.zip",
+    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/flycast_libretro.dylib.zip"
+   }
+  },
+  {
+   "id": "freeintv",
+   "displayName": "Mattel - Intellivision (FreeIntv)",
+   "coreName": "FreeIntv",
+   "version": "2018.1.5",
+   "license": "GPLv2+",
+   "authors": "David Richardson",
+   "systemName": "Intellivision",
+   "manufacturer": "Mattel",
+   "extensions": [
+    "int",
+    "bin",
+    "rom"
+   ],
+   "hwRender": false,
+   "needsFullPath": false,
+   "supportsNoGame": false,
+   "saveStates": false,
+   "cheats": false,
+   "diskControl": false,
+   "database": [
+    "Mattel - Intellivision"
+   ],
+   "firmware": [
+    {
+     "path": "exec.bin",
+     "desc": "exec.bin",
+     "optional": false
+    },
+    {
+     "path": "grom.bin",
+     "desc": "grom.bin",
+     "optional": false
+    }
+   ],
+   "download": {
+    "windows-x64": "https://buildbot.libretro.com/nightly/windows/x86_64/latest/freeintv_libretro.dll.zip",
+    "osx-arm64": "https://buildbot.libretro.com/nightly/apple/osx/arm64/latest/freeintv_libretro.dylib.zip",
+    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/freeintv_libretro.dylib.zip"
+   }
+  },
+  {
+   "id": "gambatte",
+   "displayName": "Nintendo - Game Boy / Color (Gambatte)",
+   "coreName": "Gambatte",
+   "version": "v0.5.0",
+   "license": "GPLv2",
+   "authors": "Sinamas",
+   "systemName": "Game Boy/Game Boy Color",
+   "manufacturer": "Nintendo",
+   "extensions": [
+    "gb",
+    "gbc",
+    "dmg"
+   ],
+   "hwRender": false,
+   "needsFullPath": false,
+   "supportsNoGame": false,
+   "saveStates": true,
+   "cheats": false,
+   "diskControl": false,
+   "database": [
+    "Nintendo - Game Boy",
+    "Nintendo - Game Boy Color"
+   ],
+   "firmware": [
+    {
+     "path": "gb_bios.bin",
+     "desc": "gb_bios.bin (Game Boy BIOS)",
+     "optional": true
+    },
+    {
+     "path": "gbc_bios.bin",
+     "desc": "gbc_bios.bin (Game Boy Color BIOS)",
+     "optional": true
+    }
+   ],
+   "download": {
+    "windows-x64": "https://buildbot.libretro.com/nightly/windows/x86_64/latest/gambatte_libretro.dll.zip",
+    "osx-arm64": "https://buildbot.libretro.com/nightly/apple/osx/arm64/latest/gambatte_libretro.dylib.zip",
+    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/gambatte_libretro.dylib.zip"
+   }
+  },
+  {
+   "id": "gearcoleco",
+   "displayName": "Coleco - ColecoVision (Gearcoleco)",
+   "coreName": "Gearcoleco",
+   "version": "1.0.0",
+   "license": "GPLv3",
+   "authors": "Nacho Sanchez",
+   "systemName": "ColecoVision",
+   "manufacturer": "Coleco",
+   "extensions": [
+    "col",
+    "cv",
+    "bin",
+    "rom"
+   ],
+   "hwRender": false,
+   "needsFullPath": false,
+   "supportsNoGame": false,
+   "saveStates": true,
+   "cheats": false,
+   "diskControl": false,
+   "database": [
+    "Coleco - ColecoVision"
+   ],
+   "firmware": [
+    {
+     "path": "colecovision.rom",
+     "desc": "colecovision.rom (ColecoVision BIOS)",
+     "optional": false
+    }
+   ],
+   "download": {
+    "windows-x64": "https://buildbot.libretro.com/nightly/windows/x86_64/latest/gearcoleco_libretro.dll.zip",
+    "osx-arm64": "https://buildbot.libretro.com/nightly/apple/osx/arm64/latest/gearcoleco_libretro.dylib.zip",
+    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/gearcoleco_libretro.dylib.zip"
+   }
+  },
+  {
+   "id": "gearsystem",
+   "displayName": "Sega - MS/GG/SG-1000 (Gearsystem)",
+   "coreName": "Gearsystem",
+   "version": "3.2.0",
+   "license": "GPLv3",
+   "authors": "Nacho Sanchez",
+   "systemName": "Sega 8-bit (MS/GG/SG-1000)",
+   "manufacturer": "Sega",
+   "extensions": [
+    "sms",
+    "gg",
+    "sg",
+    "mv",
+    "bin",
+    "rom"
+   ],
+   "hwRender": false,
+   "needsFullPath": false,
+   "supportsNoGame": false,
+   "saveStates": true,
+   "cheats": true,
+   "diskControl": false,
+   "database": [
+    "Sega - Game Gear",
+    "Sega - Master System - Mark III",
+    "Sega - SG-1000"
+   ],
+   "firmware": [
+    {
+     "path": "bios.sms",
+     "desc": "bios.sms (Master System BIOS)",
+     "optional": true
+    },
+    {
+     "path": "bios.gg",
+     "desc": "bios.gg (Game Gear BIOS)",
+     "optional": true
+    }
+   ],
+   "download": {
+    "windows-x64": "https://buildbot.libretro.com/nightly/windows/x86_64/latest/gearsystem_libretro.dll.zip",
+    "osx-arm64": "https://buildbot.libretro.com/nightly/apple/osx/arm64/latest/gearsystem_libretro.dylib.zip",
+    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/gearsystem_libretro.dylib.zip"
+   }
+  },
+  {
+   "id": "genesis_plus_gx",
+   "displayName": "Sega - MS/GG/MD/CD (Genesis Plus GX)",
+   "coreName": "Genesis Plus GX",
+   "version": "v1.7.4",
+   "license": "Non-commercial",
+   "authors": "Charles McDonald|Eke-Eke",
+   "systemName": "Sega 8/16-bit (Various)",
+   "manufacturer": "Sega",
+   "extensions": [
+    "mdx",
+    "md",
+    "smd",
+    "gen",
+    "bin",
+    "cue",
+    "iso",
+    "sms",
+    "bms",
+    "gg",
+    "sg",
+    "68k",
+    "sgd",
+    "chd",
+    "m3u"
+   ],
+   "hwRender": false,
+   "needsFullPath": true,
+   "supportsNoGame": false,
+   "saveStates": true,
+   "cheats": true,
+   "diskControl": true,
+   "database": [
+    "Sega - Game Gear",
+    "Sega - Master System - Mark III",
+    "Sega - Mega-CD - Sega CD",
+    "Sega - Mega Drive - Genesis",
+    "Sega - PICO",
+    "Sega - SG-1000"
+   ],
+   "firmware": [
+    {
+     "path": "bios_MD.bin",
+     "desc": "bios_MD.bin (Mega Drive startup ROM)",
+     "optional": true
+    },
+    {
+     "path": "bios_CD_E.bin",
+     "desc": "bios_CD_E.bin (MegaCD EU BIOS)",
+     "optional": true
+    },
+    {
+     "path": "bios_CD_U.bin",
+     "desc": "bios_CD_U.bin (SegaCD US BIOS)",
+     "optional": true
+    },
+    {
+     "path": "bios_CD_J.bin",
+     "desc": "bios_CD_J.bin (MegaCD JP BIOS)",
+     "optional": true
+    },
+    {
+     "path": "bios_E.sms",
+     "desc": "bios_E.sms (MasterSystem EU BIOS)",
+     "optional": true
+    },
+    {
+     "path": "bios_U.sms",
+     "desc": "bios_U.sms (MasterSystem US BIOS)",
+     "optional": true
+    },
+    {
+     "path": "bios_J.sms",
+     "desc": "bios_J.sms (MasterSystem JP BIOS)",
+     "optional": true
+    },
+    {
+     "path": "bios.gg",
+     "desc": "bios.gg (GameGear BIOS)",
+     "optional": true
+    },
+    {
+     "path": "sk.bin",
+     "desc": "sk.bin (Sonic & Knuckles ROM)",
+     "optional": true
+    },
+    {
+     "path": "sk2chip.bin",
+     "desc": "sk2chip.bin (Sonic & Knuckles UPMEM ROM)",
+     "optional": true
+    },
+    {
+     "path": "areplay.bin",
+     "desc": "areplay.bin (Action Replay ROM)",
+     "optional": true
+    },
+    {
+     "path": "ggenie.bin",
+     "desc": "ggenie.bin (Game Genie ROM)",
+     "optional": true
+    }
+   ],
+   "download": {
+    "windows-x64": "https://buildbot.libretro.com/nightly/windows/x86_64/latest/genesis_plus_gx_libretro.dll.zip",
+    "osx-arm64": "https://buildbot.libretro.com/nightly/apple/osx/arm64/latest/genesis_plus_gx_libretro.dylib.zip",
+    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/genesis_plus_gx_libretro.dylib.zip"
+   }
+  },
+  {
+   "id": "handy",
+   "displayName": "Atari - Lynx (Handy)",
+   "coreName": "Handy",
+   "version": "0.95",
+   "license": "Zlib",
+   "authors": "K. Wilkins",
+   "systemName": "Lynx",
+   "manufacturer": "Atari",
+   "extensions": [
+    "lnx",
+    "lyx",
+    "o"
+   ],
+   "hwRender": false,
+   "needsFullPath": false,
+   "supportsNoGame": false,
+   "saveStates": true,
+   "cheats": false,
+   "diskControl": false,
+   "database": [
+    "Atari - Lynx"
+   ],
+   "firmware": [
+    {
+     "path": "lynxboot.img",
+     "desc": "lynxboot.img (Lynx Boot Image)",
+     "optional": true
+    }
+   ],
+   "download": {
+    "windows-x64": "https://buildbot.libretro.com/nightly/windows/x86_64/latest/handy_libretro.dll.zip",
+    "osx-arm64": "https://buildbot.libretro.com/nightly/apple/osx/arm64/latest/handy_libretro.dylib.zip",
+    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/handy_libretro.dylib.zip"
+   }
+  },
+  {
+   "id": "kronos",
+   "displayName": "Sega - Saturn/ST-V (Kronos)",
+   "coreName": "Kronos",
+   "version": "v2.6.0",
+   "license": "GPLv2",
+   "authors": "Guillaume Duhammel|Theo Berkau|Anders Montonen|devmiyax|FCare|barbudreadmon",
+   "systemName": "Saturn",
+   "manufacturer": "Sega",
+   "extensions": [
+    "ccd",
+    "chd",
+    "cue",
+    "iso",
+    "mds",
+    "zip",
+    "m3u"
+   ],
+   "hwRender": true,
+   "needsFullPath": true,
+   "supportsNoGame": false,
+   "saveStates": true,
+   "cheats": true,
+   "diskControl": true,
+   "database": [
+    "Sega - Saturn",
+    "Sega - ST-V"
+   ],
+   "firmware": [
+    {
+     "path": "kronos/saturn_bios.bin",
+     "desc": "kronos/saturn_bios.bin (Saturn BIOS)",
+     "optional": false
+    },
+    {
+     "path": "kronos/stvbios.zip",
+     "desc": "kronos/stvbios.zip (ST-V BIOS from MAME)",
+     "optional": false
+    },
+    {
+     "path": "mpr-18811-mx.ic1",
+     "desc": "mpr-18811-mx.ic1 (The King of Fighters '95 ROM Cartridge)",
+     "optional": true
+    },
+    {
+     "path": "mpr-19367-mx.ic1",
+     "desc": "mpr-19367-mx.ic1 (Ultraman: Hikari no Kyojin Densetsu ROM Cartridge)",
+     "optional": true
+    }
+   ],
+   "download": {
+    "windows-x64": "https://buildbot.libretro.com/nightly/windows/x86_64/latest/kronos_libretro.dll.zip",
+    "osx-arm64": "https://buildbot.libretro.com/nightly/apple/osx/arm64/latest/kronos_libretro.dylib.zip",
+    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/kronos_libretro.dylib.zip"
+   }
+  },
+  {
+   "id": "mame2003_plus",
+   "displayName": "Arcade (MAME 2003-Plus)",
+   "coreName": "MAME 2003-Plus",
+   "version": "2003-Plus",
+   "license": "MAME Noncommercial",
+   "authors": "MAMEdev, MAME 2003-Plus Team, et al (see license and changelog)",
+   "systemName": "Arcade (various)",
+   "manufacturer": "Various",
+   "extensions": [
+    "zip"
+   ],
+   "hwRender": false,
+   "needsFullPath": false,
+   "supportsNoGame": false,
+   "saveStates": true,
+   "cheats": false,
+   "diskControl": false,
+   "database": [
+    "MAME 2003-Plus"
+   ],
+   "firmware": [],
+   "download": {
+    "windows-x64": "https://buildbot.libretro.com/nightly/windows/x86_64/latest/mame2003_plus_libretro.dll.zip",
+    "osx-arm64": "https://buildbot.libretro.com/nightly/apple/osx/arm64/latest/mame2003_plus_libretro.dylib.zip",
+    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/mame2003_plus_libretro.dylib.zip"
+   }
+  },
+  {
+   "id": "mednafen_gba",
+   "displayName": "Nintendo - Game Boy Advance (Beetle GBA)",
+   "coreName": "Beetle GBA",
+   "version": "v0.9.36",
+   "license": "GPLv2",
+   "authors": "Forgotten|Mednafen Team",
+   "systemName": "Game Boy Advance",
+   "manufacturer": "Nintendo",
+   "extensions": [
+    "gba",
+    "agb",
+    "bin"
+   ],
+   "hwRender": false,
+   "needsFullPath": false,
+   "supportsNoGame": false,
+   "saveStates": false,
+   "cheats": false,
+   "diskControl": false,
+   "database": [
+    "Nintendo - Game Boy Advance"
+   ],
+   "firmware": [
+    {
+     "path": "gba_bios.bin",
+     "desc": "gba_bios.bin (Game Boy Advance BIOS)",
+     "optional": true
+    }
+   ],
+   "download": {
+    "windows-x64": "https://buildbot.libretro.com/nightly/windows/x86_64/latest/mednafen_gba_libretro.dll.zip",
+    "osx-arm64": "https://buildbot.libretro.com/nightly/apple/osx/arm64/latest/mednafen_gba_libretro.dylib.zip",
+    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/mednafen_gba_libretro.dylib.zip"
+   }
+  },
+  {
+   "id": "mednafen_lynx",
+   "displayName": "Atari - Lynx (Beetle Lynx)",
+   "coreName": "Beetle Lynx",
+   "version": "v1.24.0",
+   "license": "Zlib|GPLv2",
+   "authors": "K. Wilkins|Mednafen Team",
+   "systemName": "Lynx",
+   "manufacturer": "Atari",
+   "extensions": [
+    "lnx",
+    "lyx",
+    "bll",
+    "o"
+   ],
+   "hwRender": false,
+   "needsFullPath": false,
+   "supportsNoGame": false,
+   "saveStates": false,
+   "cheats": false,
+   "diskControl": false,
+   "database": [
+    "Atari - Lynx"
+   ],
+   "firmware": [
+    {
+     "path": "lynxboot.img",
+     "desc": "lynxboot.img (Lynx Boot Image)",
+     "optional": false
+    }
+   ],
+   "download": {
+    "windows-x64": "https://buildbot.libretro.com/nightly/windows/x86_64/latest/mednafen_lynx_libretro.dll.zip",
+    "osx-arm64": "https://buildbot.libretro.com/nightly/apple/osx/arm64/latest/mednafen_lynx_libretro.dylib.zip",
+    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/mednafen_lynx_libretro.dylib.zip"
+   }
+  },
+  {
+   "id": "mednafen_ngp",
+   "displayName": "SNK - Neo Geo Pocket / Color (Beetle NeoPop)",
+   "coreName": "Beetle NeoPop",
+   "version": "v0.9.36.1",
+   "license": "GPLv2",
+   "authors": "neopop_uk|Mednafen Team",
+   "systemName": "Neo Geo Pocket (Color)",
+   "manufacturer": "SNK",
+   "extensions": [
+    "ngp",
+    "ngc",
+    "ngpc",
+    "npc"
+   ],
+   "hwRender": false,
+   "needsFullPath": false,
+   "supportsNoGame": false,
+   "saveStates": true,
+   "cheats": false,
+   "diskControl": false,
+   "database": [
+    "SNK - Neo Geo Pocket",
+    "SNK - Neo Geo Pocket Color"
+   ],
+   "firmware": [],
+   "download": {
+    "windows-x64": "https://buildbot.libretro.com/nightly/windows/x86_64/latest/mednafen_ngp_libretro.dll.zip",
+    "osx-arm64": "https://buildbot.libretro.com/nightly/apple/osx/arm64/latest/mednafen_ngp_libretro.dylib.zip",
+    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/mednafen_ngp_libretro.dylib.zip"
+   }
+  },
+  {
+   "id": "mednafen_pce",
+   "displayName": "NEC - PC Engine / SuperGrafx / CD (Beetle PCE)",
+   "coreName": "Beetle PCE",
+   "version": "v0.9.38.7",
+   "license": "GPLv2",
+   "authors": "Mednafen Team",
+   "systemName": "PC Engine/SuperGrafx/CD",
+   "manufacturer": "NEC",
+   "extensions": [
+    "pce",
+    "sgx",
+    "cue",
+    "ccd",
+    "chd",
+    "toc",
+    "m3u"
+   ],
+   "hwRender": false,
+   "needsFullPath": false,
+   "supportsNoGame": false,
+   "saveStates": true,
+   "cheats": false,
+   "diskControl": false,
+   "database": [
+    "NEC - PC Engine SuperGrafx",
+    "NEC - PC Engine - TurboGrafx 16",
+    "NEC - PC Engine CD - TurboGrafx-CD"
+   ],
+   "firmware": [
+    {
+     "path": "syscard3.pce",
+     "desc": "syscard3.pce (Super CD-ROM2 System V3.xx)",
+     "optional": true
+    },
+    {
+     "path": "syscard2.pce",
+     "desc": "syscard2.pce (CD-ROM System V2.xx)",
+     "optional": true
+    },
+    {
+     "path": "syscard1.pce",
+     "desc": "syscard1.pce (CD-ROM System V1.xx)",
+     "optional": true
+    },
+    {
+     "path": "gexpress.pce",
+     "desc": "gexpress.pce (Game Express CD Card)",
+     "optional": true
+    }
+   ],
+   "download": {
+    "windows-x64": "https://buildbot.libretro.com/nightly/windows/x86_64/latest/mednafen_pce_libretro.dll.zip",
+    "osx-arm64": "https://buildbot.libretro.com/nightly/apple/osx/arm64/latest/mednafen_pce_libretro.dylib.zip",
+    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/mednafen_pce_libretro.dylib.zip"
+   }
+  },
+  {
+   "id": "mednafen_pce_fast",
+   "displayName": "NEC - PC Engine / CD (Beetle PCE FAST)",
+   "coreName": "Beetle PCE Fast",
+   "version": "v0.9.38.7",
+   "license": "GPLv2",
+   "authors": "Mednafen Team",
+   "systemName": "PC Engine/PCE-CD",
+   "manufacturer": "NEC",
+   "extensions": [
+    "pce",
+    "cue",
+    "ccd",
+    "chd",
+    "toc",
+    "m3u"
+   ],
+   "hwRender": false,
+   "needsFullPath": false,
+   "supportsNoGame": false,
+   "saveStates": true,
+   "cheats": false,
+   "diskControl": false,
+   "database": [
+    "NEC - PC Engine - TurboGrafx 16",
+    "NEC - PC Engine CD - TurboGrafx-CD"
+   ],
+   "firmware": [
+    {
+     "path": "syscard3.pce",
+     "desc": "syscard3.pce (PCE-CD BIOS)",
+     "optional": true
+    },
+    {
+     "path": "syscard2.pce",
+     "desc": "syscard2.pce (PCE-CD BIOS)",
+     "optional": true
+    },
+    {
+     "path": "syscard1.pce",
+     "desc": "syscard1.pce (PCE-CD BIOS)",
+     "optional": true
+    },
+    {
+     "path": "gexpress.pce",
+     "desc": "gexpress.pce (PCE-CD BIOS)",
+     "optional": true
+    }
+   ],
+   "download": {
+    "windows-x64": "https://buildbot.libretro.com/nightly/windows/x86_64/latest/mednafen_pce_fast_libretro.dll.zip",
+    "osx-arm64": "https://buildbot.libretro.com/nightly/apple/osx/arm64/latest/mednafen_pce_fast_libretro.dylib.zip",
+    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/mednafen_pce_fast_libretro.dylib.zip"
+   }
+  },
+  {
+   "id": "mednafen_pcfx",
+   "displayName": "NEC - PC-FX (Beetle PC-FX)",
+   "coreName": "Beetle PC-FX",
+   "version": "v0.9.33.3",
+   "license": "GPLv2",
+   "authors": "Mednafen Team",
+   "systemName": "PC-FX",
+   "manufacturer": "NEC",
+   "extensions": [
+    "cue",
+    "ccd",
+    "toc",
+    "chd"
+   ],
+   "hwRender": false,
+   "needsFullPath": false,
+   "supportsNoGame": false,
+   "saveStates": false,
+   "cheats": false,
+   "diskControl": false,
+   "database": [
+    "NEC - PC-FX"
+   ],
+   "firmware": [
+    {
+     "path": "pcfx.rom",
+     "desc": "pcfx.rom (PC-FX BIOS v1.00 - 2 Sep 1994)",
+     "optional": false
+    }
+   ],
+   "download": {
+    "windows-x64": "https://buildbot.libretro.com/nightly/windows/x86_64/latest/mednafen_pcfx_libretro.dll.zip",
+    "osx-arm64": "https://buildbot.libretro.com/nightly/apple/osx/arm64/latest/mednafen_pcfx_libretro.dylib.zip",
+    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/mednafen_pcfx_libretro.dylib.zip"
+   }
+  },
+  {
+   "id": "mednafen_psx",
+   "displayName": "Sony - PlayStation (Beetle PSX)",
+   "coreName": "Beetle PSX",
+   "version": "v0.9.44.1",
+   "license": "GPLv2",
+   "authors": "Mednafen Team",
+   "systemName": "PlayStation",
+   "manufacturer": "Sony",
+   "extensions": [
+    "cue",
+    "toc",
+    "m3u",
+    "ccd",
+    "exe",
+    "pbp",
+    "chd",
+    "bin"
+   ],
+   "hwRender": false,
+   "needsFullPath": true,
+   "supportsNoGame": false,
+   "saveStates": true,
+   "cheats": true,
+   "diskControl": true,
+   "database": [
+    "Sony - PlayStation"
+   ],
+   "firmware": [
+    {
+     "path": "scph5500.bin",
+     "desc": "scph5500.bin (PS1 JP BIOS)",
+     "optional": false
+    },
+    {
+     "path": "scph5501.bin",
+     "desc": "scph5501.bin (PS1 US BIOS)",
+     "optional": false
+    },
+    {
+     "path": "scph5502.bin",
+     "desc": "scph5502.bin (PS1 EU BIOS)",
+     "optional": false
+    },
+    {
+     "path": "psxonpsp660.bin",
+     "desc": "psxonpsp660.bin (PSP PS1 BIOS)",
+     "optional": true
+    },
+    {
+     "path": "ps1_rom.bin",
+     "desc": "ps1_rom.bin (PS3 PS1 BIOS)",
+     "optional": true
+    }
+   ],
+   "download": {
+    "windows-x64": "https://buildbot.libretro.com/nightly/windows/x86_64/latest/mednafen_psx_libretro.dll.zip",
+    "osx-arm64": "https://buildbot.libretro.com/nightly/apple/osx/arm64/latest/mednafen_psx_libretro.dylib.zip",
+    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/mednafen_psx_libretro.dylib.zip"
+   }
+  },
+  {
+   "id": "mednafen_psx_hw",
+   "displayName": "Sony - PlayStation (Beetle PSX HW)",
+   "coreName": "Beetle PSX HW",
+   "version": "v0.9.44.1",
+   "license": "GPLv2",
+   "authors": "Mednafen Team",
+   "systemName": "PlayStation",
+   "manufacturer": "Sony",
+   "extensions": [
+    "cue",
+    "toc",
+    "m3u",
+    "ccd",
+    "exe",
+    "pbp",
+    "chd",
+    "bin"
+   ],
+   "hwRender": true,
+   "needsFullPath": true,
+   "supportsNoGame": false,
+   "saveStates": true,
+   "cheats": true,
+   "diskControl": true,
+   "database": [
+    "Sony - PlayStation"
+   ],
+   "firmware": [
+    {
+     "path": "scph5500.bin",
+     "desc": "scph5500.bin (PS1 JP BIOS)",
+     "optional": false
+    },
+    {
+     "path": "scph5501.bin",
+     "desc": "scph5501.bin (PS1 US BIOS)",
+     "optional": false
+    },
+    {
+     "path": "scph5502.bin",
+     "desc": "scph5502.bin (PS1 EU BIOS)",
+     "optional": false
+    },
+    {
+     "path": "psxonpsp660.bin",
+     "desc": "psxonpsp660.bin (PSP PS1 BIOS)",
+     "optional": true
+    },
+    {
+     "path": "ps1_rom.bin",
+     "desc": "ps1_rom.bin (PS3 PS1 BIOS)",
+     "optional": true
+    }
+   ],
+   "download": {
+    "windows-x64": "https://buildbot.libretro.com/nightly/windows/x86_64/latest/mednafen_psx_hw_libretro.dll.zip",
+    "osx-arm64": "https://buildbot.libretro.com/nightly/apple/osx/arm64/latest/mednafen_psx_hw_libretro.dylib.zip",
+    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/mednafen_psx_hw_libretro.dylib.zip"
+   }
+  },
+  {
+   "id": "mednafen_saturn",
+   "displayName": "Sega - Saturn (Beetle Saturn)",
+   "coreName": "Beetle Saturn",
+   "version": "v0.9.45.1",
+   "license": "GPLv2",
+   "authors": "Mednafen Team",
+   "systemName": "Saturn",
+   "manufacturer": "Sega",
+   "extensions": [
+    "ccd",
+    "chd",
+    "cue",
+    "toc",
+    "m3u",
+    "zip"
+   ],
+   "hwRender": false,
+   "needsFullPath": true,
+   "supportsNoGame": false,
+   "saveStates": true,
+   "cheats": true,
+   "diskControl": true,
+   "database": [
+    "Sega - Saturn"
+   ],
+   "firmware": [
+    {
+     "path": "sega_101.bin",
+     "desc": "sega_101.bin (Saturn JP BIOS)",
+     "optional": false
+    },
+    {
+     "path": "mpr-17933.bin",
+     "desc": "mpr-17933.bin (Saturn US/EU BIOS)",
+     "optional": false
+    },
+    {
+     "path": "mpr-18811-mx.ic1",
+     "desc": "mpr-18811-mx.ic1 (The King of Fighters '95 ROM Cartridge)",
+     "optional": true
+    },
+    {
+     "path": "mpr-19367-mx.ic1",
+     "desc": "mpr-19367-mx.ic1 (Ultraman: Hikari no Kyojin Densetsu ROM Cartridge)",
+     "optional": true
+    }
+   ],
+   "download": {
+    "windows-x64": "https://buildbot.libretro.com/nightly/windows/x86_64/latest/mednafen_saturn_libretro.dll.zip",
+    "osx-arm64": "https://buildbot.libretro.com/nightly/apple/osx/arm64/latest/mednafen_saturn_libretro.dylib.zip",
+    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/mednafen_saturn_libretro.dylib.zip"
+   }
+  },
+  {
+   "id": "mednafen_supergrafx",
+   "displayName": "NEC - PC Engine SuperGrafx (Beetle SuperGrafx)",
+   "coreName": "Beetle SuperGrafx",
+   "version": "v1.23.0",
+   "license": "GPLv2",
+   "authors": "Mednafen Team",
+   "systemName": "PC Engine SuperGrafx",
+   "manufacturer": "NEC",
+   "extensions": [
+    "pce",
+    "sgx",
+    "cue",
+    "ccd",
+    "chd"
+   ],
+   "hwRender": false,
+   "needsFullPath": true,
+   "supportsNoGame": false,
+   "saveStates": true,
+   "cheats": true,
+   "diskControl": true,
+   "database": [
+    "NEC - PC Engine SuperGrafx",
+    "NEC - PC Engine - TurboGrafx 16",
+    "NEC - PC Engine CD - TurboGrafx-CD"
+   ],
+   "firmware": [
+    {
+     "path": "syscard3.pce",
+     "desc": "syscard3.pce (Super CD-ROM2 System V3.xx)",
+     "optional": true
+    },
+    {
+     "path": "syscard2.pce",
+     "desc": "syscard2.pce (CD-ROM System V2.xx)",
+     "optional": true
+    },
+    {
+     "path": "syscard1.pce",
+     "desc": "syscard1.pce (CD-ROM System V1.xx)",
+     "optional": true
+    },
+    {
+     "path": "gexpress.pce",
+     "desc": "gexpress.pce (Game Express CD Card)",
+     "optional": true
+    }
+   ],
+   "download": {
+    "windows-x64": "https://buildbot.libretro.com/nightly/windows/x86_64/latest/mednafen_supergrafx_libretro.dll.zip",
+    "osx-arm64": "https://buildbot.libretro.com/nightly/apple/osx/arm64/latest/mednafen_supergrafx_libretro.dylib.zip",
+    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/mednafen_supergrafx_libretro.dylib.zip"
+   }
+  },
+  {
+   "id": "mednafen_vb",
+   "displayName": "Nintendo - Virtual Boy (Beetle VB)",
+   "coreName": "Beetle VB",
+   "version": "v0.9.36.1",
+   "license": "GPLv2",
+   "authors": "Mednafen Team",
+   "systemName": "Virtual Boy",
+   "manufacturer": "Nintendo",
+   "extensions": [
+    "vb",
+    "vboy",
+    "bin"
+   ],
+   "hwRender": false,
+   "needsFullPath": false,
+   "supportsNoGame": false,
+   "saveStates": false,
+   "cheats": false,
+   "diskControl": false,
+   "database": [
+    "Nintendo - Virtual Boy"
+   ],
+   "firmware": [],
+   "download": {
+    "windows-x64": "https://buildbot.libretro.com/nightly/windows/x86_64/latest/mednafen_vb_libretro.dll.zip",
+    "osx-arm64": "https://buildbot.libretro.com/nightly/apple/osx/arm64/latest/mednafen_vb_libretro.dylib.zip",
+    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/mednafen_vb_libretro.dylib.zip"
+   }
+  },
+  {
+   "id": "mednafen_wswan",
+   "displayName": "Bandai - WonderSwan/Color (Beetle Wonderswan)",
+   "coreName": "Beetle WonderSwan",
+   "version": "v0.9.35.1",
+   "license": "GPLv2",
+   "authors": "Dox|Mednafen Team",
+   "systemName": "WonderSwan/Color",
+   "manufacturer": "Bandai",
+   "extensions": [
+    "ws",
+    "wsc",
+    "pc2",
+    "pcv2"
+   ],
+   "hwRender": false,
+   "needsFullPath": false,
+   "supportsNoGame": false,
+   "saveStates": true,
+   "cheats": false,
+   "diskControl": false,
+   "database": [
+    "Bandai - WonderSwan",
+    "Bandai - WonderSwan Color"
+   ],
+   "firmware": [],
+   "download": {
+    "windows-x64": "https://buildbot.libretro.com/nightly/windows/x86_64/latest/mednafen_wswan_libretro.dll.zip",
+    "osx-arm64": "https://buildbot.libretro.com/nightly/apple/osx/arm64/latest/mednafen_wswan_libretro.dylib.zip",
+    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/mednafen_wswan_libretro.dylib.zip"
+   }
+  },
+  {
+   "id": "melonds",
+   "displayName": "Nintendo - DS (melonDS)",
+   "coreName": "melonDS",
+   "version": "Git",
+   "license": "GPLv3",
+   "authors": "Arisotura",
+   "systemName": "Nintendo DS",
+   "manufacturer": "Nintendo",
+   "extensions": [
+    "nds",
+    "ids",
+    "dsi"
+   ],
+   "hwRender": true,
+   "needsFullPath": false,
+   "supportsNoGame": false,
+   "saveStates": false,
+   "cheats": false,
+   "diskControl": false,
+   "database": [
+    "Nintendo - Nintendo DS",
+    "Nintendo - Nintendo DS (Download Play)",
+    "Nintendo - Nintendo DSi",
+    "Nintendo - Nintendo DSi Decrypted",
+    "Nintendo - Nintendo DSi (Digital)"
+   ],
+   "firmware": [
+    {
+     "path": "firmware.bin",
+     "desc": "firmware.bin (NDS Firmware)",
+     "optional": true
+    },
+    {
+     "path": "bios7.bin",
+     "desc": "bios7.bin (ARM7 BIOS)",
+     "optional": true
+    },
+    {
+     "path": "bios9.bin",
+     "desc": "bios9.bin (ARM9 BIOS)",
+     "optional": true
+    },
+    {
+     "path": "dsi_firmware.bin",
+     "desc": "dsi_firmware.bin (DSi Firmware)",
+     "optional": true
+    },
+    {
+     "path": "dsi_bios7.bin",
+     "desc": "dsi_bios7.bin (DSi ARM7 BIOS)",
+     "optional": true
+    },
+    {
+     "path": "dsi_bios9.bin",
+     "desc": "dsi_bios9.bin (DSi ARM9 BIOS)",
+     "optional": true
+    },
+    {
+     "path": "dsi_nand.bin",
+     "desc": "dsi_nand.bin (DSi NAND)",
+     "optional": true
+    },
+    {
+     "path": "dsi_sd_card.bin",
+     "desc": "dsi_sd_card.bin (DSi SD card)",
+     "optional": true
+    }
+   ],
+   "download": {
+    "windows-x64": "https://buildbot.libretro.com/nightly/windows/x86_64/latest/melonds_libretro.dll.zip",
+    "osx-arm64": "https://buildbot.libretro.com/nightly/apple/osx/arm64/latest/melonds_libretro.dylib.zip",
+    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/melonds_libretro.dylib.zip"
+   }
+  },
+  {
+   "id": "melondsds",
+   "displayName": "Nintendo - DS (melonDS DS)",
+   "coreName": "melonDS DS",
+   "version": "1.3.0",
+   "license": "GPLv3+",
+   "authors": "Jesse Talavera|The melonDS Team",
+   "systemName": "Nintendo DS",
+   "manufacturer": "Nintendo",
+   "extensions": [
+    "nds",
+    "ids",
+    "dsi"
+   ],
+   "hwRender": true,
+   "needsFullPath": false,
+   "supportsNoGame": true,
+   "saveStates": true,
+   "cheats": true,
+   "diskControl": false,
+   "database": [
+    "Nintendo - Nintendo DS",
+    "Nintendo - Nintendo DS (Download Play)",
+    "Nintendo - Nintendo DSi",
+    "Nintendo - Nintendo DSi Decrypted",
+    "Nintendo - Nintendo DSi (Digital)"
+   ],
+   "firmware": [
+    {
+     "path": "firmware.bin",
+     "desc": "firmware.bin (NDS Firmware)",
+     "optional": true
+    },
+    {
+     "path": "bios7.bin",
+     "desc": "bios7.bin (ARM7 BIOS)",
+     "optional": true
+    },
+    {
+     "path": "bios9.bin",
+     "desc": "bios9.bin (ARM9 BIOS)",
+     "optional": true
+    },
+    {
+     "path": "dsi_firmware.bin",
+     "desc": "dsi_firmware.bin (DSi Firmware)",
+     "optional": true
+    },
+    {
+     "path": "dsi_bios7.bin",
+     "desc": "dsi_bios7.bin (DSi ARM7 BIOS)",
+     "optional": true
+    },
+    {
+     "path": "dsi_bios9.bin",
+     "desc": "dsi_bios9.bin (DSi ARM9 BIOS)",
+     "optional": true
+    },
+    {
+     "path": "dsi_nand.bin",
+     "desc": "dsi_nand.bin (DSi NAND)",
+     "optional": true
+    }
+   ],
+   "download": {
+    "windows-x64": "https://buildbot.libretro.com/nightly/windows/x86_64/latest/melondsds_libretro.dll.zip",
+    "osx-arm64": "https://buildbot.libretro.com/nightly/apple/osx/arm64/latest/melondsds_libretro.dylib.zip",
+    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/melondsds_libretro.dylib.zip"
+   }
+  },
+  {
+   "id": "mesen",
+   "displayName": "Nintendo - NES / Famicom (Mesen)",
+   "coreName": "Mesen",
+   "version": "0.9.9",
+   "license": "GPLv3",
+   "authors": "M. Bibaud (aka Sour)",
+   "systemName": "Nintendo Entertainment System",
+   "manufacturer": "Nintendo",
+   "extensions": [
+    "nes",
+    "fds",
+    "unf",
+    "unif"
+   ],
+   "hwRender": false,
+   "needsFullPath": false,
+   "supportsNoGame": false,
+   "saveStates": true,
+   "cheats": true,
+   "diskControl": false,
+   "database": [
+    "Nintendo - Nintendo Entertainment System",
+    "Nintendo - Family Computer Disk System"
+   ],
+   "firmware": [
+    {
+     "path": "disksys.rom",
+     "desc": "disksys.rom (Family Computer Disk System BIOS)",
+     "optional": true
+    }
+   ],
+   "download": {
+    "windows-x64": "https://buildbot.libretro.com/nightly/windows/x86_64/latest/mesen_libretro.dll.zip",
+    "osx-arm64": "https://buildbot.libretro.com/nightly/apple/osx/arm64/latest/mesen_libretro.dylib.zip",
+    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/mesen_libretro.dylib.zip"
+   }
+  },
+  {
+   "id": "mesen-s",
+   "displayName": "Nintendo - SNES / SFC / Game Boy / Color (Mesen-S)",
+   "coreName": "Mesen-S",
+   "version": "0.4.0",
+   "license": "GPLv3",
+   "authors": "M. Bibaud (aka Sour)",
+   "systemName": "Super Nintendo Entertainment System / Game Boy / Game Boy Color",
+   "manufacturer": "Nintendo",
+   "extensions": [
+    "sfc",
+    "smc",
+    "fig",
+    "swc",
+    "bs",
+    "gb",
+    "gbc"
+   ],
+   "hwRender": false,
+   "needsFullPath": false,
+   "supportsNoGame": false,
+   "saveStates": false,
+   "cheats": false,
+   "diskControl": false,
+   "database": [
+    "Nintendo - Super Nintendo Entertainment System",
+    "Nintendo - Satellaview",
+    "Nintendo - Game Boy",
+    "Nintendo - Game Boy Color"
+   ],
+   "firmware": [
+    {
+     "path": "dsp1.data.rom",
+     "desc": "dsp1.data.rom",
+     "optional": true
+    },
+    {
+     "path": "dsp1.program.rom",
+     "desc": "dsp1.program.rom",
+     "optional": true
+    },
+    {
+     "path": "dsp1b.data.rom",
+     "desc": "dsp1b.data.rom",
+     "optional": true
+    },
+    {
+     "path": "dsp1b.program.rom",
+     "desc": "dsp1b.program.rom",
+     "optional": true
+    },
+    {
+     "path": "dsp2.data.rom",
+     "desc": "dsp2.data.rom",
+     "optional": true
+    },
+    {
+     "path": "dsp2.program.rom",
+     "desc": "dsp2.program.rom",
+     "optional": true
+    },
+    {
+     "path": "dsp3.data.rom",
+     "desc": "dsp3.data.rom",
+     "optional": true
+    },
+    {
+     "path": "dsp3.program.rom",
+     "desc": "dsp3.program.rom",
+     "optional": true
+    },
+    {
+     "path": "dsp4.data.rom",
+     "desc": "dsp4.data.rom",
+     "optional": true
+    },
+    {
+     "path": "dsp4.program.rom",
+     "desc": "dsp4.program.rom",
+     "optional": true
+    },
+    {
+     "path": "st010.data.rom",
+     "desc": "st010.data.rom",
+     "optional": true
+    },
+    {
+     "path": "st010.program.rom",
+     "desc": "st010.program.rom",
+     "optional": true
+    },
+    {
+     "path": "st011.data.rom",
+     "desc": "st011.data.rom",
+     "optional": true
+    },
+    {
+     "path": "st011.program.rom",
+     "desc": "st011.program.rom",
+     "optional": true
+    },
+    {
+     "path": "dmg_boot.bin",
+     "desc": "dmg_boot.bin (GB Boot Image)",
+     "optional": true
+    },
+    {
+     "path": "cgb_boot.bin",
+     "desc": "cgb_boot.bin (GBC Boot Image)",
+     "optional": true
+    },
+    {
+     "path": "sgb_boot.bin",
+     "desc": "sgb_boot.bin (SGB Boot Image)",
+     "optional": true
+    },
+    {
+     "path": "sgb2_boot.bin",
+     "desc": "sgb2_boot.bin (SGB2 Boot Image)",
+     "optional": true
+    },
+    {
+     "path": "SGB1.sfc",
+     "desc": "SGB1.sfc (SGB ROM)",
+     "optional": true
+    },
+    {
+     "path": "SGB2.sfc",
+     "desc": "SGB2.sfc (SGB2 ROM)",
+     "optional": true
+    },
+    {
+     "path": "BS-X.bin",
+     "desc": "BS-X.bin (Satellaview Boot ROM)",
+     "optional": true
+    }
+   ],
+   "download": {
+    "windows-x64": "https://buildbot.libretro.com/nightly/windows/x86_64/latest/mesen-s_libretro.dll.zip",
+    "osx-arm64": "https://buildbot.libretro.com/nightly/apple/osx/arm64/latest/mesen-s_libretro.dylib.zip",
+    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/mesen-s_libretro.dylib.zip"
+   }
+  },
+  {
+   "id": "mgba",
+   "displayName": "Nintendo - Game Boy Advance (mGBA)",
+   "coreName": "mGBA",
+   "version": "0.10-dev",
+   "license": "MPLv2.0",
+   "authors": "endrift",
+   "systemName": "Game Boy/Game Boy Color/Game Boy Advance",
+   "manufacturer": "Nintendo",
+   "extensions": [
+    "gb",
+    "gbc",
+    "gba"
+   ],
+   "hwRender": false,
+   "needsFullPath": false,
+   "supportsNoGame": false,
+   "saveStates": true,
+   "cheats": true,
+   "diskControl": false,
+   "database": [
+    "Nintendo - Game Boy",
+    "Nintendo - Game Boy Color",
+    "Nintendo - Game Boy Advance"
+   ],
+   "firmware": [
+    {
+     "path": "gba_bios.bin",
+     "desc": "gba_bios.bin (Game Boy Advance BIOS)",
+     "optional": true
+    },
+    {
+     "path": "gb_bios.bin",
+     "desc": "gb_bios.bin (Game Boy BIOS)",
+     "optional": true
+    },
+    {
+     "path": "gbc_bios.bin",
+     "desc": "gbc_bios.bin (Game Boy Color BIOS)",
+     "optional": true
+    },
+    {
+     "path": "sgb_bios.bin",
+     "desc": "sgb_bios.bin (Super Game Boy BIOS)",
+     "optional": true
+    }
+   ],
+   "download": {
+    "windows-x64": "https://buildbot.libretro.com/nightly/windows/x86_64/latest/mgba_libretro.dll.zip",
+    "osx-arm64": "https://buildbot.libretro.com/nightly/apple/osx/arm64/latest/mgba_libretro.dylib.zip",
+    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/mgba_libretro.dylib.zip"
+   }
+  },
+  {
+   "id": "mupen64plus_next",
+   "displayName": "Nintendo - Nintendo 64 (Mupen64Plus-Next)",
+   "coreName": "Mupen64Plus-Next",
+   "version": "1.0",
+   "license": "GPLv2",
+   "authors": "m4xw|Hacktarux|gonetz|GLideN64 Contributors|Mupen64Plus Team",
+   "systemName": "Nintendo 64",
+   "manufacturer": "Nintendo",
+   "extensions": [
+    "n64",
+    "v64",
+    "z64",
+    "ndd",
+    "bin",
+    "u1"
+   ],
+   "hwRender": true,
+   "needsFullPath": false,
+   "supportsNoGame": false,
+   "saveStates": true,
+   "cheats": true,
+   "diskControl": false,
+   "database": [
+    "Nintendo - Nintendo 64"
+   ],
+   "firmware": [
+    {
+     "path": "Mupen64plus/IPL.n64",
+     "desc": "Mupen64plus/IPL.n64 (64DD BIOS)",
+     "optional": true
+    }
+   ],
+   "download": {
+    "windows-x64": "https://buildbot.libretro.com/nightly/windows/x86_64/latest/mupen64plus_next_libretro.dll.zip",
+    "osx-arm64": "https://buildbot.libretro.com/nightly/apple/osx/arm64/latest/mupen64plus_next_libretro.dylib.zip",
+    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/mupen64plus_next_libretro.dylib.zip"
+   }
+  },
+  {
+   "id": "nestopia",
+   "displayName": "Nintendo - NES / Famicom (Nestopia)",
+   "coreName": "Nestopia",
+   "version": "1.53.1",
+   "license": "GPLv2",
+   "authors": "Martin Freij|R. Danbrook|Rupert Carmichael",
+   "systemName": "Nintendo Entertainment System",
+   "manufacturer": "Nintendo",
+   "extensions": [
+    "nes",
+    "fds",
+    "unf",
+    "unif"
+   ],
+   "hwRender": false,
+   "needsFullPath": false,
+   "supportsNoGame": false,
+   "saveStates": true,
+   "cheats": true,
+   "diskControl": false,
+   "database": [
+    "Nintendo - Nintendo Entertainment System",
+    "Nintendo - Family Computer Disk System"
+   ],
+   "firmware": [
+    {
+     "path": "disksys.rom",
+     "desc": "disksys.rom (Family Computer Disk System BIOS)",
+     "optional": true
+    }
+   ],
+   "download": {
+    "windows-x64": "https://buildbot.libretro.com/nightly/windows/x86_64/latest/nestopia_libretro.dll.zip",
+    "osx-arm64": "https://buildbot.libretro.com/nightly/apple/osx/arm64/latest/nestopia_libretro.dylib.zip",
+    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/nestopia_libretro.dylib.zip"
+   }
+  },
+  {
+   "id": "o2em",
+   "displayName": "Magnavox - Odyssey2 / Philips Videopac+ (O2EM)",
+   "coreName": "O2EM",
+   "version": "1.18",
+   "license": "Artistic License",
+   "authors": "Daniel Boris|Andre de la Rocha|Arlindo M. de Oliveira",
+   "systemName": "Magnavox Odyssey2 / Philips Videopac+",
+   "manufacturer": "Magnavox|Philips",
+   "extensions": [
+    "bin"
+   ],
+   "hwRender": false,
+   "needsFullPath": false,
+   "supportsNoGame": false,
+   "saveStates": true,
+   "cheats": false,
+   "diskControl": false,
+   "database": [
+    "Magnavox - Odyssey2",
+    "Philips - Videopac+"
+   ],
+   "firmware": [
+    {
+     "path": "o2rom.bin",
+     "desc": "o2rom.bin (Odyssey2 BIOS - G7000 model)",
+     "optional": false
+    },
+    {
+     "path": "c52.bin",
+     "desc": "c52.bin (Videopac French BIOS - G7000 model)",
+     "optional": false
+    },
+    {
+     "path": "g7400.bin",
+     "desc": "g7400.bin (Videopac+ European BIOS - G7400 model)",
+     "optional": false
+    },
+    {
+     "path": "jopac.bin",
+     "desc": "jopac.bin (Videopac+ French BIOS - G7400 model)",
+     "optional": false
+    }
+   ],
+   "download": {
+    "windows-x64": "https://buildbot.libretro.com/nightly/windows/x86_64/latest/o2em_libretro.dll.zip",
+    "osx-arm64": "https://buildbot.libretro.com/nightly/apple/osx/arm64/latest/o2em_libretro.dylib.zip",
+    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/o2em_libretro.dylib.zip"
+   }
+  },
+  {
+   "id": "opera",
+   "displayName": "The 3DO Company - 3DO (Opera)",
+   "coreName": "Opera",
+   "version": "1.0.0",
+   "license": "LGPL/Non-commercial",
+   "authors": "trapexit|JohnnyDude|FreeDO team",
+   "systemName": "3DO",
+   "manufacturer": "Panasonic|GoldStar|Sanyo",
+   "extensions": [
+    "iso",
+    "bin",
+    "chd",
+    "cue"
+   ],
+   "hwRender": false,
+   "needsFullPath": true,
+   "supportsNoGame": true,
+   "saveStates": true,
+   "cheats": false,
+   "diskControl": false,
+   "database": [
+    "The 3DO Company - 3DO"
+   ],
+   "firmware": [
+    {
+     "path": "panafz1.bin",
+     "desc": "panafz1.bin (Panasonic FZ-1 BIOS)",
+     "optional": true
+    },
+    {
+     "path": "panafz10.bin",
+     "desc": "panafz10.bin (Panasonic FZ-10 BIOS)",
+     "optional": true
+    },
+    {
+     "path": "panafz10-norsa.bin",
+     "desc": "panafz10-norsa.bin (Panasonic FZ-10 BIOS [Encryption Check Disabled])",
+     "optional": true
+    },
+    {
+     "path": "panafz10e-anvil.bin",
+     "desc": "panafz10e-anvil.bin (Panasonic FZ-10E ANVIL BIOS)",
+     "optional": true
+    },
+    {
+     "path": "panafz10e-anvil-norsa.bin",
+     "desc": "panafz10e-anvil-norsa.bin (Panasonic FZ-10E ANVIL BIOS [Encryption Check Disabled])",
+     "optional": true
+    },
+    {
+     "path": "goldstar.bin",
+     "desc": "goldstar.bin (Goldstar GDO-101M BIOS)",
+     "optional": true
+    },
+    {
+     "path": "sanyotry.bin",
+     "desc": "sanyotry.bin (Sanyo Try IMP-21J BIOS)",
+     "optional": true
+    },
+    {
+     "path": "3do_arcade_saot.bin",
+     "desc": "3do_arcade_saot.bin (Shootout At Old Tucson BIOS)",
+     "optional": true
+    },
+    {
+     "path": "panafz1-kanji.bin",
+     "desc": "panafz1-kanji.bin (Panasonic FZ-1 Kanji Font ROM)",
+     "optional": true
+    },
+    {
+     "path": "panafz10ja-anvil-kanji.bin",
+     "desc": "panafz10ja-anvil-kanji.bin (Panasonic FZ-10JA Kanji Font ROM)",
+     "optional": true
+    },
+    {
+     "path": "panafz1j.bin",
+     "desc": "panafz1j.bin (Panasonic FZ-1J BIOS)",
+     "optional": true
+    },
+    {
+     "path": "panafz1j-norsa.bin",
+     "desc": "panafz1j-norsa.bin (Panasonic FZ-1J BIOS [Encryption Check Disabled])",
+     "optional": true
+    },
+    {
+     "path": "panafz1j-kanji.bin",
+     "desc": "panafz1j-kanji.bin (Panasonic FZ-1J Kanji Font ROM)",
+     "optional": true
+    }
+   ],
+   "download": {
+    "windows-x64": "https://buildbot.libretro.com/nightly/windows/x86_64/latest/opera_libretro.dll.zip",
+    "osx-arm64": "https://buildbot.libretro.com/nightly/apple/osx/arm64/latest/opera_libretro.dylib.zip",
+    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/opera_libretro.dylib.zip"
+   }
+  },
+  {
+   "id": "pcsx2",
+   "displayName": "Sony - PlayStation 2 (LRPS2)",
+   "coreName": "LRPS2",
+   "version": "Git",
+   "license": "GPL",
+   "authors": "PCSX2 Team",
+   "systemName": "Sony PlayStation 2",
+   "manufacturer": "Sony",
+   "extensions": [
+    "elf",
+    "iso",
+    "ciso",
+    "cue",
+    "bin",
+    "gz",
+    "chd",
+    "cso",
+    "zso",
+    "mdf",
+    "nrg",
+    "dump",
+    "img",
+    "m3u"
+   ],
+   "hwRender": true,
+   "needsFullPath": true,
+   "supportsNoGame": false,
+   "saveStates": true,
+   "cheats": false,
+   "diskControl": false,
+   "database": [
+    "Sony - PlayStation 2"
+   ],
+   "firmware": [
+    {
+     "path": "pcsx2/bios",
+     "desc": "'pcsx2/bios' folder",
+     "optional": false
+    },
+    {
+     "path": "pcsx2/resources/GameIndex.yaml",
+     "desc": "pcsx2/resources/GameIndex.yaml (Game Database)",
+     "optional": true
+    }
+   ],
+   "download": {
+    "windows-x64": "https://buildbot.libretro.com/nightly/windows/x86_64/latest/pcsx2_libretro.dll.zip",
+    "osx-arm64": "https://buildbot.libretro.com/nightly/apple/osx/arm64/latest/pcsx2_libretro.dylib.zip",
+    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/pcsx2_libretro.dylib.zip"
+   }
+  },
+  {
+   "id": "pcsx_rearmed",
+   "displayName": "Sony - PlayStation (PCSX ReARMed)",
+   "coreName": "PCSX-ReARMed",
+   "version": "r24",
+   "license": "GPLv2",
+   "authors": "PCSX Team|notaz|Exophase",
+   "systemName": "PlayStation",
+   "manufacturer": "Sony",
+   "extensions": [
+    "bin",
+    "cue",
+    "img",
+    "mdf",
+    "pbp",
+    "toc",
+    "cbn",
+    "m3u",
+    "ccd",
+    "chd",
+    "iso",
+    "exe"
+   ],
+   "hwRender": false,
+   "needsFullPath": true,
+   "supportsNoGame": false,
+   "saveStates": true,
+   "cheats": true,
+   "diskControl": true,
+   "database": [
+    "Sony - PlayStation"
+   ],
+   "firmware": [
+    {
+     "path": "scph5500.bin",
+     "desc": "scph5500.bin (PS1 JP BIOS)",
+     "optional": true
+    },
+    {
+     "path": "scph5501.bin",
+     "desc": "scph5501.bin (PS1 US BIOS)",
+     "optional": true
+    },
+    {
+     "path": "scph5502.bin",
+     "desc": "scph5502.bin (PS1 EU BIOS)",
+     "optional": true
+    },
+    {
+     "path": "psxonpsp660.bin",
+     "desc": "psxonpsp660.bin (PSP PSX Emu BIOS)",
+     "optional": true
+    }
+   ],
+   "download": {
+    "windows-x64": "https://buildbot.libretro.com/nightly/windows/x86_64/latest/pcsx_rearmed_libretro.dll.zip",
+    "osx-arm64": "https://buildbot.libretro.com/nightly/apple/osx/arm64/latest/pcsx_rearmed_libretro.dylib.zip",
+    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/pcsx_rearmed_libretro.dylib.zip"
+   }
+  },
+  {
+   "id": "picodrive",
+   "displayName": "Sega - MS/GG/MD/CD/32X (PicoDrive)",
+   "coreName": "PicoDrive",
+   "version": "1.99",
+   "license": "MAME",
+   "authors": "notaz|fdave|irixxxx",
+   "systemName": "Sega 8/16-bit + 32X (Various)",
+   "manufacturer": "Sega",
+   "extensions": [
+    "bin",
+    "gen",
+    "smd",
+    "md",
+    "32x",
+    "cue",
+    "iso",
+    "chd",
+    "sms",
+    "gg",
+    "sg",
+    "sc",
+    "m3u",
+    "68k",
+    "sgd",
+    "pco"
+   ],
+   "hwRender": false,
+   "needsFullPath": true,
+   "supportsNoGame": false,
+   "saveStates": true,
+   "cheats": true,
+   "diskControl": true,
+   "database": [
+    "Sega - Master System - Mark III",
+    "Sega - Game Gear",
+    "Sega - Mega-CD - Sega CD",
+    "Sega - Mega Drive - Genesis",
+    "Sega - PICO",
+    "Sega - 32X"
+   ],
+   "firmware": [
+    {
+     "path": "bios_CD_E.bin",
+     "desc": "bios_CD_E.bin (MegaCD EU BIOS)",
+     "optional": true
+    },
+    {
+     "path": "bios_CD_U.bin",
+     "desc": "bios_CD_U.bin (SegaCD US BIOS)",
+     "optional": true
+    },
+    {
+     "path": "bios_CD_J.bin",
+     "desc": "bios_CD_J.bin (MegaCD JP BIOS)",
+     "optional": true
+    }
+   ],
+   "download": {
+    "windows-x64": "https://buildbot.libretro.com/nightly/windows/x86_64/latest/picodrive_libretro.dll.zip",
+    "osx-arm64": "https://buildbot.libretro.com/nightly/apple/osx/arm64/latest/picodrive_libretro.dylib.zip",
+    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/picodrive_libretro.dylib.zip"
+   }
+  },
+  {
+   "id": "play",
+   "displayName": "Sony - PlayStation 2 (Play!)",
+   "coreName": "Play!",
+   "version": "Git",
+   "license": "MIT",
+   "authors": "Jean-Philip Desjardins",
+   "systemName": "Sony PlayStation 2",
+   "manufacturer": "Sony",
+   "extensions": [
+    "chd",
+    "cso",
+    "cue",
+    "elf",
+    "iso",
+    "isz"
+   ],
+   "hwRender": false,
+   "needsFullPath": false,
+   "supportsNoGame": false,
+   "saveStates": true,
+   "cheats": false,
+   "diskControl": false,
+   "database": [
+    "Sony - PlayStation 2"
+   ],
+   "firmware": [],
+   "download": {
+    "windows-x64": "https://buildbot.libretro.com/nightly/windows/x86_64/latest/play_libretro.dll.zip",
+    "osx-arm64": "https://buildbot.libretro.com/nightly/apple/osx/arm64/latest/play_libretro.dylib.zip",
+    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/play_libretro.dylib.zip"
+   }
+  },
+  {
+   "id": "pokemini",
+   "displayName": "Nintendo - Pokemon Mini (PokeMini)",
+   "coreName": "PokeMini",
+   "version": "v0.60",
+   "license": "GPLv3",
+   "authors": "JustBurn",
+   "systemName": "Pokemon Mini",
+   "manufacturer": "Nintendo",
+   "extensions": [
+    "min"
+   ],
+   "hwRender": false,
+   "needsFullPath": false,
+   "supportsNoGame": false,
+   "saveStates": true,
+   "cheats": false,
+   "diskControl": false,
+   "database": [
+    "Nintendo - Pokemon Mini"
+   ],
+   "firmware": [
+    {
+     "path": "bios.min",
+     "desc": "bios.min (Pokemon Mini BIOS)",
+     "optional": true
+    }
+   ],
+   "download": {
+    "windows-x64": "https://buildbot.libretro.com/nightly/windows/x86_64/latest/pokemini_libretro.dll.zip",
+    "osx-arm64": "https://buildbot.libretro.com/nightly/apple/osx/arm64/latest/pokemini_libretro.dylib.zip",
+    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/pokemini_libretro.dylib.zip"
+   }
+  },
+  {
+   "id": "potator",
+   "displayName": "Watara - Supervision (Potator)",
+   "coreName": "Potator",
+   "version": "1.0.5",
+   "license": "Public Domain",
+   "authors": "Normmatt|Cal2|infval|Alekmaul",
+   "systemName": "Supervision",
+   "manufacturer": "Watara",
+   "extensions": [
+    "bin",
+    "sv"
+   ],
+   "hwRender": false,
+   "needsFullPath": false,
+   "supportsNoGame": false,
+   "saveStates": true,
+   "cheats": false,
+   "diskControl": false,
+   "database": [
+    "Watara - Supervision"
+   ],
+   "firmware": [],
+   "download": {
+    "windows-x64": "https://buildbot.libretro.com/nightly/windows/x86_64/latest/potator_libretro.dll.zip",
+    "osx-arm64": "https://buildbot.libretro.com/nightly/apple/osx/arm64/latest/potator_libretro.dylib.zip",
+    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/potator_libretro.dylib.zip"
+   }
+  },
+  {
+   "id": "ppsspp",
+   "displayName": "Sony - PlayStation Portable (PPSSPP)",
+   "coreName": "PPSSPP",
+   "version": "Git",
+   "license": "GPLv2",
+   "authors": "Henrik Hrydgard",
+   "systemName": "PSP",
+   "manufacturer": "Sony",
+   "extensions": [
+    "elf",
+    "iso",
+    "cso",
+    "prx",
+    "pbp",
+    "chd"
+   ],
+   "hwRender": true,
+   "needsFullPath": true,
+   "supportsNoGame": false,
+   "saveStates": true,
+   "cheats": false,
+   "diskControl": false,
+   "database": [
+    "Sony - PlayStation Portable"
+   ],
+   "firmware": [
+    {
+     "path": "PPSSPP/ppge_atlas.zim",
+     "desc": "ppge_atlas.zim (PPSSPP Data ROM)",
+     "optional": false
+    }
+   ],
+   "download": {
+    "windows-x64": "https://buildbot.libretro.com/nightly/windows/x86_64/latest/ppsspp_libretro.dll.zip",
+    "osx-arm64": "https://buildbot.libretro.com/nightly/apple/osx/arm64/latest/ppsspp_libretro.dylib.zip",
+    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/ppsspp_libretro.dylib.zip"
+   }
+  },
+  {
+   "id": "prosystem",
+   "displayName": "Atari - 7800 (ProSystem)",
+   "coreName": "ProSystem",
+   "version": "1.3e",
+   "license": "GPLv2",
+   "authors": "Greg Stanton|Brian Berlin|Leonis|Greg DeMent",
+   "systemName": "Atari 7800",
+   "manufacturer": "Atari",
+   "extensions": [
+    "a78",
+    "bin",
+    "cdf"
+   ],
+   "hwRender": false,
+   "needsFullPath": false,
+   "supportsNoGame": false,
+   "saveStates": true,
+   "cheats": false,
+   "diskControl": false,
+   "database": [
+    "Atari - 7800"
+   ],
+   "firmware": [
+    {
+     "path": "7800 BIOS (U).rom",
+     "desc": "7800 BIOS (U).rom (7800 BIOS)",
+     "optional": true
+    }
+   ],
+   "download": {
+    "windows-x64": "https://buildbot.libretro.com/nightly/windows/x86_64/latest/prosystem_libretro.dll.zip",
+    "osx-arm64": "https://buildbot.libretro.com/nightly/apple/osx/arm64/latest/prosystem_libretro.dylib.zip",
+    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/prosystem_libretro.dylib.zip"
+   }
+  },
+  {
+   "id": "sameboy",
+   "displayName": "Nintendo - Game Boy / Color (SameBoy)",
+   "coreName": "SameBoy",
+   "version": "0.14.7",
+   "license": "MIT",
+   "authors": "LIJI32",
+   "systemName": "Game Boy/Game Boy Color",
+   "manufacturer": "Nintendo",
+   "extensions": [
+    "gb",
+    "gbc"
+   ],
+   "hwRender": false,
+   "needsFullPath": false,
+   "supportsNoGame": false,
+   "saveStates": false,
+   "cheats": false,
+   "diskControl": false,
+   "database": [
+    "Nintendo - Game Boy",
+    "Nintendo - Game Boy Color"
+   ],
+   "firmware": [
+    {
+     "path": "dmg_boot.bin",
+     "desc": "dmg_boot.bin (Game Boy boot ROM)",
+     "optional": true
+    },
+    {
+     "path": "cgb_boot.bin",
+     "desc": "cgb_boot.bin (Game Boy Color boot ROM)",
+     "optional": true
+    }
+   ],
+   "download": {
+    "windows-x64": "https://buildbot.libretro.com/nightly/windows/x86_64/latest/sameboy_libretro.dll.zip",
+    "osx-arm64": "https://buildbot.libretro.com/nightly/apple/osx/arm64/latest/sameboy_libretro.dylib.zip",
+    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/sameboy_libretro.dylib.zip"
+   }
+  },
+  {
+   "id": "smsplus",
+   "displayName": "Sega - MS/GG (SMS Plus GX)",
+   "coreName": "SMS Plus GX",
+   "version": "1.8",
+   "license": "GPLv2",
+   "authors": "Charles MacDonald|gameblabla",
+   "systemName": "Sega 8-bit",
+   "manufacturer": "Sega",
+   "extensions": [
+    "sms",
+    "bin",
+    "rom",
+    "col",
+    "gg",
+    "sg"
+   ],
+   "hwRender": false,
+   "needsFullPath": false,
+   "supportsNoGame": false,
+   "saveStates": false,
+   "cheats": false,
+   "diskControl": false,
+   "database": [
+    "Sega - Game Gear",
+    "Sega - Master System - Mark III"
+   ],
+   "firmware": [
+    {
+     "path": "bios.sms",
+     "desc": "bios.sms (Master System BIOS)",
+     "optional": true
+    },
+    {
+     "path": "BIOS.col",
+     "desc": "BIOS.col (Colecovision BIOS)",
+     "optional": true
+    }
+   ],
+   "download": {
+    "windows-x64": "https://buildbot.libretro.com/nightly/windows/x86_64/latest/smsplus_libretro.dll.zip",
+    "osx-arm64": "https://buildbot.libretro.com/nightly/apple/osx/arm64/latest/smsplus_libretro.dylib.zip",
+    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/smsplus_libretro.dylib.zip"
+   }
+  },
+  {
+   "id": "snes9x",
+   "displayName": "Nintendo - SNES / SFC (Snes9x)",
+   "coreName": "Snes9x",
+   "version": "1.61",
+   "license": "Non-commercial",
+   "authors": "Snes9x Team",
+   "systemName": "Super Nintendo Entertainment System",
+   "manufacturer": "Nintendo",
+   "extensions": [
+    "smc",
+    "sfc",
+    "swc",
+    "fig",
+    "bs",
+    "st"
+   ],
+   "hwRender": false,
+   "needsFullPath": false,
+   "supportsNoGame": false,
+   "saveStates": true,
+   "cheats": true,
+   "diskControl": false,
+   "database": [
+    "Nintendo - Super Nintendo Entertainment System",
+    "Nintendo - Sufami Turbo",
+    "Nintendo - Satellaview"
+   ],
+   "firmware": [
+    {
+     "path": "BS-X.bin",
+     "desc": "BS-X.bin (BS-X - Sore wa Namae o Nusumareta Machi no Monogatari (Japan) (Rev 1))",
+     "optional": true
+    },
+    {
+     "path": "STBIOS.bin",
+     "desc": "STBIOS.bin (Sufami Turbo (Japan))",
+     "optional": true
+    }
+   ],
+   "download": {
+    "windows-x64": "https://buildbot.libretro.com/nightly/windows/x86_64/latest/snes9x_libretro.dll.zip",
+    "osx-arm64": "https://buildbot.libretro.com/nightly/apple/osx/arm64/latest/snes9x_libretro.dylib.zip",
+    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/snes9x_libretro.dylib.zip"
+   }
+  },
+  {
+   "id": "stella",
+   "displayName": "Atari - 2600 (Stella)",
+   "coreName": "Stella",
+   "version": "6.6",
+   "license": "GPLv2",
+   "authors": "Stephen Anthony|Bradford Mott|Eckhard Stolberg|Brian Watson",
+   "systemName": "Atari 2600",
+   "manufacturer": "Atari",
+   "extensions": [
+    "a26",
+    "bin"
+   ],
+   "hwRender": false,
+   "needsFullPath": false,
+   "supportsNoGame": false,
+   "saveStates": true,
+   "cheats": false,
+   "diskControl": false,
+   "database": [
+    "Atari - 2600"
+   ],
+   "firmware": [],
+   "download": {
+    "windows-x64": "https://buildbot.libretro.com/nightly/windows/x86_64/latest/stella_libretro.dll.zip",
+    "osx-arm64": "https://buildbot.libretro.com/nightly/apple/osx/arm64/latest/stella_libretro.dylib.zip",
+    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/stella_libretro.dylib.zip"
+   }
+  },
+  {
+   "id": "stella2014",
+   "displayName": "Atari - 2600 (Stella 2014)",
+   "coreName": "Stella 2014",
+   "version": "3.9.3",
+   "license": "GPLv2",
+   "authors": "Stephen Anthony|Bradford Mott|Eckhard Stolberg|Brian Watson",
+   "systemName": "Atari 2600",
+   "manufacturer": "Atari",
+   "extensions": [
+    "a26",
+    "bin"
+   ],
+   "hwRender": false,
+   "needsFullPath": false,
+   "supportsNoGame": false,
+   "saveStates": true,
+   "cheats": false,
+   "diskControl": false,
+   "database": [
+    "Atari - 2600"
+   ],
+   "firmware": [],
+   "download": {
+    "windows-x64": "https://buildbot.libretro.com/nightly/windows/x86_64/latest/stella2014_libretro.dll.zip",
+    "osx-arm64": "https://buildbot.libretro.com/nightly/apple/osx/arm64/latest/stella2014_libretro.dylib.zip",
+    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/stella2014_libretro.dylib.zip"
+   }
+  },
+  {
+   "id": "swanstation",
+   "displayName": "Sony - PlayStation (SwanStation)",
+   "coreName": "SwanStation",
+   "version": "v0.1",
+   "license": "GPLv3",
+   "authors": "stenzek",
+   "systemName": "PlayStation",
+   "manufacturer": "Sony",
+   "extensions": [
+    "exe",
+    "psexe",
+    "cue",
+    "bin",
+    "img",
+    "iso",
+    "chd",
+    "pbp",
+    "ecm",
+    "mds",
+    "psf",
+    "m3u"
+   ],
+   "hwRender": true,
+   "needsFullPath": false,
+   "supportsNoGame": false,
+   "saveStates": true,
+   "cheats": false,
+   "diskControl": true,
+   "database": [
+    "Sony - PlayStation"
+   ],
+   "firmware": [
+    {
+     "path": "psxonpsp660.bin",
+     "desc": "psxonpsp660.bin (PSP PS1 BIOS)",
+     "optional": true
+    },
+    {
+     "path": "scph5500.bin",
+     "desc": "scph5500.bin (PS1 JP BIOS)",
+     "optional": true
+    },
+    {
+     "path": "scph5501.bin",
+     "desc": "scph5501.bin (PS1 US BIOS)",
+     "optional": true
+    },
+    {
+     "path": "scph5502.bin",
+     "desc": "scph5502.bin (PS1 EU BIOS)",
+     "optional": true
+    },
+    {
+     "path": "ps1_rom.bin",
+     "desc": "ps1_rom.bin (PS3 PS1 BIOS)",
+     "optional": true
+    }
+   ],
+   "download": {
+    "windows-x64": "https://buildbot.libretro.com/nightly/windows/x86_64/latest/swanstation_libretro.dll.zip",
+    "osx-arm64": "https://buildbot.libretro.com/nightly/apple/osx/arm64/latest/swanstation_libretro.dylib.zip",
+    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/swanstation_libretro.dylib.zip"
+   }
+  },
+  {
+   "id": "tgbdual",
+   "displayName": "Nintendo - Game Boy / Color (TGB Dual)",
+   "coreName": "TGB Dual",
+   "version": "v0.8.3",
+   "license": "GPLv2",
+   "authors": "GIGO|Hii",
+   "systemName": "Game Boy/Game Boy Color",
+   "manufacturer": "Nintendo",
+   "extensions": [
+    "cgb",
+    "dmg",
+    "gb",
+    "gbc",
+    "sgb"
+   ],
+   "hwRender": false,
+   "needsFullPath": false,
+   "supportsNoGame": false,
+   "saveStates": true,
+   "cheats": false,
+   "diskControl": false,
+   "database": [
+    "Nintendo - Game Boy",
+    "Nintendo - Game Boy Color"
+   ],
+   "firmware": [],
+   "download": {
+    "windows-x64": "https://buildbot.libretro.com/nightly/windows/x86_64/latest/tgbdual_libretro.dll.zip",
+    "osx-arm64": "https://buildbot.libretro.com/nightly/apple/osx/arm64/latest/tgbdual_libretro.dylib.zip",
+    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/tgbdual_libretro.dylib.zip"
+   }
+  },
+  {
+   "id": "vecx",
+   "displayName": "GCE - Vectrex (vecx)",
+   "coreName": "vecx",
+   "version": "SVN",
+   "license": "GPLv3",
+   "authors": "Valavan Manohararajah|John Hawthorn|Nikita Zimin|Demeth",
+   "systemName": "Vectrex",
+   "manufacturer": "Smith Engineering|General Consumer Electronics",
+   "extensions": [
+    "bin",
+    "vec"
+   ],
+   "hwRender": true,
+   "needsFullPath": false,
+   "supportsNoGame": false,
+   "saveStates": true,
+   "cheats": false,
+   "diskControl": false,
+   "database": [
+    "GCE - Vectrex"
+   ],
+   "firmware": [],
+   "download": {
+    "windows-x64": "https://buildbot.libretro.com/nightly/windows/x86_64/latest/vecx_libretro.dll.zip",
+    "osx-arm64": "https://buildbot.libretro.com/nightly/apple/osx/arm64/latest/vecx_libretro.dylib.zip",
+    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/vecx_libretro.dylib.zip"
+   }
+  },
+  {
+   "id": "vemulator",
+   "displayName": "VeMUlator",
+   "coreName": "VeMUlator",
+   "version": "0.1",
+   "license": "GPL v3",
+   "authors": "Mahmoud Jaoune",
+   "systemName": "SEGA Visual Memory Unit",
+   "manufacturer": "Sega",
+   "extensions": [
+    "vms",
+    "dci",
+    "bin"
+   ],
+   "hwRender": false,
+   "needsFullPath": false,
+   "supportsNoGame": false,
+   "saveStates": false,
+   "cheats": false,
+   "diskControl": false,
+   "database": [],
+   "firmware": [],
+   "download": {
+    "windows-x64": "https://buildbot.libretro.com/nightly/windows/x86_64/latest/vemulator_libretro.dll.zip",
+    "osx-arm64": "https://buildbot.libretro.com/nightly/apple/osx/arm64/latest/vemulator_libretro.dylib.zip",
+    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/vemulator_libretro.dylib.zip"
+   }
+  },
+  {
+   "id": "vice_x64",
+   "displayName": "Commodore - C64 (VICE x64, fast)",
+   "coreName": "VICE x64",
+   "version": "3.10",
+   "license": "GPLv2",
+   "authors": "VICE Team",
+   "systemName": "C64",
+   "manufacturer": "Commodore",
+   "extensions": [
+    "d64",
+    "d71",
+    "d80",
+    "d81",
+    "d82",
+    "g64",
+    "g41",
+    "x64",
+    "t64",
+    "tap",
+    "prg",
+    "p00",
+    "crt",
+    "bin",
+    "zip",
+    "gz",
+    "d6z",
+    "d7z",
+    "d8z",
+    "g6z",
+    "g4z",
+    "x6z",
+    "cmd",
+    "m3u",
+    "vfl",
+    "vsf",
+    "nib",
+    "nbz",
+    "d2m",
+    "d4m",
+    "/"
+   ],
+   "hwRender": false,
+   "needsFullPath": true,
+   "supportsNoGame": true,
+   "saveStates": true,
+   "cheats": true,
+   "diskControl": true,
+   "database": [
+    "Commodore - 64"
+   ],
+   "firmware": [
+    {
+     "path": "vice/JiffyDOS_C64.bin",
+     "desc": "vice/JiffyDOS_C64.bin (JiffyDOS C64 Kernal)",
+     "optional": true
+    },
+    {
+     "path": "vice/JiffyDOS_1541-II.bin",
+     "desc": "vice/JiffyDOS_1541-II.bin (JiffyDOS 1541 drive BIOS)",
+     "optional": true
+    },
+    {
+     "path": "vice/JiffyDOS_1571_repl310654.bin",
+     "desc": "vice/JiffyDOS_1571_repl310654.bin (JiffyDOS 1571 drive BIOS)",
+     "optional": true
+    },
+    {
+     "path": "vice/JiffyDOS_1581.bin",
+     "desc": "vice/JiffyDOS_1581.bin (JiffyDOS 1581 drive BIOS)",
+     "optional": true
+    }
+   ],
+   "download": {
+    "windows-x64": "https://buildbot.libretro.com/nightly/windows/x86_64/latest/vice_x64_libretro.dll.zip",
+    "osx-arm64": "https://buildbot.libretro.com/nightly/apple/osx/arm64/latest/vice_x64_libretro.dylib.zip",
+    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/vice_x64_libretro.dylib.zip"
+   }
+  },
+  {
+   "id": "vice_x64sc",
+   "displayName": "Commodore - C64 (VICE x64sc, accurate)",
+   "coreName": "VICE x64sc",
+   "version": "3.10",
+   "license": "GPLv2",
+   "authors": "VICE Team",
+   "systemName": "C64",
+   "manufacturer": "Commodore",
+   "extensions": [
+    "d64",
+    "d71",
+    "d80",
+    "d81",
+    "d82",
+    "g64",
+    "g41",
+    "x64",
+    "t64",
+    "tap",
+    "prg",
+    "p00",
+    "crt",
+    "bin",
+    "zip",
+    "gz",
+    "d6z",
+    "d7z",
+    "d8z",
+    "g6z",
+    "g4z",
+    "x6z",
+    "cmd",
+    "m3u",
+    "vfl",
+    "vsf",
+    "nib",
+    "nbz",
+    "d2m",
+    "d4m",
+    "/"
+   ],
+   "hwRender": false,
+   "needsFullPath": true,
+   "supportsNoGame": true,
+   "saveStates": true,
+   "cheats": true,
+   "diskControl": true,
+   "database": [
+    "Commodore - 64"
+   ],
+   "firmware": [
+    {
+     "path": "vice/JiffyDOS_C64.bin",
+     "desc": "vice/JiffyDOS_C64.bin (JiffyDOS C64 Kernal)",
+     "optional": true
+    },
+    {
+     "path": "vice/JiffyDOS_1541-II.bin",
+     "desc": "vice/JiffyDOS_1541-II.bin (JiffyDOS 1541 drive BIOS)",
+     "optional": true
+    },
+    {
+     "path": "vice/JiffyDOS_1571_repl310654.bin",
+     "desc": "vice/JiffyDOS_1571_repl310654.bin (JiffyDOS 1571 drive BIOS)",
+     "optional": true
+    },
+    {
+     "path": "vice/JiffyDOS_1581.bin",
+     "desc": "vice/JiffyDOS_1581.bin (JiffyDOS 1581 drive BIOS)",
+     "optional": true
+    }
+   ],
+   "download": {
+    "windows-x64": "https://buildbot.libretro.com/nightly/windows/x86_64/latest/vice_x64sc_libretro.dll.zip",
+    "osx-arm64": "https://buildbot.libretro.com/nightly/apple/osx/arm64/latest/vice_x64sc_libretro.dylib.zip",
+    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/vice_x64sc_libretro.dylib.zip"
+   }
+  },
+  {
+   "id": "virtualjaguar",
+   "displayName": "Atari - Jaguar (Virtual Jaguar)",
+   "coreName": "Virtual Jaguar",
+   "version": "v3.3.0",
+   "license": "GPLv3",
+   "authors": "Joseph Mattiello|David Raingeard|Shamus",
+   "systemName": "Jaguar",
+   "manufacturer": "Atari",
+   "extensions": [
+    "j64",
+    "jag",
+    "rom",
+    "abs",
+    "cof",
+    "bin",
+    "prg",
+    "cue",
+    "cdi"
+   ],
+   "hwRender": false,
+   "needsFullPath": false,
+   "supportsNoGame": false,
+   "saveStates": true,
+   "cheats": true,
+   "diskControl": false,
+   "database": [
+    "Atari - Jaguar"
+   ],
+   "firmware": [
+    {
+     "path": "[BIOS] Atari Jaguar CD (World).j64",
+     "desc": "[BIOS] Atari Jaguar CD (World).j64 (Jaguar CD BIOS, retail - optional override)",
+     "optional": true
+    },
+    {
+     "path": "[BIOS] Atari Jaguar Developer CD (World).j64",
+     "desc": "[BIOS] Atari Jaguar Developer CD (World).j64 (Jaguar CD BIOS, developer - optional override)",
+     "optional": true
+    }
+   ],
+   "download": {
+    "windows-x64": "https://buildbot.libretro.com/nightly/windows/x86_64/latest/virtualjaguar_libretro.dll.zip",
+    "osx-arm64": "https://buildbot.libretro.com/nightly/apple/osx/arm64/latest/virtualjaguar_libretro.dylib.zip",
+    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/virtualjaguar_libretro.dylib.zip"
+   }
+  },
+  {
+   "id": "yabause",
+   "displayName": "Sega - Saturn (Yabause)",
+   "coreName": "Yabause",
+   "version": "v0.9.15",
+   "license": "GPLv2",
+   "authors": "Guillaume Duhammel|Theo Berkau|Anders Montonen",
+   "systemName": "Saturn",
+   "manufacturer": "Sega",
+   "extensions": [
+    "bin",
+    "ccd",
+    "chd",
+    "cue",
+    "iso",
+    "mds",
+    "zip",
+    "m3u"
+   ],
+   "hwRender": false,
+   "needsFullPath": true,
+   "supportsNoGame": false,
+   "saveStates": true,
+   "cheats": true,
+   "diskControl": false,
+   "database": [
+    "Sega - Saturn"
+   ],
+   "firmware": [
+    {
+     "path": "saturn_bios.bin",
+     "desc": "saturn_bios.bin (Saturn BIOS)",
+     "optional": true
+    }
+   ],
+   "download": {
+    "windows-x64": "https://buildbot.libretro.com/nightly/windows/x86_64/latest/yabause_libretro.dll.zip",
+    "osx-arm64": "https://buildbot.libretro.com/nightly/apple/osx/arm64/latest/yabause_libretro.dylib.zip",
+    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/yabause_libretro.dylib.zip"
+   }
+  }
+ ]
+}

@@ -1,0 +1,107 @@
+# OpenEmu for Windows
+
+Port do [OpenEmu](https://github.com/OpenEmu/OpenEmu) (macOS) para **Windows 10/11 x64**, mantido neste fork em
+`Windows/`. Reproduz a experiência do OpenEmu — biblioteca de jogos com capas, consoles na barra lateral,
+coleções, homebrew, save states, cheats, controles por sistema — com a emulação fornecida por **cores libretro**,
+um plugin ("driver") por console, já mapeados para **todos os 42 sistemas** do OpenEmu.
+
+*English summary at the bottom.*
+
+## Recursos (paridade com o OpenEmu)
+
+| Área | O que existe |
+|---|---|
+| Biblioteca | Importação por arrastar/soltar, arquivos ou pastas; detecção automática do sistema (extensão + assinatura); hash MD5/CRC/SHA1 como o OpenEmu (cabeçalhos iNES/SNES/Lynx/A78 ignorados); títulos e capas via **OpenVGDB**; ZIP com um ROM é extraído; cópia opcional dos ROMs para a biblioteca |
+| Navegação | Barra lateral **Consoles / Coleções / Homebrew**, grade com capas (tamanho ajustável) ou lista, busca, coleções manuais, "Adicionados/Jogados recentemente", capas manuais, informações, contagem de partidas |
+| Jogo | Janela por jogo com barra HUD (pausa, reset, avanço rápido, save/load, captura, cheats, opções do core, controles, disco, volume, tela cheia), escala inteira/proporção, filtro nearest/linear, mensagens do core, pausa ao perder foco |
+| Save states | Slots rápidos 1–9, estados nomeados com miniatura PNG, auto-save ao sair / retomar ao abrir, gerenciador (carregar/renomear/excluir); SRAM/RTC persistidos automaticamente |
+| Cheats | Por jogo (Game Genie / PAR / raw), ativados ao vivo via `retro_cheat_set` |
+| Controles | Mapas de teclado padrão **idênticos aos do OpenEmu** (extraídos dos plugins de sistema), gamepads XInput com layout RetroPad, rebinding por sistema/jogador na tela de Preferências, hotkeys configuráveis, teclado passado ao core em computadores (C64/MSX/Atari 8-bit) |
+| Cores | Gerenciador de cores: instalar/atualizar/remover a partir do buildbot libretro, core padrão por sistema, opções do core persistidas; o pacote de distribuição já traz **todos os cores** (`cores\`) |
+| BIOS | Lista de firmwares exigidos/opcionais por sistema (do libretro-core-info), importação por arquivo ou arrastar |
+| Homebrew | Mesmo catálogo curado do OpenEmu (`games.xml`), download e execução direta |
+| Idiomas | Inglês e Português (Brasil) |
+| Extras | CLI headless (`openemu-cli`), abertura de ROM por linha de comando / "Abrir com", cores OpenGL (N64, PSX HW, PSP, Dreamcast, DS, GameCube, PS2, Saturn) via `GlGameView` |
+
+## Sistemas e cores
+
+Os 42 sistemas do OpenEmu com os cores correspondentes (primeiro = padrão):
+
+3DO (opera) · Arcade (fbneo, mame2003_plus) · Atari 2600 (stella) · 5200 (a5200) · 7800 (prosystem) · Atari 8-bit (atari800) ·
+ColecoVision (gearcoleco, bluemsx) · Commodore 64 (vice_x64sc) · Dreamcast (flycast) · Game Boy / Color (gambatte, sameboy, mgba) ·
+Game Boy Advance (mgba) · GameCube (dolphin) · Game Gear, Master System, SG-1000, Mega Drive, Mega-CD (genesis_plus_gx, picodrive) ·
+32X (picodrive) · Intellivision (freeintv) · Jaguar (virtualjaguar) · Lynx (handy) · MSX (bluemsx) · Nintendo 64 (mupen64plus_next) ·
+Nintendo DS (melondsds, desmume) · NES / Famicom Disk System (fceumm, nestopia, mesen) · Neo Geo Pocket (mednafen_ngp) · Odyssey² (o2em) ·
+TurboGrafx-16 / CD / SuperGrafx (mednafen_pce) · PC-FX (mednafen_pcfx) · PlayStation (mednafen_psx_hw, swanstation, pcsx_rearmed) ·
+PlayStation 2 (pcsx2, play) · PSP (ppsspp) · Pokémon mini (pokemini) · Saturn (mednafen_saturn, kronos) · Supervision (potator) ·
+VMU (vemulator) · Vectrex (vecx) · Virtual Boy (mednafen_vb) · WonderSwan (mednafen_wswan)
+
+O catálogo completo (extensões, controles, mapa de teclado, mapa RetroPad, cores) está em
+`src/OpenEmu.Core/Resources/systems.json`; os cores (firmwares, extensões, URLs) em `cores.json`.
+Ambos são gerados a partir dos plugins do OpenEmu e do `libretro-core-info`.
+
+## Build
+
+Requisitos: .NET SDK 9.
+
+```powershell
+cd Windows
+dotnet build OpenEmu.Windows.sln
+dotnet test                      # 23 testes (inclui carga real de um core libretro)
+dotnet run --project src/OpenEmu.App
+```
+
+Pacote de distribuição com todos os cores (`dist\OpenEmu-Windows-x64.zip`):
+
+```powershell
+.\scripts\build-windows.ps1      # ou scripts/build-windows.sh no macOS/Linux
+```
+
+CI: `.github/workflows/windows.yml` compila, testa e publica o zip como artefato.
+
+### CLI
+
+```
+openemu-cli systems | cores | install --all | bios | import <arquivos> | library
+openemu-cli run --core fceumm --rom jogo.nes --frames 300 --screenshot out.png --state
+```
+
+## Pastas
+
+| Windows | macOS (OpenEmu) |
+|---|---|
+| `%APPDATA%\OpenEmu\settings.json`, `Cores\`, `openvgdb.sqlite` | `~/Library/Application Support/OpenEmu` |
+| `Documentos\OpenEmu Library\` → `roms\`, `Battery Saves\`, `Save States\`, `Screenshots\`, `Artwork\`, `BIOS\`, `Library.sqlite` | `Game Library/` |
+
+Variáveis: `OPENEMU_HOME`, `OPENEMU_LIBRARY`, `OPENEMU_CORES`.
+
+## Arquitetura
+
+```
+src/OpenEmu.Core   biblioteca .NET (sem UI): Libretro (loader P/Invoke + ambiente), Emulation (thread, pacing, SRAM,
+                   states, cheats), Video (conversão de pixels, PNG), Audio (WASAPI), Input (RetroPad, teclado HID,
+                   XInput), Systems/Cores/Bios (catálogos), Library (SQLite, importer, OpenVGDB), Homebrew, Localization
+src/OpenEmu.App    Avalonia UI 11: MainWindow (biblioteca), GameWindow (+ GameView software / GlGameView OpenGL),
+                   PreferencesWindow (Biblioteca, Jogo, Controles, Cores, BIOS), janelas de states/cheats/opções
+src/OpenEmu.Cli    front-end headless (testes, scripts, CI)
+tests/             xUnit
+```
+
+O código do OpenEmu original (Swift/Objective-C, Cocoa) continua na raiz do repositório e serve de referência;
+os plugins de sistema (`OpenEmu/SystemPlugins/*/`) são a fonte do `systems.json`.
+
+## Limitações conhecidas (v0.1)
+
+- Cores OpenGL: caminho implementado (FBO + blit), validado apenas com cores de software nesta versão; cores Vulkan/D3D não são suportados.
+- Shaders (OpenEmu-Shaders/slang) não portados — apenas nearest/linear.
+- Gamepads: XInput (Xbox e compatíveis); DirectInput/HID genérico não implementado.
+- Arquivos 7z não são extraídos (ZIP sim); conjuntos de arcade são usados zipados.
+- Cada jogo roda no mesmo processo (o OpenEmu usa XPC helpers); um jogo por vez é o cenário testado.
+
+---
+
+### English
+
+OpenEmu for Windows is a .NET 9 / Avalonia port of the OpenEmu library + emulator front-end. Emulation comes from
+libretro cores mapped to all 42 OpenEmu systems; the distribution bundles every core. See the tables above for the
+feature list, `scripts/build-windows.ps1` for packaging and `openemu-cli` for headless use.
