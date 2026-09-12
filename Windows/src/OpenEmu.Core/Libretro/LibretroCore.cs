@@ -612,16 +612,22 @@ public sealed unsafe class LibretroCore : IDisposable
         return opt;
     }
 
-    private void ParseOptionsV1(retro_core_option_definition* defs)
+    // retro_core_option_definition / _v2_definition contain a fixed array of 128 {value,label} pointer pairs, so their
+    // layout depends on the pointer size (x86 = 4 bytes, x64/ARM64 = 8). They are walked manually to support all three.
+    private static readonly int PtrSize = IntPtr.Size;
+    private static byte* PtrAt(byte* basePtr, int index) => *(byte**)(basePtr + index * PtrSize);
+
+    private void ParseOptionsV1(retro_core_option_definition* defsTyped)
     {
-        for (var d = defs; d != null && d->key != null; d++)
+        // layout: key, desc, info, values[128]{value,label}, default_value
+        var stride = (3 + 256 + 1) * PtrSize;
+        for (var d = (byte*)defsTyped; d != null && PtrAt(d, 0) != null; d += stride)
         {
-            var opt = GetOrAddOption(S(d->key)!);
-            opt.Description = S(d->desc) ?? opt.Key; opt.Info = S(d->info);
+            var opt = GetOrAddOption(S(PtrAt(d, 0))!);
+            opt.Description = S(PtrAt(d, 1)) ?? opt.Key; opt.Info = S(PtrAt(d, 2));
             opt.Values.Clear();
-            var vals = (retro_core_option_value*)d->values;
-            for (var i = 0; i < 128 && vals[i].value != null; i++) opt.Values.Add((S(vals[i].value)!, S(vals[i].label) ?? S(vals[i].value)!));
-            opt.DefaultValue = S(d->default_value) ?? (opt.Values.Count > 0 ? opt.Values[0].Value : null);
+            for (var i = 0; i < 128 && PtrAt(d, 3 + i * 2) != null; i++) opt.Values.Add((S(PtrAt(d, 3 + i * 2))!, S(PtrAt(d, 4 + i * 2)) ?? S(PtrAt(d, 3 + i * 2))!));
+            opt.DefaultValue = S(PtrAt(d, 3 + 256)) ?? (opt.Values.Count > 0 ? opt.Values[0].Value : null);
         }
         OptionsChanged?.Invoke();
     }
@@ -629,18 +635,20 @@ public sealed unsafe class LibretroCore : IDisposable
     private void ParseOptionsV2(retro_core_options_v2* v2)
     {
         var cats = new Dictionary<string, string>();
-        for (var c = v2->categories; c != null && c->key != null; c++) cats[S(c->key)!] = S(c->desc) ?? S(c->key)!;
-        for (var d = v2->definitions; d != null && d->key != null; d++)
+        // category: key, desc, info
+        for (var c = (byte*)v2->categories; c != null && PtrAt(c, 0) != null; c += 3 * PtrSize) cats[S(PtrAt(c, 0))!] = S(PtrAt(c, 1)) ?? S(PtrAt(c, 0))!;
+        // definition: key, desc, desc_categorized, info, info_categorized, category_key, values[128], default_value
+        var stride = (6 + 256 + 1) * PtrSize;
+        for (var d = (byte*)v2->definitions; d != null && PtrAt(d, 0) != null; d += stride)
         {
-            var opt = GetOrAddOption(S(d->key)!);
-            var catKey = S(d->category_key);
+            var opt = GetOrAddOption(S(PtrAt(d, 0))!);
+            var catKey = S(PtrAt(d, 5));
             opt.Category = catKey != null && cats.TryGetValue(catKey, out var cn) ? cn : catKey;
-            opt.Description = (catKey != null ? S(d->desc_categorized) : null) ?? S(d->desc) ?? opt.Key;
-            opt.Info = (catKey != null ? S(d->info_categorized) : null) ?? S(d->info);
+            opt.Description = (catKey != null ? S(PtrAt(d, 2)) : null) ?? S(PtrAt(d, 1)) ?? opt.Key;
+            opt.Info = (catKey != null ? S(PtrAt(d, 4)) : null) ?? S(PtrAt(d, 3));
             opt.Values.Clear();
-            var vals = (retro_core_option_value*)d->values;
-            for (var i = 0; i < 128 && vals[i].value != null; i++) opt.Values.Add((S(vals[i].value)!, S(vals[i].label) ?? S(vals[i].value)!));
-            opt.DefaultValue = S(d->default_value) ?? (opt.Values.Count > 0 ? opt.Values[0].Value : null);
+            for (var i = 0; i < 128 && PtrAt(d, 6 + i * 2) != null; i++) opt.Values.Add((S(PtrAt(d, 6 + i * 2))!, S(PtrAt(d, 7 + i * 2)) ?? S(PtrAt(d, 6 + i * 2))!));
+            opt.DefaultValue = S(PtrAt(d, 6 + 256)) ?? (opt.Values.Count > 0 ? opt.Values[0].Value : null);
         }
         OptionsChanged?.Invoke();
     }
@@ -689,7 +697,12 @@ public static class PrintfLite
                 case 'x': sb.Append(((ulong)(long)arg & (fmt[i - 1] is 'l' or 'z' or 'j' ? ulong.MaxValue : 0xFFFFFFFF)).ToString("x")); break;
                 case 'X': sb.Append(((ulong)(long)arg & (fmt[i - 1] is 'l' or 'z' or 'j' ? ulong.MaxValue : 0xFFFFFFFF)).ToString("X")); break;
                 case 'p': sb.Append("0x").Append(((long)arg).ToString("x")); break;
-                case 'f': case 'F': case 'g': case 'G': case 'e': case 'E': sb.Append(BitConverter.Int64BitsToDouble((long)arg).ToString("0.###")); break;
+                case 'f': case 'F': case 'g': case 'G': case 'e': case 'E':
+                {
+                    long bits = (long)arg;
+                    if (IntPtr.Size == 4) { var hi = ai < args.Length ? args[ai++] : IntPtr.Zero; bits = (uint)(long)arg | ((long)(uint)(long)hi << 32); }
+                    sb.Append(BitConverter.Int64BitsToDouble(bits).ToString("0.###")); break;
+                }
                 default: sb.Append('?'); break;
             }
         }

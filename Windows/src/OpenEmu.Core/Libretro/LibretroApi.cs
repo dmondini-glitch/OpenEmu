@@ -108,13 +108,8 @@ public unsafe struct retro_log_callback { public delegate* unmanaged[Cdecl]<int,
 [StructLayout(LayoutKind.Sequential)]
 public unsafe struct retro_core_option_value { public byte* value; public byte* label; }
 
-[StructLayout(LayoutKind.Sequential)]
-public unsafe struct retro_core_option_definition
-{
-    public byte* key; public byte* desc; public byte* info;
-    public fixed byte values[128 * 16]; // retro_core_option_value[128] (2 pointers each on 64-bit)
-    public byte* default_value;
-}
+/// <summary>Opaque: contains a 128-entry pointer-pair array whose size depends on the pointer width; parsed manually.</summary>
+public struct retro_core_option_definition { }
 
 [StructLayout(LayoutKind.Sequential)]
 public unsafe struct retro_core_options_intl { public retro_core_option_definition* us; public retro_core_option_definition* local; }
@@ -122,13 +117,8 @@ public unsafe struct retro_core_options_intl { public retro_core_option_definiti
 [StructLayout(LayoutKind.Sequential)]
 public unsafe struct retro_core_option_v2_category { public byte* key; public byte* desc; public byte* info; }
 
-[StructLayout(LayoutKind.Sequential)]
-public unsafe struct retro_core_option_v2_definition
-{
-    public byte* key; public byte* desc; public byte* desc_categorized; public byte* info; public byte* info_categorized; public byte* category_key;
-    public fixed byte values[128 * 16];
-    public byte* default_value;
-}
+/// <summary>Opaque: see retro_core_option_definition.</summary>
+public struct retro_core_option_v2_definition { }
 
 [StructLayout(LayoutKind.Sequential)]
 public unsafe struct retro_core_options_v2 { public retro_core_option_v2_category* categories; public retro_core_option_v2_definition* definitions; }

@@ -33,7 +33,7 @@ public sealed class SessionOptions
 /// Runs one libretro core on a dedicated thread with frame pacing, audio, input, battery saves, states and cheats.
 /// All core calls are marshalled onto the emulation thread via <see cref="Invoke"/>.
 /// </summary>
-public sealed class EmulationSession : IDisposable
+public sealed class EmulationSession : IEmulator
 {
     private readonly SessionOptions _opt;
     private readonly Thread _thread;
@@ -67,6 +67,14 @@ public sealed class EmulationSession : IDisposable
     public double SampleRate => _core?.AvInfo.timing.sample_rate is > 0 and var s ? s : 48000.0;
     public int CurrentSlot { get; set; } = 1;
     public IHwRenderHost? HwRenderHost { get; set; }
+    public EmulatorInfo? Info { get; private set; }
+    public IReadOnlyList<CoreOptionSnapshot> CoreOptions => _core?.Options.Values.Select(CoreOptionSnapshot.From).ToList() ?? new List<CoreOptionSnapshot>();
+    public uint DiskImageIndex => _core?.DiskImageIndex ?? 0;
+    public float Volume { get => Audio.Volume; set => Audio.Volume = value; }
+    public bool Muted { get => Audio.Muted; set => Audio.Muted = value; }
+    public void SetKey(int hidUsage, bool down) => Input.Keyboard.Set(hidUsage, down);
+    public void ClearKeys() => Input.Keyboard.Clear();
+    public Task SendKeyboardEvent(bool down, uint retroKey, uint character, ushort modifiers) => Invoke(() => _core?.SendKeyboardEvent(down, retroKey, character, modifiers));
     /// <summary>Set when the core needs a GL context; the UI must then drive frames via <see cref="RunFrameOnCallerThread"/>.</summary>
     public bool RequiresHwRender { get; private set; }
 
@@ -197,6 +205,10 @@ public sealed class EmulationSession : IDisposable
         if (!core.LoadGame(_opt.RomPath))
             throw new InvalidOperationException($"{core.LibraryName} could not load {_opt.RomPath}");
         RequiresHwRender = core.UsesHwRender;
+        var labels = new List<string>();
+        if (core.HasDiskControl) for (uint i = 0; i < core.DiskImageCount; i++) labels.Add(core.GetDiskImageLabel(i) ?? $"Disc {i + 1}");
+        Info = new EmulatorInfo(core.LibraryName, core.LibraryVersion, core.AvInfo.timing.fps, core.AvInfo.timing.sample_rate, core.AvInfo.geometry.base_width, core.AvInfo.geometry.base_height,
+            core.AvInfo.geometry.aspect_ratio, core.Rotation, core.HasDiskControl, core.DiskImageCount, labels, core.HasKeyboardCallback, core.UsesHwRender, false);
         Audio.Configure((int)Math.Round(core.AvInfo.timing.sample_rate));
         Audio.Volume = 1f;
         // restore battery save

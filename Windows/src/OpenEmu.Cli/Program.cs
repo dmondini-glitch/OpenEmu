@@ -35,6 +35,9 @@ try
             foreach (var kv in res.Where(k => k.Value != null)) Console.Error.WriteLine($"  {kv.Key} FAILED: {kv.Value!.Message}");
             return res.Values.All(v => v == null) ? 0 : 1;
         }
+        case "platform":
+            Console.WriteLine($"native={CoreManifest.NativePlatformKey} cores={CoreManifest.PlatformKey} requiresHost={CoreManifest.RequiresCoreHost} host={OpenEmu.Core.Remote.RemoteSession.FindHost(CoreManifest.HostArchitecture(CoreManifest.PlatformKey)) ?? "(not found)"} coresDir={new CoreManager().UserCoresDir} bundled={new CoreManager().BundledCoresDir}");
+            return 0;
         case "bios":
             foreach (var b in new BiosManager().Status())
                 Console.WriteLine($"{(b.Present ? "OK " : "-- ")}{b.System.Name,-24} {b.Firmware.Path,-30} {(b.Firmware.Optional ? "(optional) " : "")}{b.Firmware.Description}");
@@ -64,14 +67,23 @@ try
             var sys = (Opt("system") is { } sid ? SystemCatalog.Find(sid) : null) ?? (rom != null ? SystemDetector.Detect(rom) : null) ?? SystemCatalog.All.FirstOrDefault(s => s.Cores.Contains(coreId)) ?? SystemCatalog.All[0];
             var opts = new SessionOptions { System = sys, Core = def, CoreLibraryPath = lib, RomPath = rom, GameKey = rom != null ? Path.GetFileNameWithoutExtension(rom) : coreId };
             var audio = new NullAudioSink();
-            using var session = new EmulationSession(opts, audio, new InputManager(new NullGamepadProvider()));
+            IEmulator session;
+            if (Flag("host") || CoreManifest.RequiresCoreHost)
+            {
+                var hostPath = Opt("host-path") ?? OpenEmu.Core.Remote.RemoteSession.FindHost(CoreManifest.HostArchitecture(CoreManifest.PlatformKey)) ?? throw new FileNotFoundException("core host not found (set OPENEMU_COREHOST)");
+                session = new OpenEmu.Core.Remote.RemoteSession(opts, hostPath);
+                Console.WriteLine($"using core host {hostPath}");
+            }
+            else session = new EmulationSession(opts, audio, new InputManager(new NullGamepadProvider()));
             session.Log += (lvl, msg) => { if (Flag("verbose") || lvl >= 2) Console.Error.WriteLine($"[{coreId}] {msg}"); };
             session.FastForward = Flag("fast");
             await session.StartAsync();
-            Console.WriteLine($"{session.Core!.LibraryName} {session.Core.LibraryVersion}: {session.Core.AvInfo.geometry.base_width}x{session.Core.AvInfo.geometry.base_height} @ {session.Core.AvInfo.timing.fps:0.##} fps, {session.Core.AvInfo.timing.sample_rate} Hz, pixfmt={session.Core.PixelFormat}, hw={session.RequiresHwRender}, options={session.Core.Options.Count}");
+            var info = session.Info!;
+            Console.WriteLine($"{info.CoreName} {info.CoreVersion}: {info.BaseWidth}x{info.BaseHeight} @ {info.Fps:0.##} fps, {info.SampleRate} Hz, hw={info.HwRender}, remote={info.IsRemote}, options={session.CoreOptions.Count}");
             var sw = System.Diagnostics.Stopwatch.StartNew();
-            while (session.FrameCount < frames && session.State == SessionState.Running) await Task.Delay(5);
-            Console.WriteLine($"ran {session.FrameCount} frames in {sw.Elapsed.TotalSeconds:0.00}s; audio samples={audio.SamplesWritten}; frame {session.Frame.Width}x{session.Frame.Height} blank={session.Frame.IsBlank()}");
+            long count = 0; session.FrameRendered += () => Interlocked.Increment(ref count);
+            while (Interlocked.Read(ref count) < frames && session.State == SessionState.Running && sw.Elapsed < TimeSpan.FromSeconds(120)) await Task.Delay(5);
+            Console.WriteLine($"ran {count} frames in {sw.Elapsed.TotalSeconds:0.00}s; audio samples={audio.SamplesWritten}; frame {session.Frame.Width}x{session.Frame.Height} blank={session.Frame.IsBlank()}");
             if (Opt("screenshot") is { } shot) { File.WriteAllBytes(shot, session.Screenshot()); Console.WriteLine($"screenshot → {shot}"); }
             if (Flag("state"))
             {
@@ -92,6 +104,8 @@ try
                   import <files|folders> [--no-copy]
                   library                         list games
                   run --core <id> [--rom file] [--frames N] [--screenshot out.png] [--state] [--install] [--fast] [--verbose]
+                                  [--host [--host-path exe]]   run the core in the out-of-process core host
+                  platform                        show native platform, core platform and core-host status
                 """);
             return 0;
     }

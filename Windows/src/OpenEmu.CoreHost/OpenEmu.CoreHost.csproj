@@ -1,0 +1,11 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <AssemblyName>OpenEmu.CoreHost</AssemblyName>
+    <RootNamespace>OpenEmu.CoreHost</RootNamespace>
+    <RuntimeIdentifiers>win-x64;win-x86;win-arm64;osx-arm64;osx-x64</RuntimeIdentifiers>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\OpenEmu.Core\OpenEmu.Core.csproj" />
+  </ItemGroup>
+</Project>

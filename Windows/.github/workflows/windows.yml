@@ -16,20 +16,38 @@ jobs:
         with: { dotnet-version: 9.0.x }
       - run: dotnet build OpenEmu.Windows.sln -c Release
       - run: dotnet test tests/OpenEmu.Core.Tests/OpenEmu.Core.Tests.csproj -c Release --no-build --logger "trx"
-      - name: Headless core smoke test (fceumm on Windows)
+      - name: Headless smoke test (in-process and through the core host)
         run: |
+          dotnet run --project src/OpenEmu.Cli -c Release --no-build -- platform
           dotnet run --project src/OpenEmu.Cli -c Release --no-build -- install fceumm 2048
           dotnet run --project src/OpenEmu.Cli -c Release --no-build -- run --core 2048 --frames 60 --state
-  package:
-    needs: test
+          $env:OPENEMU_COREHOST = (Resolve-Path src/OpenEmu.CoreHost/bin/Release/net9.0/OpenEmu.CoreHost.dll)
+          dotnet run --project src/OpenEmu.Cli -c Release --no-build -- run --core 2048 --frames 60 --state --host
+  test-x86:
     runs-on: windows-latest
     defaults: { run: { working-directory: Windows } }
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-dotnet@v4
         with: { dotnet-version: 9.0.x }
-      - run: pwsh scripts/build-windows.ps1
+      - name: 32-bit build + real core smoke test (x86 cores from the buildbot)
+        run: |
+          dotnet publish src/OpenEmu.Cli/OpenEmu.Cli.csproj -c Release -r win-x86 --self-contained true -o out-x86
+          .\out-x86\openemu-cli.exe platform
+          .\out-x86\openemu-cli.exe install fceumm 2048
+          .\out-x86\openemu-cli.exe run --core 2048 --frames 60 --state
+  package:
+    needs: [test, test-x86]
+    runs-on: windows-latest
+    strategy:
+      matrix: { arch: [x64, x86, arm64] }
+    defaults: { run: { working-directory: Windows } }
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with: { dotnet-version: 9.0.x }
+      - run: pwsh scripts/build-windows.ps1 -Arch ${{ matrix.arch }}
       - uses: actions/upload-artifact@v4
         with:
-          name: OpenEmu-Windows-x64
-          path: Windows/dist/OpenEmu-Windows-x64.zip
+          name: OpenEmu-Windows-${{ matrix.arch }}
+          path: Windows/dist/OpenEmu-Windows-${{ matrix.arch }}.zip

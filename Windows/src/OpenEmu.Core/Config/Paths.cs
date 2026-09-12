@@ -18,8 +18,17 @@ public static class Paths
 
     public static string SettingsFile => Path.Combine(ConfigRoot, "settings.json");
     public static string LogsDir => Path.Combine(ConfigRoot, "Logs");
-    public static string CoresDir => Environment.GetEnvironmentVariable("OPENEMU_CORES") ?? Path.Combine(ConfigRoot, "Cores");
-    public static string BundledCoresDir => Path.Combine(AppContext.BaseDirectory, "cores");
+    /// <summary>User-installed cores, one folder per platform key (windows-x64, windows-x86, ...).</summary>
+    public static string CoresDir => Environment.GetEnvironmentVariable("OPENEMU_CORES") ?? Path.Combine(ConfigRoot, "Cores", Cores.CoreManifest.PlatformKey);
+    /// <summary>Cores shipped with the application: &lt;app&gt;\cores\&lt;platform key&gt;\ (falls back to a flat cores\ folder).</summary>
+    public static string BundledCoresDir
+    {
+        get
+        {
+            var perPlatform = Path.Combine(AppContext.BaseDirectory, "cores", Cores.CoreManifest.PlatformKey);
+            return Directory.Exists(perPlatform) ? perPlatform : Path.Combine(AppContext.BaseDirectory, "cores");
+        }
+    }
     public static string DatabaseFile => Path.Combine(LibraryRoot, "Library.sqlite");
     public static string RomsDir => Path.Combine(LibraryRoot, "roms");
     public static string SavesDir => Path.Combine(LibraryRoot, "Battery Saves");

@@ -57,17 +57,39 @@ public static class CoreManifest
 
     public static CoreDefinition? Find(string id) => All.FirstOrDefault(c => c.Id == id);
 
-    /// <summary>Platform key used in the manifest download table.</summary>
+    /// <summary>Platform key of the running process ("windows-x64", "windows-x86", "windows-arm64", "osx-arm64", ...).</summary>
+    public static string NativePlatformKey => PlatformKeyFor(System.Runtime.InteropServices.RuntimeInformation.ProcessArchitecture);
+
+    public static string PlatformKeyFor(System.Runtime.InteropServices.Architecture arch)
+    {
+        var a = arch switch { System.Runtime.InteropServices.Architecture.X64 => "x64", System.Runtime.InteropServices.Architecture.X86 => "x86", System.Runtime.InteropServices.Architecture.Arm64 => "arm64", _ => arch.ToString().ToLowerInvariant() };
+        if (OperatingSystem.IsWindows()) return "windows-" + a;
+        if (OperatingSystem.IsMacOS()) return "osx-" + a;
+        return "linux-" + a;
+    }
+
+    /// <summary>
+    /// Platform whose cores this process should use. Native when cores exist for it; on Windows ARM64 (no native libretro
+    /// builds) the x64 cores are used through the out-of-process core host running under Windows' x64 emulation.
+    /// Override with the OPENEMU_CORE_PLATFORM environment variable (e.g. "windows-x86" on Windows 10 ARM).
+    /// </summary>
     public static string PlatformKey
     {
         get
         {
-            var arch = System.Runtime.InteropServices.RuntimeInformation.OSArchitecture;
-            if (OperatingSystem.IsWindows()) return "windows-x64";
-            if (OperatingSystem.IsMacOS()) return arch == System.Runtime.InteropServices.Architecture.Arm64 ? "osx-arm64" : "osx-x64";
-            return "linux-x64";
+            var env = Environment.GetEnvironmentVariable("OPENEMU_CORE_PLATFORM");
+            if (!string.IsNullOrEmpty(env)) return env;
+            var native = NativePlatformKey;
+            if (All.Any(c => c.Download.ContainsKey(native))) return native;
+            return native switch { "windows-arm64" => "windows-x64", "osx-arm64" => "osx-x64", _ => native };
         }
     }
+
+    /// <summary>True when cores for <see cref="PlatformKey"/> cannot be loaded into this process and need the core host.</summary>
+    public static bool RequiresCoreHost => PlatformKey != NativePlatformKey;
+
+    /// <summary>Process architecture the core host must have to load cores of the given platform key.</summary>
+    public static string HostArchitecture(string platformKey) => platformKey[(platformKey.IndexOf('-') + 1)..];
 
     public static string LibraryExtension => OperatingSystem.IsWindows() ? ".dll" : OperatingSystem.IsMacOS() ? ".dylib" : ".so";
     public static string LibraryFileName(string coreId) => coreId + "_libretro" + LibraryExtension;

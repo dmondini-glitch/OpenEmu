@@ -64,8 +64,8 @@ public sealed class XInputProvider : IGamepadProvider
     [StructLayout(LayoutKind.Sequential)]
     private struct XINPUT_VIBRATION { public ushort wLeftMotorSpeed, wRightMotorSpeed; }
 
-    private unsafe delegate* unmanaged<uint, XINPUT_STATE*, uint> _getState;
-    private unsafe delegate* unmanaged<uint, XINPUT_VIBRATION*, uint> _setState;
+    private unsafe delegate* unmanaged[Stdcall]<uint, XINPUT_STATE*, uint> _getState;
+    private unsafe delegate* unmanaged[Stdcall]<uint, XINPUT_VIBRATION*, uint> _setState;
     private readonly bool[] _connected = new bool[4];
     private readonly DateTime[] _nextProbe = new DateTime[4];
 
@@ -79,8 +79,8 @@ public sealed class XInputProvider : IGamepadProvider
         foreach (var name in new[] { "xinput1_4.dll", "xinput1_3.dll", "xinput9_1_0.dll" })
             if (NativeLibrary.TryLoad(name, out lib)) break;
         if (lib == IntPtr.Zero) throw new DllNotFoundException("XInput not available");
-        _getState = (delegate* unmanaged<uint, XINPUT_STATE*, uint>)NativeLibrary.GetExport(lib, "XInputGetState");
-        _setState = (delegate* unmanaged<uint, XINPUT_VIBRATION*, uint>)NativeLibrary.GetExport(lib, "XInputSetState");
+        _getState = (delegate* unmanaged[Stdcall]<uint, XINPUT_STATE*, uint>)NativeLibrary.GetExport(lib, "XInputGetState");
+        _setState = (delegate* unmanaged[Stdcall]<uint, XINPUT_VIBRATION*, uint>)NativeLibrary.GetExport(lib, "XInputSetState");
     }
 
     public unsafe GamepadState GetState(int index)

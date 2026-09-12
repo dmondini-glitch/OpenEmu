@@ -70,6 +70,8 @@ public sealed class AppSettings
     public HashSet<string> HiddenSystems { get; set; } = new();
     public DateTime? LastCoreUpdateCheck { get; set; }
     public bool WelcomeShown { get; set; }
+    /// <summary>Run every core in the separate core-host process (always true on Windows ARM64).</summary>
+    public bool RunCoresOutOfProcess { get; set; }
 
     [JsonIgnore] public static JsonSerializerOptions JsonOptions { get; } = new() { WriteIndented = true, Converters = { new JsonStringEnumConverter() }, DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull };
 }

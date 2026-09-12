@@ -24,7 +24,8 @@
    "download": {
     "windows-x64": "https://buildbot.libretro.com/nightly/windows/x86_64/latest/2048_libretro.dll.zip",
     "osx-arm64": "https://buildbot.libretro.com/nightly/apple/osx/arm64/latest/2048_libretro.dylib.zip",
-    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/2048_libretro.dylib.zip"
+    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/2048_libretro.dylib.zip",
+    "windows-x86": "https://buildbot.libretro.com/nightly/windows/x86/latest/2048_libretro.dll.zip"
    }
   },
   {
@@ -59,7 +60,8 @@
    "download": {
     "windows-x64": "https://buildbot.libretro.com/nightly/windows/x86_64/latest/a5200_libretro.dll.zip",
     "osx-arm64": "https://buildbot.libretro.com/nightly/apple/osx/arm64/latest/a5200_libretro.dylib.zip",
-    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/a5200_libretro.dylib.zip"
+    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/a5200_libretro.dylib.zip",
+    "windows-x86": "https://buildbot.libretro.com/nightly/windows/x86/latest/a5200_libretro.dll.zip"
    }
   },
   {
@@ -136,7 +138,8 @@
    "download": {
     "windows-x64": "https://buildbot.libretro.com/nightly/windows/x86_64/latest/atari800_libretro.dll.zip",
     "osx-arm64": "https://buildbot.libretro.com/nightly/apple/osx/arm64/latest/atari800_libretro.dylib.zip",
-    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/atari800_libretro.dylib.zip"
+    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/atari800_libretro.dylib.zip",
+    "windows-x86": "https://buildbot.libretro.com/nightly/windows/x86/latest/atari800_libretro.dll.zip"
    }
   },
   {
@@ -200,7 +203,8 @@
    "download": {
     "windows-x64": "https://buildbot.libretro.com/nightly/windows/x86_64/latest/blastem_libretro.dll.zip",
     "osx-arm64": "https://buildbot.libretro.com/nightly/apple/osx/arm64/latest/blastem_libretro.dylib.zip",
-    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/blastem_libretro.dylib.zip"
+    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/blastem_libretro.dylib.zip",
+    "windows-x86": "https://buildbot.libretro.com/nightly/windows/x86/latest/blastem_libretro.dll.zip"
    }
   },
   {
@@ -253,7 +257,8 @@
    "download": {
     "windows-x64": "https://buildbot.libretro.com/nightly/windows/x86_64/latest/bluemsx_libretro.dll.zip",
     "osx-arm64": "https://buildbot.libretro.com/nightly/apple/osx/arm64/latest/bluemsx_libretro.dylib.zip",
-    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/bluemsx_libretro.dylib.zip"
+    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/bluemsx_libretro.dylib.zip",
+    "windows-x86": "https://buildbot.libretro.com/nightly/windows/x86/latest/bluemsx_libretro.dll.zip"
    }
   },
   {
@@ -390,7 +395,8 @@
    "download": {
     "windows-x64": "https://buildbot.libretro.com/nightly/windows/x86_64/latest/bsnes_libretro.dll.zip",
     "osx-arm64": "https://buildbot.libretro.com/nightly/apple/osx/arm64/latest/bsnes_libretro.dylib.zip",
-    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/bsnes_libretro.dylib.zip"
+    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/bsnes_libretro.dylib.zip",
+    "windows-x86": "https://buildbot.libretro.com/nightly/windows/x86/latest/bsnes_libretro.dll.zip"
    }
   },
   {
@@ -522,7 +528,8 @@
    "download": {
     "windows-x64": "https://buildbot.libretro.com/nightly/windows/x86_64/latest/bsnes_hd_beta_libretro.dll.zip",
     "osx-arm64": "https://buildbot.libretro.com/nightly/apple/osx/arm64/latest/bsnes_hd_beta_libretro.dylib.zip",
-    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/bsnes_hd_beta_libretro.dylib.zip"
+    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/bsnes_hd_beta_libretro.dylib.zip",
+    "windows-x86": "https://buildbot.libretro.com/nightly/windows/x86/latest/bsnes_hd_beta_libretro.dll.zip"
    }
   },
   {
@@ -779,7 +786,8 @@
    "download": {
     "windows-x64": "https://buildbot.libretro.com/nightly/windows/x86_64/latest/fbneo_libretro.dll.zip",
     "osx-arm64": "https://buildbot.libretro.com/nightly/apple/osx/arm64/latest/fbneo_libretro.dylib.zip",
-    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/fbneo_libretro.dylib.zip"
+    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/fbneo_libretro.dylib.zip",
+    "windows-x86": "https://buildbot.libretro.com/nightly/windows/x86/latest/fbneo_libretro.dll.zip"
    }
   },
   {
@@ -827,7 +835,8 @@
    "download": {
     "windows-x64": "https://buildbot.libretro.com/nightly/windows/x86_64/latest/fceumm_libretro.dll.zip",
     "osx-arm64": "https://buildbot.libretro.com/nightly/apple/osx/arm64/latest/fceumm_libretro.dylib.zip",
-    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/fceumm_libretro.dylib.zip"
+    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/fceumm_libretro.dylib.zip",
+    "windows-x86": "https://buildbot.libretro.com/nightly/windows/x86/latest/fceumm_libretro.dll.zip"
    }
   },
   {
@@ -909,7 +918,8 @@
    "download": {
     "windows-x64": "https://buildbot.libretro.com/nightly/windows/x86_64/latest/flycast_libretro.dll.zip",
     "osx-arm64": "https://buildbot.libretro.com/nightly/apple/osx/arm64/latest/flycast_libretro.dylib.zip",
-    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/flycast_libretro.dylib.zip"
+    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/flycast_libretro.dylib.zip",
+    "windows-x86": "https://buildbot.libretro.com/nightly/windows/x86/latest/flycast_libretro.dll.zip"
    }
   },
   {
@@ -950,7 +960,8 @@
    "download": {
     "windows-x64": "https://buildbot.libretro.com/nightly/windows/x86_64/latest/freeintv_libretro.dll.zip",
     "osx-arm64": "https://buildbot.libretro.com/nightly/apple/osx/arm64/latest/freeintv_libretro.dylib.zip",
-    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/freeintv_libretro.dylib.zip"
+    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/freeintv_libretro.dylib.zip",
+    "windows-x86": "https://buildbot.libretro.com/nightly/windows/x86/latest/freeintv_libretro.dll.zip"
    }
   },
   {
@@ -992,7 +1003,8 @@
    "download": {
     "windows-x64": "https://buildbot.libretro.com/nightly/windows/x86_64/latest/gambatte_libretro.dll.zip",
     "osx-arm64": "https://buildbot.libretro.com/nightly/apple/osx/arm64/latest/gambatte_libretro.dylib.zip",
-    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/gambatte_libretro.dylib.zip"
+    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/gambatte_libretro.dylib.zip",
+    "windows-x86": "https://buildbot.libretro.com/nightly/windows/x86/latest/gambatte_libretro.dll.zip"
    }
   },
   {
@@ -1029,7 +1041,8 @@
    "download": {
     "windows-x64": "https://buildbot.libretro.com/nightly/windows/x86_64/latest/gearcoleco_libretro.dll.zip",
     "osx-arm64": "https://buildbot.libretro.com/nightly/apple/osx/arm64/latest/gearcoleco_libretro.dylib.zip",
-    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/gearcoleco_libretro.dylib.zip"
+    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/gearcoleco_libretro.dylib.zip",
+    "windows-x86": "https://buildbot.libretro.com/nightly/windows/x86/latest/gearcoleco_libretro.dll.zip"
    }
   },
   {
@@ -1075,7 +1088,8 @@
    "download": {
     "windows-x64": "https://buildbot.libretro.com/nightly/windows/x86_64/latest/gearsystem_libretro.dll.zip",
     "osx-arm64": "https://buildbot.libretro.com/nightly/apple/osx/arm64/latest/gearsystem_libretro.dylib.zip",
-    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/gearsystem_libretro.dylib.zip"
+    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/gearsystem_libretro.dylib.zip",
+    "windows-x86": "https://buildbot.libretro.com/nightly/windows/x86/latest/gearsystem_libretro.dll.zip"
    }
   },
   {
@@ -1183,7 +1197,8 @@
    "download": {
     "windows-x64": "https://buildbot.libretro.com/nightly/windows/x86_64/latest/genesis_plus_gx_libretro.dll.zip",
     "osx-arm64": "https://buildbot.libretro.com/nightly/apple/osx/arm64/latest/genesis_plus_gx_libretro.dylib.zip",
-    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/genesis_plus_gx_libretro.dylib.zip"
+    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/genesis_plus_gx_libretro.dylib.zip",
+    "windows-x86": "https://buildbot.libretro.com/nightly/windows/x86/latest/genesis_plus_gx_libretro.dll.zip"
    }
   },
   {
@@ -1219,7 +1234,8 @@
    "download": {
     "windows-x64": "https://buildbot.libretro.com/nightly/windows/x86_64/latest/handy_libretro.dll.zip",
     "osx-arm64": "https://buildbot.libretro.com/nightly/apple/osx/arm64/latest/handy_libretro.dylib.zip",
-    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/handy_libretro.dylib.zip"
+    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/handy_libretro.dylib.zip",
+    "windows-x86": "https://buildbot.libretro.com/nightly/windows/x86/latest/handy_libretro.dll.zip"
    }
   },
   {
@@ -1303,7 +1319,8 @@
    "download": {
     "windows-x64": "https://buildbot.libretro.com/nightly/windows/x86_64/latest/mame2003_plus_libretro.dll.zip",
     "osx-arm64": "https://buildbot.libretro.com/nightly/apple/osx/arm64/latest/mame2003_plus_libretro.dylib.zip",
-    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/mame2003_plus_libretro.dylib.zip"
+    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/mame2003_plus_libretro.dylib.zip",
+    "windows-x86": "https://buildbot.libretro.com/nightly/windows/x86/latest/mame2003_plus_libretro.dll.zip"
    }
   },
   {
@@ -1339,7 +1356,8 @@
    "download": {
     "windows-x64": "https://buildbot.libretro.com/nightly/windows/x86_64/latest/mednafen_gba_libretro.dll.zip",
     "osx-arm64": "https://buildbot.libretro.com/nightly/apple/osx/arm64/latest/mednafen_gba_libretro.dylib.zip",
-    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/mednafen_gba_libretro.dylib.zip"
+    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/mednafen_gba_libretro.dylib.zip",
+    "windows-x86": "https://buildbot.libretro.com/nightly/windows/x86/latest/mednafen_gba_libretro.dll.zip"
    }
   },
   {
@@ -1376,7 +1394,8 @@
    "download": {
     "windows-x64": "https://buildbot.libretro.com/nightly/windows/x86_64/latest/mednafen_lynx_libretro.dll.zip",
     "osx-arm64": "https://buildbot.libretro.com/nightly/apple/osx/arm64/latest/mednafen_lynx_libretro.dylib.zip",
-    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/mednafen_lynx_libretro.dylib.zip"
+    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/mednafen_lynx_libretro.dylib.zip",
+    "windows-x86": "https://buildbot.libretro.com/nightly/windows/x86/latest/mednafen_lynx_libretro.dll.zip"
    }
   },
   {
@@ -1408,7 +1427,8 @@
    "download": {
     "windows-x64": "https://buildbot.libretro.com/nightly/windows/x86_64/latest/mednafen_ngp_libretro.dll.zip",
     "osx-arm64": "https://buildbot.libretro.com/nightly/apple/osx/arm64/latest/mednafen_ngp_libretro.dylib.zip",
-    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/mednafen_ngp_libretro.dylib.zip"
+    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/mednafen_ngp_libretro.dylib.zip",
+    "windows-x86": "https://buildbot.libretro.com/nightly/windows/x86/latest/mednafen_ngp_libretro.dll.zip"
    }
   },
   {
@@ -1465,7 +1485,8 @@
    "download": {
     "windows-x64": "https://buildbot.libretro.com/nightly/windows/x86_64/latest/mednafen_pce_libretro.dll.zip",
     "osx-arm64": "https://buildbot.libretro.com/nightly/apple/osx/arm64/latest/mednafen_pce_libretro.dylib.zip",
-    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/mednafen_pce_libretro.dylib.zip"
+    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/mednafen_pce_libretro.dylib.zip",
+    "windows-x86": "https://buildbot.libretro.com/nightly/windows/x86/latest/mednafen_pce_libretro.dll.zip"
    }
   },
   {
@@ -1520,7 +1541,8 @@
    "download": {
     "windows-x64": "https://buildbot.libretro.com/nightly/windows/x86_64/latest/mednafen_pce_fast_libretro.dll.zip",
     "osx-arm64": "https://buildbot.libretro.com/nightly/apple/osx/arm64/latest/mednafen_pce_fast_libretro.dylib.zip",
-    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/mednafen_pce_fast_libretro.dylib.zip"
+    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/mednafen_pce_fast_libretro.dylib.zip",
+    "windows-x86": "https://buildbot.libretro.com/nightly/windows/x86/latest/mednafen_pce_fast_libretro.dll.zip"
    }
   },
   {
@@ -1557,7 +1579,8 @@
    "download": {
     "windows-x64": "https://buildbot.libretro.com/nightly/windows/x86_64/latest/mednafen_pcfx_libretro.dll.zip",
     "osx-arm64": "https://buildbot.libretro.com/nightly/apple/osx/arm64/latest/mednafen_pcfx_libretro.dylib.zip",
-    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/mednafen_pcfx_libretro.dylib.zip"
+    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/mednafen_pcfx_libretro.dylib.zip",
+    "windows-x86": "https://buildbot.libretro.com/nightly/windows/x86/latest/mednafen_pcfx_libretro.dll.zip"
    }
   },
   {
@@ -1618,7 +1641,8 @@
    "download": {
     "windows-x64": "https://buildbot.libretro.com/nightly/windows/x86_64/latest/mednafen_psx_libretro.dll.zip",
     "osx-arm64": "https://buildbot.libretro.com/nightly/apple/osx/arm64/latest/mednafen_psx_libretro.dylib.zip",
-    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/mednafen_psx_libretro.dylib.zip"
+    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/mednafen_psx_libretro.dylib.zip",
+    "windows-x86": "https://buildbot.libretro.com/nightly/windows/x86/latest/mednafen_psx_libretro.dll.zip"
    }
   },
   {
@@ -1679,7 +1703,8 @@
    "download": {
     "windows-x64": "https://buildbot.libretro.com/nightly/windows/x86_64/latest/mednafen_psx_hw_libretro.dll.zip",
     "osx-arm64": "https://buildbot.libretro.com/nightly/apple/osx/arm64/latest/mednafen_psx_hw_libretro.dylib.zip",
-    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/mednafen_psx_hw_libretro.dylib.zip"
+    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/mednafen_psx_hw_libretro.dylib.zip",
+    "windows-x86": "https://buildbot.libretro.com/nightly/windows/x86/latest/mednafen_psx_hw_libretro.dll.zip"
    }
   },
   {
@@ -1733,7 +1758,8 @@
    "download": {
     "windows-x64": "https://buildbot.libretro.com/nightly/windows/x86_64/latest/mednafen_saturn_libretro.dll.zip",
     "osx-arm64": "https://buildbot.libretro.com/nightly/apple/osx/arm64/latest/mednafen_saturn_libretro.dylib.zip",
-    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/mednafen_saturn_libretro.dylib.zip"
+    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/mednafen_saturn_libretro.dylib.zip",
+    "windows-x86": "https://buildbot.libretro.com/nightly/windows/x86/latest/mednafen_saturn_libretro.dll.zip"
    }
   },
   {
@@ -1788,7 +1814,8 @@
    "download": {
     "windows-x64": "https://buildbot.libretro.com/nightly/windows/x86_64/latest/mednafen_supergrafx_libretro.dll.zip",
     "osx-arm64": "https://buildbot.libretro.com/nightly/apple/osx/arm64/latest/mednafen_supergrafx_libretro.dylib.zip",
-    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/mednafen_supergrafx_libretro.dylib.zip"
+    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/mednafen_supergrafx_libretro.dylib.zip",
+    "windows-x86": "https://buildbot.libretro.com/nightly/windows/x86/latest/mednafen_supergrafx_libretro.dll.zip"
    }
   },
   {
@@ -1818,7 +1845,8 @@
    "download": {
     "windows-x64": "https://buildbot.libretro.com/nightly/windows/x86_64/latest/mednafen_vb_libretro.dll.zip",
     "osx-arm64": "https://buildbot.libretro.com/nightly/apple/osx/arm64/latest/mednafen_vb_libretro.dylib.zip",
-    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/mednafen_vb_libretro.dylib.zip"
+    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/mednafen_vb_libretro.dylib.zip",
+    "windows-x86": "https://buildbot.libretro.com/nightly/windows/x86/latest/mednafen_vb_libretro.dll.zip"
    }
   },
   {
@@ -1850,7 +1878,8 @@
    "download": {
     "windows-x64": "https://buildbot.libretro.com/nightly/windows/x86_64/latest/mednafen_wswan_libretro.dll.zip",
     "osx-arm64": "https://buildbot.libretro.com/nightly/apple/osx/arm64/latest/mednafen_wswan_libretro.dylib.zip",
-    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/mednafen_wswan_libretro.dylib.zip"
+    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/mednafen_wswan_libretro.dylib.zip",
+    "windows-x86": "https://buildbot.libretro.com/nightly/windows/x86/latest/mednafen_wswan_libretro.dll.zip"
    }
   },
   {
@@ -1925,7 +1954,8 @@
    "download": {
     "windows-x64": "https://buildbot.libretro.com/nightly/windows/x86_64/latest/melonds_libretro.dll.zip",
     "osx-arm64": "https://buildbot.libretro.com/nightly/apple/osx/arm64/latest/melonds_libretro.dylib.zip",
-    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/melonds_libretro.dylib.zip"
+    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/melonds_libretro.dylib.zip",
+    "windows-x86": "https://buildbot.libretro.com/nightly/windows/x86/latest/melonds_libretro.dll.zip"
    }
   },
   {
@@ -2033,7 +2063,8 @@
    "download": {
     "windows-x64": "https://buildbot.libretro.com/nightly/windows/x86_64/latest/mesen_libretro.dll.zip",
     "osx-arm64": "https://buildbot.libretro.com/nightly/apple/osx/arm64/latest/mesen_libretro.dylib.zip",
-    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/mesen_libretro.dylib.zip"
+    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/mesen_libretro.dylib.zip",
+    "windows-x86": "https://buildbot.libretro.com/nightly/windows/x86/latest/mesen_libretro.dll.zip"
    }
   },
   {
@@ -2176,7 +2207,8 @@
    "download": {
     "windows-x64": "https://buildbot.libretro.com/nightly/windows/x86_64/latest/mesen-s_libretro.dll.zip",
     "osx-arm64": "https://buildbot.libretro.com/nightly/apple/osx/arm64/latest/mesen-s_libretro.dylib.zip",
-    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/mesen-s_libretro.dylib.zip"
+    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/mesen-s_libretro.dylib.zip",
+    "windows-x86": "https://buildbot.libretro.com/nightly/windows/x86/latest/mesen-s_libretro.dll.zip"
    }
   },
   {
@@ -2229,7 +2261,8 @@
    "download": {
     "windows-x64": "https://buildbot.libretro.com/nightly/windows/x86_64/latest/mgba_libretro.dll.zip",
     "osx-arm64": "https://buildbot.libretro.com/nightly/apple/osx/arm64/latest/mgba_libretro.dylib.zip",
-    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/mgba_libretro.dylib.zip"
+    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/mgba_libretro.dylib.zip",
+    "windows-x86": "https://buildbot.libretro.com/nightly/windows/x86/latest/mgba_libretro.dll.zip"
    }
   },
   {
@@ -2268,7 +2301,8 @@
    "download": {
     "windows-x64": "https://buildbot.libretro.com/nightly/windows/x86_64/latest/mupen64plus_next_libretro.dll.zip",
     "osx-arm64": "https://buildbot.libretro.com/nightly/apple/osx/arm64/latest/mupen64plus_next_libretro.dylib.zip",
-    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/mupen64plus_next_libretro.dylib.zip"
+    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/mupen64plus_next_libretro.dylib.zip",
+    "windows-x86": "https://buildbot.libretro.com/nightly/windows/x86/latest/mupen64plus_next_libretro.dll.zip"
    }
   },
   {
@@ -2306,7 +2340,8 @@
    "download": {
     "windows-x64": "https://buildbot.libretro.com/nightly/windows/x86_64/latest/nestopia_libretro.dll.zip",
     "osx-arm64": "https://buildbot.libretro.com/nightly/apple/osx/arm64/latest/nestopia_libretro.dylib.zip",
-    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/nestopia_libretro.dylib.zip"
+    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/nestopia_libretro.dylib.zip",
+    "windows-x86": "https://buildbot.libretro.com/nightly/windows/x86/latest/nestopia_libretro.dll.zip"
    }
   },
   {
@@ -2356,7 +2391,8 @@
    "download": {
     "windows-x64": "https://buildbot.libretro.com/nightly/windows/x86_64/latest/o2em_libretro.dll.zip",
     "osx-arm64": "https://buildbot.libretro.com/nightly/apple/osx/arm64/latest/o2em_libretro.dylib.zip",
-    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/o2em_libretro.dylib.zip"
+    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/o2em_libretro.dylib.zip",
+    "windows-x86": "https://buildbot.libretro.com/nightly/windows/x86/latest/o2em_libretro.dll.zip"
    }
   },
   {
@@ -2453,7 +2489,8 @@
    "download": {
     "windows-x64": "https://buildbot.libretro.com/nightly/windows/x86_64/latest/opera_libretro.dll.zip",
     "osx-arm64": "https://buildbot.libretro.com/nightly/apple/osx/arm64/latest/opera_libretro.dylib.zip",
-    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/opera_libretro.dylib.zip"
+    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/opera_libretro.dylib.zip",
+    "windows-x86": "https://buildbot.libretro.com/nightly/windows/x86/latest/opera_libretro.dll.zip"
    }
   },
   {
@@ -2565,7 +2602,8 @@
    "download": {
     "windows-x64": "https://buildbot.libretro.com/nightly/windows/x86_64/latest/pcsx_rearmed_libretro.dll.zip",
     "osx-arm64": "https://buildbot.libretro.com/nightly/apple/osx/arm64/latest/pcsx_rearmed_libretro.dylib.zip",
-    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/pcsx_rearmed_libretro.dylib.zip"
+    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/pcsx_rearmed_libretro.dylib.zip",
+    "windows-x86": "https://buildbot.libretro.com/nightly/windows/x86/latest/pcsx_rearmed_libretro.dll.zip"
    }
   },
   {
@@ -2629,7 +2667,8 @@
    "download": {
     "windows-x64": "https://buildbot.libretro.com/nightly/windows/x86_64/latest/picodrive_libretro.dll.zip",
     "osx-arm64": "https://buildbot.libretro.com/nightly/apple/osx/arm64/latest/picodrive_libretro.dylib.zip",
-    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/picodrive_libretro.dylib.zip"
+    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/picodrive_libretro.dylib.zip",
+    "windows-x86": "https://buildbot.libretro.com/nightly/windows/x86/latest/picodrive_libretro.dll.zip"
    }
   },
   {
@@ -2662,7 +2701,8 @@
    "download": {
     "windows-x64": "https://buildbot.libretro.com/nightly/windows/x86_64/latest/play_libretro.dll.zip",
     "osx-arm64": "https://buildbot.libretro.com/nightly/apple/osx/arm64/latest/play_libretro.dylib.zip",
-    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/play_libretro.dylib.zip"
+    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/play_libretro.dylib.zip",
+    "windows-x86": "https://buildbot.libretro.com/nightly/windows/x86/latest/play_libretro.dll.zip"
    }
   },
   {
@@ -2696,7 +2736,8 @@
    "download": {
     "windows-x64": "https://buildbot.libretro.com/nightly/windows/x86_64/latest/pokemini_libretro.dll.zip",
     "osx-arm64": "https://buildbot.libretro.com/nightly/apple/osx/arm64/latest/pokemini_libretro.dylib.zip",
-    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/pokemini_libretro.dylib.zip"
+    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/pokemini_libretro.dylib.zip",
+    "windows-x86": "https://buildbot.libretro.com/nightly/windows/x86/latest/pokemini_libretro.dll.zip"
    }
   },
   {
@@ -2725,7 +2766,8 @@
    "download": {
     "windows-x64": "https://buildbot.libretro.com/nightly/windows/x86_64/latest/potator_libretro.dll.zip",
     "osx-arm64": "https://buildbot.libretro.com/nightly/apple/osx/arm64/latest/potator_libretro.dylib.zip",
-    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/potator_libretro.dylib.zip"
+    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/potator_libretro.dylib.zip",
+    "windows-x86": "https://buildbot.libretro.com/nightly/windows/x86/latest/potator_libretro.dll.zip"
    }
   },
   {
@@ -2764,7 +2806,8 @@
    "download": {
     "windows-x64": "https://buildbot.libretro.com/nightly/windows/x86_64/latest/ppsspp_libretro.dll.zip",
     "osx-arm64": "https://buildbot.libretro.com/nightly/apple/osx/arm64/latest/ppsspp_libretro.dylib.zip",
-    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/ppsspp_libretro.dylib.zip"
+    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/ppsspp_libretro.dylib.zip",
+    "windows-x86": "https://buildbot.libretro.com/nightly/windows/x86/latest/ppsspp_libretro.dll.zip"
    }
   },
   {
@@ -2800,7 +2843,8 @@
    "download": {
     "windows-x64": "https://buildbot.libretro.com/nightly/windows/x86_64/latest/prosystem_libretro.dll.zip",
     "osx-arm64": "https://buildbot.libretro.com/nightly/apple/osx/arm64/latest/prosystem_libretro.dylib.zip",
-    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/prosystem_libretro.dylib.zip"
+    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/prosystem_libretro.dylib.zip",
+    "windows-x86": "https://buildbot.libretro.com/nightly/windows/x86/latest/prosystem_libretro.dll.zip"
    }
   },
   {
@@ -2841,7 +2885,8 @@
    "download": {
     "windows-x64": "https://buildbot.libretro.com/nightly/windows/x86_64/latest/sameboy_libretro.dll.zip",
     "osx-arm64": "https://buildbot.libretro.com/nightly/apple/osx/arm64/latest/sameboy_libretro.dylib.zip",
-    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/sameboy_libretro.dylib.zip"
+    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/sameboy_libretro.dylib.zip",
+    "windows-x86": "https://buildbot.libretro.com/nightly/windows/x86/latest/sameboy_libretro.dll.zip"
    }
   },
   {
@@ -2886,7 +2931,8 @@
    "download": {
     "windows-x64": "https://buildbot.libretro.com/nightly/windows/x86_64/latest/smsplus_libretro.dll.zip",
     "osx-arm64": "https://buildbot.libretro.com/nightly/apple/osx/arm64/latest/smsplus_libretro.dylib.zip",
-    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/smsplus_libretro.dylib.zip"
+    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/smsplus_libretro.dylib.zip",
+    "windows-x86": "https://buildbot.libretro.com/nightly/windows/x86/latest/smsplus_libretro.dll.zip"
    }
   },
   {
@@ -2932,7 +2978,8 @@
    "download": {
     "windows-x64": "https://buildbot.libretro.com/nightly/windows/x86_64/latest/snes9x_libretro.dll.zip",
     "osx-arm64": "https://buildbot.libretro.com/nightly/apple/osx/arm64/latest/snes9x_libretro.dylib.zip",
-    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/snes9x_libretro.dylib.zip"
+    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/snes9x_libretro.dylib.zip",
+    "windows-x86": "https://buildbot.libretro.com/nightly/windows/x86/latest/snes9x_libretro.dll.zip"
    }
   },
   {
@@ -2961,7 +3008,8 @@
    "download": {
     "windows-x64": "https://buildbot.libretro.com/nightly/windows/x86_64/latest/stella_libretro.dll.zip",
     "osx-arm64": "https://buildbot.libretro.com/nightly/apple/osx/arm64/latest/stella_libretro.dylib.zip",
-    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/stella_libretro.dylib.zip"
+    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/stella_libretro.dylib.zip",
+    "windows-x86": "https://buildbot.libretro.com/nightly/windows/x86/latest/stella_libretro.dll.zip"
    }
   },
   {
@@ -2990,7 +3038,8 @@
    "download": {
     "windows-x64": "https://buildbot.libretro.com/nightly/windows/x86_64/latest/stella2014_libretro.dll.zip",
     "osx-arm64": "https://buildbot.libretro.com/nightly/apple/osx/arm64/latest/stella2014_libretro.dylib.zip",
-    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/stella2014_libretro.dylib.zip"
+    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/stella2014_libretro.dylib.zip",
+    "windows-x86": "https://buildbot.libretro.com/nightly/windows/x86/latest/stella2014_libretro.dll.zip"
    }
   },
   {
@@ -3055,7 +3104,8 @@
    "download": {
     "windows-x64": "https://buildbot.libretro.com/nightly/windows/x86_64/latest/swanstation_libretro.dll.zip",
     "osx-arm64": "https://buildbot.libretro.com/nightly/apple/osx/arm64/latest/swanstation_libretro.dylib.zip",
-    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/swanstation_libretro.dylib.zip"
+    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/swanstation_libretro.dylib.zip",
+    "windows-x86": "https://buildbot.libretro.com/nightly/windows/x86/latest/swanstation_libretro.dll.zip"
    }
   },
   {
@@ -3088,7 +3138,8 @@
    "download": {
     "windows-x64": "https://buildbot.libretro.com/nightly/windows/x86_64/latest/tgbdual_libretro.dll.zip",
     "osx-arm64": "https://buildbot.libretro.com/nightly/apple/osx/arm64/latest/tgbdual_libretro.dylib.zip",
-    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/tgbdual_libretro.dylib.zip"
+    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/tgbdual_libretro.dylib.zip",
+    "windows-x86": "https://buildbot.libretro.com/nightly/windows/x86/latest/tgbdual_libretro.dll.zip"
    }
   },
   {
@@ -3117,7 +3168,8 @@
    "download": {
     "windows-x64": "https://buildbot.libretro.com/nightly/windows/x86_64/latest/vecx_libretro.dll.zip",
     "osx-arm64": "https://buildbot.libretro.com/nightly/apple/osx/arm64/latest/vecx_libretro.dylib.zip",
-    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/vecx_libretro.dylib.zip"
+    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/vecx_libretro.dylib.zip",
+    "windows-x86": "https://buildbot.libretro.com/nightly/windows/x86/latest/vecx_libretro.dll.zip"
    }
   },
   {
@@ -3145,7 +3197,8 @@
    "download": {
     "windows-x64": "https://buildbot.libretro.com/nightly/windows/x86_64/latest/vemulator_libretro.dll.zip",
     "osx-arm64": "https://buildbot.libretro.com/nightly/apple/osx/arm64/latest/vemulator_libretro.dylib.zip",
-    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/vemulator_libretro.dylib.zip"
+    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/vemulator_libretro.dylib.zip",
+    "windows-x86": "https://buildbot.libretro.com/nightly/windows/x86/latest/vemulator_libretro.dll.zip"
    }
   },
   {
@@ -3224,7 +3277,8 @@
    "download": {
     "windows-x64": "https://buildbot.libretro.com/nightly/windows/x86_64/latest/vice_x64_libretro.dll.zip",
     "osx-arm64": "https://buildbot.libretro.com/nightly/apple/osx/arm64/latest/vice_x64_libretro.dylib.zip",
-    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/vice_x64_libretro.dylib.zip"
+    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/vice_x64_libretro.dylib.zip",
+    "windows-x86": "https://buildbot.libretro.com/nightly/windows/x86/latest/vice_x64_libretro.dll.zip"
    }
   },
   {
@@ -3303,7 +3357,8 @@
    "download": {
     "windows-x64": "https://buildbot.libretro.com/nightly/windows/x86_64/latest/vice_x64sc_libretro.dll.zip",
     "osx-arm64": "https://buildbot.libretro.com/nightly/apple/osx/arm64/latest/vice_x64sc_libretro.dylib.zip",
-    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/vice_x64sc_libretro.dylib.zip"
+    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/vice_x64sc_libretro.dylib.zip",
+    "windows-x86": "https://buildbot.libretro.com/nightly/windows/x86/latest/vice_x64sc_libretro.dll.zip"
    }
   },
   {
@@ -3350,7 +3405,8 @@
    "download": {
     "windows-x64": "https://buildbot.libretro.com/nightly/windows/x86_64/latest/virtualjaguar_libretro.dll.zip",
     "osx-arm64": "https://buildbot.libretro.com/nightly/apple/osx/arm64/latest/virtualjaguar_libretro.dylib.zip",
-    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/virtualjaguar_libretro.dylib.zip"
+    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/virtualjaguar_libretro.dylib.zip",
+    "windows-x86": "https://buildbot.libretro.com/nightly/windows/x86/latest/virtualjaguar_libretro.dll.zip"
    }
   },
   {
@@ -3391,7 +3447,8 @@
    "download": {
     "windows-x64": "https://buildbot.libretro.com/nightly/windows/x86_64/latest/yabause_libretro.dll.zip",
     "osx-arm64": "https://buildbot.libretro.com/nightly/apple/osx/arm64/latest/yabause_libretro.dylib.zip",
-    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/yabause_libretro.dylib.zip"
+    "osx-x64": "https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/yabause_libretro.dylib.zip",
+    "windows-x86": "https://buildbot.libretro.com/nightly/windows/x86/latest/yabause_libretro.dll.zip"
    }
   }
  ]

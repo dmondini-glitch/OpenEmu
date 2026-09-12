@@ -30,7 +30,9 @@ public partial class PreferencesWindow : Window
         InitializeComponent();
         Tabs.SelectedIndex = (int)tab;
         BuildLibrary(); BuildGameplay(); BuildControls(systemId); BuildCores(); BuildBios();
-        VersionText.Text = $"Version {typeof(PreferencesWindow).Assembly.GetName().Version} · .NET {Environment.Version} · {CoreManifest.PlatformKey}";
+        var hostPath = Core.Remote.RemoteSession.FindHost(CoreManifest.HostArchitecture(CoreManifest.PlatformKey));
+        VersionText.Text = $"Version {typeof(PreferencesWindow).Assembly.GetName().Version} · .NET {Environment.Version} · app: {CoreManifest.NativePlatformKey} · cores: {CoreManifest.PlatformKey}"
+            + (CoreManifest.RequiresCoreHost ? $" (core host {CoreManifest.HostArchitecture(CoreManifest.PlatformKey)}: {(hostPath != null ? "ok" : "MISSING")})" : "");
         PathsText.Text = $"Library: {Paths.LibraryRoot}\nSettings: {Paths.SettingsFile}\nCores: {_s.Cores.UserCoresDir}\nBundled cores: {_s.Cores.BundledCoresDir}\nBIOS: {Paths.BiosDir}";
         _padTimer.Tick += (_, _) => PollPads();
         KeyDown += OnKeyDown;
@@ -114,6 +116,9 @@ public partial class PreferencesWindow : Window
         p.Children.Add(Row(L.T("prefs.gameplay.autoload"), Check(st.Gameplay.LoadAutoSaveOnStart, v => st.Gameplay.LoadAutoSaveOnStart = v)));
         p.Children.Add(Row(L.T("prefs.gameplay.messages"), Check(st.Gameplay.ShowCoreMessages, v => st.Gameplay.ShowCoreMessages = v)));
         p.Children.Add(Row(L.T("prefs.gameplay.pauseBackground"), Check(st.Gameplay.BackgroundPause, v => st.Gameplay.BackgroundPause = v)));
+        var oop = Check(st.RunCoresOutOfProcess || CoreManifest.RequiresCoreHost, v => st.RunCoresOutOfProcess = v);
+        oop.IsEnabled = !CoreManifest.RequiresCoreHost;
+        p.Children.Add(Row(L.T("prefs.gameplay.outOfProcess"), oop, L.T("prefs.gameplay.outOfProcessHint", CoreManifest.PlatformKey)));
         p.Children.Add(Header(L.T("prefs.gameplay.hotkeys")));
         var hk = st.Hotkeys;
         void Hot(string label, Func<int> get, Action<int> set)

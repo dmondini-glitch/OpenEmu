@@ -5,6 +5,7 @@ using OpenEmu.Core.Cores;
 using OpenEmu.Core.Emulation;
 using OpenEmu.Core.Library;
 using OpenEmu.Core.Libretro;
+using OpenEmu.Core.Remote;
 using OpenEmu.Core.Localization;
 using OpenEmu.Core.Systems;
 
@@ -17,6 +18,9 @@ public sealed class GameLauncher
     public List<GameWindow> OpenWindows { get; } = new();
     public GameLauncher(AppServices s) => _s = s;
 
+    /// <summary>Cores run out-of-process when this process cannot load them (Windows ARM64) or when the user opted in.</summary>
+    public bool UseCoreHost(CoreDefinition core) => CoreManifest.RequiresCoreHost || _s.Settings.RunCoresOutOfProcess;
+
     public async Task<GameWindow?> LaunchAsync(Game game, Window owner, string? coreId = null)
     {
         var system = SystemCatalog.Find(game.SystemId);
@@ -27,6 +31,18 @@ public sealed class GameLauncher
         core ??= _s.Cores.PreferredCore(system, _s.Settings);
         if (core == null) { await Dialogs.Message(owner, L.T("common.error"), $"No core available for {system.Name}"); return null; }
 
+        if (UseCoreHost(core) && core.HwRender)
+        {
+            // OpenGL cores need an in-process GL context; offer a software alternative if the system has one.
+            var alt = _s.Cores.CoresForSystem(system, _s.Settings).FirstOrDefault(c => !c.HwRender);
+            if (alt == null || coreId != null) { await Dialogs.Message(owner, L.T("common.error"), L.T("play.hwCoreRemote", core.Title, CoreManifest.NativePlatformKey)); return null; }
+            core = alt;
+        }
+        if (UseCoreHost(core) && RemoteSession.FindHost(CoreManifest.HostArchitecture(CoreManifest.PlatformKey)) == null)
+        {
+            await Dialogs.Message(owner, L.T("common.error"), L.T("play.hostMissing", CoreManifest.HostArchitecture(CoreManifest.PlatformKey)));
+            return null;
+        }
         var lib = _s.Cores.FindLibrary(core.Id);
         if (lib == null)
         {

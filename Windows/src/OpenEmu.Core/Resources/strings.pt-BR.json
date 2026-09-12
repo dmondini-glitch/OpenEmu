@@ -173,5 +173,9 @@
  "notify.slot": "Slot {0}",
  "notify.installing": "Instalando {0}…",
  "notify.installed": "{0} instalado",
- "notify.installFailed": "Não foi possível instalar {0}: {1}"
+ "notify.installFailed": "Não foi possível instalar {0}: {1}",
+ "play.hwCoreRemote": "{0} precisa de OpenGL dentro do processo do app, o que não é possível em {1} (os cores rodam no core host x64/x86). Escolha um core com renderização por software para este sistema.",
+ "play.hostMissing": "O core host para {0} não foi encontrado ao lado do aplicativo (host\\\\{0}\\\\OpenEmu.CoreHost.exe).",
+ "prefs.gameplay.outOfProcess": "Executar cores em um processo separado",
+ "prefs.gameplay.outOfProcessHint": "Isola travamentos, como os processos auxiliares do OpenEmu. Cores: {0}. Cores OpenGL não ficam disponíveis neste modo."
 }

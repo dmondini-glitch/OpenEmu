@@ -15,10 +15,10 @@ namespace OpenEmu.App.Views;
 /// <summary>Save-state manager (load / rename / delete with thumbnails).</summary>
 public sealed class SaveStatesWindow : Window
 {
-    private readonly EmulationSession _session;
+    private readonly IEmulator _session;
     private readonly StackPanel _list = new() { Spacing = 6 };
 
-    public SaveStatesWindow(EmulationSession session)
+    public SaveStatesWindow(IEmulator session)
     {
         _session = session;
         Title = L.T("states.title"); Width = 560; Height = 480; WindowStartupLocation = WindowStartupLocation.CenterOwner;
@@ -62,11 +62,11 @@ public sealed class SaveStatesWindow : Window
 public sealed class CheatsWindow : Window
 {
     private readonly Game _game;
-    private readonly EmulationSession? _session;
+    private readonly IEmulator? _session;
     private readonly StackPanel _list = new() { Spacing = 6 };
     private readonly GameLibrary _lib = App.Services.Library;
 
-    public CheatsWindow(Game game, EmulationSession? session)
+    public CheatsWindow(Game game, IEmulator? session)
     {
         _game = game; _session = session;
         Title = $"{L.T("cheats.title")} — {game.Title}"; Width = 560; Height = 480; WindowStartupLocation = WindowStartupLocation.CenterOwner;
@@ -126,13 +126,13 @@ public sealed class CheatsWindow : Window
 /// <summary>Core options ("Core Settings" in OpenEmu), persisted per core in settings.</summary>
 public sealed class CoreOptionsWindow : Window
 {
-    public CoreOptionsWindow(EmulationSession session, string coreId)
+    public CoreOptionsWindow(IEmulator session, string coreId)
     {
-        Title = $"{L.T("play.coreOptions")} — {session.Core?.LibraryName}"; Width = 620; Height = 560; WindowStartupLocation = WindowStartupLocation.CenterOwner;
+        Title = $"{L.T("play.coreOptions")} — {session.Info?.CoreName}"; Width = 620; Height = 560; WindowStartupLocation = WindowStartupLocation.CenterOwner;
         var settings = App.Services.Settings;
         if (!settings.CoreOptions.TryGetValue(coreId, out var saved)) settings.CoreOptions[coreId] = saved = new();
         var panel = new StackPanel { Spacing = 8, Margin = new Thickness(12) };
-        var options = session.Core!.Options.Values.Where(o => o.Visible).OrderBy(o => o.Category ?? "").ThenBy(o => o.Description).ToList();
+        var options = session.CoreOptions.OrderBy(o => o.Category ?? "").ThenBy(o => o.Description).ToList();
         string? lastCat = null;
         foreach (var o in options)
         {
@@ -142,13 +142,13 @@ public sealed class CoreOptionsWindow : Window
             label.Children.Add(new TextBlock { Text = o.Description, TextWrapping = TextWrapping.Wrap });
             if (!string.IsNullOrEmpty(o.Info)) label.Children.Add(new TextBlock { Text = o.Info, Classes = { "muted" }, FontSize = 11, TextWrapping = TextWrapping.Wrap });
             row.Children.Add(label);
-            var combo = new ComboBox { ItemsSource = o.Values.Select(v => v.Label).ToList(), HorizontalAlignment = HorizontalAlignment.Stretch };
-            var idx = o.Values.FindIndex(v => v.Value == o.EffectiveValue);
+            var combo = new ComboBox { ItemsSource = o.Labels.ToList(), HorizontalAlignment = HorizontalAlignment.Stretch };
+            var idx = o.Values.ToList().IndexOf(o.Current);
             combo.SelectedIndex = idx >= 0 ? idx : 0;
             combo.SelectionChanged += async (_, _) =>
             {
                 if (combo.SelectedIndex < 0) return;
-                var val = o.Values[combo.SelectedIndex].Value;
+                var val = o.Values[combo.SelectedIndex];
                 saved[o.Key] = val;
                 await session.SetOption(o.Key, val);
             };

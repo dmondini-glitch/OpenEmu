@@ -1,7 +1,7 @@
 # OpenEmu for Windows
 
-Port do [OpenEmu](https://github.com/OpenEmu/OpenEmu) (macOS) para **Windows 10/11 x64**, mantido neste fork em
-`Windows/`. Reproduz a experiência do OpenEmu — biblioteca de jogos com capas, consoles na barra lateral,
+Port do [OpenEmu](https://github.com/OpenEmu/OpenEmu) (macOS) para **Windows 10/11 — x64, x86 (32-bit) e ARM64**,
+mantido neste fork em `Windows/`. Reproduz a experiência do OpenEmu — biblioteca de jogos com capas, consoles na barra lateral,
 coleções, homebrew, save states, cheats, controles por sistema — com a emulação fornecida por **cores libretro**,
 um plugin ("driver") por console, já mapeados para **todos os 42 sistemas** do OpenEmu.
 
@@ -22,6 +22,19 @@ um plugin ("driver") por console, já mapeados para **todos os 42 sistemas** do 
 | Homebrew | Mesmo catálogo curado do OpenEmu (`games.xml`), download e execução direta |
 | Idiomas | Inglês e Português (Brasil) |
 | Extras | CLI headless (`openemu-cli`), abertura de ROM por linha de comando / "Abrir com", cores OpenGL (N64, PSX HW, PSP, Dreamcast, DS, GameCube, PS2, Saturn) via `GlGameView` |
+
+## Arquiteturas
+
+| Pacote | App | Cores libretro | Como rodam |
+|---|---|---|---|
+| `OpenEmu-Windows-x64.zip` | nativo x64 | `cores\windows-x64` (61) | dentro do processo do app (ou no core host, opcional) |
+| `OpenEmu-Windows-x86.zip` | nativo x86 | `cores\windows-x86` (57 — sem Dolphin/GameCube, PCSX2, DeSmuME, Kronos, melonDS DS) | dentro do processo do app |
+| `OpenEmu-Windows-arm64.zip` | nativo ARM64 | `cores\windows-x64` (+ x86 opcional) | no **core host** x64/x86 (`OpenEmu.CoreHost.exe`) sob a emulação do Windows 11/10 ARM |
+
+O buildbot libretro não publica cores nativos para Windows ARM64, então o app ARM64 usa um processo auxiliar
+(como os helpers XPC do OpenEmu original): o core roda no `OpenEmu.CoreHost.exe` x64, o vídeo e o teclado passam
+por memória compartilhada e os comandos por named pipe. Cores OpenGL não funcionam nesse modo; o app escolhe o
+core por software equivalente. Detalhes e comandos em [docs/EMPACOTAMENTO-WINDOWS.md](docs/EMPACOTAMENTO-WINDOWS.md).
 
 ## Sistemas e cores
 
@@ -47,17 +60,18 @@ Requisitos: .NET SDK 9.
 ```powershell
 cd Windows
 dotnet build OpenEmu.Windows.sln
-dotnet test                      # 23 testes (inclui carga real de um core libretro)
+dotnet test                      # 25 testes (inclui carga real de um core libretro, em processo e via core host)
 dotnet run --project src/OpenEmu.App
 ```
 
-Pacote de distribuição com todos os cores (`dist\OpenEmu-Windows-x64.zip`):
+Pacote de distribuição com todos os cores (`dist\OpenEmu-Windows-<arch>.zip`):
 
 ```powershell
-.\scripts\build-windows.ps1      # ou scripts/build-windows.sh no macOS/Linux
+.\scripts\build-windows.ps1 -Arch x64      # x86 | arm64  (ou scripts/build-windows.sh <arch> no macOS/Linux)
 ```
 
-CI: `.github/workflows/windows.yml` compila, testa e publica o zip como artefato.
+Guia completo: [docs/EMPACOTAMENTO-WINDOWS.md](docs/EMPACOTAMENTO-WINDOWS.md).
+CI: `.github/workflows/windows.yml` compila, testa (inclusive 32-bit e via core host) e publica os três zips como artefatos.
 
 ### CLI
 
@@ -84,6 +98,7 @@ src/OpenEmu.Core   biblioteca .NET (sem UI): Libretro (loader P/Invoke + ambient
 src/OpenEmu.App    Avalonia UI 11: MainWindow (biblioteca), GameWindow (+ GameView software / GlGameView OpenGL),
                    PreferencesWindow (Biblioteca, Jogo, Controles, Cores, BIOS), janelas de states/cheats/opções
 src/OpenEmu.Cli    front-end headless (testes, scripts, CI)
+src/OpenEmu.CoreHost processo auxiliar que roda um core fora do app (Remote/: memória compartilhada + named pipe)
 tests/             xUnit
 ```
 
@@ -96,12 +111,14 @@ os plugins de sistema (`OpenEmu/SystemPlugins/*/`) são a fonte do `systems.json
 - Shaders (OpenEmu-Shaders/slang) não portados — apenas nearest/linear.
 - Gamepads: XInput (Xbox e compatíveis); DirectInput/HID genérico não implementado.
 - Arquivos 7z não são extraídos (ZIP sim); conjuntos de arcade são usados zipados.
-- Cada jogo roda no mesmo processo (o OpenEmu usa XPC helpers); um jogo por vez é o cenário testado.
+- Em x64/x86 cada jogo roda no processo do app por padrão (ative "Executar cores em um processo separado" para isolamento); um jogo por vez é o cenário testado.
+- ARM64: sem cores nativos (limitação do buildbot libretro); cores OpenGL indisponíveis via core host; Windows 10 ARM exige o pacote com cores x86.
 
 ---
 
 ### English
 
-OpenEmu for Windows is a .NET 9 / Avalonia port of the OpenEmu library + emulator front-end. Emulation comes from
-libretro cores mapped to all 42 OpenEmu systems; the distribution bundles every core. See the tables above for the
+OpenEmu for Windows is a .NET 9 / Avalonia port of the OpenEmu library + emulator front-end for Windows x64, x86 and
+ARM64. Emulation comes from libretro cores mapped to all 42 OpenEmu systems; each distribution bundles every core
+available for its architecture (ARM64 runs the x64/x86 cores in a separate core-host process under Windows' emulation). See the tables above for the
 feature list, `scripts/build-windows.ps1` for packaging and `openemu-cli` for headless use.
