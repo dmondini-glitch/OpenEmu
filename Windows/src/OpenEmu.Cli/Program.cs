@@ -39,8 +39,14 @@ try
             Console.WriteLine($"native={CoreManifest.NativePlatformKey} cores={CoreManifest.PlatformKey} requiresHost={CoreManifest.RequiresCoreHost} host={OpenEmu.Core.Remote.RemoteSession.FindHost(CoreManifest.HostArchitecture(CoreManifest.PlatformKey)) ?? "(not found)"} coresDir={new CoreManager().UserCoresDir} bundled={new CoreManager().BundledCoresDir}");
             return 0;
         case "bios":
+            if (Flag("install-free"))
+            {
+                var res = await FreeSystemFiles.InstallAllAsync(new HttpClient(), progress: new Progress<(string, double)>(p => { if (p.Item2 >= 1) Console.WriteLine($"  {p.Item1} ok"); }));
+                foreach (var kv in res.Where(k => k.Value != null)) Console.Error.WriteLine($"  {kv.Key} FAILED: {kv.Value!.Message}");
+                Console.WriteLine("OpenBIOS: " + string.Join(", ", FreeSystemFiles.OpenBiosTargets));
+            }
             foreach (var b in new BiosManager().Status())
-                Console.WriteLine($"{(b.Present ? "OK " : "-- ")}{b.System.Name,-24} {b.Firmware.Path,-30} {(b.Firmware.Optional ? "(optional) " : "")}{b.Firmware.Description}");
+                Console.WriteLine($"{(b.Present ? (b.IsOpenBios ? "OB " : "OK ") : b.CoreHasHle ? "hle" : "-- ")}{b.System.Name,-24} {b.Firmware.Path,-30} {(b.Firmware.Optional ? "(optional) " : "")}{b.Firmware.Description}");
             return 0;
         case "import":
         {
@@ -74,7 +80,17 @@ try
                 session = new OpenEmu.Core.Remote.RemoteSession(opts, hostPath);
                 Console.WriteLine($"using core host {hostPath}");
             }
-            else session = new EmulationSession(opts, audio, new InputManager(new NullGamepadProvider()));
+            else
+            {
+                var local = new EmulationSession(opts, audio, new InputManager(new NullGamepadProvider()));
+                if (def.HwRender && OperatingSystem.IsWindows() && !Flag("no-gl"))
+                {
+                    var gl = new OpenEmu.Core.Video.Win32GlContext(IntPtr.Zero, 640, 480);
+                    gl.Log += m => Console.Error.WriteLine(m);
+                    local.HwRenderHost = gl;
+                }
+                session = local;
+            }
             session.Log += (lvl, msg) => { if (Flag("verbose") || lvl >= 2) Console.Error.WriteLine($"[{coreId}] {msg}"); };
             session.FastForward = Flag("fast");
             await session.StartAsync();
@@ -83,7 +99,10 @@ try
             var sw = System.Diagnostics.Stopwatch.StartNew();
             long count = 0; session.FrameRendered += () => Interlocked.Increment(ref count);
             while (Interlocked.Read(ref count) < frames && session.State == SessionState.Running && sw.Elapsed < TimeSpan.FromSeconds(120)) await Task.Delay(5);
-            Console.WriteLine($"ran {count} frames in {sw.Elapsed.TotalSeconds:0.00}s; audio samples={audio.SamplesWritten}; frame {session.Frame.Width}x{session.Frame.Height} blank={session.Frame.IsBlank()}");
+            if (session is EmulationSession { HwRenderOnEmulationThread: true } hw) await hw.Invoke(hw.CaptureHwFrame);
+            var blank = session.Frame.IsBlank();
+            Console.WriteLine($"ran {count} frames in {sw.Elapsed.TotalSeconds:0.00}s; audio samples={audio.SamplesWritten}; frame {session.Frame.Width}x{session.Frame.Height} blank={blank}");
+            if (Flag("require-frame") && (count < frames || blank || session.Frame.Width == 0)) { Console.Error.WriteLine("FAIL: no valid frames produced"); session.Stop(); return 3; }
             if (Opt("screenshot") is { } shot) { File.WriteAllBytes(shot, session.Screenshot()); Console.WriteLine($"screenshot → {shot}"); }
             if (Flag("state"))
             {
@@ -100,11 +119,12 @@ try
                   systems                         list supported systems
                   cores                           list cores and install status
                   install <id...> | --all         download cores from the libretro buildbot
-                  bios                            BIOS/firmware status
+                  bios [--install-free]           BIOS/firmware status (OB = OpenBIOS, hle = core boots without it); --install-free installs OpenBIOS + free packs
                   import <files|folders> [--no-copy]
                   library                         list games
                   run --core <id> [--rom file] [--frames N] [--screenshot out.png] [--state] [--install] [--fast] [--verbose]
                                   [--host [--host-path exe]]   run the core in the out-of-process core host
+                                  [--no-gl] [--require-frame]  GL cores use a hidden WGL window on Windows; --require-frame exits 3 unless real frames were produced
                   platform                        show native platform, core platform and core-host status
                 """);
             return 0;

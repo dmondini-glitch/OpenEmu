@@ -34,6 +34,7 @@ public sealed class AppServices
         s.Library = new GameLibrary();
         s.Cores = new CoreManager(http: s.Http);
         s.Bios = new BiosManager();
+        try { var w = Core.Bios.FreeSystemFiles.InstallOpenBios(); if (w.Count > 0) s.Log.Info("Installed OpenBIOS as " + string.Join(", ", w.Select(Path.GetFileName))); } catch (Exception ex) { s.Log.Warn("OpenBIOS install failed: " + ex.Message); }
         s.Vgdb = new OpenVgdb();
         s.Importer = new GameImporter(s.Library, s.Vgdb, s.Http) { CopyToLibrary = s.Settings.CopyRomsToLibrary };
         s.Homebrew = new HomebrewCatalog(s.Http);

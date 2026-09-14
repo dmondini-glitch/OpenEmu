@@ -334,6 +334,18 @@ public partial class PreferencesWindow : Window
             BiosStatus.Text = $"{n} / {files.Count}";
             RefreshBios();
         };
+        BiosFreeBtn.Click += async (_, _) =>
+        {
+            BiosFreeBtn.IsEnabled = false;
+            try
+            {
+                var res = await Dialogs.RunWithProgress(this, L.T("prefs.bios.installFree"), p => Core.Bios.FreeSystemFiles.InstallAllAsync(_s.Http, progress: new Progress<(string Pack, double Progress)>(x => p.Report(x.Progress))));
+                var failed = res.Where(r => r.Value != null).Select(r => $"{r.Key}: {r.Value!.Message}").ToList();
+                BiosStatus.Text = failed.Count == 0 ? L.T("common.done") : string.Join("; ", failed);
+            }
+            catch (Exception ex) { BiosStatus.Text = ex.Message; }
+            finally { BiosFreeBtn.IsEnabled = true; RefreshBios(); }
+        };
         BiosFolderBtn.Click += (_, _) => { try { System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo(Paths.BiosDir) { UseShellExecute = true }); } catch { } };
         DragDrop.SetAllowDrop(BiosPanel, true);
         BiosPanel.AddHandler(DragDrop.DropEvent, (_, e) =>
@@ -357,9 +369,11 @@ public partial class PreferencesWindow : Window
             foreach (var b in group.OrderBy(b => b.Firmware.Optional).ThenBy(b => b.Firmware.Path))
             {
                 var row = new Grid { ColumnDefinitions = new ColumnDefinitions("Auto,220,*"), Margin = new Thickness(12, 0, 0, 0) };
-                row.Children.Add(new TextBlock { Text = b.Present ? "✔" : (b.Firmware.Optional ? "○" : "✖"), Foreground = b.Present ? Brushes.LightGreen : b.Firmware.Optional ? Brushes.Gray : Brushes.Orange, Width = 22 });
+                var soft = !b.Present && !b.Firmware.Optional && b.CoreHasHle;
+                row.Children.Add(new TextBlock { Text = b.Present ? "✔" : (b.Firmware.Optional || soft ? "○" : "✖"), Foreground = b.Present ? Brushes.LightGreen : (b.Firmware.Optional || soft) ? Brushes.Gray : Brushes.Orange, Width = 22 });
                 var name = new TextBlock { Text = b.Firmware.Path, FontFamily = new FontFamily("Consolas,Menlo,monospace"), FontSize = 12 }; Grid.SetColumn(name, 1); row.Children.Add(name);
-                var desc = new TextBlock { Text = (b.Firmware.Description ?? "") + (b.Firmware.Optional ? $"  ({L.T("prefs.bios.optional")})" : "") + $"  ·  {b.Core.Title}", Classes = { "muted" }, FontSize = 11, TextTrimming = TextTrimming.CharacterEllipsis }; Grid.SetColumn(desc, 2); row.Children.Add(desc);
+                var extra = b.IsOpenBios ? "  ·  OpenBIOS" : (soft ? $"  ·  {L.T("prefs.bios.hle")}" : "");
+                var desc = new TextBlock { Text = (b.Firmware.Description ?? "") + (b.Firmware.Optional ? $"  ({L.T("prefs.bios.optional")})" : "") + extra + $"  ·  {b.Core.Title}", Classes = { "muted" }, FontSize = 11, TextTrimming = TextTrimming.CharacterEllipsis }; Grid.SetColumn(desc, 2); row.Children.Add(desc);
                 st.Children.Add(row);
             }
             box.Child = st;

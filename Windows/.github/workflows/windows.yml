@@ -23,6 +23,38 @@ jobs:
           dotnet run --project src/OpenEmu.Cli -c Release --no-build -- run --core 2048 --frames 60 --state
           $env:OPENEMU_COREHOST = (Resolve-Path src/OpenEmu.CoreHost/bin/Release/net9.0/OpenEmu.CoreHost.dll)
           dotnet run --project src/OpenEmu.Cli -c Release --no-build -- run --core 2048 --frames 60 --state --host
+  test-gl:
+    # Hardware-rendered cores (N64 etc.) through the native WGL path, using Mesa llvmpipe as a software OpenGL 4.5 driver.
+    runs-on: windows-latest
+    defaults: { run: { working-directory: Windows } }
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with: { dotnet-version: 9.0.x }
+      - run: dotnet publish src/OpenEmu.Cli/OpenEmu.Cli.csproj -c Release -r win-x64 --self-contained true -o out-gl
+      - name: Install Mesa (llvmpipe) opengl32.dll next to the CLI
+        run: |
+          $rel = Invoke-RestMethod https://api.github.com/repos/pal1000/mesa-dist-win/releases/latest
+          $asset = $rel.assets | Where-Object { $_.name -like "mesa3d-*-release-msvc.7z" } | Select-Object -First 1
+          Invoke-WebRequest $asset.browser_download_url -OutFile mesa.7z
+          7z x mesa.7z -omesa | Out-Null
+          $dll = Get-ChildItem mesa -Recurse -Filter opengl32.dll | Where-Object { $_.FullName -match "\\x64\\" } | Select-Object -First 1
+          Copy-Item $dll.FullName out-gl\opengl32.dll
+          Write-Host "Mesa: $($dll.FullName)"
+      - name: N64 (mupen64plus-next, GL 3.3 core) renders real frames
+        run: |
+          Invoke-WebRequest https://raw.githubusercontent.com/PeterLemon/N64/master/HelloWorld/16BPP/HelloWorldCPU320x240/HelloWorldCPU16BPP320X240.N64 -OutFile hello.n64
+          $env:GALLIUM_DRIVER = "llvmpipe"
+          .\out-gl\openemu-cli.exe platform
+          .\out-gl\openemu-cli.exe run --core mupen64plus_next --rom hello.n64 --frames 90 --screenshot n64.png --state --install --require-frame --verbose
+      - name: Free system files (OpenBIOS + packs) install
+        run: .\out-gl\openemu-cli.exe bios --install-free
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: gl-smoke-screenshots
+          path: Windows/n64.png
+          if-no-files-found: ignore
   test-x86:
     runs-on: windows-latest
     defaults: { run: { working-directory: Windows } }
@@ -37,7 +69,7 @@ jobs:
           .\out-x86\openemu-cli.exe install fceumm 2048
           .\out-x86\openemu-cli.exe run --core 2048 --frames 60 --state
   package:
-    needs: [test, test-x86]
+    needs: [test, test-gl, test-x86]
     runs-on: windows-latest
     strategy:
       matrix: { arch: [x64, x86, arm64] }

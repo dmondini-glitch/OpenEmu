@@ -51,6 +51,9 @@ public sealed class EmulationSession : IEmulator
     private readonly Stopwatch _clock = new();
     private double _fpsMeasured;
     private readonly List<(bool Enabled, string Code)> _cheats = new();
+    private IHwRenderThreadHost? _threadHost;
+    /// <summary>True when the emulation thread owns the GL context (Win32/WGL path).</summary>
+    public bool HwRenderOnEmulationThread => _threadHost != null;
 
     public FrameBuffer Frame { get; } = new();
     public IAudioSink Audio { get; }
@@ -170,6 +173,13 @@ public sealed class EmulationSession : IEmulator
         finally
         {
             try { FlushBattery(); } catch { }
+            if (_threadHost != null)
+            {
+                try { _core?.FireHwContextDestroy(); } catch { }
+                try { _core?.UnloadGame(); _core?.Deinit(); } catch { }
+                try { _threadHost.Teardown(); } catch { }
+                _threadHost = null;
+            }
             try { _core?.Dispose(); } catch { }
             _core = null;
             try { Audio.Dispose(); } catch { }
@@ -205,6 +215,12 @@ public sealed class EmulationSession : IEmulator
         if (!core.LoadGame(_opt.RomPath))
             throw new InvalidOperationException($"{core.LibraryName} could not load {_opt.RomPath}");
         RequiresHwRender = core.UsesHwRender;
+        if (core.UsesHwRender && HwRenderHost is IHwRenderThreadHost th)
+        {
+            th.Prepare(core);          // creates the GL context + FBO on this (emulation) thread
+            core.FireHwContextReset(); // the core may now create its GL resources
+            _threadHost = th;
+        }
         var labels = new List<string>();
         if (core.HasDiskControl) for (uint i = 0; i < core.DiskImageCount; i++) labels.Add(core.GetDiskImageLabel(i) ?? $"Disc {i + 1}");
         Info = new EmulatorInfo(core.LibraryName, core.LibraryVersion, core.AvInfo.timing.fps, core.AvInfo.timing.sample_rate, core.AvInfo.geometry.base_width, core.AvInfo.geometry.base_height,
@@ -256,9 +272,9 @@ public sealed class EmulationSession : IEmulator
                 next = Stopwatch.GetTimestamp();
                 continue;
             }
-            if (RequiresHwRender && HwRenderHost != null)
+            if (RequiresHwRender && HwRenderHost != null && _threadHost == null)
             {
-                // GL cores are stepped by the UI thread (see RunFrameOnCallerThread); this thread only serves the queue.
+                // GL cores hosted by the UI (Avalonia OpenGlControlBase, non-Windows) are stepped by the UI thread; this thread only serves the queue.
                 _resume.Wait(20); _resume.Reset(); continue;
             }
             RunOneFrame(core);
@@ -291,7 +307,22 @@ public sealed class EmulationSession : IEmulator
     {
         core.Run();
         Interlocked.Increment(ref _frames);
+        if (_threadHost != null)
+        {
+            var g = core.AvInfo.geometry;
+            try { _threadHost.Present(Frame, g.base_width, g.base_height, g.aspect_ratio); }
+            catch (Exception ex) { Log?.Invoke(Retro.LogError, "present failed: " + ex.Message); }
+        }
         FrameRendered?.Invoke();
+    }
+
+    /// <summary>For GL cores hosted on the emulation thread: reads the current GL frame into <see cref="Frame"/> (call via Invoke).</summary>
+    public void CaptureHwFrame()
+    {
+        var core = _core;
+        if (core == null || _threadHost == null) return;
+        var g = core.AvInfo.geometry;
+        try { _threadHost.Capture(Frame, g.base_width, g.base_height); } catch (Exception ex) { Log?.Invoke(Retro.LogWarn, "capture failed: " + ex.Message); }
     }
 
     /// <summary>For hardware-rendered cores: run one frame on the calling (GL) thread.</summary>
@@ -334,7 +365,8 @@ public sealed class EmulationSession : IEmulator
         var core = _core; if (core == null) return null;
         var data = core.Serialize();
         if (data == null) { Notification?.Invoke("This core does not support save states"); return null; }
-        var png = Frame.Width > 0 ? Frame.ToPng() : null;
+        CaptureHwFrame();
+        var png = Frame.Width > 0 && !Frame.IsHardwareFrame ? Frame.ToPng() : null;
         var info = _states.Write(_opt.System.Id, _opt.GameKey, name, data, png, _opt.Core.Id, slot);
         Notification?.Invoke(slot.HasValue ? $"Saved to slot {slot}" : $"Saved \"{name}\"");
         return info;
@@ -362,7 +394,11 @@ public sealed class EmulationSession : IEmulator
     public IReadOnlyList<SaveStateInfo> ListStates() => _states.List(_opt.System.Id, _opt.GameKey);
     public SaveStateManager States => _states;
 
-    public byte[] Screenshot() => Frame.ToPng();
+    public byte[] Screenshot()
+    {
+        if (_threadHost != null) { try { Invoke(CaptureHwFrame).Wait(2000); } catch { } }
+        return Frame.ToPng();
+    }
 
     public string SaveScreenshot(string screenshotsDir, string title)
     {

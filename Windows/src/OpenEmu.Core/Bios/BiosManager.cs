@@ -4,7 +4,13 @@ using OpenEmu.Core.Systems;
 
 namespace OpenEmu.Core.Bios;
 
-public sealed record BiosStatus(FirmwareEntry Firmware, CoreDefinition Core, SystemDefinition System, bool Present, string ExpectedPath);
+public sealed record BiosStatus(FirmwareEntry Firmware, CoreDefinition Core, SystemDefinition System, bool Present, string ExpectedPath)
+{
+    /// <summary>The core boots without this file (HLE BIOS or built-in replacement).</summary>
+    public bool CoreHasHle => FreeSystemFiles.CanRunWithoutBios(Core.Id);
+    /// <summary>The file present is the open-source OpenBIOS replacement rather than a Sony dump.</summary>
+    public bool IsOpenBios => Present && FreeSystemFiles.OpenBiosTargets.Contains(global::System.IO.Path.GetFileName(ExpectedPath), StringComparer.OrdinalIgnoreCase) && FreeSystemFiles.IsOpenBios(ExpectedPath);
+}
 
 /// <summary>Tracks BIOS / firmware files required by cores (the libretro "system directory").</summary>
 public sealed class BiosManager
@@ -31,6 +37,10 @@ public sealed class BiosManager
             }
         return list;
     }
+
+    /// <summary>Required files that are missing AND that the core cannot do without (HLE cores are never blocked).</summary>
+    public IReadOnlyList<BiosStatus> Blocking(SystemDefinition system, CoreDefinition core)
+        => FreeSystemFiles.CanRunWithoutBios(core.Id) ? Array.Empty<BiosStatus>() : MissingRequired(system, core);
 
     public IReadOnlyList<BiosStatus> MissingRequired(SystemDefinition system, CoreDefinition core)
         => core.RequiredFirmware.Select(fw =>

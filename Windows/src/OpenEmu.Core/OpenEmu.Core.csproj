@@ -7,6 +7,8 @@
     <EmbeddedResource Include="Resources\cores.json" LogicalName="cores.json" />
     <EmbeddedResource Include="Resources\strings.en.json" LogicalName="strings.en.json" WithCulture="false" />
     <EmbeddedResource Include="Resources\strings.pt-BR.json" LogicalName="strings.pt-BR.json" WithCulture="false" />
+    <EmbeddedResource Include="Resources\bios\openbios.bin" LogicalName="bios/openbios.bin" />
+    <EmbeddedResource Include="Resources\bios\openbios-LICENSE.txt" LogicalName="bios/openbios-LICENSE.txt" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.Data.Sqlite" Version="10.0.12" />

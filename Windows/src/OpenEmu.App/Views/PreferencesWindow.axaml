@@ -40,8 +40,10 @@
     <TabItem Header="{s:T prefs.bios}">
       <DockPanel Margin="16">
         <TextBlock DockPanel.Dock="Top" Text="{s:T prefs.bios.hint}" Classes="muted" TextWrapping="Wrap" />
+        <TextBlock DockPanel.Dock="Top" Text="{s:T prefs.bios.copyright}" Classes="muted" TextWrapping="Wrap" Margin="0,6,0,0" />
         <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Spacing="8" Margin="0,10">
           <Button x:Name="BiosImportBtn" Content="{s:T prefs.bios.import}" />
+          <Button x:Name="BiosFreeBtn" Content="{s:T prefs.bios.installFree}" />
           <Button x:Name="BiosFolderBtn" Content="{s:T prefs.bios.openFolder}" />
           <TextBlock x:Name="BiosStatus" Classes="muted" VerticalAlignment="Center" />
         </StackPanel>

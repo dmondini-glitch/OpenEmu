@@ -23,6 +23,18 @@ public interface IHwRenderHost
 }
 
 /// <summary>
+/// A hardware-render host whose GL context is owned by the emulation thread: the session calls Prepare after the
+/// game is loaded, Present after every frame and Teardown before the core is destroyed — all on that thread.
+/// </summary>
+public interface IHwRenderThreadHost : IHwRenderHost
+{
+    void Prepare(LibretroCore core);
+    void Present(Video.FrameBuffer frame, uint baseWidth, uint baseHeight, float aspect);
+    void Capture(Video.FrameBuffer frame, uint baseWidth, uint baseHeight);
+    void Teardown();
+}
+
+/// <summary>
 /// Loads a libretro core ("driver plugin") and wires its callbacks to managed events.
 /// All core entry points must be invoked from the same thread (the emulation thread).
 /// </summary>

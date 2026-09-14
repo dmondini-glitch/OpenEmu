@@ -51,12 +51,18 @@ public sealed class GameLauncher
             catch (Exception ex) { await Dialogs.Message(owner, L.T("common.error"), L.T("notify.installFailed", core.Title, ex.Message)); return null; }
         }
 
-        var missing = _s.Bios.MissingRequired(system, core);
+        var missing = _s.Bios.Blocking(system, core);
         if (missing.Count > 0)
         {
-            var list = string.Join("\n", missing.Select(m => $"• {m.Firmware.Path} – {m.Firmware.Description}"));
-            await Dialogs.Message(owner, L.T("prefs.bios"), L.T("play.missingBios", system.Name, list) + "\n\n" + L.T("prefs.bios.hint"));
-            return null;
+            // Prefer a core of the same system that boots without the proprietary BIOS (HLE), like PCSX-ReARMed for PlayStation.
+            var hle = coreId == null ? _s.Cores.CoresForSystem(system, _s.Settings).FirstOrDefault(c => Core.Bios.FreeSystemFiles.CanRunWithoutBios(c.Id) && _s.Cores.IsInstalled(c.Id) && !(UseCoreHost(c) && c.HwRender)) : null;
+            if (hle != null) { core = hle; lib = _s.Cores.FindLibrary(core.Id)!; }
+            else
+            {
+                var list = string.Join("\n", missing.Select(m => $"• {m.Firmware.Path} – {m.Firmware.Description}"));
+                await Dialogs.Message(owner, L.T("prefs.bios"), L.T("play.missingBios", system.Name, list) + "\n\n" + L.T("prefs.bios.copyright"));
+                return null;
+            }
         }
 
         var opts = new SessionOptions

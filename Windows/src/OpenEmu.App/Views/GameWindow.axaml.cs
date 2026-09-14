@@ -1,4 +1,5 @@
 using Avalonia.Controls;
+using Avalonia.Controls.Primitives;
 using Avalonia.Input;
 using Avalonia.Interactivity;
 using Avalonia.Threading;
@@ -23,6 +24,7 @@ public partial class GameWindow : Window
     private IEmulator? _session;
     private GameView? _swView;
     private GlGameView? _glView;
+    private Win32GlHost? _win32Gl;
     private readonly DispatcherTimer _hudTimer = new() { Interval = TimeSpan.FromSeconds(2.5) };
     private readonly DispatcherTimer _toastTimer = new() { Interval = TimeSpan.FromSeconds(2) };
     private readonly DispatcherTimer _fpsTimer = new() { Interval = TimeSpan.FromSeconds(1) };
@@ -46,8 +48,8 @@ public partial class GameWindow : Window
         PointerMoved += (_, _) => ShowHud();
         Deactivated += (_, _) => { _session?.ClearKeys(); if (_s.Settings.Gameplay.BackgroundPause && _session is { State: SessionState.Running }) _session.Pause(); };
         Activated += (_, _) => { if (_s.Settings.Gameplay.BackgroundPause && _session is { State: SessionState.Paused } && !_userPaused) _session.Resume(); };
-        _hudTimer.Tick += (_, _) => { Hud.IsVisible = false; _hudTimer.Stop(); };
-        _toastTimer.Tick += (_, _) => { Toast.IsVisible = false; _toastTimer.Stop(); };
+        _hudTimer.Tick += (_, _) => { Hud.IsVisible = false; _hudTimer.Stop(); if (_hudPopup != null) _hudPopup.IsOpen = false; };
+        _toastTimer.Tick += (_, _) => { Toast.IsVisible = false; _toastTimer.Stop(); if (_toastPopup != null) _toastPopup.IsOpen = false; };
         _fpsTimer.Tick += (_, _) => { if (_session != null) FpsText.Text = $"{_session.MeasuredFps:0.0} fps"; };
         WireButtons();
         VolumeSlider.Value = _s.Settings.Audio.Volume;
@@ -89,9 +91,19 @@ public partial class GameWindow : Window
             else
             {
                 local = new EmulationSession(_opts, input: _s.Input);
-                local.HwThreadInvoker = a => { if (Dispatcher.UIThread.CheckAccess()) a(); else Dispatcher.UIThread.Post(a); };
-                if (_opts.Core.HwRender)
+                if (_opts.Core.HwRender && OperatingSystem.IsWindows())
                 {
+                    // Real desktop OpenGL in a native child window; the core runs and presents on the emulation thread.
+                    _win32Gl = new Win32GlHost { Video = _s.Settings.Video };
+                    ViewHost.Content = _win32Gl;
+                    var ctx = await _win32Gl.Ready.WaitAsync(TimeSpan.FromSeconds(10));
+                    ctx.Log += m => _s.Log.Info($"[{_opts.Core.Id}] {m}");
+                    local.HwRenderHost = ctx;
+                    UseFloatingHud();
+                }
+                else if (_opts.Core.HwRender)
+                {
+                    local.HwThreadInvoker = a => { if (Dispatcher.UIThread.CheckAccess()) a(); else Dispatcher.UIThread.Post(a); };
                     _glView = new GlGameView { Session = local, Video = _s.Settings.Video };
                     _glView.Error += e => _s.Log.Error("GL: " + e);
                     local.HwRenderHost = _glView;
@@ -105,7 +117,11 @@ public partial class GameWindow : Window
             _session.StateChanged += st => Dispatcher.UIThread.Post(() => OnSessionState(st));
             await _session.StartAsync();
             var info = _session.Info!;
-            if (local != null && local.RequiresHwRender)
+            if (local != null && local.RequiresHwRender && _win32Gl != null)
+            {
+                // native GL window already in place
+            }
+            else if (local != null && local.RequiresHwRender)
             {
                 _glView ??= new GlGameView { Session = local, Video = _s.Settings.Video };
                 ViewHost.Content = _glView;
@@ -113,6 +129,7 @@ public partial class GameWindow : Window
             }
             else
             {
+                if (_win32Gl != null) { ViewHost.Content = null; _win32Gl = null; }
                 _swView = new GameView { Frame = _session.Frame, Video = _s.Settings.Video, Rotation = info.Rotation };
                 _session.FrameRendered += () => _swView.RequestRedraw();
                 ViewHost.Content = _swView;
@@ -125,6 +142,7 @@ public partial class GameWindow : Window
             await _session.ApplyCheats(_s.Library.CheatsFor(_game.Id).Where(c => c.Enabled).Select(c => (true, c.Code)));
             if (_s.Settings.Gameplay.LoadAutoSaveOnStart && _session.FindAutoSave() is { } auto) await _session.LoadState(auto);
             if (info.IsRemote) Title += "  ·  core host";
+            if (info.HwRender) Title += "  ·  OpenGL";
             ShowHud();
             Focus();
         }
@@ -168,6 +186,8 @@ public partial class GameWindow : Window
             _session?.ClearKeys();
             _session?.Dispose();
             _s.Input.Keyboard.Clear();
+            if (_hudPopup != null) _hudPopup.IsOpen = false;
+            if (_toastPopup != null) _toastPopup.IsOpen = false;
             Closing -= OnClosing;
             Close();
         }
@@ -231,7 +251,25 @@ public partial class GameWindow : Window
         ShowToast(on ? L.T("notify.ffOn") : L.T("notify.ffOff"));
     }
 
-    private void CaptureIfGl() { if (_glView != null && Dispatcher.UIThread.CheckAccess()) { try { _glView.CaptureFrame(); } catch { } } }
+    private void CaptureIfGl()
+    {
+        if (_glView != null && Dispatcher.UIThread.CheckAccess()) { try { _glView.CaptureFrame(); } catch { } }
+        else if (_session is EmulationSession { HwRenderOnEmulationThread: true } es) { try { es.Invoke(es.CaptureHwFrame).Wait(2000); } catch { } }
+    }
+
+    /// <summary>Native child windows cover Avalonia content, so the HUD and toasts move into popups that float above them.</summary>
+    private void UseFloatingHud()
+    {
+        Root.Children.Remove(Hud); Root.Children.Remove(Toast); Root.Children.Remove(PausedOverlay);
+        _hudPopup = new Avalonia.Controls.Primitives.Popup { PlacementTarget = Root, Placement = PlacementMode.Bottom, PlacementConstraintAdjustment = Avalonia.Controls.Primitives.PopupPositioning.PopupPositionerConstraintAdjustment.None, IsLightDismissEnabled = false, Child = Hud, VerticalOffset = -70, HorizontalOffset = 0 };
+        _toastPopup = new Avalonia.Controls.Primitives.Popup { PlacementTarget = Root, Placement = PlacementMode.Top, IsLightDismissEnabled = false, Child = Toast, VerticalOffset = 60 };
+        Root.Children.Add(_hudPopup); Root.Children.Add(_toastPopup);
+        _hudPopup.IsOpen = true; Hud.IsVisible = true;
+        _hudPopup.Placement = PlacementMode.Bottom;
+        // re-anchor when the window moves/resizes
+        PositionChanged += (_, _) => { if (_hudPopup.IsOpen) { _hudPopup.IsOpen = false; _hudPopup.IsOpen = Hud.IsVisible; } };
+    }
+    private Avalonia.Controls.Primitives.Popup? _hudPopup, _toastPopup;
 
     private async Task QuickSave() { CaptureIfGl(); if (_session != null) await _session.QuickSave(); }
 
@@ -330,6 +368,14 @@ public partial class GameWindow : Window
         else { _preFullscreen = WindowState; WindowState = WindowState.FullScreen; }
     }
 
-    private void ShowHud() { Hud.IsVisible = true; _hudTimer.Stop(); _hudTimer.Start(); }
-    public void ShowToast(string text) { ToastText.Text = text; Toast.IsVisible = true; _toastTimer.Stop(); _toastTimer.Start(); }
+    private void ShowHud()
+    {
+        Hud.IsVisible = true; _hudTimer.Stop(); _hudTimer.Start();
+        if (_hudPopup != null && !_hudPopup.IsOpen) _hudPopup.IsOpen = true;
+    }
+    public void ShowToast(string text)
+    {
+        ToastText.Text = text; Toast.IsVisible = true; _toastTimer.Stop(); _toastTimer.Start();
+        if (_toastPopup != null && !_toastPopup.IsOpen) _toastPopup.IsOpen = true;
+    }
 }

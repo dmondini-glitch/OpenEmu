@@ -177,5 +177,8 @@
  "play.hwCoreRemote": "{0} needs OpenGL inside the app process, which is not possible on {1} (cores run in the x64/x86 core host). Choose a software-rendering core for this system.",
  "play.hostMissing": "The core host for {0} was not found next to the application (host\\\\{0}\\\\OpenEmu.CoreHost.exe).",
  "prefs.gameplay.outOfProcess": "Run cores in a separate process",
- "prefs.gameplay.outOfProcessHint": "Isolates crashes like OpenEmu's helper processes. Cores: {0}. OpenGL cores are not available in this mode."
+ "prefs.gameplay.outOfProcessHint": "Isolates crashes like OpenEmu's helper processes. Cores: {0}. OpenGL cores are not available in this mode.",
+ "prefs.bios.copyright": "Original BIOS images (Sony, Sega, Nintendo, NEC, 3DO, Coleco…) are copyrighted and are not downloaded by OpenEmu: dump them from hardware you own. OpenEmu ships the open-source OpenBIOS (PCSX-Redux, MIT) as the PlayStation BIOS and can download other free system packs (C-BIOS for MSX, PPSSPP and Dolphin files). Cores marked \"boots without BIOS\" use built-in HLE firmware.",
+ "prefs.bios.installFree": "Install free system files",
+ "prefs.bios.hle": "boots without BIOS"
 }

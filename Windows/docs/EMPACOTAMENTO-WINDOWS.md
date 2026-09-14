@@ -93,6 +93,14 @@ Compress-Archive -Path dist\x64\* -DestinationPath dist\OpenEmu-Windows-x64.zip
 
 RIDs válidos: `win-x64`, `win-x86`, `win-arm64`.
 
+## BIOS incluídas e não incluídas
+
+O pacote traz apenas firmware redistribuível: o **OpenBIOS** (PCSX-Redux, licença MIT, embutido em `OpenEmu.Core.dll` e
+gravado em `BIOS\scph5500/5501/5502.bin` na primeira execução) e, sob demanda, os pacotes livres do buildbot libretro
+(C-BIOS para MSX, assets do PPSSPP, Sys do Dolphin). BIOS originais de Sony, Sega, Nintendo, NEC, 3DO etc. são
+protegidas por copyright e **não devem ser adicionadas ao pacote distribuído**; o usuário importa o dump do próprio
+hardware em Preferências → BIOS (ou copia para `Documentos\OpenEmu Library\BIOS`).
+
 ## Verificação do pacote
 
 ```powershell
@@ -101,6 +109,8 @@ cd dist\OpenEmu-Windows-x64
 .\cli\openemu-cli.exe cores                                 # todos devem aparecer como "installed"
 .\cli\openemu-cli.exe run --core fceumm --rom jogo.nes --frames 300 --screenshot out.png --state
 .\cli\openemu-cli.exe run --core 2048 --frames 120 --host   # mesmo teste passando pelo core host
+.\cli\openemu-cli.exe run --core mupen64plus_next --rom jogo.z64 --frames 120 --require-frame   # OpenGL (WGL) headless
+.\cli\openemu-cli.exe bios --install-free                  # OpenBIOS + pacotes livres
 ```
 
 No ARM64 o `run` usa o core host automaticamente.
@@ -131,5 +141,7 @@ Variáveis de ambiente: `OPENEMU_HOME`, `OPENEMU_LIBRARY`, `OPENEMU_CORES`, `OPE
 | `download-cores.ps1` falha em alguns cores | buildbot temporariamente fora; rode de novo (os já baixados são mantidos) |
 | "core host … não foi encontrado" no ARM64 | o pacote foi gerado sem `host\x64`; use o script `build-windows.ps1 -Arch arm64` |
 | Jogo abre e fecha em ARM64 com core OpenGL | escolha um core por software (ex.: `mednafen_psx` em vez de `mednafen_psx_hw`) |
+| Core OpenGL falha em x64/x86 | verifique `%APPDATA%\OpenEmu\Logs\openemu.log` (linha "OpenGL: …" mostra driver e versão) e `crash.log`; é preciso um driver com OpenGL 3.3+; em VMs sem GPU use o `opengl32.dll` do Mesa (llvmpipe) ao lado do `OpenEmu.exe` |
+| "Faltam arquivos de BIOS" | só sistemas cuja BIOS é proprietária; importe o dump em Preferências → BIOS. PlayStation já vem com OpenBIOS |
 | Sem áudio | o áudio usa WASAPI no processo que roda o core (app ou core host); verifique o dispositivo padrão do Windows |
 | Windows SmartScreen | o pacote não é assinado; "Mais informações → Executar assim mesmo", ou assine `OpenEmu.exe` com `signtool` |

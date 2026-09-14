@@ -36,6 +36,22 @@ O buildbot libretro não publica cores nativos para Windows ARM64, então o app 
 por memória compartilhada e os comandos por named pipe. Cores OpenGL não funcionam nesse modo; o app escolhe o
 core por software equivalente. Detalhes e comandos em [docs/EMPACOTAMENTO-WINDOWS.md](docs/EMPACOTAMENTO-WINDOWS.md).
 
+## OpenGL (N64, PlayStation HW, PSP, Dreamcast, DS, GameCube, PS2)
+
+No Windows o Avalonia desenha via ANGLE (OpenGL ES sobre Direct3D), que não serve para cores que exigem OpenGL de
+desktop 3.3+. Por isso a janela de jogo cria um **HWND filho nativo com contexto WGL próprio** (`Win32GlContext`):
+o core roda e apresenta na thread de emulação, com vsync opcional, e a UI continua em ANGLE. A CI valida esse
+caminho rodando o mupen64plus-next com Mesa/llvmpipe e exigindo frames reais.
+
+## BIOS
+
+| Situação | O que o OpenEmu faz |
+|---|---|
+| PlayStation | Instala automaticamente o **OpenBIOS** (PCSX-Redux, MIT) como `scph5500/5501/5502.bin`; Beetle PSX, SwanStation e PCSX-ReARMed iniciam com ele. Uma BIOS original, se você a extrair do seu console, pode substituir os arquivos na pasta `BIOS`. |
+| PS2, Dreamcast, Saturn, DS, GBA, Pokémon mini, Vectrex, Jaguar… | Os cores padrão têm BIOS HLE/embutida (Play!, Flycast, Yabause, melonDS DS, mGBA, PokeMini, vecx, VirtualJaguar); a falta da BIOS original não bloqueia o jogo. |
+| MSX, PSP, GameCube | "Instalar arquivos de sistema livres" baixa C-BIOS (blueMSX), assets do PPSSPP e Sys do Dolphin. |
+| 3DO, PC Engine CD, Sega CD, Famicom Disk System, Lynx, ColecoVision, Odyssey², Intellivision, Atari 8-bit, Neo Geo (arcade) | Precisam da BIOS original: são imagens protegidas por copyright e **não são baixadas pelo app**. A tela Preferências → BIOS lista o nome exato de cada arquivo para você importar o dump do seu hardware. |
+
 ## Sistemas e cores
 
 Os 42 sistemas do OpenEmu com os cores correspondentes (primeiro = padrão):
@@ -107,7 +123,7 @@ os plugins de sistema (`OpenEmu/SystemPlugins/*/`) são a fonte do `systems.json
 
 ## Limitações conhecidas (v0.1)
 
-- Cores OpenGL: caminho implementado (FBO + blit), validado apenas com cores de software nesta versão; cores Vulkan/D3D não são suportados.
+- Cores OpenGL: validados na CI com Mesa/llvmpipe (mupen64plus-next); cores Vulkan/D3D não são suportados. No ARM64 (core host) continuam indisponíveis.
 - Shaders (OpenEmu-Shaders/slang) não portados — apenas nearest/linear.
 - Gamepads: XInput (Xbox e compatíveis); DirectInput/HID genérico não implementado.
 - Arquivos 7z não são extraídos (ZIP sim); conjuntos de arcade são usados zipados.
