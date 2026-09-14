@@ -180,5 +180,6 @@
  "prefs.gameplay.outOfProcessHint": "Isola travamentos, como os processos auxiliares do OpenEmu. Cores: {0}. Cores OpenGL não ficam disponíveis neste modo.",
  "prefs.bios.copyright": "As BIOS originais (Sony, Sega, Nintendo, NEC, 3DO, Coleco…) são protegidas por copyright e não são baixadas pelo OpenEmu: extraia-as do hardware que você possui. O OpenEmu inclui o OpenBIOS de código aberto (PCSX-Redux, MIT) como BIOS de PlayStation e pode baixar outros pacotes livres (C-BIOS para MSX, arquivos do PPSSPP e do Dolphin). Cores marcados como \"inicia sem BIOS\" usam firmware HLE embutido.",
  "prefs.bios.installFree": "Instalar arquivos de sistema livres",
- "prefs.bios.hle": "inicia sem BIOS"
+ "prefs.bios.hle": "inicia sem BIOS",
+ "prefs.bios.coverage": "Firmware open-source usado por padrão (sem BIOS original)"
 }

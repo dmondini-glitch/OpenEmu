@@ -28,11 +28,63 @@ public static class FreeSystemFiles
     /// <summary>Cores that boot without the official BIOS (HLE / built-in replacement), so a missing BIOS must not block launching.</summary>
     public static readonly HashSet<string> CoresWithHleBios = new(StringComparer.Ordinal)
     {
-        "pcsx_rearmed", "play", "flycast", "yabause", "kronos", "melondsds", "melonds", "mgba", "pokemini", "vecx", "virtualjaguar", "a5200", "prosystem", "stella", "stella2014",
-        "gearsystem", "genesis_plus_gx", "picodrive", "bluemsx", "fbneo", "mame2003_plus",
+        "pcsx_rearmed", "play", "flycast", "yabause", "kronos", "melondsds", "melonds", "mgba", "pokemini", "vecx", "virtualjaguar", "a5200", "atari800", "prosystem", "stella", "stella2014",
+        "gearsystem", "genesis_plus_gx", "picodrive", "bluemsx", "fbneo", "mame2003_plus", "handy", "sameboy", "gambatte", "tgbdual",
     };
 
     public static bool CanRunWithoutBios(string coreId) => CoresWithHleBios.Contains(coreId);
+
+    /// <summary>
+    /// Core options that switch a core to its open-source / HLE firmware when the proprietary file is absent
+    /// (applied under the user's own options at launch).
+    /// </summary>
+    public static Dictionary<string, string> DefaultCoreOptions(string coreId, string? biosDir = null)
+    {
+        biosDir ??= Paths.BiosDir;
+        var o = new Dictionary<string, string>();
+        bool Missing(string rel) => !File.Exists(Path.Combine(biosDir, rel.Replace('/', Path.DirectorySeparatorChar)));
+        switch (coreId)
+        {
+            case "kronos": if (Missing("kronos/saturn_bios.bin")) o["kronos_force_hle_bios"] = "enabled"; break;
+            case "yabause": if (Missing("saturn_bios.bin")) o["yabause_force_hle_bios"] = "enabled"; break;
+            case "melondsds": if (Missing("bios7.bin") || Missing("firmware.bin")) o["melonds_sysfile_mode"] = "builtin"; break;
+            case "flycast": if (Missing("dc/dc_boot.bin")) o["flycast_hle_bios"] = "enabled"; break;
+            case "pcsx_rearmed": o["pcsx_rearmed_show_bios_bootlogo"] = "disabled"; break;
+            case "atari800": if (Missing("ATARIXL.ROM")) { o["atari800_os_xl"] = "AltirraOS"; o["atari800_os_400_800"] = "AltirraOS"; } break;
+        }
+        return o;
+    }
+
+    /// <summary>Per-system summary of what boots without proprietary firmware (shown in Preferences → BIOS and the docs).</summary>
+    public static readonly IReadOnlyList<(string SystemId, string Replacement, bool Available)> Coverage = new[]
+    {
+        ("openemu.system.psx", "OpenBIOS (PCSX-Redux, MIT) — bundled", true),
+        ("openemu.system.ps2", "Play! HLE BIOS", true),
+        ("openemu.system.saturn", "Kronos / Yabause HLE BIOS", true),
+        ("openemu.system.dc", "Flycast HLE BIOS", true),
+        ("openemu.system.nds", "melonDS FreeBIOS (DS mode)", true),
+        ("openemu.system.gba", "mGBA HLE BIOS", true),
+        ("openemu.system.gb", "SameBoy open-source boot ROMs", true),
+        ("openemu.system.msx", "C-BIOS (blueMSX pack)", true),
+        ("openemu.system.psp", "PPSSPP assets pack (no BIOS needed)", true),
+        ("openemu.system.gc", "Dolphin Sys pack (IPL optional)", true),
+        ("openemu.system.atari8bit", "AltirraOS (built into atari800)", true),
+        ("openemu.system.5200", "built-in 5200 BIOS (a5200)", true),
+        ("openemu.system.7800", "BIOS optional (ProSystem)", true),
+        ("openemu.system.lynx", "boot ROM optional (Handy)", true),
+        ("openemu.system.pokemonmini", "PokeMini FreeBIOS", true),
+        ("openemu.system.vectrex", "GCE BIOS built into vecx (freely licensed)", true),
+        ("openemu.system.jaguar", "built into VirtualJaguar", true),
+        ("openemu.system.scd", "none — Sega CD BIOS required", false),
+        ("openemu.system.pcecd", "none — syscard3.pce required", false),
+        ("openemu.system.pcfx", "none — pcfx.rom required", false),
+        ("openemu.system.3do", "none — Panasonic/GoldStar BIOS required", false),
+        ("openemu.system.fds", "none — disksys.rom required", false),
+        ("openemu.system.colecovision", "none — colecovision.rom required", false),
+        ("openemu.system.odyssey2", "none — o2rom.bin required", false),
+        ("openemu.system.intellivision", "none — exec.bin / grom.bin required", false),
+        ("openemu.system.arcade", "Neo Geo sets need neogeo.zip (no open-source BIOS)", false),
+    };
 
     /// <summary>Copies the bundled OpenBIOS as the PlayStation BIOS file names when they are missing. Returns the files written.</summary>
     public static IReadOnlyList<string> InstallOpenBios(string? biosDir = null, bool overwrite = false)

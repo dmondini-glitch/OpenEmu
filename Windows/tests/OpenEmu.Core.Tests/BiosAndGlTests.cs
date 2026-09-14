@@ -44,6 +44,28 @@ public class BiosAndGlTests
     }
 
     [Fact]
+    public void OpenSourceFirmwareDefaultsAreAppliedWhenProprietaryFilesAreMissing()
+    {
+        var dir = Path.Combine(Path.GetTempPath(), "openemu-bios-opts-" + Guid.NewGuid().ToString("N"));
+        Directory.CreateDirectory(dir);
+        Assert.Equal("enabled", FreeSystemFiles.DefaultCoreOptions("kronos", dir)["kronos_force_hle_bios"]);
+        Assert.Equal("enabled", FreeSystemFiles.DefaultCoreOptions("yabause", dir)["yabause_force_hle_bios"]);
+        Assert.Equal("builtin", FreeSystemFiles.DefaultCoreOptions("melondsds", dir)["melonds_sysfile_mode"]);
+        Assert.Equal("AltirraOS", FreeSystemFiles.DefaultCoreOptions("atari800", dir)["atari800_os_xl"]);
+        Directory.CreateDirectory(Path.Combine(dir, "kronos")); File.WriteAllBytes(Path.Combine(dir, "kronos", "saturn_bios.bin"), new byte[16]);
+        Assert.False(FreeSystemFiles.DefaultCoreOptions("kronos", dir).ContainsKey("kronos_force_hle_bios"));
+        Assert.Empty(FreeSystemFiles.DefaultCoreOptions("fceumm", dir));
+        // systems default to cores that boot without proprietary BIOS
+        Assert.Equal("play", SystemCatalog.Find("ps2")!.DefaultCore);
+        Assert.Equal("kronos", SystemCatalog.Find("saturn")!.DefaultCore);
+        Assert.True(FreeSystemFiles.CanRunWithoutBios(SystemCatalog.Find("dc")!.DefaultCore));
+        Assert.True(FreeSystemFiles.CanRunWithoutBios(SystemCatalog.Find("nds")!.DefaultCore));
+        Assert.True(FreeSystemFiles.CanRunWithoutBios(SystemCatalog.Find("atari8bit")!.DefaultCore));
+        foreach (var (sysId, _, available) in FreeSystemFiles.Coverage) Assert.NotNull(SystemCatalog.Find(sysId));
+        Directory.Delete(dir, true);
+    }
+
+    [Fact]
     public void GlDestRectKeepsAspectAndIntegralScale()
     {
         var (x0, y0, x1, y1) = GlBlitter.DestRect(1920, 1080, 320, 240, 4f / 3f, true, false);

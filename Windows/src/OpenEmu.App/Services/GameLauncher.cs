@@ -21,6 +21,14 @@ public sealed class GameLauncher
     /// <summary>Cores run out-of-process when this process cannot load them (Windows ARM64) or when the user opted in.</summary>
     public bool UseCoreHost(CoreDefinition core) => CoreManifest.RequiresCoreHost || _s.Settings.RunCoresOutOfProcess;
 
+    /// <summary>User options win; underneath them the open-source-firmware defaults (HLE BIOS, AltirraOS…) are applied.</summary>
+    private Dictionary<string, string> MergeOptions(string coreId)
+    {
+        var o = Core.Bios.FreeSystemFiles.DefaultCoreOptions(coreId);
+        if (_s.Settings.CoreOptions.TryGetValue(coreId, out var user)) foreach (var kv in user) o[kv.Key] = kv.Value;
+        return o;
+    }
+
     public async Task<GameWindow?> LaunchAsync(Game game, Window owner, string? coreId = null)
     {
         var system = SystemCatalog.Find(game.SystemId);
@@ -68,7 +76,7 @@ public sealed class GameLauncher
         var opts = new SessionOptions
         {
             System = system, Core = core, CoreLibraryPath = lib, RomPath = game.RomPath, GameKey = game.GameKey,
-            CoreOptions = _s.Settings.CoreOptions.TryGetValue(core.Id, out var co) ? new(co) : new(),
+            CoreOptions = MergeOptions(core.Id),
             Language = _s.Settings.Language == "pt-BR" ? Retro.LanguagePortugueseBrazil : Retro.LanguageEnglish,
         };
         var win = new GameWindow(game, opts);

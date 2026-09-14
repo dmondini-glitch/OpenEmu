@@ -95,6 +95,9 @@ RIDs válidos: `win-x64`, `win-x86`, `win-arm64`.
 
 ## BIOS incluídas e não incluídas
 
+Cobertura de firmware open-source (o que roda sem BIOS original) está na tabela "BIOS" do README; a lista é a mesma
+exibida em Preferências → BIOS e definida em `src/OpenEmu.Core/Bios/FreeSystemFiles.cs`.
+
 O pacote traz apenas firmware redistribuível: o **OpenBIOS** (PCSX-Redux, licença MIT, embutido em `OpenEmu.Core.dll` e
 gravado em `BIOS\scph5500/5501/5502.bin` na primeira execução) e, sob demanda, os pacotes livres do buildbot libretro
 (C-BIOS para MSX, assets do PPSSPP, Sys do Dolphin). BIOS originais de Sony, Sega, Nintendo, NEC, 3DO etc. são

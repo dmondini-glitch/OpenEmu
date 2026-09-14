@@ -180,5 +180,6 @@
  "prefs.gameplay.outOfProcessHint": "Isolates crashes like OpenEmu's helper processes. Cores: {0}. OpenGL cores are not available in this mode.",
  "prefs.bios.copyright": "Original BIOS images (Sony, Sega, Nintendo, NEC, 3DO, Coleco…) are copyrighted and are not downloaded by OpenEmu: dump them from hardware you own. OpenEmu ships the open-source OpenBIOS (PCSX-Redux, MIT) as the PlayStation BIOS and can download other free system packs (C-BIOS for MSX, PPSSPP and Dolphin files). Cores marked \"boots without BIOS\" use built-in HLE firmware.",
  "prefs.bios.installFree": "Install free system files",
- "prefs.bios.hle": "boots without BIOS"
+ "prefs.bios.hle": "boots without BIOS",
+ "prefs.bios.coverage": "Open-source firmware used by default (no original BIOS needed)"
 }

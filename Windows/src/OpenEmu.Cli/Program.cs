@@ -71,7 +71,8 @@ try
             var lib = Opt("core-path") ?? mgr.FindLibrary(coreId) ?? (Flag("install") ? await mgr.InstallAsync(coreId) : throw new FileNotFoundException($"core {coreId} not installed (use --install)"));
             var def = CoreManifest.Find(coreId) ?? new CoreDefinition { Id = coreId };
             var sys = (Opt("system") is { } sid ? SystemCatalog.Find(sid) : null) ?? (rom != null ? SystemDetector.Detect(rom) : null) ?? SystemCatalog.All.FirstOrDefault(s => s.Cores.Contains(coreId)) ?? SystemCatalog.All[0];
-            var opts = new SessionOptions { System = sys, Core = def, CoreLibraryPath = lib, RomPath = rom, GameKey = rom != null ? Path.GetFileNameWithoutExtension(rom) : coreId };
+            var opts = new SessionOptions { System = sys, Core = def, CoreLibraryPath = lib, RomPath = rom, GameKey = rom != null ? Path.GetFileNameWithoutExtension(rom) : coreId, CoreOptions = FreeSystemFiles.DefaultCoreOptions(coreId) };
+            FreeSystemFiles.InstallOpenBios();
             var audio = new NullAudioSink();
             IEmulator session;
             if (Flag("host") || CoreManifest.RequiresCoreHost)

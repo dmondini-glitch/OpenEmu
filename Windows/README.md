@@ -43,14 +43,26 @@ desktop 3.3+. Por isso a janela de jogo cria um **HWND filho nativo com contexto
 o core roda e apresenta na thread de emulação, com vsync opcional, e a UI continua em ANGLE. A CI valida esse
 caminho rodando o mupen64plus-next com Mesa/llvmpipe e exigindo frames reais.
 
-## BIOS
+## BIOS: só firmware open-source
 
-| Situação | O que o OpenEmu faz |
-|---|---|
-| PlayStation | Instala automaticamente o **OpenBIOS** (PCSX-Redux, MIT) como `scph5500/5501/5502.bin`; Beetle PSX, SwanStation e PCSX-ReARMed iniciam com ele. Uma BIOS original, se você a extrair do seu console, pode substituir os arquivos na pasta `BIOS`. |
-| PS2, Dreamcast, Saturn, DS, GBA, Pokémon mini, Vectrex, Jaguar… | Os cores padrão têm BIOS HLE/embutida (Play!, Flycast, Yabause, melonDS DS, mGBA, PokeMini, vecx, VirtualJaguar); a falta da BIOS original não bloqueia o jogo. |
-| MSX, PSP, GameCube | "Instalar arquivos de sistema livres" baixa C-BIOS (blueMSX), assets do PPSSPP e Sys do Dolphin. |
-| 3DO, PC Engine CD, Sega CD, Famicom Disk System, Lynx, ColecoVision, Odyssey², Intellivision, Atari 8-bit, Neo Geo (arcade) | Precisam da BIOS original: são imagens protegidas por copyright e **não são baixadas pelo app**. A tela Preferências → BIOS lista o nome exato de cada arquivo para você importar o dump do seu hardware. |
+O pacote não contém nem baixa BIOS originais. Ele usa as substituições open-source que a comunidade libretro usa e as
+ativa por padrão (opções de core aplicadas automaticamente quando o arquivo original não existe):
+
+| Sistema | Firmware livre usado | Status |
+|---|---|---|
+| PlayStation | **OpenBIOS** (PCSX-Redux, MIT) — embutido, instalado como `scph5500/5501/5502.bin` | ✔ |
+| PlayStation 2 | Play! (HLE) — core padrão | ✔ |
+| Saturn | Kronos / Yabause com `force_hle_bios` — core padrão Kronos | ✔ |
+| Dreamcast | Flycast `hle_bios` | ✔ |
+| Nintendo DS | melonDS DS FreeBIOS (`sysfile_mode = builtin`) | ✔ |
+| Game Boy Advance / GB / GBC | mGBA HLE, SameBoy boot ROMs open-source | ✔ |
+| MSX | C-BIOS (pacote blueMSX, botão "Instalar arquivos de sistema livres") | ✔ |
+| PSP / GameCube | assets do PPSSPP e Sys do Dolphin (pacotes livres) | ✔ |
+| Atari 8-bit / 5200 / 7800 / Lynx | AltirraOS embutido no atari800, BIOS embutida no a5200, opcional no ProSystem e Handy | ✔ |
+| Pokémon mini / Vectrex / Jaguar | FreeBIOS do PokeMini, BIOS GCE (licenciada) no vecx, embutida no VirtualJaguar | ✔ |
+| Sega CD, TurboGrafx-CD, PC-FX, 3DO, Famicom Disk System, ColecoVision, Odyssey², Intellivision, Neo Geo (arcade) | **não existe substituto open-source** — esses sistemas exigem o dump da BIOS original, que o app não baixa | ✖ |
+
+A tela Preferências → BIOS mostra essa tabela, o estado de cada arquivo e o nome exato esperado.
 
 ## Sistemas e cores
 

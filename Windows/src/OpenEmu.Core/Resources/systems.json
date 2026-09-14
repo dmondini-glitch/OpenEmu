@@ -3537,8 +3537,8 @@
     "OEPS2ButtonSelect": "SELECT"
    },
    "cores": [
-    "pcsx2",
-    "play"
+    "play",
+    "pcsx2"
    ]
   },
   {
@@ -4105,9 +4105,9 @@
     "OESaturnButtonAnalogMode": "L3"
    },
    "cores": [
-    "mednafen_saturn",
     "kronos",
-    "yabause"
+    "yabause",
+    "mednafen_saturn"
    ]
   },
   {

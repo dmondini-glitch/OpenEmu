@@ -360,6 +360,21 @@ public partial class PreferencesWindow : Window
     private void RefreshBios()
     {
         BiosPanel.Children.Clear();
+        // open-source firmware coverage (what boots without proprietary BIOS)
+        var cov = new Border { Classes = { "card" }, Padding = new Thickness(10, 6), Margin = new Thickness(0, 2, 0, 8) };
+        var cst = new StackPanel { Spacing = 2 };
+        cst.Children.Add(new TextBlock { Text = L.T("prefs.bios.coverage"), FontWeight = FontWeight.SemiBold });
+        foreach (var (sysId, replacement, available) in Core.Bios.FreeSystemFiles.Coverage)
+        {
+            var sys = SystemCatalog.Find(sysId); if (sys == null) continue;
+            var row = new Grid { ColumnDefinitions = new ColumnDefinitions("Auto,200,*"), Margin = new Thickness(12, 0, 0, 0) };
+            row.Children.Add(new TextBlock { Text = available ? "✔" : "✖", Foreground = available ? Brushes.LightGreen : Brushes.Orange, Width = 22 });
+            var n = new TextBlock { Text = sys.Name, FontSize = 12 }; Grid.SetColumn(n, 1); row.Children.Add(n);
+            var r = new TextBlock { Text = replacement, Classes = { "muted" }, FontSize = 11, TextTrimming = TextTrimming.CharacterEllipsis }; Grid.SetColumn(r, 2); row.Children.Add(r);
+            cst.Children.Add(row);
+        }
+        cov.Child = cst;
+        BiosPanel.Children.Add(cov);
         foreach (var group in _s.Bios.Status().GroupBy(b => b.System.Name).OrderBy(g => g.Key))
         {
             var box = new Border { Classes = { "card" }, Padding = new Thickness(10, 6), Margin = new Thickness(0, 2) };
